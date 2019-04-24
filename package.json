@@ -1,0 +1,44 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "The new-to-be handlebars documentation site",
+  "private": true,
+  "scripts": {
+    "dev": "vuepress dev",
+    "build": "vuepress build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/handlebars-lang/docs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/handlebars-lang/docs/issues"
+  },
+  "homepage": "https://github.com/handlebars-lang/docs#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.1.0",
+    "husky": "^2.0.0",
+    "lint-staged": "^8.1.5",
+    "prettier": "^1.17.0",
+    "vuepress": "^1.0.0-alpha.47"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,json,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
