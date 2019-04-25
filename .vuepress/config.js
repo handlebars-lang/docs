@@ -24,8 +24,10 @@ module.exports = {
         items: [{ text: "handlebarsjs.com", link: "https://handlebarsjs.com" }]
       }
     ],
+    sidebar: ["/", ["/installation.md", "Install"]],
     repo: "handlebars-lang/docs",
     lastUpdated: "Last Updated",
     editLinks: true
-  }
+  },
+  plugins: [require("./plugins/determine-handlebars-version")]
 };

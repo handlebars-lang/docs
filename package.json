@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/handlebars-lang/docs#readme",
   "devDependencies": {
+    "axios": "^0.18.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.1.0",
     "husky": "^2.0.0",

@@ -11,7 +11,7 @@ features:
   - title: Mustache-compatible
     details: Handlebars is largely compatible with Mustache templates. In most cases it is possible to swap out Mustache with Handlebars and continue using your current templates.
   - title: Fast execution
-    details: Handlebars compiles templates into JavaScript functions, which makes them faster then interpreted template engines
+    details: Handlebars compiles templates into JavaScript functions. This makes the template execution faster than most other templat engines.
 footer: CC BY-SA Licensed | Copyright © 2019-present Nils Knappmeier and contributors
 ---
 
