@@ -24,8 +24,8 @@ module.exports = {
         items: [{ text: "handlebarsjs.com", link: "https://handlebarsjs.com" }]
       }
     ],
+    repo: "handlebars-lang/docs",
     lastUpdated: "Last Updated",
-    editLinks: true,
-    editLinkText: "Edit this page on Github"
+    editLinks: true
   }
 };
