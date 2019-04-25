@@ -1,3 +1,5 @@
+https://api.travis-ci.org/handlebars-lang/docs.svg?branch=master
+
 This is the repository for a new-to-come Handlebars documentation site.
 
 The site can be previewed at https://handlebars-lang.github.io/docs
