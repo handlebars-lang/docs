@@ -1,5 +1,6 @@
 const basePath = process.env.VUEPRESS_BASE || "/";
 
+console.log(`basePath: ${basePath}`);
 module.exports = {
   base: basePath,
   title: "Handlebars.js (draft)",
