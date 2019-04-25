@@ -1,5 +1,9 @@
 This is the repository for a new-to-come Handlebars documentation site.
 
+The site can be previewed at https://handlebars-lang.github.io/docs
+
+When finished, it might become https://handlebarsjs.com some time...
+
 # Why vuepress?
 
 There are a lot of static page generators out there nowadays. I have chosen [vuepress](https://v1.vuepress.vuejs.org) over other systems for several reasons:
