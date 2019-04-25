@@ -1,10 +1,8 @@
 language: node_js
 node_js:
   - lts/*
-env:
-- VUEPRESS_BASE=docs
 script:
-  - npm run build
+  - VUEPRESS_BASE=/docs/ npm run build
 deploy:
   provider: pages
   skip-cleanup: true
