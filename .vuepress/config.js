@@ -23,6 +23,8 @@ module.exports = {
         items: [{ text: "handlebarsjs.com", link: "https://handlebarsjs.com" }]
       }
     ],
-    lastUpdated: "Last Updated"
+    lastUpdated: "Last Updated",
+    editLinks: true,
+    editLinkText: "Edit this page on Github"
   }
 };
