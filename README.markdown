@@ -1,4 +1,4 @@
-![](https://api.travis-ci.org/handlebars-lang/docs.svg?branch=master)
+[![](https://api.travis-ci.org/handlebars-lang/docs.svg?branch=master)](https://travis-ci.org/handlebars-lang/docs)
 
 This is the repository for a new-to-come Handlebars documentation site.
 
