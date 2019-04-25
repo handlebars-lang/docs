@@ -18,6 +18,7 @@ module.exports = {
     nav: [
       { text: "Home", link: "/" },
       { text: "Guide", link: "/guide/" },
+      { text: "Improve the docs", link: "/CONTRIBUTING.html" },
       {
         text: "Other sources",
         items: [{ text: "handlebarsjs.com", link: "https://handlebarsjs.com" }]
