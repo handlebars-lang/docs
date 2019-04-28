@@ -3,7 +3,7 @@ const basePath = process.env.VUEPRESS_BASE || "/";
 console.log(`basePath: ${basePath}`);
 module.exports = {
   base: basePath,
-  title: "Handlebars.js (draft)",
+  title: "Handlebars (draft)",
   head: [
     [
       "link",
@@ -24,10 +24,12 @@ module.exports = {
         items: [{ text: "handlebarsjs.com", link: "https://handlebarsjs.com" }]
       }
     ],
-    sidebar: ["/", ["/installation.md", "Install"]],
     repo: "handlebars-lang/docs",
     lastUpdated: "Last Updated",
     editLinks: true
   },
-  plugins: [require("./plugins/determine-handlebars-version")]
+  plugins: [
+    require("./plugins/determine-handlebars-version"),
+    require("./plugins/inject-examples-into-page-data")
+  ]
 };

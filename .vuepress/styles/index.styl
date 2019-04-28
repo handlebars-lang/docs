@@ -1,16 +1,53 @@
-body {
-    background-color: $bodyBgColor;
+html, body {
+    background-color: $bodyBgColor !important;
 }
 
 .navbar, .navbar .links {
-    background-color: $navbarBgColor !important;
+    background-color: $navbarBgColor !important
+    opacity: 0.9;
+}
+
+.sidebar {
+    background-color $navbarBgColor !important
+}
+
+.page-edit .edit-link a  {
+    color: $accentColor !important
+}
+
+.icon.outbound {
+    color: $iconOutboundColor !important
+}
+
+.page-edit .last-updated .prefix {
+    color: $textColor !important
+}
+
+.page-edit .last-updated .time {
+    color: $textColor !important
+}
+
+$contentBoxPadding = 1.2rem
+$contentBorderRadius = 0.5rem
+
+.custom.content {
+    padding: $contentBoxPadding;
 }
 
 .home {
+    #main-title {
+        display: none
+    }
+
     .features {
         background-color: $featuresBgColor
-        padding: 1.2rem !important
-        border-radius: 1rem;
+        padding: $contentBoxPadding !important
+        border-radius: $contentBorderRadius
+        margin-bottom: 2rem
+    }
+
+    .hero img {
+        max-height: 200px !important;
     }
 
     .hero .description {
@@ -23,6 +60,7 @@ body {
 }
 
 .content {
-    background-color: $contentBgColor !important;
-    border-radius: 1em;
+    background-color: $contentBgColor !important
+    border-radius: $contentBorderRadius !important
 }
+
