@@ -8,7 +8,7 @@
 
 # npm
 
-```
+```bash
 npm install handlebars
 ```
 
@@ -16,7 +16,7 @@ npm install handlebars
 
 Handlebars templates look like regular HTML, with embedded handlebars expressions.
 
-```hbs
+```handlebars
 <div class="entry">
   <h1>{{title}}</h1>
   <div class="body">
@@ -83,7 +83,7 @@ results in
 
 Handlebars HTML-escapes values returned by a `\{\{expression}}`. If you don't want Handlebars to escape a value, use the "triple-stash", `{{{`.
 
-```hbs
+```handlebars
 <div class="entry">
   <h1>{{title}}</h1>
   <div class="body">
@@ -132,7 +132,7 @@ This will escape the passed in parameters, but mark the response as safe, so Han
 Block expressions allow you to define helpers that will invoke a section of your template with a different context than the current. These block helpers are identified by a `#` preceeding the helper name and require a matching closing mustache, `/`, of the same name.
 Let's consider a helper that will generate an HTML list:
 
-```hbs
+```handlebars
 {{#list people}}{{firstName}} {{lastName}}{{/list}}
 ```
 
@@ -182,13 +182,13 @@ Since the contents of a block helper are escaped when you call `options.fn(conte
 
 Handlebars supports simple paths, just like Mustache.
 
-```hbs
+```handlebars
 <p>{{name}}</p>
 ```
 
 Handlebars also supports nested paths, making it possible to look up properties nested below the current context.
 
-```hbs
+```handlebars
 <div class="entry">
   <h1>{{title}}</h1>
   <h2>By {{author.name}}</h2>
@@ -217,7 +217,7 @@ Nested handlebars paths can also include `../` segments, which evaluate their pa
 
 # Comments
 
-```hbs
+```handlebars
 <div id="comments">
   {{#each comments}}
   <h2><a href="/posts/{{../permalink}}#{{id}}">{{title}}</a></h2>
@@ -229,7 +229,7 @@ Nested handlebars paths can also include `../` segments, which evaluate their pa
 Even though the link is printed while in the context of a comment, it can still go back to the main context (the post) to retrieve its permalink.
 The exact value that `../` will resolve to varies based on the helper that is calling the block. Using `../` is only necessary when context changes, so children of helpers such as each would require the use of `../` while children of helpers such as if do not.
 
-```hbs
+```handlebars
 {{permalink}}
 {{#each comments}}
   {{../permalink}}
@@ -243,7 +243,7 @@ The exact value that `../` will resolve to varies based on the helper that is ca
 In this example all of the above reference the same permalink value even though they are located within different blocks. This behavior is new as of Handlebars 4, the release notes discuss the prior behavior as well as the migration plan.
 Handlebars also allows for name conflict resolution between helpers and data fields via a this reference:
 
-```hbs
+```handlebars
 <p>{{./name}} or {{this/name}} or {{this.name}}</p>
 ```
 
@@ -253,7 +253,7 @@ Template comments with `\{\{!-- --}}` or `\{\{! }}`.
 
 You can use comments in your handlebars code just as you would in your code. Since there is generally some level of logic, this is a good practice.
 
-```hbs
+```handlebars
 <div class="entry">
   {{!-- only output author name if an author exists --}}
   {{#if author}}
@@ -264,7 +264,7 @@ You can use comments in your handlebars code just as you would in your code. Sin
 
 The comments will not be in the resulting output. If you'd like the comments to show up. Just use html comments, and they will be output.
 
-```hbs
+```handlebars
 <div class="entry">
   {{! This comment will not be in the output }}
   <!-- This comment will be in the output -->
@@ -277,7 +277,7 @@ Any comments that must contain `}}` or other handlebars tokens should use the `\
 
 Handlebars helpers can be accessed from any context in a template. You can register a helper with the Handlebars.registerHelper method.
 
-```hbs
+```handlebars
 <div class="post">
   <h1>By {{fullName author}}</h1>
   <div class="body">{{body}}</div>
@@ -326,7 +326,7 @@ results in:
 
 Helpers receive the current context as the `this` context of the function.
 
-```hbs
+```handlebars
 <ul>
   {{#each items}}
   <li>{{agree_button}}</li>
@@ -371,7 +371,7 @@ If your helper returns HTML that you do not want escaped, make sure to return a 
 
 Helper calls may also have literal values passed to them either as parameter arguments or hash arguments. Supported literals include numbers, strings, `true`, `false`, `null` and ? `undefined`.
 
-```hbs
+```handlebars
 {{agree_button "My Text" class="my-class" visible=true counter=4}}
 ```
 
@@ -379,7 +379,7 @@ Helper calls may also have literal values passed to them either as parameter arg
 
 Handlebars partials allow for code reuse by creating shared templates. Rendering this template
 
-```hbs
+```handlebars
 <div class="post">
   {{> userMessage tagName="h1" }}
 
