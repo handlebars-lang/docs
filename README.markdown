@@ -10,7 +10,7 @@ When finished, it might become https://handlebarsjs.com some time...
 
 There are a lot of static page generators out there nowadays. I have chosen [vuepress](https://v1.vuepress.vuejs.org) over other systems for several reasons:
 
-* I like [vuejs]().
+* I like [vuejs](https://vuejs.org).
 * Vuepress builds fast loading static sites with modern PWA technologies.
 * Vuepress is centered around markdown, but leaves the opportunity to inject interactive parts if needed
 * Vuepress has a simple predefined way of adapting stylesheets, which makes it easy to adapt colors from the 

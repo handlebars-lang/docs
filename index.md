@@ -1,7 +1,6 @@
 ---
 home: true
 heroImage: /images/handlebars_logo.png
-heroText: Handlebars.js
 tagline: Minimal templating on steriods
 actionText: Get Started →
 actionLink: /guide/
@@ -12,7 +11,5 @@ features:
     details: Handlebars is largely compatible with Mustache templates. In most cases it is possible to swap out Mustache with Handlebars and continue using your current templates.
   - title: Fast execution
     details: Handlebars compiles templates into JavaScript functions. This makes the template execution faster than most other templat engines.
-footer: CC BY-SA Licensed | Copyright © 2019-present Nils Knappmeier and contributors
+footer: MIT licensed | Copyright (C) 2011-2019 by Yehuda Katz
 ---
-
-# Intro
