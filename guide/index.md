@@ -1,18 +1,6 @@
-# Installation
+# Guide
 
-## Download
-
-<DownloadHandlebars type="awsFull">Download Handlebars {{$handlebarsVersion}}</DownloadHandlebars>
-
-<br>
-
-<DownloadHandlebars type="awsRuntime">Download Handlebars runtime {{$handlebarsVersion}}</DownloadHandlebars>
-
-## npm
-
-```bash
-npm install handlebars
-```
+[Installation](./installation.html)
 
 # Getting Started
 

@@ -24,6 +24,19 @@ module.exports = {
         items: [{ text: "handlebarsjs.com", link: "https://handlebarsjs.com" }]
       }
     ],
+    sidebar: [
+      "/",
+      "guide/",
+      "guide/installation.md",
+      "guide/expressions.md",
+      "guide/execution.md",
+      "guide/precompilation.md",
+      "guide/partials.md",
+      "guide/block-helpers.md",
+      "guide/builtin-helpers.md",
+      "guide/api-reference.md"
+    ],
+    displayAllHeaders: true,
     repo: "handlebars-lang/docs",
     lastUpdated: "Last Updated",
     editLinks: true
