@@ -163,7 +163,7 @@ Template whitespace may be omitted from either side of any mustache statement by
 
 with this context:
 
-```json
+```js
 {
   nav: [
     {url: 'foo', test: true, title: 'bar'},
