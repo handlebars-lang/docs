@@ -71,8 +71,8 @@ In this case, `link` is the name of a Handlebars helper, and story is a paramete
 
 ```js
 Handlebars.registerHelper('link', function(object) {
-  var url \= Handlebars.escapeExpression(object.url),
-      text \= Handlebars.escapeExpression(object.text);
+  var url = Handlebars.escapeExpression(object.url),
+      text = Handlebars.escapeExpression(object.text);
 
   return new Handlebars.SafeString(
     "<a href='" + url + "'>" + text + "</a>"
@@ -119,8 +119,8 @@ Handlebars.registerHelper('link', function(text, options) {
 
   for (var prop in options.hash) {
     attrs.push(
-        Handlebars.escapeExpression(prop) + '\="'
-        + Handlebars.escapeExpression(options.hash\[prop\]) + '"');
+        Handlebars.escapeExpression(prop) + '="'
+        + Handlebars.escapeExpression(options.hash[prop]) + '"');
   }
 
   return new Handlebars.SafeString(
@@ -151,13 +151,13 @@ Template whitespace may be omitted from either side of any mustache statement by
 
 ```handlebars
 {{#each nav ~}}
-  <a href\="{{url}}"\>
+  <a href="{{url}}">
     {{~#if test}}
       {{~title}}
     {{~^~}}
       Empty
     {{~/if~}}
-  </a\>
+  </a>
 {{~/each}}
 ```
 
@@ -165,42 +165,42 @@ with this context:
 
 ```json
 {
-  nav: \[
+  nav: [
     {url: 'foo', test: true, title: 'bar'},
     {url: 'bar'}
-  \]
+  ]
 }
 ```
 
 results in output sans newlines and formatting whitespace:
 
 ```html
-<a href\="foo"\>bar</a\><a href\="bar"\>Empty</a\>
+<a href="foo">bar</a><a href="bar">Empty</a>
 ```
 
 This expands the default behavior of stripping lines that are "standalone" helpers (only a block helper, comment, or partial and whitespace).
 
 ```handlebars
 {{#each nav}}
-  <a href\="{{url}}"\>
+  <a href="{{url}}">
     {{#if test}}
       {{title}}
     {{^}}
       Empty
     {{/if}}
-  </a\>
+  </a>
 {{~/each}}
 ```
 
 will render
 
 ```html
-<a href\="foo"\>
+<a href="foo">
     bar
-</a\>
-<a href\="bar"\>
+</a>
+<a href="bar">
     Empty
-</a\>
+</a>
 ```
 
 ## Escaping
