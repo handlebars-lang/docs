@@ -28,8 +28,5 @@ module.exports = {
     lastUpdated: "Last Updated",
     editLinks: true
   },
-  plugins: [
-    require("./plugins/determine-handlebars-version"),
-    require("./plugins/inject-examples-into-page-data")
-  ]
+  plugins: [require("./plugins/determine-handlebars-version")]
 };
