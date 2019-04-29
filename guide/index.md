@@ -2,7 +2,7 @@
 
 [Installation](./installation.html)
 
-# Getting Started
+## Getting Started
 
 Handlebars templates look like regular HTML, with embedded handlebars expressions.
 
@@ -69,7 +69,7 @@ results in
 
 [Learn More: Execution](execution.html)
 
-# HTML Escaping
+## HTML Escaping
 
 ::: v-pre
 Handlebars HTML-escapes values returned by a `{{expression}}`. If you don't want Handlebars to escape a value, use the "triple-stash", `{{{`.
@@ -119,7 +119,7 @@ Handlebars.registerHelper("link", function(text, url) {
 
 This will escape the passed in parameters, but mark the response as safe, so Handlebars will not try to escape it even if the "triple-stash" is not used.
 
-# Block Expressions
+## Block Expressions
 
 Block expressions allow you to define helpers that will invoke a section of your template with a different context than the current. These block helpers are identified by a `#` preceeding the helper name and require a matching closing mustache, `/`, of the same name.
 Let's consider a helper that will generate an HTML list:
@@ -170,7 +170,7 @@ Since the contents of a block helper are escaped when you call `options.fn(conte
 
 [Learn More: Block Helpers](block-helpers.html)
 
-# Handlebars Paths
+## Handlebars Paths
 
 Handlebars supports simple paths, just like Mustache.
 
@@ -207,7 +207,7 @@ var context = {
 This makes it possible to use Handlebars templates with more raw JSON objects.
 Nested handlebars paths can also include `../` segments, which evaluate their paths against a parent context.
 
-# Comments
+## Comments
 
 ```handlebars
 <div id="comments">
@@ -271,7 +271,7 @@ The comments will not be in the resulting output. If you'd like the comments to 
 Any comments that must contain `}}` or other handlebars tokens should use the `{{!-- --}}` syntax.
 :::
 
-# Helpers
+## Helpers
 
 Handlebars helpers can be accessed from any context in a template. You can register a helper with the Handlebars.registerHelper method.
 
@@ -365,7 +365,7 @@ results in:
 
 If your helper returns HTML that you do not want escaped, make sure to return a new `Handlebars.SafeString`.
 
-# Literals
+## Literals
 
 Helper calls may also have literal values passed to them either as parameter arguments or hash arguments. Supported literals include numbers, strings, `true`, `false`, `null` and ? `undefined`.
 
@@ -373,7 +373,7 @@ Helper calls may also have literal values passed to them either as parameter arg
 {{agree_button "My Text" class="my-class" visible=true counter=4}}
 ```
 
-# Partials
+## Partials
 
 Handlebars partials allow for code reuse by creating shared templates. Rendering this template
 
@@ -426,13 +426,13 @@ results in:
 
 [Learn More: Partials](partials.html)
 
-# Built-In Helpers
+## Built-In Helpers
 
 Handlebars offers a variety of built-in helpers such as the if conditional and each iterator.
 
 [Learn More: Built-In Helpers](builtin-helpers.html)
 
-# API Reference
+## API Reference
 
 Handlebars offers a variety of APIs and utility methods for applications and helpers.
 
