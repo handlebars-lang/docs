@@ -1,12 +1,14 @@
 # Installation
 
+## Download
+
 <DownloadHandlebars type="awsFull">Download Handlebars {{$handlebarsVersion}}</DownloadHandlebars>
 
 <br>
 
-<DownloadHandlebars type="awsRuntime">Download Handlebars runtime{{$handlebarsVersion}}</DownloadHandlebars>
+<DownloadHandlebars type="awsRuntime">Download Handlebars runtime {{$handlebarsVersion}}</DownloadHandlebars>
 
-# npm
+## npm
 
 ```bash
 npm install handlebars
@@ -81,7 +83,9 @@ results in
 
 # HTML Escaping
 
-Handlebars HTML-escapes values returned by a `\{\{expression}}`. If you don't want Handlebars to escape a value, use the "triple-stash", `{{{`.
+::: v-pre
+Handlebars HTML-escapes values returned by a `{{expression}}`. If you don't want Handlebars to escape a value, use the "triple-stash", `{{{`.
+:::
 
 ```handlebars
 <div class="entry">
@@ -249,7 +253,11 @@ Handlebars also allows for name conflict resolution between helpers and data fie
 
 Any of the above would cause the name field on the current context to be used rather than a helper of the same name.
 
-Template comments with `\{\{!-- --}}` or `\{\{! }}`.
+::: v-pre
+
+### Template comments with `{{!-- --}}` or `{{! }}`.
+
+:::
 
 You can use comments in your handlebars code just as you would in your code. Since there is generally some level of logic, this is a good practice.
 
@@ -271,7 +279,9 @@ The comments will not be in the resulting output. If you'd like the comments to 
 </div>
 ```
 
-Any comments that must contain `}}` or other handlebars tokens should use the `\{\{!-- --}}` syntax.
+::: v-pre
+Any comments that must contain `}}` or other handlebars tokens should use the `{{!-- --}}` syntax.
+:::
 
 # Helpers
 
