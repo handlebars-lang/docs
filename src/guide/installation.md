@@ -6,7 +6,7 @@ The fastest route is to manually download the package and copy into your project
 
 <DownloadHandlebars type="awsFull">Download Handlebars {{$handlebarsVersion}}</DownloadHandlebars>
 
-<DownloadHandlebars type="awsRuntime">Download Handlebars {{$handlebarsVersion}}</DownloadHandlebars>
+<DownloadHandlebars type="awsRuntime">Download Handlebars runtime {{$handlebarsVersion}}</DownloadHandlebars>
 
 ## npm / yarn
 
