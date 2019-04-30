@@ -2,31 +2,57 @@
 
 This page describes how to contribute to the Handlebars documentation, not the Handlebars.js library.
 
-## How can I contribute?
+Contributing to the page is done through [pull requests](https://help.github.com/en/articles/about-pull-requests)
+on GitHub. You need a GitHub account in order to do that.
 
-For **simple changes** like correcting typos and changing small paragraphs of text, you can simply use the **Github-frontend** to edit the corresponding markdown files. This will create a pull-request to the _master_-branch. Once the pull-request is accepted, Travis-CI will build and update the site.
+:::tip
+This page is rendered with [VuePress](https://v1.vuepress.vuejs.org/). The content is primarily
+written in Markdown. For the syntax, please refer to the following documentation
 
-For **larger changes**, do the following:
+- [CommonMark help](https://commonmark.org/help/)
+- [markdown-it syntax extensions](https://github.com/markdown-it/markdown-it#syntax-extensions)
+- [Vuepress markdown syntax extensions](https://v1.vuepress.vuejs.org/guide/markdown.html)
+  :::
 
-- make sure you have NodeJS installed, preferable the latest LTS version.
-- fork and clone [the site's repository](https://github.com/handlebars-lang/docs)
-- Run `npm install` to install the required dependencies
-- Run `npm run dev` to start a development http-server with live-reload.
-- The open your browser at the URL that is displayed in the console (usually http://localhost:8080/).
+## Correcting small changes
 
-A few notes on the site and the build processes
+At the bottom of each page, there is a link named `{{$themeConfig.editLinkText}}`.
+This link will allow you to propose changes to the page directly on Github.
 
-- The site is built with Vuepress 1.x (beta). A lot of documentation is available at https://v1.vuepress.vuejs.org
-- The site uses the Vuepress default-theme with a few custom styles.
-- The default-theme uses [stylus](http://stylus-lang.com/) to compile CSS.
-- Most of the non-content files (styles, assets, config) can be found in the `.vuepress`-directory
-  of this repository.
-- Markdown files in this repository automatically become HTML-files on the site.
-- Most files are formatted with [Prettier](https://prettier.io) and linted with
-  [eslint](https://eslint.org) in a precommit hook, so you don't have to worry too much about
-  code style in JavaScript files.
+::: tip
+Further reading: [Editing files in another user's repository](https://help.github.com/en/articles/editing-files-in-another-users-repository)
+:::
 
-When you are done with your changes, please create a pull-request to merge them into the master
+## Making larger changes
+
+If you want to create new pages of documentation, or fix styling issues, you should  
+create a fork of the repository and submit a pull-request when you are done.
+
+Have a look at the [documentation of the development setup][contributing-page-in-repo]
+to learn how to use the appropriate tools.
+
+::: tip
+Further reading
+
+- [Fork a repo](https://help.github.com/en/articles/fork-a-repo)
+- [Development setup for this site][contributing-page-in-repo]
+- [About pull-requests](https://help.github.com/en/articles/about-pull-requests)
+  :::
+
+## Rules
+
+::: danger
+
+- **Respect intellectual property**: Please only submit texts and other media if
+  you have created it yourself or you have copied it from
+  [handlebarsjs.com](https://handlebarsjs.com).
+  There are many blog posts about Handlebars, but the text from these posts
+  is intellectual property of their authors.
+- **License**: By submitting content, you agree that it is published on this site
+  under the license of this site.
+
+- **Code of conduct**: Please be respectful to others and avoid sexualized or coarse language.
+  :::
 
 ## What can I contribute?
 
@@ -42,3 +68,5 @@ When you are done with your changes, please create a pull-request to merge them 
   correct wrong content.
 - **Fix CSS-styling issues.** The styling on this page is far from perfect. If you feel like improving it,
   please go ahead. For larger changes, please get in touch by opening an issue.
+
+[contributing-page-in-repo]: https://github.com/handlebars-lang/docs/blob/master/CONTRIBUTING.md

@@ -19,7 +19,7 @@ module.exports = {
     nav: [
       { text: "Home", link: "/" },
       { text: "Guide", link: "/guide/" },
-      { text: "Improve the docs", link: "/CONTRIBUTING.html" },
+      { text: "Improve the docs", link: "/contributing.html" },
       {
         text: "Other sources",
         items: [{ text: "handlebarsjs.com", link: "https://handlebarsjs.com" }]
@@ -40,7 +40,9 @@ module.exports = {
     displayAllHeaders: true,
     repo: "handlebars-lang/docs",
     lastUpdated: "Last Updated",
-    editLinks: true
+    editLinks: true,
+    editLinkText: "Propose a change to this page!",
+    docsDir: "src"
   },
   plugins: [require("./plugins/determine-handlebars-version")]
 };
