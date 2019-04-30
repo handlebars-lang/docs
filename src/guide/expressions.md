@@ -70,13 +70,11 @@ A Handlebars helper call is a simple identifier, followed by zero or more parame
 In this case, `link` is the name of a Handlebars helper, and story is a parameter to the helper. Handlebars evaluates parameters in exactly the same way described above in "Basic Usage".
 
 ```js
-Handlebars.registerHelper('link', function(object) {
+Handlebars.registerHelper("link", function(object) {
   var url = Handlebars.escapeExpression(object.url),
-      text = Handlebars.escapeExpression(object.text);
+    text = Handlebars.escapeExpression(object.text);
 
-  return new Handlebars.SafeString(
-    "<a href='" + url + "'>" + text + "</a>"
-  );
+  return new Handlebars.SafeString("<a href='" + url + "'>" + text + "</a>");
 });
 ```
 
@@ -114,17 +112,20 @@ Handlebars helpers can also receive an optional sequence of key-value pairs as t
 The keys in hash arguments must each be simple identifiers, and the values are Handlebars expressions. This means that values can be simple identifiers, paths, or Strings.
 
 ```js
-Handlebars.registerHelper('link', function(text, options) {
+Handlebars.registerHelper("link", function(text, options) {
   var attrs = [];
 
   for (var prop in options.hash) {
     attrs.push(
-        Handlebars.escapeExpression(prop) + '="'
-        + Handlebars.escapeExpression(options.hash[prop]) + '"');
+      Handlebars.escapeExpression(prop) +
+        '="' +
+        Handlebars.escapeExpression(options.hash[prop]) +
+        '"'
+    );
   }
 
   return new Handlebars.SafeString(
-    "<a " + attrs.join(" ") + "\>" + Handlebars.escapeExpression(text) + "</a>"
+    "<a " + attrs.join(" ") + ">" + Handlebars.escapeExpression(text) + "</a>"
   );
 });
 ```
@@ -165,10 +166,7 @@ with this context:
 
 ```js
 {
-  nav: [
-    {url: 'foo', test: true, title: 'bar'},
-    {url: 'bar'}
-  ]
+  nav: [{ url: "foo", test: true, title: "bar" }, { url: "bar" }];
 }
 ```
 
@@ -196,10 +194,10 @@ will render
 
 ```html
 <a href="foo">
-    bar
+  bar
 </a>
 <a href="bar">
-    Empty
+  Empty
 </a>
 ```
 

@@ -14,6 +14,7 @@ module.exports = {
       }
     ]
   ],
+  dest: "target/",
   themeConfig: {
     nav: [
       { text: "Home", link: "/" },

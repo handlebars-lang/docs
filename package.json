@@ -4,8 +4,8 @@
   "description": "The new-to-be handlebars documentation site",
   "private": true,
   "scripts": {
-    "dev": "vuepress dev",
-    "build": "vuepress build"
+    "dev": "vuepress dev src ",
+    "build": "vuepress build src"
   },
   "repository": {
     "type": "git",
