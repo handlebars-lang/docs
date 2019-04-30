@@ -1,5 +1,5 @@
 ---
-layout: TryHandlebars
+layout: TryHandlebarsLayout
 template: |
   {{#each people}}
   {{>person person=.}}

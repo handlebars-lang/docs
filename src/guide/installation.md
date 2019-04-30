@@ -4,9 +4,9 @@ There are many different ways to install and use Handlebars, the following are s
 
 The fastest route is to manually download the package and copy into your project but a number of other systems are available.
 
-<DownloadHandlebars type="awsFull">Download Handlebars {{$handlebarsVersion}}</DownloadHandlebars>
+<DownloadHandlebars type="awsFull">Download Handlebars {{$handlebarsVersions.latest}}</DownloadHandlebars>
 
-<DownloadHandlebars type="awsRuntime">Download Handlebars runtime {{$handlebarsVersion}}</DownloadHandlebars>
+<DownloadHandlebars type="awsRuntime">Download Handlebars runtime {{$handlebarsVersions.latest}}</DownloadHandlebars>
 
 ## npm / yarn
 

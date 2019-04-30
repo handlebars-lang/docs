@@ -44,5 +44,5 @@ module.exports = {
     editLinkText: "Propose a change to this page!",
     docsDir: "src"
   },
-  plugins: [require("./plugins/determine-handlebars-version")]
+  plugins: [require("./plugins/inject-handlebars-versions")]
 };
