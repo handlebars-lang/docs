@@ -1,18 +1,27 @@
 <template>
-    <a :href="href"><slot></slot></a>
+<div>
+    <Layout>
+        <template v-slot:page-top>
+            <div class="content default">
+                <p>dies ist ein test</p>
+            </div>
+        </template>
+    </Layout>
+</div>
 </template>
 <script>
+    import Layout from '@theme/layouts/Layout.vue'
     export default {
+        components: {Layout},
         props: [
-            'type'
+            'examplePath'
         ],
+        async mounted() {
+        },
         data() {
-            const version = this.$handlebarsVersion
             return {
-                urlForType: {
-                    awsFull: `http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v${version}.js`,
-                    awsRuntime: `http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars.runtime-v${version}.js`,
-                }
+                loaded: false
+
             }
         },
         computed: {

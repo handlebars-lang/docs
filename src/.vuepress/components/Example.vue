@@ -1,6 +1,8 @@
 <template>
 <div>
-    
+    <div class="warning custom-block">
+        <p>Work in progress</p>
+    </div>
 </div>
 </template>
 <script>
