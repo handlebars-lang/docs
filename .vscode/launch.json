@@ -7,9 +7,9 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch Program",
+      "name": "npm run dev",
       "program": "${workspaceFolder}/node_modules/.bin/vuepress",
-      "args": ["dev"]
+      "args": ["dev", "src"]
     }
   ]
 }
