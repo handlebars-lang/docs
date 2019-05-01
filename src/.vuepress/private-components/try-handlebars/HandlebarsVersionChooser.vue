@@ -23,8 +23,4 @@
     }
 </script>
 <style lang="stylus">
-    .workspace {
-        margin-top: $navbarHeight;
-        border: 1px solid black;
-    }
 </style>

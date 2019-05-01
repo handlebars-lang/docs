@@ -2,8 +2,8 @@
 <div>
     <Layout>
         <template v-slot:page-top>
-            <div class="workspace">
-                <handlebars-version-chooser/>
+            <div class="try-handlebars">
+                <workspace :parsedExample="$frontmatter.parsedExample"/>
             </div>
         </template>
     </Layout>
@@ -11,14 +11,18 @@
 </template>
 <script>
     import Layout from '@theme/layouts/Layout.vue'
+    import Workspace from '../private-components/try-handlebars/Workspace.vue'
+
     import HandlebarsVersionChooser from '../private-components/try-handlebars/HandlebarsVersionChooser.vue'
+    
     export default {
-        components: {Layout, HandlebarsVersionChooser},
-        props: [
-            'examplePath'
-        ],
+        components: {Layout, HandlebarsVersionChooser, Workspace},
         data() {
             return {
+                code: '',
+                codeMirrorOptions: {
+
+                }
             }
         },
         computed: {
@@ -26,8 +30,7 @@
     }
 </script>
 <style lang="stylus">
-    .workspace {
+    .try-handlebars {
         margin-top: $navbarHeight;
-        border: 1px solid black;
     }
 </style>

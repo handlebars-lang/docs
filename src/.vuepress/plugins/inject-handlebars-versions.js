@@ -1,4 +1,4 @@
-const handlebarsVersions = require("../lib/handlebars-versions");
+const handlebarsVersions = require("./lib/handlebars-versions");
 
 module.exports = function storeHandlebarsVersionAtVuePrototype(options, ctx) {
   return {

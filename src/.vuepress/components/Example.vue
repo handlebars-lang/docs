@@ -1,32 +1,35 @@
 <template>
-<div>
-    <div class="warning custom-block">
-        <p>Work in progress</p>
+    <div>
+        <router-link :to="normalizedPath">Open example</router-link>
+        <workspace :parsedExample="exampleData"/>
     </div>
-</div>
 </template>
 <script>
-    import Layout from '@theme/layouts/Layout.vue'
+    import Workspace from '../private-components/try-handlebars/Workspace.vue'
     export default {
-        components: {Layout},
+        components: {Workspace},
         props: [
             'examplePage'
         ],
         computed: {
-            template() {
-
-            },
             exampleData() {
-                return findPageByHtmlOrMarkdownPath(this.$props.examplePage)
-                .findPageByHtmlOrMarkdownPath
+                const pageData = this.findPageByHtmlOrMarkdownPath()
+                return pageData.frontmatter.parsedExample
+            },
+            normalizedPath() {
+              return this.$props.examplePage.replace(/\.(html|md)$/,'')+'.html'
             }
         },
         methods: {
-            findPageByHtmlOrMarkdownPath(path) {
-                const normalizedPath = path.replace(/\.(html|md)$/,'.html')
-                return this.$site.pages.find((page) => {
-                    return page.regularPath === normalizedPath
+            findPageByHtmlOrMarkdownPath() {
+                const pageData = this.$site.pages.find((page) => {
+                    console.log(page.regularPath)
+                    return page.regularPath === this.normalizedPath
                 })
+                if (pageData == null) {
+                    throw new Error(`Page ${normalizedPath} not found`)
+                }
+                return pageData
             }
         }
     }

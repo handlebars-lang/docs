@@ -44,5 +44,8 @@ module.exports = {
     editLinkText: "Propose a change to this page!",
     docsDir: "src"
   },
-  plugins: [require("./plugins/inject-handlebars-versions")]
+  plugins: [
+    require("./plugins/inject-handlebars-versions"),
+    require("./plugins/add-parsed-examples-to-page")
+  ]
 };
