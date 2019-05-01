@@ -1,10 +1,11 @@
 <template>
     <div class="workspace">
-        <div class="workspace-header">
-        <div class="version-chooser">
-            Handlebars: <handlebars-version-chooser />
-        </div>
-        </div>
+        <!-- TODO: Remove comment when interactivity is implemented -->
+        <!-- <div class="workspace-header">
+            <div class="version-chooser">
+                Handlebars: <handlebars-version-chooser />
+            </div>
+        </div> -->
         <div class="workspace-row">
             <workspace-element 
                 title="Template"
@@ -52,11 +53,14 @@
         ],
         data() {
             return {
-                currentExample: {}
             }
         },
-        beforeMount() {
-            this.currentExample = this.$props.parsedExample
+        computed: {
+            currentExample() {
+                // TODO: Choose an updated example once interactivity 
+                // is implemented
+                return this.$props.parsedExample
+            }
         }
     }
 </script>
