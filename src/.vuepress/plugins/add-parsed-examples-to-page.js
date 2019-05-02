@@ -1,8 +1,3 @@
-const {
-  highlightHandlebars,
-  highlightJson,
-  highlightHtml
-} = require("./lib/highlight-code");
 const Handlebars = require("handlebars");
 const { prettifyJson } = require("./lib/prettify-json");
 
@@ -23,25 +18,15 @@ module.exports = function prerenderExampleCode(options, ctx) {
 function parseExample(example, _filePath) {
   const output = runHandlebars(example, _filePath);
   return {
-    template: {
-      raw: example.template,
-      html: highlightHandlebars(example.template)
-    },
+    template: example.template,
     partials: Object.keys(example.partials).map(partialName => {
       return {
         name: partialName,
-        raw: example.partials[partialName],
-        html: highlightHandlebars(example.partials[partialName])
+        content: example.partials[partialName]
       };
     }),
-    input: {
-      raw: example.input,
-      html: highlightJson(prettifyJson(example.input))
-    },
-    output: {
-      raw: output,
-      html: highlightHtml(output)
-    }
+    input: prettifyJson(example.input),
+    output
   };
 }
 
@@ -52,10 +37,7 @@ function runHandlebars(example, pageName) {
   try {
     return template(example.input);
   } catch (error) {
-    console.error(
-      "Error while running handlebars for example page " + pageName,
-      error.stack
-    );
+    console.error("Error while running handlebars for example page " + pageName, error.stack);
     return error.message;
   }
 }

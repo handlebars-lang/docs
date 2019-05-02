@@ -1,55 +1,67 @@
 <template>
-    <div :class="[ 'workspace-element', cssClass ]">
-        <div class="we-header">{{title}}</div>
-        <pre-code :styleClass="prismaElementCssClass" v-html="prerenderedValue" />
-    </div>
+    <workspace-element-decorator :css-class="cssClass" :title="title">
+        <code-editor css-class="we-content" :value="value" @input="updateCode" :language="language"
+                     :active="interactive"/>
+    </workspace-element-decorator>
 </template>
 <script>
-    import PreCode from './PreCode.vue'
-   
+    import CodeEditor from "./CodeEditor.vue";
+    import WorkspaceElementDecorator from './WorkspaceElementDecorator.vue'
+
     export default {
-        components: {PreCode},
+        components: {CodeEditor, WorkspaceElementDecorator},
         props: [
-            'title',
-            'prerenderedValue',
-            'value',
-            'cssClass',
-            'language'
+            "title",
+            "value",
+            "cssClass",
+            "language",
+            "interactive"
         ],
         data() {
             return {
-                currentExampleState: {}
-            }
+                currentExampleState: {},
+                code: null,
+                caret: 0
+            };
+        },
+        mounted() {
         },
         computed: {
             prismaElementCssClass() {
-                return [ 'we-content', `language-${this.$props.language}` ]
-            }
+                return ["we-content", `language-${this.$props.language}`];
+            },
+        },
+        methods: {
+            updateCode(newCode) {
+                this.$emit('input', newCode)
+            },
+
         },
         beforeMount() {
-            this.currentExampleState = this.$props.parsedExample
+            this.currentExampleState = this.$props.parsedExample;
         }
-    }
+    };
 </script>
 <style lang="stylus">
-    .workspace-element {
-        box-shadow: 0 0 5px;
-        margin: $exampleWorkspaceDefaultMargin;
-        background-color: white;
-        display: flex;
-        flex: 1 1 30%;
-        flex-direction: column;
-    }
 
-    .we-header {
-        padding: $exampleWorkspaceDefaultMargin;
-    }
-
-    pre.we-content[class*="language-"] {
-        padding: $exampleWorkspaceDefaultPadding;
+    pre.we-content,
+        // fix for intervening styles of vuepress default-theme
+    .content pre.we-content {
         margin: 0;
+        font-size: 0.8rem;
+        line-height: 1.5em;
+        padding: 0;
+
         flex: 1 1 100%;
         white-space: pre-wrap;
         overflow-x: auto;
+        height: 100%;
+        border-radius: 0;
+
+        > code {
+            padding: $weContentPaddingTop $weContentPadding $weContentPadding $weContentPadding
+            background-color: $weContentBgColor
+        }
     }
+
 </style>

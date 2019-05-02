@@ -1,32 +1,31 @@
 <template>
-<div>
-    <Layout>
-        <template v-slot:page-top>
-            <div class="try-handlebars">
-                <workspace :parsedExample="$frontmatter.parsedExample"/>
-            </div>
-        </template>
-    </Layout>
-</div>
+    <div>
+        <Layout>
+            <template v-slot:page-top>
+                <div class="try-handlebars">
+                    <workspace :parsedExample="$frontmatter.parsedExample" :interactive="interactive"/>
+                </div>
+            </template>
+        </Layout>
+    </div>
 </template>
 <script>
     import Layout from '@theme/layouts/Layout.vue'
     import Workspace from '../private-components/try-handlebars/Workspace.vue'
 
     import HandlebarsVersionChooser from '../private-components/try-handlebars/HandlebarsVersionChooser.vue'
-    
+
     export default {
         components: {Layout, HandlebarsVersionChooser, Workspace},
         data() {
             return {
-                code: '',
-                codeMirrorOptions: {
-
-                }
+                interactive: false
             }
         },
-        computed: {
-        }
+        mounted() {
+            this.interactive = true
+        },
+        computed: {}
     }
 </script>
 <style lang="stylus">

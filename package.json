@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vuepress dev src ",
     "build": "vuepress build src",
-    "preview": "npm run build && http-server target"
+    "preview": "npm run build && cd target && static-server"
   },
   "repository": {
     "type": "git",
@@ -23,11 +23,11 @@
     "axios": "^0.18.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.1.0",
-    "http-server": "^0.11.1",
     "husky": "^2.0.0",
     "lint-staged": "^8.1.5",
     "prettier": "^1.17.0",
     "semver": "^6.0.0",
+    "static-server": "^2.2.1",
     "vuepress": "^1.0.0-alpha.47"
   },
   "husky": {
@@ -47,6 +47,11 @@
   },
   "dependencies": {
     "handlebars": "^4.1.2",
-    "prismjs": "^1.16.0"
+    "highlight.js": "^9.15.6",
+    "json5": "^2.1.0",
+    "lodash.debounce": "^4.0.8",
+    "prismjs": "^1.16.0",
+    "selection-range": "^1.1.0",
+    "vue-prism-editor": "^0.2.1"
   }
 }
