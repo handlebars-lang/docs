@@ -4,6 +4,7 @@ const {
   highlightHtml
 } = require("./lib/highlight-code");
 const Handlebars = require("handlebars");
+const { prettifyJson } = require("./lib/prettify-json");
 
 module.exports = function prerenderExampleCode(options, ctx) {
   return {
@@ -35,7 +36,7 @@ function parseExample(example, _filePath) {
     }),
     input: {
       raw: example.input,
-      html: highlightJson(JSON.stringify(example.input, 0, 2))
+      html: highlightJson(prettifyJson(example.input))
     },
     output: {
       raw: output,
