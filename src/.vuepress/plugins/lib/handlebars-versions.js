@@ -4,7 +4,7 @@ const semver = require("semver");
 async function retrieveVersions() {
   const npmMetadata = await retrieveHandlebarsMetadataFromNpmjs();
 
-  const allVersions = Object.keys(npmMetadata.versions);
+  const allVersions = Object.keys(npmMetadata.versions).filter(version => semver.gte(version, "3.0.0"));
   allVersions.sort(semver.rcompare);
 
   return {

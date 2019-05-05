@@ -50,12 +50,15 @@ function resolveHandlebarsUrl(version) {
 }
 
 function getAndRemoveGlobalHandlebars() {
-  if (window.Handlebars == null) {
+  let currentHandlebarsInstance = window.Handlebars;
+  if (currentHandlebarsInstance == null) {
     throw new Error(
       `Handlebars version ${version} did not save global "Handlebars" variable, despite script loading successfully!`
     );
   }
-  return window.Handlebars.noConflict();
+
+  window.Handlebars.noConflict();
+  return currentHandlebarsInstance;
 }
 
 /*
