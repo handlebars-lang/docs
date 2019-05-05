@@ -1,97 +1,77 @@
 <template>
-  <pre
-    @keyup="keyup"
-    @keydown.13.prevent="insertEnter"
-    @mouseup="updateSelection"
-    ref="container"
-    :class="cssClass"
-  ><code :contenteditable="active" spellcheck="false" :class="codeElementCssClass" ref="codeElement"
-         v-html="codeHtml"></code></pre>
+  <highlighted-code
+    :value="value"
+    ref="codeElement"
+    :contenteditable="true"
+    :css-class="cssClass"
+    :language="language"
+    @keyup="emitInputEvent"
+    @keydown.exact.enter.prevent="insertNewline"
+    @keydown.exact.tab.prevent="insertTab"
+    @keydown.shift.tab.prevent="deindentLine"
+    @keydown="keydown"
+    @blur="blur"
+    @compositionstart="disableInputEvents"
+    @compositionend="enableInputEvents"
+    @beforeUpdateHtml="preserveSelection"
+  />
 </template>
 <script>
 import Vue from "vue";
-import hljs from "highlight.js/lib/highlight";
-import hljsHandlebars from "highlight.js/lib/languages/handlebars";
-import hljsJavaScript from "highlight.js/lib/languages/javascript";
-import hljsXml from "highlight.js/lib/languages/xml";
-import "highlight.js/styles/a11y-dark.css";
-
-// selectionRange needs browser-APIs on import, load lazy and not in prerendering phase
-let selectionRange = function() {};
-if (typeof window !== "undefined") {
-  import("selection-range").then((module) => {
-    selectionRange = module.default
-  });
-}
-
-hljs.registerLanguage("handlebars", hljsHandlebars);
-hljs.registerLanguage("xml", hljsXml);
-hljs.registerLanguage("javascript", hljsJavaScript);
-
-const languageMapping = {
-  json: "javascript",
-  html: "xml",
-  handlebars: "handlebars"
-};
+import HighlightedCode from "./HighlightedCode.vue";
+import { getSelection, setSelection } from "./selectionRange";
 
 export default {
-  props: ["value", "cssClass", "language", "active"],
+  components: { HighlightedCode },
+  props: ["value", "cssClass", "language"],
   data() {
     return {
-      code: this.$props.value,
-      selection: null
+      inputEventsEnabled: true
     };
   },
   mounted() {
-    this.keyup = debounce(this.keyup, 1000, { leading: true, trailing:true });
-  },
-  computed: {
-    codeElementCssClass() {
-      return ["ce-code-content", "hljs", this.hljsLanguage];
-    },
-    hljsLanguage() {
-      return languageMapping[this.$props.language];
-    },
-    codeHtml() {
-      if (this.hljsLanguage) {
-        return hljs.highlight(this.hljsLanguage, this.code).value;
-      }
-      return this.code;
-    }
+    this.codeElement = this.$refs.codeElement.$el;
   },
   methods: {
-    keyup() {
-      console.log(this.$refs.codeElement.innerText);
-      this.updateSelection();
-      if (this.$props.active) {
-        this.code = this.$refs.codeElement.innerText;
-        this.$emit("input", this.code);
+    disableInputEvents() {
+      this.inputEventsEnabled = false;
+    },
+    enableInputEvents() {
+      this.inputEventsEnabled = true;
+    },
+    emitInputEvent() {
+      if (this.inputEventsEnabled) {
+        this.$emit("input", this.codeElement.innerText);
       }
     },
-    insertEnter() {
+    blur() {
+      this.enableInputEvents();
+      this.emitInputEvent();
+    },
+    keydown(event) {
+      console.log(event);
+    },
+    preserveSelection() {
+      const selection = getSelection(this.codeElement);
+      if (selection != null) {
+        // when redrawing is done, restore the selection
+        Vue.nextTick(() => setSelection(this.codeElement, selection));
+      }
+    },
+    insertNewline() {
+      const selectionBefore = getSelection(this.codeElement);
       document.execCommand("insertHTML", false, "\n");
-      const currentSelection = selectionRange(this.$refs.codeElement);
-      if (currentSelection.start === this.selection.start) {
+      const selectionAfter = getSelection(this.codeElement);
+      if (selectionBefore.start === selectionAfter.start) {
         // sometimes, we have to insert another "\n" to make the cursor go to the next line
         document.execCommand("insertHTML", false, "\n");
       }
     },
-    updateSelection() {
-      this.selection = selectionRange(this.$refs.codeElement);
-    }
-  },
-  watch: {
-    value(newVal) {
-      if (newVal !== this.code) {
-        this.code = newVal;
-      }
+    insertTab() {
+      document.execCommand("insertHTML", false, "\t");
     },
-    codeHtml() {
-      Vue.nextTick(() => {
-        if (this.selection != null) {
-          selectionRange(this.$refs.codeElement, this.selection);
-        }
-      });
+    deindentLine() {
+      // TODO: Not yet implemented
     }
   }
 };

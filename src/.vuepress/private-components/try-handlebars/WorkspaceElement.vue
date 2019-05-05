@@ -1,44 +1,32 @@
 <template>
     <workspace-element-decorator :css-class="cssClass" :title="title">
-        <code-editor css-class="we-content" :value="value" @input="updateCode" :language="language"
-                     :active="interactive"/>
+        <code-editor
+                v-if="interactive"
+                css-class="we-content"
+                :value="value"
+                @input="delegateInputEvent"
+                :language="language"
+                :active="true"
+        />
+        <highlighted-code
+                v-else
+                css-class="we-content"
+                :value="value"
+                :language="language"
+        />
     </workspace-element-decorator>
 </template>
 <script>
-    import CodeEditor from "./CodeEditor.vue";
-    import WorkspaceElementDecorator from './WorkspaceElementDecorator.vue'
+    import WorkspaceElementDecorator from "./WorkspaceElementDecorator.vue";
+    import HighlightedCode from "./HighlightedCode.vue";
 
     export default {
-        components: {CodeEditor, WorkspaceElementDecorator},
-        props: [
-            "title",
-            "value",
-            "cssClass",
-            "language",
-            "interactive"
-        ],
-        data() {
-            return {
-                currentExampleState: {},
-                code: null,
-                caret: 0
-            };
-        },
-        mounted() {
-        },
-        computed: {
-            prismaElementCssClass() {
-                return ["we-content", `language-${this.$props.language}`];
-            },
-        },
+        components: {HighlightedCode, "code-editor": () => import("./CodeEditor.vue"), WorkspaceElementDecorator},
+        props: ["title", "value", "cssClass", "language", "interactive"],
         methods: {
-            updateCode(newCode) {
-                this.$emit('input', newCode)
-            },
-
-        },
-        beforeMount() {
-            this.currentExampleState = this.$props.parsedExample;
+            delegateInputEvent(newCode) {
+                this.$emit("input", newCode);
+            }
         }
     };
 </script>
@@ -63,5 +51,4 @@
             background-color: $weContentBgColor
         }
     }
-
 </style>
