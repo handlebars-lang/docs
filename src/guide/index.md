@@ -6,14 +6,7 @@
 
 Handlebars templates look like regular HTML, with embedded handlebars expressions.
 
-```handlebars
-<div class="entry">
-  <h1>{{title}}</h1>
-  <div class="body">
-    {{body}}
-  </div>
-</div>
-```
+<Example examplePage="/examples/simple" />
 
 A handlebars expression is a `{{`, some contents, followed by a `}}`
 
@@ -347,9 +340,7 @@ Handlebars.registerHelper("agree_button", function() {
   var emotion = Handlebars.escapeExpression(this.emotion),
     name = Handlebars.escapeExpression(this.name);
 
-  return new Handlebars.SafeString(
-    "<button>I agree. I " + emotion + " " + name + "</button>"
-  );
+  return new Handlebars.SafeString("<button>I agree. I " + emotion + " " + name + "</button>");
 });
 ```
 
@@ -394,8 +385,7 @@ when using this partial and context:
 ```js
 Handlebars.registerPartial(
   "userMessage",
-  "<{{tagName}}>By {{author.firstName}} {{author.lastName}}</{{tagName}}>" +
-    '<div class="body">{{body}}</div>'
+  "<{{tagName}}>By {{author.firstName}} {{author.lastName}}</{{tagName}}>" + '<div class="body">{{body}}</div>'
 );
 
 var context = {
