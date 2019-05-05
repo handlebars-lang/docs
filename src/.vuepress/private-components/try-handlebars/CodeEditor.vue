@@ -20,7 +20,6 @@ import "highlight.js/styles/a11y-dark.css";
 let selectionRange = function() {};
 if (typeof window !== "undefined") {
   import("selection-range").then((module) => {
-    debugger;
     selectionRange = module.default
   });
 }
@@ -43,6 +42,9 @@ export default {
       selection: null
     };
   },
+  mounted() {
+    this.keyup = debounce(this.keyup, 1000, { leading: true, trailing:true });
+  },
   computed: {
     codeElementCssClass() {
       return ["ce-code-content", "hljs", this.hljsLanguage];
@@ -59,6 +61,7 @@ export default {
   },
   methods: {
     keyup() {
+      console.log(this.$refs.codeElement.innerText);
       this.updateSelection();
       if (this.$props.active) {
         this.code = this.$refs.codeElement.innerText;

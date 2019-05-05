@@ -60,30 +60,3 @@ function getAndRemoveGlobalHandlebars() {
   window.Handlebars.noConflict();
   return currentHandlebarsInstance;
 }
-
-/*
-
-    return new Promise((resolve, reject) => {
-
-
-        const hbsScript = createHandlebarsScriptElement(version);
-        hbsScript.addEventListener("load", () => {
-            let handlebarsInstance = getGlobalHandlebarsAndCleanUp(hbsScript);
-            if (!window.Handlebars) {
-                return reject(new Error("Handlebars entity not found after successful load"));
-            }
-            return resolve(handlebarsInstance);
-        });
-
-        hbsScript.addEventListener("error", err => {
-            debugger;
-            hbsScript.remove();
-            if (Handlebars) {
-                Handlebars.noConflict();
-            }
-            reject(err);
-        });
-        document.body.appendChild(hbsScript)
-    });
-
- */
