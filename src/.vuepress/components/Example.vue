@@ -24,7 +24,6 @@
         methods: {
             findPageByHtmlOrMarkdownPath() {
                 const pageData = this.$site.pages.find((page) => {
-                    console.log(page.regularPath)
                     return page.regularPath === this.normalizedPath
                 })
                 if (pageData == null) {

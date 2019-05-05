@@ -9,7 +9,6 @@
     @keydown.exact.enter.prevent="insertNewline"
     @keydown.exact.tab.prevent="insertTab"
     @keydown.shift.tab.prevent="deindentLine"
-    @keydown="keydown"
     @blur="blur"
     @compositionstart="disableInputEvents"
     @compositionend="enableInputEvents"
@@ -47,9 +46,6 @@ export default {
     blur() {
       this.enableInputEvents();
       this.emitInputEvent();
-    },
-    keydown(event) {
-      console.log(event);
     },
     preserveSelection() {
       const selection = getSelection(this.codeElement);
