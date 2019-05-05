@@ -1,6 +1,6 @@
 <template>
   <highlighted-code
-    :value="value"
+    :value="actuallyDisplayedValue"
     ref="codeElement"
     :contenteditable="true"
     :css-class="cssClass"
@@ -9,9 +9,8 @@
     @keydown.exact.enter.prevent="insertNewline"
     @keydown.exact.tab.prevent="insertTab"
     @keydown.shift.tab.prevent="deindentLine"
-    @blur="blur"
-    @compositionstart="disableInputEvents"
-    @compositionend="enableInputEvents"
+    @compositionstart="freezeCurrentValue"
+    @compositionend="unfreezeCurrentValue"
     @beforeUpdateHtml="preserveSelection"
   />
 </template>
@@ -25,23 +24,28 @@ export default {
   props: ["value", "cssClass", "language"],
   data() {
     return {
-      inputEventsEnabled: true
+      frozenValue: null
     };
   },
   mounted() {
     this.codeElement = this.$refs.codeElement.$el;
   },
+  computed: {
+    actuallyDisplayedValue() {
+      console.log("frozen", this.frozenValue,"current", this.$props.value)
+      return this.frozenValue || this.$props.value
+    }
+  },
   methods: {
-    disableInputEvents() {
-      this.inputEventsEnabled = false;
+    freezeCurrentValue() {
+      this.frozenValue = this.$props.value;
     },
-    enableInputEvents() {
-      this.inputEventsEnabled = true;
+    unfreezeCurrentValue() {
+      this.frozenValue = null
+      this.emitInputEvent()
     },
     emitInputEvent() {
-      if (this.inputEventsEnabled) {
-        this.$emit("input", this.codeElement.innerText);
-      }
+      this.$emit("input", this.codeElement.innerText);
     },
     blur() {
       this.enableInputEvents();
