@@ -7,11 +7,11 @@
             'type'
         ],
         data() {
-            const handlebarsVersions = this.$handlebarsVersions
+            const version = this.$handlebarsVersions.latest
             return {
                 urlForType: {
-                    awsFull: `http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v${handlebarsVersions.latest}.js`,
-                    awsRuntime: `http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars.runtime-v${handlebarsVersions.latest}.js`,
+                    full: `https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/${version}/handlebars.min.js`,
+                    runtime: `https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/${version}/handlebars-runtime.min.js`,
                 }
             }
         },

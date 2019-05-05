@@ -46,7 +46,7 @@ function createHandlebarsScriptElement(version) {
 }
 
 function resolveHandlebarsUrl(version) {
-  return `http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v${version}.js`;
+  return `https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/${version}/handlebars.min.js`;
 }
 
 function getAndRemoveGlobalHandlebars() {
