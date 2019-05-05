@@ -1,6 +1,6 @@
 <template>
     <div>
-        <router-link :to="normalizedPath">Open example</router-link>
+        <router-link class="example-show-in-playground" :to="normalizedPath">Open in interactive playground!</router-link>
         <workspace :parsedExample="exampleData"/>
     </div>
 </template>
@@ -34,6 +34,12 @@
         }
     }
 </script>
-<style>
-    
+<style lang="stylus">
+    .example-show-in-playground {
+        margin-left: $weContentPadding;
+        color: white;
+        font-size: 0.8rem;
+        padding: $weContentPadding;
+        background-color: $baseColor;
+    }
 </style>
