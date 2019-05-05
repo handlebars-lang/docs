@@ -26,7 +26,7 @@
         :interactive="interactive"
       />
     </div>
-    <div class="workspace-row">
+    <div class="workspace-row" v-if="showInputOutput">
       <workspace-element
         title="Input"
         styleClass="workspace-input"
@@ -56,7 +56,7 @@ import {debounceExecuteExample} from "./execute-example";
 
 export default {
   components: { Layout, WorkspaceElement, WorkspaceError, HandlebarsVersionChooser },
-  props: ["parsedExample", "interactive"],
+  props: ["parsedExample", "interactive", "showInputOutput"],
   data() {
     let parsedExample = this.$props.parsedExample;
     return {

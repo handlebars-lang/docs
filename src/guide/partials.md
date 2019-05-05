@@ -2,4 +2,4 @@ Content still missing. Please help by copying it from the old site and convertin
 
 [Turndown](http://domchristie.github.io/turndown/) can be a great help converting the HTML of the old page to Markdown.
 
-<Example examplePage="/examples/partials" />
+<Example examplePage="/examples/partials" showInputOutput="true"/>

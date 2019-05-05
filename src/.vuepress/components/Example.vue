@@ -1,7 +1,7 @@
 <template>
     <div>
         <router-link class="example-show-in-playground" :to="normalizedPath">Open in interactive playground!</router-link>
-        <workspace :parsedExample="exampleData"/>
+        <workspace :parsedExample="exampleData" :show-input-output="showInputOutput"/>
     </div>
 </template>
 <script>
@@ -9,7 +9,8 @@
     export default {
         components: {Workspace},
         props: [
-            'examplePage'
+            'examplePage',
+            'showInputOutput'
         ],
         computed: {
             exampleData() {

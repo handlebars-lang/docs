@@ -3,7 +3,7 @@
         <Layout>
             <template v-slot:page-top>
                 <div class="try-handlebars">
-                    <workspace :parsedExample="$frontmatter.parsedExample" :interactive="interactive"/>
+                    <workspace :parsedExample="$frontmatter.parsedExample" :interactive="interactive" :show-input-output="true"/>
                 </div>
             </template>
         </Layout>
