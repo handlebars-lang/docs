@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "vuepress dev src ",
+    "clean": "rm -rf target  node_modules/@vuepress/core/node_modules/.cache/",
     "build": "vuepress build src",
     "preview": "npm run build && cd target && static-server"
   },
