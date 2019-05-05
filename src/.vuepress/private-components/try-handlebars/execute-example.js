@@ -2,7 +2,8 @@ import { lazyGetHandlebars } from "./lazy-get-handlebars";
 import json5 from "json5";
 import debounce from "lodash.debounce";
 
-export const debounceExecuteExample = debounce(executeExample, { trailing: true, maxWait: 1000 });
+export const debounceExecuteExample = debounce(executeExample, 300, { trailing: true });
+
 /**
  * Return the output of the example
  */
