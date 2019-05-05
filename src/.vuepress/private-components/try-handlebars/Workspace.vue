@@ -3,7 +3,7 @@
     <div v-if="interactive" class="workspace-header">
       <div class="version-chooser">
         Handlebars:
-        <handlebars-version-chooser v-model="currentExample.handlebarsVersion" />
+        <handlebars-version-chooser v-model="currentExample.handlebarsVersion" @input="debounceExecuteExample" />
       </div>
     </div>
     <div class="workspace-row">
