@@ -3,7 +3,7 @@
     <div v-if="interactive" class="workspace-header">
       <div class="version-chooser">
         Handlebars:
-        <handlebars-version-chooser v-model="currentExample.handlebarsVersion" @input="debounceExecuteExample" />
+        <handlebars-version-chooser v-model="currentExample.handlebarsVersion" @input="executeExample" />
       </div>
     </div>
     <div class="workspace-row">
@@ -12,7 +12,7 @@
         styleClass="workspace-template"
         language="handlebars"
         v-model="currentExample.template"
-        @input="debounceExecuteExample"
+        @input="executeExample"
         :interactive="interactive"
       />
       <workspace-element
@@ -22,7 +22,7 @@
         styleClass="workspace-partial"
         language="handlebars"
         v-model="partial.content"
-        @input="debounceExecuteExample"
+        @input="executeExample"
         :interactive="interactive"
       />
     </div>
@@ -32,7 +32,7 @@
         styleClass="workspace-input"
         language="json"
         v-model="currentExample.input"
-        @input="debounceExecuteExample"
+        @input="executeExample"
         :interactive="interactive"
       />
       <workspace-error v-if="currentError" :error="currentError" />
@@ -48,13 +48,13 @@
   </div>
 </template>
 <script>
-import Layout from "@theme/layouts/Layout.vue";
-import WorkspaceElement from "./WorkspaceElement.vue";
-import WorkspaceError from "./WorkspaceError.vue";
-import HandlebarsVersionChooser from "./HandlebarsVersionChooser.vue";
-import {debounceExecuteExample} from "./execute-example";
+  import Layout from "@theme/layouts/Layout.vue";
+  import WorkspaceElement from "./WorkspaceElement.vue";
+  import WorkspaceError from "./WorkspaceError.vue";
+  import HandlebarsVersionChooser from "./HandlebarsVersionChooser.vue";
+  import {executeExample} from "./execute-example";
 
-export default {
+  export default {
   components: { Layout, WorkspaceElement, WorkspaceError, HandlebarsVersionChooser },
   props: ["parsedExample", "interactive", "showInputOutput"],
   data() {
@@ -74,9 +74,9 @@ export default {
     partialTitle(name) {
       return `{{>${name}}}`;
     },
-    async debounceExecuteExample() {
+    async executeExample() {
       try {
-        await debounceExecuteExample(this.currentExample)
+        await executeExample(this.currentExample)
         this.currentError = null;
       } catch (err) {
         this.currentError = err;

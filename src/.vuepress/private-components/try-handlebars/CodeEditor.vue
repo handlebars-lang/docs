@@ -32,8 +32,7 @@ export default {
   },
   computed: {
     actuallyDisplayedValue() {
-      console.log("frozen", this.frozenValue,"current", this.$props.value)
-      return this.frozenValue || this.$props.value
+      return this.frozenValue || this.$props.value;
     }
   },
   methods: {
@@ -41,8 +40,8 @@ export default {
       this.frozenValue = this.$props.value;
     },
     unfreezeCurrentValue() {
-      this.frozenValue = null
-      this.emitInputEvent()
+      this.frozenValue = null;
+      this.emitInputEvent();
     },
     emitInputEvent() {
       this.$emit("input", this.codeElement.innerText);
@@ -52,11 +51,15 @@ export default {
       this.emitInputEvent();
     },
     preserveSelection() {
-      const selection = getSelection(this.codeElement);
-      if (selection != null) {
-        // when redrawing is done, restore the selection
-        Vue.nextTick(() => setSelection(this.codeElement, selection));
+      if (this.codeElement == null) {
+        return;
       }
+      const selection = getSelection(this.codeElement);
+      if (selection == null) {
+        return;
+      }
+      // when redrawing is done, restore the selection
+      Vue.nextTick(() => setSelection(this.codeElement, selection));
     },
     insertNewline() {
       const selectionBefore = getSelection(this.codeElement);
