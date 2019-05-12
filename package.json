@@ -51,8 +51,6 @@
     "handlebars": "^4.1.2",
     "highlight.js": "^9.15.6",
     "json5": "^2.1.0",
-    "prismjs": "^1.16.0",
-    "vue-cm": "^1.1.0",
-    "vue-prism-editor": "^0.2.1"
+    "vue-cm": "^1.1.0"
   }
 }
