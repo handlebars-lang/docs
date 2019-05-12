@@ -45,5 +45,6 @@
     code.ce-code-content {
         height: 100%;
         box-sizing: border-box;
+        background: none;
     }
 </style>

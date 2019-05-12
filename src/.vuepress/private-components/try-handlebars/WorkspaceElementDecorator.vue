@@ -32,7 +32,7 @@
         text-align: right
         padding: $weHeaderMargin
         margin: 0
+        z-index: 10
         background: radial-gradient(ellipse at center, alpha($weHeaderColor, 0.25) 0%, alpha($weHeaderColor, 0) 90%);
     }
-
 </style>

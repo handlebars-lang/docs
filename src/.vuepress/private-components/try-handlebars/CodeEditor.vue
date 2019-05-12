@@ -1,87 +1,60 @@
 <template>
-  <highlighted-code
-    :value="actuallyDisplayedValue"
-    ref="codeElement"
-    :contenteditable="true"
-    :css-class="cssClass"
-    :language="language"
-    @keyup="emitInputEvent"
-    @keydown.exact.enter.prevent="insertNewline"
-    @keydown.exact.tab.prevent="insertTab"
-    @keydown.shift.tab.prevent="deindentLine"
-    @compositionstart="freezeCurrentValue"
-    @compositionend="unfreezeCurrentValue"
-    @beforeUpdateHtml="preserveSelection"
-  />
+    <ClientOnly>
+        <div :class="cssClass">
+            <code-mirror :value="value" @change="onCodeChanged" :options="codeMirrorOptions"/>
+        </div>
+    </ClientOnly>
 </template>
 <script>
-import Vue from "vue";
-import HighlightedCode from "./HighlightedCode.vue";
-import { getSelection, setSelection } from "./selectionRange";
+    import CodeMirror from 'vue-cm'
+    import 'codemirror/mode/javascript/javascript.js'
+    import 'codemirror/mode/handlebars/handlebars'
+    import 'codemirror/mode/xml/xml'
 
-export default {
-  components: { HighlightedCode },
-  props: ["value", "cssClass", "language"],
-  data() {
-    return {
-      frozenValue: null
+    export default {
+        components: {CodeMirror},
+        props: ["value", "cssClass", "language"],
+        data() {
+            return {
+                frozenValue: null
+            };
+        },
+        computed: {
+            codeMirrorOptions() {
+                return {
+                    mode: languageToModeMapping[this.language],
+                    theme: 'base16-dark',
+                    lineWrapping: true
+                }
+            }
+        },
+        methods: {
+            onCodeChanged(newValue) {
+                this.$emit('input', newValue)
+            },
+        }
     };
-  },
-  mounted() {
-    this.codeElement = this.$refs.codeElement.$el;
-  },
-  computed: {
-    actuallyDisplayedValue() {
-      return this.frozenValue || this.$props.value;
+
+    const languageToModeMapping = {
+        'handlebars': {
+            name: 'handlebars'
+        },
+        'json': {
+            name: 'javascript',
+        },
+        'html': {
+            name: 'xml',
+            html: true
+        }
     }
-  },
-  methods: {
-    freezeCurrentValue() {
-      this.frozenValue = this.$props.value;
-    },
-    unfreezeCurrentValue() {
-      this.frozenValue = null;
-      this.emitInputEvent();
-    },
-    emitInputEvent() {
-      this.$emit("input", this.codeElement.innerText);
-    },
-    blur() {
-      this.enableInputEvents();
-      this.emitInputEvent();
-    },
-    preserveSelection() {
-      if (this.codeElement == null) {
-        return;
-      }
-      const selection = getSelection(this.codeElement);
-      if (selection == null) {
-        return;
-      }
-      // when redrawing is done, restore the selection
-      Vue.nextTick(() => setSelection(this.codeElement, selection));
-    },
-    insertNewline() {
-      const selectionBefore = getSelection(this.codeElement);
-      document.execCommand("insertHTML", false, "\n");
-      const selectionAfter = getSelection(this.codeElement);
-      if (selectionBefore.start === selectionAfter.start) {
-        // sometimes, we have to insert another "\n" to make the cursor go to the next line
-        document.execCommand("insertHTML", false, "\n");
-      }
-    },
-    insertTab() {
-      document.execCommand("insertHTML", false, "\t");
-    },
-    deindentLine() {
-      // TODO: Not yet implemented
-    }
-  }
-};
+
+
 </script>
 <style lang="stylus">
-code.ce-code-content {
-    height: 100%;
-    box-sizing: border-box;
-}
+    @import '~codemirror/lib/codemirror.css'
+    @import '~codemirror/theme/base16-dark.css'
+
+    .cm-s-base16-dark.CodeMirror {
+        background: none;
+    }
 </style>
