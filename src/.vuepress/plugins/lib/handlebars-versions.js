@@ -14,7 +14,7 @@ async function retrieveVersions() {
 }
 
 async function retrieveHandlebarsMetadataFromNpmjs() {
-  const response = await axios.get("http://registry.npmjs.org/handlebars/");
+  const response = await axios.get("https://registry.npmjs.org/handlebars/");
   return response.data;
 }
 
