@@ -1,5 +1,5 @@
 ---
-layout: TryHandlebarsLayout
+layout: InteractivePlaygroundLayout
 example:
   template: |
     {{>header}}

@@ -1,11 +1,13 @@
 <template>
-    <div>
-        <router-link class="example-show-in-playground" :to="normalizedPath">Open in interactive playground!</router-link>
+    <div class="handlebars-example">
+        <router-link class="example-show-in-playground" :to="normalizedPath">Open in interactive playground!
+        </router-link>
         <workspace :parsedExample="exampleData" :show-input-output="showInputOutput"/>
     </div>
 </template>
 <script>
     import Workspace from '../private-components/try-handlebars/Workspace.vue'
+
     export default {
         components: {Workspace},
         props: [
@@ -18,7 +20,7 @@
                 return pageData.frontmatter.parsedExample
             },
             normalizedPath() {
-              return this.$props.examplePage.replace(/\.(html|md)$/,'')+'.html'
+                return this.$props.examplePage.replace(/\.(html|md)$/, '') + '.html'
             }
         },
         methods: {
@@ -35,11 +37,20 @@
     }
 </script>
 <style lang="stylus">
-    .example-show-in-playground {
-        margin-left: $weContentPadding;
-        color: white;
-        font-size: 0.8rem;
-        padding: $weContentPadding;
-        background-color: $baseColor;
+    .handlebars-example {
+        position: relative;
+
+        > .example-show-in-playground {
+            position: absolute;
+            z-index: 10;
+            top: $exampleWorkspaceDefaultMargin;
+            left: $exampleWorkspaceDefaultMargin;
+            color: $baseColor;
+            vertical-align: middle;
+            text-align: center;
+            font-size: 0.8rem;
+            border: 0.25rem solid $baseColor;
+            padding: 0.25rem;
+        }
     }
 </style>

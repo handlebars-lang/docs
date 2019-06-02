@@ -6,7 +6,7 @@
 
 Handlebars templates look like regular HTML, with embedded handlebars expressions.
 
-<Example examplePage="/examples/simple" />
+<Example examplePage="/examples/simple-expressions" />
 
 A handlebars expression is a `{{`, some contents, followed by a `}}`
 
@@ -25,9 +25,8 @@ You can deliver a template to the browser by including it in a `<script>` tag.
 </script>
 ```
 
-::: warning
-It is important that you put the template inside a `<script>` tag. Do not put it into the HTML directly or the HTML-parser might modify it (for example, if it contains a table).
-:::
+::: warning It is important that you put the template inside a `<script>` tag. Do not put it into the HTML directly or
+the HTML-parser might modify it (for example, if it contains a table). :::
 
 Compile a template in JavaScript by using `Handlebars.compile`
 
@@ -36,11 +35,11 @@ var source = document.getElementById("entry-template").innerHTML;
 var template = Handlebars.compile(source);
 ```
 
-::: warning
-Please note that this approach is not recommended for production applications. A better way is to precompile your templates. This will result in a smaller required runtime library and significant savings from not having to compile the template in the browser. This can be especially important when working with mobile devices.
+::: warning Please note that this approach is not recommended for production applications. A better way is to precompile
+your templates. This will result in a smaller required runtime library and significant savings from not having to
+compile the template in the browser. This can be especially important when working with mobile devices.
 
-[Learn More: Precompilation](precompilation.html)
-:::
+[Learn More: Precompilation](precompilation.html) :::
 
 Get the HTML result of evaluating a Handlebars template by executing the template with a context.
 
@@ -64,9 +63,8 @@ results in
 
 ## HTML Escaping
 
-::: v-pre
-Handlebars HTML-escapes values returned by a `{{expression}}`. If you don't want Handlebars to escape a value, use the "triple-stash", `{{{`.
-:::
+::: v-pre Handlebars HTML-escapes values returned by a `{{expression}}`. If you don't want Handlebars to escape a value,
+use the "triple-stash", `{{{`. :::
 
 ```handlebars
 <div class="entry">
@@ -97,7 +95,9 @@ results in:
 </div>
 ```
 
-Handlebars will not escape a `Handlebars.SafeString`. If you write a helper that generates its own HTML, you will usually want to return a `new Handlebars.SafeString(result)`. In such a circumstance, you will want to manually escape parameters.
+Handlebars will not escape a `Handlebars.SafeString`. If you write a helper that generates its own HTML, you will
+usually want to return a `new Handlebars.SafeString(result)`. In such a circumstance, you will want to manually escape
+parameters.
 
 ```js
 Handlebars.registerHelper("link", function(text, url) {
@@ -110,12 +110,14 @@ Handlebars.registerHelper("link", function(text, url) {
 });
 ```
 
-This will escape the passed in parameters, but mark the response as safe, so Handlebars will not try to escape it even if the "triple-stash" is not used.
+This will escape the passed in parameters, but mark the response as safe, so Handlebars will not try to escape it even
+if the "triple-stash" is not used.
 
 ## Block Expressions
 
-Block expressions allow you to define helpers that will invoke a section of your template with a different context than the current. These block helpers are identified by a `#` preceeding the helper name and require a matching closing mustache, `/`, of the same name.
-Let's consider a helper that will generate an HTML list:
+Block expressions allow you to define helpers that will invoke a section of your template with a different context than
+the current. These block helpers are identified by a `#` preceeding the helper name and require a matching closing
+mustache, `/`, of the same name. Let's consider a helper that will generate an HTML list:
 
 ```handlebars
 {{#list people}}{{firstName}} {{lastName}}{{/list}}
@@ -133,7 +135,9 @@ If we have the following context:
 }
 ```
 
-we would create a helper named list to generate our HTML list. The helper receives the people as its first parameter, and an options hash as its second parameter. The options hash contains a property named fn, which you can invoke with a context just as you would invoke a normal Handlebars template.
+we would create a helper named list to generate our HTML list. The helper receives the people as its first parameter,
+and an options hash as its second parameter. The options hash contains a property named fn, which you can invoke with a
+context just as you would invoke a normal Handlebars template.
 
 ```js
 Handlebars.registerHelper("list", function(items, options) {
@@ -157,9 +161,11 @@ When executed, the template will render:
 </ul>
 ```
 
-Block helpers have more features, such as the ability to create an `else` section (used, for instance, by the built-in `if` helper).
+Block helpers have more features, such as the ability to create an `else` section (used, for instance, by the built-in
+`if` helper).
 
-Since the contents of a block helper are escaped when you call `options.fn(context)`, Handlebars does not escape the results of a block helper. If it did, inner content would be double-escaped!
+Since the contents of a block helper are escaped when you call `options.fn(context)`, Handlebars does not escape the
+results of a block helper. If it did, inner content would be double-escaped!
 
 [Learn More: Block Helpers](block-helpers.html)
 
@@ -197,8 +203,8 @@ var context = {
 };
 ```
 
-This makes it possible to use Handlebars templates with more raw JSON objects.
-Nested handlebars paths can also include `../` segments, which evaluate their paths against a parent context.
+This makes it possible to use Handlebars templates with more raw JSON objects. Nested handlebars paths can also include
+`../` segments, which evaluate their paths against a parent context.
 
 ## Comments
 
@@ -211,8 +217,10 @@ Nested handlebars paths can also include `../` segments, which evaluate their pa
 </div>
 ```
 
-Even though the link is printed while in the context of a comment, it can still go back to the main context (the post) to retrieve its permalink.
-The exact value that `../` will resolve to varies based on the helper that is calling the block. Using `../` is only necessary when context changes, so children of helpers such as each would require the use of `../` while children of helpers such as if do not.
+Even though the link is printed while in the context of a comment, it can still go back to the main context (the post)
+to retrieve its permalink. The exact value that `../` will resolve to varies based on the helper that is calling the
+block. Using `../` is only necessary when context changes, so children of helpers such as each would require the use of
+`../` while children of helpers such as if do not.
 
 ```handlebars
 {{permalink}}
@@ -225,8 +233,9 @@ The exact value that `../` will resolve to varies based on the helper that is ca
 {{/each}}
 ```
 
-In this example all of the above reference the same permalink value even though they are located within different blocks. This behavior is new as of Handlebars 4, the release notes discuss the prior behavior as well as the migration plan.
-Handlebars also allows for name conflict resolution between helpers and data fields via a this reference:
+In this example all of the above reference the same permalink value even though they are located within different
+blocks. This behavior is new as of Handlebars 4, the release notes discuss the prior behavior as well as the migration
+plan. Handlebars also allows for name conflict resolution between helpers and data fields via a this reference:
 
 ```handlebars
 <p>{{./name}} or {{this/name}} or {{this.name}}</p>
@@ -240,7 +249,8 @@ Any of the above would cause the name field on the current context to be used ra
 
 :::
 
-You can use comments in your handlebars code just as you would in your code. Since there is generally some level of logic, this is a good practice.
+You can use comments in your handlebars code just as you would in your code. Since there is generally some level of
+logic, this is a good practice.
 
 ```handlebars
 <div class="entry">
@@ -251,7 +261,8 @@ You can use comments in your handlebars code just as you would in your code. Sin
 </div>
 ```
 
-The comments will not be in the resulting output. If you'd like the comments to show up. Just use html comments, and they will be output.
+The comments will not be in the resulting output. If you'd like the comments to show up. Just use html comments, and
+they will be output.
 
 ```handlebars
 <div class="entry">
@@ -260,13 +271,12 @@ The comments will not be in the resulting output. If you'd like the comments to 
 </div>
 ```
 
-::: v-pre
-Any comments that must contain `}}` or other handlebars tokens should use the `{{!-- --}}` syntax.
-:::
+::: v-pre Any comments that must contain `}}` or other handlebars tokens should use the `{{!-- --}}` syntax. :::
 
 ## Helpers
 
-Handlebars helpers can be accessed from any context in a template. You can register a helper with the Handlebars.registerHelper method.
+Handlebars helpers can be accessed from any context in a template. You can register a helper with the
+Handlebars.registerHelper method.
 
 ```handlebars
 <div class="post">
@@ -358,7 +368,8 @@ If your helper returns HTML that you do not want escaped, make sure to return a 
 
 ## Literals
 
-Helper calls may also have literal values passed to them either as parameter arguments or hash arguments. Supported literals include numbers, strings, `true`, `false`, `null` and ? `undefined`.
+Helper calls may also have literal values passed to them either as parameter arguments or hash arguments. Supported
+literals include numbers, strings, `true`, `false`, `null` and ? `undefined`.
 
 ```handlebars
 {{agree_button "My Text" class="my-class" visible=true counter=4}}

@@ -34,6 +34,7 @@ module.exports = {
       "guide/precompilation.md",
       "guide/partials.md",
       "guide/block-helpers.md",
+      "guide/decorators.md",
       "guide/builtin-helpers.md",
       "guide/api-reference.md"
     ],
