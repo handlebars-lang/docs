@@ -25,8 +25,12 @@ You can deliver a template to the browser by including it in a `<script>` tag.
 </script>
 ```
 
-::: warning It is important that you put the template inside a `<script>` tag. Do not put it into the HTML directly or
-the HTML-parser might modify it (for example, if it contains a table). :::
+::: warning
+
+It is important that you put the template inside a `<script>` tag. Do not put it into the HTML directly or the
+HTML-parser might modify it (for example, if it contains a table).
+
+:::
 
 Compile a template in JavaScript by using `Handlebars.compile`
 
@@ -35,11 +39,15 @@ var source = document.getElementById("entry-template").innerHTML;
 var template = Handlebars.compile(source);
 ```
 
-::: warning Please note that this approach is not recommended for production applications. A better way is to precompile
-your templates. This will result in a smaller required runtime library and significant savings from not having to
-compile the template in the browser. This can be especially important when working with mobile devices.
+::: warning
 
-[Learn More: Precompilation](precompilation.html) :::
+Please note that this approach is not recommended for production applications. A better way is to precompile your
+templates. This will result in a smaller required runtime library and significant savings from not having to compile the
+template in the browser. This can be especially important when working with mobile devices.
+
+[Learn More: Precompilation](precompilation.html)
+
+:::
 
 Get the HTML result of evaluating a Handlebars template by executing the template with a context.
 
@@ -63,8 +71,12 @@ results in
 
 ## HTML Escaping
 
-::: v-pre Handlebars HTML-escapes values returned by a `{{expression}}`. If you don't want Handlebars to escape a value,
-use the "triple-stash", `{{{`. :::
+::: v-pre
+
+Handlebars HTML-escapes values returned by a `{{expression}}`. If you don't want Handlebars to escape a value, use the
+"triple-stash", `{{{`.
+
+:::
 
 ```handlebars
 <div class="entry">
@@ -271,7 +283,11 @@ they will be output.
 </div>
 ```
 
-::: v-pre Any comments that must contain `}}` or other handlebars tokens should use the `{{!-- --}}` syntax. :::
+::: v-pre
+
+Any comments that must contain `}}` or other handlebars tokens should use the `{{!-- --}}` syntax.
+
+:::
 
 ## Helpers
 
