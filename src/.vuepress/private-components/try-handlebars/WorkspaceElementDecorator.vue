@@ -19,6 +19,7 @@
         box-shadow: 0 0 5px;
         margin: 0.5rem;
         flex: 1 1 30%;
+        min-width: 20em;
     }
 
     .we-header {

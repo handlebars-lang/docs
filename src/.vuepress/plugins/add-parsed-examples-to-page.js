@@ -17,7 +17,7 @@ module.exports = function prerenderExampleCode(options, ctx) {
 
 function parseExampleWithErrorHandling(example, filepath) {
   try {
-    return parseExample(example, filepath);
+    return parseExample(example);
   } catch (error) {
     console.error("Error while running handlebars for example page " + filepath, error.stack);
     return error.message;
@@ -33,23 +33,39 @@ function parseExample(example) {
 function normalizeExample(example) {
   return {
     ...example,
-    partials: example.partials || {}
+    partials: example.partials || {},
+    preparationScript: example.preparationScript || ""
   };
 }
 
 function runHandlebars(example) {
   const handlebars = Handlebars.create();
-  handlebars.registerPartial(example.partials);
+  prepareHandlebarsRuntime(handlebars, example);
   const template = handlebars.compile(example.template);
   return template(example.input);
+}
+
+function prepareHandlebarsRuntime(handlebars, example) {
+  registerPartials(handlebars, example);
+  runPreparationScript(example, handlebars);
+}
+
+function runPreparationScript(example, handlebars) {
+  const compiledPreparationScript = Function("Handlebars", example.preparationScript);
+  compiledPreparationScript.call(undefined, handlebars);
+}
+
+function registerPartials(handlebars, example) {
+  handlebars.registerPartial(example.partials);
 }
 
 function prepareResultForRendering(example, output) {
   return {
     template: example.template,
     partials: partialsAsNameContentArray(example),
+    preparationScript: example.preparationScript,
     input: prettifyJson(example.input),
-    output
+    output: output
   };
 }
 

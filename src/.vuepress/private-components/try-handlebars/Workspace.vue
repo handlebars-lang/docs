@@ -26,6 +26,16 @@
         :interactive="interactive"
       />
     </div>
+    <div class="workspace-row" v-if="currentExample.preparationScript">
+      <workspace-element
+              title="Preparation-Script"
+              styleClass="workspace-partial"
+              language="javascript"
+              v-model="currentExample.preparationScript"
+              @input="executeExample"
+              :interactive="interactive"
+      />
+    </div>
     <div class="workspace-row" v-if="showInputOutput">
       <workspace-element
         title="Input"
@@ -65,6 +75,7 @@
         partials: [ ...parsedExample.partials ],
         input: parsedExample.input,
         output: parsedExample.output,
+        preparationScript: parsedExample.preparationScript,
         handlebarsVersion: this.$handlebarsVersions.latest
       },
       currentError: null

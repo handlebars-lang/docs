@@ -24,6 +24,7 @@
 
     const languageMapping = {
         json: "javascript",
+        javascript: "javascript",
         html: "xml",
         handlebars: "handlebars"
     };

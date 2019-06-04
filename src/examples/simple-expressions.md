@@ -2,18 +2,9 @@
 layout: InteractivePlaygroundLayout
 example:
   template: |
-    <div class="city">
-      <h1>{{name}}</h1>
-      <div class="body">
-        {{summary}}
-      </div>
-    </div>
-  partials: {}
+    {{firstname}} {{lastname}}
+  partials:
   input:
-    name: Darmstadt
-    summary: Darmstadt is a city in Hesse, Germany
+    firstname: Yehuda
+    lastname: Katz
 ---
-
-```handlebars
-test
-```

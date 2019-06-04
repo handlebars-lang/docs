@@ -294,52 +294,7 @@ Any comments that must contain `}}` or other handlebars tokens should use the `{
 Handlebars helpers can be accessed from any context in a template. You can register a helper with the
 Handlebars.registerHelper method.
 
-```handlebars
-<div class="post">
-  <h1>By {{fullName author}}</h1>
-  <div class="body">{{body}}</div>
-
-  <h1>Comments</h1>
-
-  {{#each comments}}
-  <h2>By {{fullName author}}</h2>
-  <div class="body">{{body}}</div>
-  {{/each}}
-</div>
-```
-
-when using this context and helpers:
-
-```js
-var context = {
-  author: { firstName: "Alan", lastName: "Johnson" },
-  body: "I Love Handlebars",
-  comments: [
-    {
-      author: { firstName: "Yehuda", lastName: "Katz" },
-      body: "Me too!"
-    }
-  ]
-};
-
-Handlebars.registerHelper("fullName", function(person) {
-  return person.firstName + " " + person.lastName;
-});
-```
-
-results in:
-
-```html
-<div class="post">
-  <h1>By Alan Johnson</h1>
-  <div class="body">I Love Handlebars</div>
-
-  <h1>Comments</h1>
-
-  <h2>By Yehuda Katz</h2>
-  <div class="body">Me Too!</div>
-</div>
-```
+<Example examplePage="/examples/simple-helper" showInputOutput="true" />
 
 Helpers receive the current context as the `this` context of the function.
 

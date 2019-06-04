@@ -42,6 +42,9 @@
         'json': {
             name: 'javascript',
         },
+        'javascript': {
+            name: 'javascript'
+        },
         'html': {
             name: 'xml',
             html: true
@@ -56,5 +59,7 @@
 
     .cm-s-base16-dark.CodeMirror {
         background: none;
+        height: auto;
+        overflow: hidden;
     }
 </style>
