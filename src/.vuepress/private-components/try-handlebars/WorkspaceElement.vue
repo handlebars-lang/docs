@@ -34,7 +34,7 @@
 
     .we-content,
         // fix for conflicting styles of vuepress default-theme: declare more specific style
-    .content .we-content {
+    .theme-default-content .we-content {
         margin: 0;
         font-size: 0.8rem;
         line-height: 1.5em;
