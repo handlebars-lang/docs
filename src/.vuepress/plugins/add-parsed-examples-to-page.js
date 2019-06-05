@@ -1,7 +1,9 @@
+/* eslint-disable no-console */
+
 const Handlebars = require("handlebars");
 const { prettifyJson } = require("./lib/prettify-json");
 
-module.exports = function prerenderExampleCode(options, ctx) {
+module.exports = function prerenderExampleCode() {
   return {
     name: "prerender-example-code",
     extendPageData($page) {

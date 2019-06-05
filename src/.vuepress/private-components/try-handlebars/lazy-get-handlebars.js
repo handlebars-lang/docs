@@ -22,7 +22,7 @@ async function loadHandlebarsNow(version) {
   return new Promise(async (resolve, reject) => {
     script.addEventListener("load", () => {
       try {
-        let globalHandlebars = getAndRemoveGlobalHandlebars();
+        let globalHandlebars = getAndRemoveGlobalHandlebars(version);
         return resolve(globalHandlebars);
       } catch (err) {
         reject(err);
@@ -49,7 +49,7 @@ function resolveHandlebarsUrl(version) {
   return `https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/${version}/handlebars.min.js`;
 }
 
-function getAndRemoveGlobalHandlebars() {
+function getAndRemoveGlobalHandlebars(version) {
   let currentHandlebarsInstance = window.Handlebars;
   if (currentHandlebarsInstance == null) {
     throw new Error(

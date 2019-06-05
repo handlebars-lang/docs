@@ -294,7 +294,7 @@ Any comments that must contain `}}` or other handlebars tokens should use the `{
 Handlebars helpers can be accessed from any context in a template. You can register a helper with the
 Handlebars.registerHelper method.
 
-<Example examplePage="/examples/simple-helper" showInputOutput="true" />
+<Example examplePage="/examples/simple-helper" :showInputOutput="true" />
 
 Helpers receive the current context as the `this` context of the function.
 

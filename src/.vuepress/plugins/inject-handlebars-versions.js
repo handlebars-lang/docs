@@ -1,6 +1,8 @@
+/* eslint-disable no-console */
+
 const handlebarsVersions = require("./lib/handlebars-versions");
 
-module.exports = function storeHandlebarsVersionAtVuePrototype(options, ctx) {
+module.exports = function storeHandlebarsVersionAtVuePrototype() {
   return {
     name: "storeHandlebarsVersionAtVuePrototype",
     async enhanceAppFiles() {
@@ -9,9 +11,7 @@ module.exports = function storeHandlebarsVersionAtVuePrototype(options, ctx) {
       return {
         name: "storeHandlebarsVersionAtVuePrototype",
         content: `export default ({ Vue }) => { 
-                        Vue.prototype.$handlebarsVersions = ${JSON.stringify(
-                          versions
-                        )}
+                        Vue.prototype.$handlebarsVersions = ${JSON.stringify(versions)}
                     }`
       };
     }

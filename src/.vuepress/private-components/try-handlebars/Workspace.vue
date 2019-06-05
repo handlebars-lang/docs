@@ -8,48 +8,48 @@
     </div>
     <div class="workspace-row">
       <workspace-element
-        title="Template"
-        styleClass="workspace-template"
-        language="handlebars"
         v-model="currentExample.template"
-        @input="executeExample"
+        title="Template"
+        style-class="workspace-template"
+        language="handlebars"
         :interactive="interactive"
+        @input="executeExample"
       />
       <workspace-element
         v-for="partial in currentExample.partials"
         :key="partial.name"
-        :title="partialTitle(partial.name)"
-        styleClass="workspace-partial"
-        language="handlebars"
         v-model="partial.content"
-        @input="executeExample"
+        :title="partialTitle(partial.name)"
+        style-class="workspace-partial"
+        language="handlebars"
         :interactive="interactive"
+        @input="executeExample"
       />
     </div>
-    <div class="workspace-row" v-if="currentExample.preparationScript">
+    <div v-if="currentExample.preparationScript" class="workspace-row">
       <workspace-element
-              title="Preparation-Script"
-              styleClass="workspace-partial"
-              language="javascript"
-              v-model="currentExample.preparationScript"
-              @input="executeExample"
-              :interactive="interactive"
+        v-model="currentExample.preparationScript"
+        title="Preparation-Script"
+        style-class="workspace-partial"
+        language="javascript"
+        :interactive="interactive"
+        @input="executeExample"
       />
     </div>
-    <div class="workspace-row" v-if="showInputOutput">
+    <div v-if="showInputOutput" class="workspace-row">
       <workspace-element
-        title="Input"
-        styleClass="workspace-input"
-        language="json"
         v-model="currentExample.input"
-        @input="executeExample"
+        title="Input"
+        style-class="workspace-input"
+        language="json"
         :interactive="interactive"
+        @input="executeExample"
       />
       <workspace-error v-if="currentError" :error="currentError" />
       <workspace-element
         v-else
         title="Output"
-        styleClass="workspace-output"
+        style-class="workspace-output"
         language="html"
         :value="currentExample.output"
         :interactive="false"
@@ -58,21 +58,24 @@
   </div>
 </template>
 <script>
-  import Layout from "@theme/layouts/Layout.vue";
-  import WorkspaceElement from "./WorkspaceElement.vue";
-  import WorkspaceError from "./WorkspaceError.vue";
-  import HandlebarsVersionChooser from "./HandlebarsVersionChooser.vue";
-  import {executeExample} from "./execute-example";
+import WorkspaceElement from "./WorkspaceElement.vue";
+import WorkspaceError from "./WorkspaceError.vue";
+import HandlebarsVersionChooser from "./HandlebarsVersionChooser.vue";
+import { executeExample } from "./execute-example";
 
-  export default {
-  components: { Layout, WorkspaceElement, WorkspaceError, HandlebarsVersionChooser },
-  props: ["parsedExample", "interactive", "showInputOutput"],
+export default {
+  components: { WorkspaceElement, WorkspaceError, HandlebarsVersionChooser },
+  props: {
+    parsedExample: { type: Object, required: true },
+    interactive: { type: Boolean, default: false },
+    showInputOutput: { type: Boolean, default: false }
+  },
   data() {
     let parsedExample = this.$props.parsedExample;
     return {
       currentExample: {
         template: parsedExample.template,
-        partials: [ ...parsedExample.partials ],
+        partials: [...parsedExample.partials],
         input: parsedExample.input,
         output: parsedExample.output,
         preparationScript: parsedExample.preparationScript,
@@ -87,7 +90,7 @@
     },
     async executeExample() {
       try {
-        await executeExample(this.currentExample)
+        await executeExample(this.currentExample);
         this.currentError = null;
       } catch (err) {
         this.currentError = err;

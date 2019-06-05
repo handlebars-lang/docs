@@ -1,3 +1,6 @@
+/* eslint-env node */
+/* eslint-disable no-console */
+
 const basePath = process.env.VUEPRESS_BASE || "/";
 
 console.log(`basePath: ${basePath}`);

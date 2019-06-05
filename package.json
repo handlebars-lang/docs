@@ -7,7 +7,9 @@
     "dev": "vuepress dev src ",
     "clean": "rm -rf target  node_modules/@vuepress/core/node_modules/.cache/",
     "build": "vuepress build src",
-    "preview": "npm run build && cd target && static-server"
+    "preview": "npm run build && cd target && static-server",
+    "lintfix": "eslint --fix 'src/.vuepress/**/*.{js,vue}' ",
+    "format": "prettier --write 'src/**/*.{js,css,json,md,vue}'"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,7 @@
     "axios": "^0.18.1",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-vue": "^5.2.2",
     "husky": "^2.3.0",
     "lint-staged": "^8.1.7",
     "markdown-it": "^8.4.2",
@@ -38,16 +41,17 @@
     }
   },
   "lint-staged": {
-    "*.{js,css,json,md}": [
+    "*.{js,css,json,md,vue}": [
       "prettier --write",
       "git add"
     ],
-    "*.js": [
+    "*.{js,vue}": [
       "eslint --fix",
       "git add"
     ]
   },
   "dependencies": {
+    "babel-eslint": "^10.0.1",
     "codemirror": "^5.47.0",
     "handlebars": "^4.1.2",
     "highlight.js": "^9.15.8",
