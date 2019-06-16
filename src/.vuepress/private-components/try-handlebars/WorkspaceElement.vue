@@ -1,5 +1,8 @@
 <template>
-  <workspace-element-decorator :css-class="cssClass" :title="title">
+  <workspace-element-decorator
+    v-bind="{ cssClass, headerCssClass, title, canBeRenamed: interactive && canBeRenamed }"
+    @renameTo="$emit('renameTo', $event)"
+  >
     <code-editor
       v-if="interactive"
       css-class="we-content"
@@ -21,8 +24,10 @@ export default {
     title: { type: String, required: true },
     value: { type: String, default: "" },
     cssClass: { type: String, default: "" },
+    headerCssClass: { type: String, default: "" },
     language: { type: String, required: true },
-    interactive: { type: Boolean, required: true }
+    interactive: { type: Boolean, required: true },
+    canBeRenamed: { type: Boolean, default: false }
   },
   methods: {
     delegateInputEvent(newCode) {

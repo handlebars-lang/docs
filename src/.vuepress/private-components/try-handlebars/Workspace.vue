@@ -4,6 +4,9 @@
       <div class="version-chooser">
         Handlebars:
         <handlebars-version-chooser v-model="currentExample.handlebarsVersion" @input="executeExample" />
+        <button @click="addPartial">
+          Add partial
+        </button>
       </div>
     </div>
     <div class="workspace-row">
@@ -19,10 +22,13 @@
         v-for="partial in currentExample.partials"
         :key="partial.name"
         v-model="partial.content"
-        :title="partialTitle(partial.name)"
+        :title="partial.name"
         style-class="workspace-partial"
+        header-css-class="workspace-partial-header"
         language="handlebars"
         :interactive="interactive"
+        :can-be-renamed="true"
+        @renameTo="renamePartialTo(partial, $event)"
         @input="executeExample"
       />
     </div>
@@ -58,6 +64,7 @@
   </div>
 </template>
 <script>
+import Vue from "vue";
 import WorkspaceElement from "./WorkspaceElement.vue";
 import WorkspaceError from "./WorkspaceError.vue";
 import HandlebarsVersionChooser from "./HandlebarsVersionChooser.vue";
@@ -85,9 +92,6 @@ export default {
     };
   },
   methods: {
-    partialTitle(name) {
-      return `{{>${name}}}`;
-    },
     async executeExample() {
       try {
         await executeExample(this.currentExample);
@@ -95,11 +99,36 @@ export default {
       } catch (err) {
         this.currentError = err;
       }
+    },
+    addPartial() {
+      if (this.currentExample.partials == null) {
+        this.currentExample.partials = [];
+      }
+      this.currentExample.partials.push({
+        name: "new_partial",
+        content: ""
+      });
+    },
+    renamePartialTo(partial, newName) {
+      partial.name = newName;
+      Vue.nextTick(() => {
+        this.executeExample();
+      });
     }
   }
 };
 </script>
 <style lang="stylus">
+
+.workspace-partial-header {
+    &:before {
+        content: '{{>';
+    }
+
+    &:after {
+        content: '}}';
+    }
+}
 
 .workspace-header {
     margin: $exampleWorkspaceDefaultMargin;

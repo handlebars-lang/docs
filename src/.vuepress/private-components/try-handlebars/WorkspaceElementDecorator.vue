@@ -1,8 +1,13 @@
 <template>
   <div :class="['workspace-element', cssClass]">
-    <div class="we-header">
-      {{ title }}
-    </div>
+    <div
+      ref="title"
+      :class="['we-header', headerCssClass]"
+      :contenteditable="canBeRenamed"
+      @keydown.enter.prevent="titleChanged"
+      @blur="titleChanged"
+      v-text="title"
+    />
     <slot />
   </div>
 </template>
@@ -16,6 +21,21 @@ export default {
     cssClass: {
       type: String,
       default: ""
+    },
+    headerCssClass: {
+      type: String,
+      default: ""
+    },
+    canBeRenamed: {
+      type: Boolean,
+      default: false
+    }
+  },
+  methods: {
+    titleChanged() {
+      if (this.canBeRenamed) {
+        this.$emit("renameTo", this.$refs.title.innerText);
+      }
     }
   }
 };
