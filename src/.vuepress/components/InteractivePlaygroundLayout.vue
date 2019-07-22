@@ -5,7 +5,7 @@
         <div class="try-handlebars">
           <workspace
             :parsed-example="parsedExampleWithEnsuredPreparationScript"
-            :interactive="!nonInteractiveForPrerendering"
+            :interactive="true"
             :show-input-output="true"
           />
         </div>

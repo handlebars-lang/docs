@@ -1,6 +1,6 @@
 <template>
   <div class="workspace">
-    <div class="workspace-header">
+    <div class="workspace-header" v-if="interactive">
       <div class="version-chooser">
         Handlebars:
         <handlebars-version-chooser v-model="currentExample.handlebarsVersion" @input="executeExample" />

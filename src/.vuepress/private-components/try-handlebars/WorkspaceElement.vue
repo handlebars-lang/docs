@@ -5,7 +5,7 @@
     @delete="$emit('delete', $event)"
   >
     <code-editor
-      v-if="interactive"
+      v-if="interactive && mounted"
       css-class="we-content"
       :value="value"
       :language="language"
@@ -29,6 +29,14 @@ export default {
     language: { type: String, required: true },
     interactive: { type: Boolean, required: true },
     canBeRenamed: { type: Boolean, default: false }
+  },
+  data() {
+    return {
+      mounted: false
+    };
+  },
+  beforeMount() {
+    this.$data.mounted = true;
   },
   methods: {
     delegateInputEvent(newCode) {
