@@ -88,7 +88,8 @@ export default {
         preparationScript: parsedExample.preparationScript,
         handlebarsVersion: this.$handlebarsVersions.latest
       },
-      currentError: null
+      currentError: null,
+      createdPartialCounter: 0
     };
   },
   methods: {

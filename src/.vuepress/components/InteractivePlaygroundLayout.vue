@@ -4,8 +4,8 @@
       <template v-slot:page-top>
         <div class="try-handlebars">
           <workspace
-            :parsed-example="$frontmatter.parsedExample"
-            :interactive="interactive"
+            :parsed-example="parsedExampleWithEnsuredPreparationScript"
+            :interactive="!nonInteractiveForPrerendering"
             :show-input-output="true"
           />
         </div>
@@ -16,17 +16,34 @@
 <script>
 import Layout from "@theme/layouts/Layout.vue";
 import Workspace from "../private-components/try-handlebars/Workspace.vue";
+import { deindent } from "../private-components/utils";
 
 export default {
   components: { Layout, Workspace },
   data() {
     return {
-      interactive: false
+      nonInteractiveForPrerendering: true
     };
   },
-  computed: {},
+  computed: {
+    parsedExampleWithEnsuredPreparationScript() {
+      return {
+        ...this.$frontmatter.parsedExample,
+        preparationScript: this.$frontmatter.parsedExample.preparationScript || this.emptyPreparationScript()
+      };
+    }
+  },
   mounted() {
-    this.interactive = true;
+    this.nonInteractiveForPrerendering = false;
+  },
+  methods: {
+    emptyPreparationScript() {
+      return deindent`
+      // Handlebars.registerHelper('shout', function(string) {
+      //    return string.toUpperCase()
+      // });
+      `;
+    }
   }
 };
 </script>
