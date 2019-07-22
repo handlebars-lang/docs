@@ -73,3 +73,27 @@ $contentBorderRadius = 0.5rem
     border-radius: $contentBorderRadius !important
 }
 
+.table-of-contents {
+    border: 1px solid $textColor;
+    float: right;
+    padding: 0.5em;
+    margin-left: 1rem;
+    max-width: 50%;
+
+    @media (max-width: $MQMobile) {
+        float: none;
+        margin-left: 0;
+        max-width: 100%;
+    }
+
+    &:before {
+        content: "Table of contents";
+        font-weight: bold;
+    }
+
+    > ul {
+        list-style-type: decimal;
+        margin: 0.5rem 0 0 0;
+    }
+}
+
