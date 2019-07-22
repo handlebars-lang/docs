@@ -2,6 +2,7 @@
   <workspace-element-decorator
     v-bind="{ cssClass, headerCssClass, title, canBeRenamed: interactive && canBeRenamed }"
     @renameTo="$emit('renameTo', $event)"
+    @delete="$emit('delete', $event)"
   >
     <code-editor
       v-if="interactive"

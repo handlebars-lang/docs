@@ -19,7 +19,7 @@
         @input="executeExample"
       />
       <workspace-element
-        v-for="partial in currentExample.partials"
+        v-for="(partial, index) in currentExample.partials"
         :key="partial.name"
         v-model="partial.content"
         :title="partial.name"
@@ -29,6 +29,7 @@
         :interactive="interactive"
         :can-be-renamed="true"
         @renameTo="renamePartialTo(partial, $event)"
+        @delete="deletePartial(index)"
         @input="executeExample"
       />
     </div>
@@ -93,13 +94,15 @@ export default {
     };
   },
   methods: {
-    async executeExample() {
-      try {
-        await executeExample(this.currentExample);
-        this.currentError = null;
-      } catch (err) {
-        this.currentError = err;
-      }
+    executeExample() {
+      Vue.nextTick(async () => {
+        try {
+          await executeExample(this.currentExample);
+          this.currentError = null;
+        } catch (err) {
+          this.currentError = err;
+        }
+      });
     },
     addPartial() {
       if (this.currentExample.partials == null) {
@@ -109,12 +112,15 @@ export default {
         name: "new_partial",
         content: ""
       });
+      this.executeExample();
+    },
+    deletePartial(index) {
+      this.currentExample.partials.splice(index, 1);
+      this.executeExample();
     },
     renamePartialTo(partial, newName) {
       partial.name = newName;
-      Vue.nextTick(() => {
-        this.executeExample();
-      });
+      this.executeExample();
     }
   }
 };
