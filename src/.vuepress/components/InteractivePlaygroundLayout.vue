@@ -39,7 +39,7 @@ export default {
   methods: {
     emptyPreparationScript() {
       return deindent`
-      // Handlebars.registerHelper('shout', function(string) {
+      // Handlebars.registerHelper('loud', function(string) {
       //    return string.toUpperCase()
       // });
       `;
