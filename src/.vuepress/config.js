@@ -22,7 +22,7 @@ module.exports = {
     nav: [
       { text: "Home", link: "/" },
       { text: "Guide", link: "/guide/" },
-      { text: "Improve the docs", link: "/contributing.html" },
+      { text: "Improve the docs", link: "/contributing/" },
       {
         text: "Other sources",
         items: [{ text: "handlebarsjs.com", link: "https://handlebarsjs.com" }]
