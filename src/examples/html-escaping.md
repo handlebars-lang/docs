@@ -2,11 +2,16 @@
 layout: InteractivePlaygroundLayout
 example:
   template: |
-    {{name}}
-    <hr>
-    - raw: {{{summary}}}
-    - escaped: {{summary}}
+    {{#each specialChars}}
+        raw: "{{{char}}}", escaped: {{char}}  
+    {{/each}}
   input:
-    name: Darmstadt
-    summary: Darmstadt is a city in <b>Hesse</b>, Germany
+    specialChars:
+      - char: "&"
+      - char: "<"
+      - char: ">"
+      - char: '"'
+      - char: "'"
+      - char: "`"
+      - char: "="
 ---
