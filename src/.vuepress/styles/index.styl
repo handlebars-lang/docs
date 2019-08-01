@@ -30,9 +30,6 @@ html, body {
 $contentBoxPadding = 1.2rem
 $contentBorderRadius = 0.5rem
 
-.custom.theme-default-content {
-    padding: $contentBoxPadding;
-}
 
 
 .home {
@@ -60,7 +57,16 @@ $contentBorderRadius = 0.5rem
     }
     
     .theme-default-content {
-        display: none !important
+
+        background-color: transparent !important;
+
+        @media (min-width: $MQMobile) {
+            position: absolute;
+            left: 0;
+            top: $navbarHeight;
+            margin: 1rem;
+        }
+
     }
     
     .footer {
@@ -69,9 +75,11 @@ $contentBorderRadius = 0.5rem
 }
 
 .theme-default-content {
-    background-color: $contentBgColor !important
-    border-radius: $contentBorderRadius !important
+    background-color: $contentBgColor;
+    padding: $contentBoxPadding;
+    border-radius: $contentBorderRadius;
 }
+
 
 .table-of-contents {
     border: 1px solid $textColor;
