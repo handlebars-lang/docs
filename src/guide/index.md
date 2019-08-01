@@ -1,7 +1,5 @@
 # Guide
 
-[[toc]]
-
 [Installation](./installation.html)
 
 ## Getting Started
