@@ -1,6 +1,6 @@
-[[toc]]
-
 # Guide
+
+[[toc]]
 
 [Installation](./installation.html)
 

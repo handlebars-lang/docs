@@ -41,7 +41,7 @@ module.exports = {
       "guide/builtin-helpers.md",
       "guide/api-reference.md"
     ],
-    displayAllHeaders: true,
+    displayAllHeaders: false,
     repo: "handlebars-lang/docs",
     lastUpdated: "Last Updated",
     editLinks: true,
