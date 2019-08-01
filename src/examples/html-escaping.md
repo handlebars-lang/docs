@@ -2,16 +2,8 @@
 layout: InteractivePlaygroundLayout
 example:
   template: |
-    {{#each specialChars}}
-        raw: "{{{char}}}", escaped: {{char}}  
-    {{/each}}
+    raw: {{{specialChars}}}
+    html-escaped: {{specialChars}}
   input:
-    specialChars:
-      - char: "&"
-      - char: "<"
-      - char: ">"
-      - char: '"'
-      - char: "'"
-      - char: "`"
-      - char: "="
+    specialChars: '& < > " '' ` ='
 ---

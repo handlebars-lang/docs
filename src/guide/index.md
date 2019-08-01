@@ -1,3 +1,5 @@
+[[toc]]
+
 # Guide
 
 [Installation](./installation.html)
@@ -78,52 +80,109 @@ Handlebars HTML-escapes values returned by a `{{expression}}`. If you don't want
 
 :::
 
-```handlebars
-<div class="entry">
-  <h1>{{title}}</h1>
-  <div class="body">
-    {{{body}}}
-  </div>
-</div>
-```
-
-with this context:
-
-```json
-{
-  "title": "All about <p> Tags",
-  "body": "<p>This is a post about &lt;p&gt; tags</p>"
-}
-```
-
-results in:
-
-```html
-<div class="entry">
-  <h1>All About &lt;p&gt; Tags</h1>
-  <div class="body">
-    <p>This is a post about &lt;p&gt; tags</p>
-  </div>
-</div>
-```
+<Example examplePage="/examples/html-escaping" :showInputOutput="true" />
 
 Handlebars will not escape a `Handlebars.SafeString`. If you write a helper that generates its own HTML, you will
 usually want to return a `new Handlebars.SafeString(result)`. In such a circumstance, you will want to manually escape
 parameters.
 
-```js
-Handlebars.registerHelper("link", function(text, url) {
-  text = Handlebars.Utils.escapeExpression(text);
-  url = Handlebars.Utils.escapeExpression(url);
-
-  var result = '<a href="' + url + '">' + text + "</a>";
-
-  return new Handlebars.SafeString(result);
-});
-```
+<Example examplePage="/examples/helper-safestring" :showInputOutput="false" />
 
 This will escape the passed in parameters, but mark the response as safe, so Handlebars will not try to escape it even
 if the "triple-stash" is not used.
+
+## Evaluation context
+
+::: v-pre
+
+The builting block-helpers `{{#each}}` and `{{#with}}` allow you to change the current evaluation context.
+
+- The `{{#each}}`-helper iterates an array, allowing to you access the properties of each object via simple handlebars
+  expressions.
+- The `{{#with}}`-helper dives into an object-property, giving you access to its properties
+
+:::
+
+<Example examplePage="/examples/each-with" showInputOutput="true" />
+
+## Nested Handlebars Paths
+
+::: v-pre
+
+In addition to simple paths like `<p>{{name}}</p>`, Handlebars also supports nested paths. This allows you to look up
+properties nested below the current context.
+
+:::
+
+<Example examplePage="/examples/path-expressions-dot" showInputOutput="true" />
+
+This makes it possible to use Handlebars templates with more raw JSON objects. It is also possible, to use `/` as path
+delimiter:
+
+<Example examplePage="/examples/path-expressions-slash" />
+
+Nested handlebars paths can also include `../` segments, which evaluate their paths against a parent context.
+
+<Example examplePage="/examples/path-expressions-dot-dot" showInputOutput="true"/>
+
+Even though the name is printed while in the context of a comment, it can still go back to the main context (the
+root-object) to retrieve the prefix.
+
+::: v-pre
+
+::: warning
+
+The exact value that `../` will resolve to varies based on the helper that is calling the block. Using `../` is only
+necessary when context changes. Children of helpers such as `{{#each}}` would require the use of `../` while children of
+helpers such as `{{#if}}` do not.
+
+:::
+
+In this example all of the above reference the same permalink value even though they are located within different
+blocks. This behavior is new as of Handlebars 4, the release notes discuss the prior behavior as well as the migration
+plan. Handlebars also allows for name conflict resolution between helpers and data fields via a this reference:
+
+```handlebars
+<p>{{./name}} or {{this/name}} or {{this.name}}</p>
+```
+
+Any of the above would cause the name field on the current context to be used rather than a helper of the same name.
+
+## Template comments
+
+::: v-pre
+
+You can use comments in your handlebars code just as you would in your code. Since there is generally some level of
+logic, this is a good practice.
+
+The comments will not be in the resulting output. If you'd like the comments to show up. Just use html comments, and
+they will be output.
+
+Any comments that must contain `}}` or other handlebars tokens should use the `{{!-- --}}` syntax.
+
+:::
+
+<Example examplePage="/examples/comments" />
+
+## Helpers
+
+Handlebars helpers can be accessed from any context in a template. You can register a helper with the
+Handlebars.registerHelper method.
+
+<Example examplePage="/examples/helper-simple" :showInputOutput="false" />
+
+Helpers receive the current context as the `this`-context of the function.
+
+<Example examplePage="/examples/helper-this-context" :showInputOutput="false" />
+
+### Literals
+
+Helper calls may also have literal values passed to them either as parameter arguments or hash arguments. Supported
+literals include numbers, strings, `true`, `false`, `null` and ? `undefined`.
+
+```handlebars
+{{agree_button "My Text" class="my-class" visible=true counter=4}}
+```
 
 ## Block Expressions
 
@@ -180,171 +239,6 @@ Since the contents of a block helper are escaped when you call `options.fn(conte
 results of a block helper. If it did, inner content would be double-escaped!
 
 [Learn More: Block Helpers](block-helpers.html)
-
-## Handlebars Paths
-
-Handlebars supports simple paths, just like Mustache.
-
-```handlebars
-<p>{{name}}</p>
-```
-
-Handlebars also supports nested paths, making it possible to look up properties nested below the current context.
-
-```handlebars
-<div class="entry">
-  <h1>{{title}}</h1>
-  <h2>By {{author.name}}</h2>
-
-  <div class="body">
-    {{body}}
-  </div>
-</div>
-```
-
-That template works with this context
-
-```js
-var context = {
-  title: "My First Blog Post!",
-  author: {
-    id: 47,
-    name: "Yehuda Katz"
-  },
-  body: "My first post. Wheeeee!"
-};
-```
-
-This makes it possible to use Handlebars templates with more raw JSON objects. Nested handlebars paths can also include
-`../` segments, which evaluate their paths against a parent context.
-
-## Comments
-
-```handlebars
-<div id="comments">
-  {{#each comments}}
-  <h2><a href="/posts/{{../permalink}}#{{id}}">{{title}}</a></h2>
-  <div>{{body}}</div>
-  {{/each}}
-</div>
-```
-
-Even though the link is printed while in the context of a comment, it can still go back to the main context (the post)
-to retrieve its permalink. The exact value that `../` will resolve to varies based on the helper that is calling the
-block. Using `../` is only necessary when context changes, so children of helpers such as each would require the use of
-`../` while children of helpers such as if do not.
-
-```handlebars
-{{permalink}}
-{{#each comments}}
-  {{../permalink}}
-
-  {{#if title}}
-    {{../permalink}}
-  {{/if}}
-{{/each}}
-```
-
-In this example all of the above reference the same permalink value even though they are located within different
-blocks. This behavior is new as of Handlebars 4, the release notes discuss the prior behavior as well as the migration
-plan. Handlebars also allows for name conflict resolution between helpers and data fields via a this reference:
-
-```handlebars
-<p>{{./name}} or {{this/name}} or {{this.name}}</p>
-```
-
-Any of the above would cause the name field on the current context to be used rather than a helper of the same name.
-
-::: v-pre
-
-### Template comments with `{{!-- --}}` or `{{! }}`.
-
-:::
-
-You can use comments in your handlebars code just as you would in your code. Since there is generally some level of
-logic, this is a good practice.
-
-```handlebars
-<div class="entry">
-  {{!-- only output author name if an author exists --}}
-  {{#if author}}
-    <h1>{{author.firstName}} {{author.lastName}}</h1>
-  {{/if}}
-</div>
-```
-
-The comments will not be in the resulting output. If you'd like the comments to show up. Just use html comments, and
-they will be output.
-
-```handlebars
-<div class="entry">
-  {{! This comment will not be in the output }}
-  <!-- This comment will be in the output -->
-</div>
-```
-
-::: v-pre
-
-Any comments that must contain `}}` or other handlebars tokens should use the `{{!-- --}}` syntax.
-
-:::
-
-## Helpers
-
-Handlebars helpers can be accessed from any context in a template. You can register a helper with the
-Handlebars.registerHelper method.
-
-<Example examplePage="/examples/simple-helper" :showInputOutput="true" />
-
-Helpers receive the current context as the `this` context of the function.
-
-```handlebars
-<ul>
-  {{#each items}}
-  <li>{{agree_button}}</li>
-  {{/each}}
-</ul>
-```
-
-when using this context and helpers:
-
-```js
-var context = {
-  items: [
-    { name: "Handlebars", emotion: "love" },
-    { name: "Mustache", emotion: "enjoy" },
-    { name: "Ember", emotion: "want to learn" }
-  ]
-};
-
-Handlebars.registerHelper("agree_button", function() {
-  var emotion = Handlebars.escapeExpression(this.emotion),
-    name = Handlebars.escapeExpression(this.name);
-
-  return new Handlebars.SafeString("<button>I agree. I " + emotion + " " + name + "</button>");
-});
-```
-
-results in:
-
-```html
-<ul>
-  <li><button>I agree. I love Handlebars</button></li>
-  <li><button>I agree. I enjoy Mustache</button></li>
-  <li><button>I agree. I want to learn Ember</button></li>
-</ul>
-```
-
-If your helper returns HTML that you do not want escaped, make sure to return a new `Handlebars.SafeString`.
-
-## Literals
-
-Helper calls may also have literal values passed to them either as parameter arguments or hash arguments. Supported
-literals include numbers, strings, `true`, `false`, `null` and ? `undefined`.
-
-```handlebars
-{{agree_button "My Text" class="my-class" visible=true counter=4}}
-```
 
 ## Partials
 
