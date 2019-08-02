@@ -1,9 +1,13 @@
 <template>
-  <div class="handlebars-example">
+  <div v-if="exampleData" class="handlebars-example">
     <router-link class="example-show-in-playground" :to="normalizedPath">
       Open in interactive playground!
     </router-link>
     <workspace :parsed-example="exampleData" :show-input-output="Boolean(showInputOutput)" />
+  </div>
+  <div v-else class="handlebars-example error">
+    <header>Error while parsing example "{{ normalizedPath }}":</header>
+    <section>{{ error.stack }}</section>
   </div>
 </template>
 <script>
@@ -16,23 +20,22 @@ export default {
     showInputOutput: { type: [Boolean, String], default: false }
   },
   computed: {
+    error() {
+      if (this.examplePageData == null) {
+        return new Error(`Page "${this.normalizedPath}" not found`);
+      }
+      return this.examplePageData.frontmatter.errorWhileParsingExample;
+    },
     exampleData() {
-      const pageData = this.findPageByHtmlOrMarkdownPath();
-      return pageData.frontmatter.parsedExample;
+      return this.examplePageData && this.examplePageData.frontmatter.parsedExample;
+    },
+    examplePageData() {
+      return this.$site.pages.find(page => {
+        return page.regularPath === this.normalizedPath;
+      });
     },
     normalizedPath() {
       return this.$props.examplePage.replace(/\.(html|md)$/, "") + ".html";
-    }
-  },
-  methods: {
-    findPageByHtmlOrMarkdownPath() {
-      const pageData = this.$site.pages.find(page => {
-        return page.regularPath === this.normalizedPath;
-      });
-      if (pageData == null) {
-        throw new Error(`Page ${this.normalizedPath} not found`);
-      }
-      return pageData;
     }
   }
 };
@@ -53,5 +56,23 @@ export default {
         border: 0.25rem solid $baseColor;
         padding: 0.25rem;
     }
+
+  &.error {
+    color: darkred;
+    border: 1px solid darkred;
+
+    > header {
+      font-weight: bold;
+      border-bottom: 1px dashed red;
+      padding: 0.25rem 0.5rem;
+    }
+
+    > section {
+      padding: 0.25rem 0.5rem;
+      white-space pre;
+      overflow: auto
+      line-height: 1.25em;
+    }
+  }
 }
 </style>

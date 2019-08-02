@@ -2,7 +2,11 @@
 
 const handlebarsVersions = require("./lib/handlebars-versions");
 
-module.exports = function storeHandlebarsVersionAtVuePrototype() {
+module.exports = {
+  storeHandlebarsVersionAtVuePrototype
+};
+
+function storeHandlebarsVersionAtVuePrototype() {
   return {
     name: "storeHandlebarsVersionAtVuePrototype",
     async enhanceAppFiles() {
@@ -16,4 +20,4 @@ module.exports = function storeHandlebarsVersionAtVuePrototype() {
       };
     }
   };
-};
+}

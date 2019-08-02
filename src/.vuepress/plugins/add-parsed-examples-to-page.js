@@ -3,33 +3,44 @@
 const Handlebars = require("handlebars");
 const { prettifyJson } = require("./lib/prettify-json");
 
-module.exports = function prerenderExampleCode() {
+module.exports = {
+  addParsedExampleToPage
+};
+
+function addParsedExampleToPage() {
   return {
     name: "prerender-example-code",
     extendPageData($page) {
       const { frontmatter, _filePath } = $page;
 
-      const example = frontmatter.example;
-      if (example != null) {
-        frontmatter.parsedExample = parseExampleWithErrorHandling(example, _filePath);
+      if (frontmatter.example == null) {
+        return;
       }
+      addParsedExampleOrErrorToFrontMatter(frontmatter, _filePath);
     }
   };
-};
+}
 
-function parseExampleWithErrorHandling(example, filepath) {
+function addParsedExampleOrErrorToFrontMatter(frontmatter, filePath) {
   try {
-    return parseExample(example);
+    frontmatter.parsedExample = parseExample(frontmatter.example);
   } catch (error) {
-    console.error("Error while running handlebars for example page " + filepath, error.stack);
-    return error.message;
+    frontmatter.errorWhileParsingExample = {
+      message: error.message,
+      stack: error.stack
+    };
+    console.error("Error while running handlebars for example page " + filePath, error.stack);
   }
 }
 
 function parseExample(example) {
   const normalizedExample = normalizeExample(example);
-  const output = runHandlebars(normalizedExample);
-  return prepareResultForRendering(normalizedExample, output);
+  try {
+    const output = runHandlebars(normalizedExample);
+    return prepareResultForRendering(normalizedExample, output);
+  } catch (error) {
+    return prepareErrorResult(normalizedExample, error);
+  }
 }
 
 function normalizeExample(example) {
@@ -78,4 +89,14 @@ function partialsAsNameContentArray(example) {
       content: example.partials[partialName]
     };
   });
+}
+
+function prepareErrorResult(example, error) {
+  return {
+    template: example.template,
+    partials: partialsAsNameContentArray(example),
+    preparationScript: example.preparationScript,
+    input: prettifyJson(example.input),
+    error: error
+  };
 }
