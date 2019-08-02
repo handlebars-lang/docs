@@ -56,7 +56,17 @@ class ExampleParser {
       preparationScript: this.normalizedExample.preparationScript,
       input: prettifyJson(this.normalizedExample.input),
       output: this.handlebarsOutput,
-      error: this.handlebarsExecutionError
+      error: this._handlebarsExecutionErrorWithEnumerableProperties()
+    };
+  }
+
+  _handlebarsExecutionErrorWithEnumerableProperties() {
+    if (this.handlebarsExecutionError == null) {
+      return null;
+    }
+    return {
+      message: this.handlebarsExecutionError.message,
+      stack: this.handlebarsExecutionError.stack
     };
   }
 

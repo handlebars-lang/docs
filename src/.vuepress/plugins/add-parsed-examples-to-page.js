@@ -25,7 +25,6 @@ function addParsedExampleToPage() {
 
       errorCollector.collectErrorIfNotNull(_filePath, exampleParser.parseError);
       errorCollector.collectErrorIfNotNull(_filePath, exampleParser.handlebarsExecutionError);
-      console.log(exampleParser.handlebarsExecutionError);
     },
     generated() {
       // executed only when "building", not when "developing".
