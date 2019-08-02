@@ -31,9 +31,9 @@
     "lint-staged": "^8.2.1",
     "markdown-it": "^8.4.2",
     "prettier": "^1.18.2",
-    "semver": "^6.2.0",
+    "semver": "^6.3.0",
     "static-server": "^2.2.1",
-    "vuepress": "^1.0.2"
+    "vuepress": "^1.0.3"
   },
   "husky": {
     "hooks": {
@@ -54,7 +54,7 @@
     "babel-eslint": "^10.0.2",
     "codemirror": "^5.48.2",
     "handlebars": "^4.1.2",
-    "highlight.js": "^9.15.8",
+    "highlight.js": "^9.15.9",
     "json5": "^2.1.0",
     "vue-cm": "^1.1.0"
   }
