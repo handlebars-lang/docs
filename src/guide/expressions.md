@@ -56,7 +56,7 @@ Handlebars HTML-escapes values returned by a `{{expression}}`. If you don't want
 
 :::
 
-<Example examplePage="/examples/html-escaping" showInputOutput="true" />
+<Example examplePage="/examples/html-escaping" :showInputOutput="true" />
 
 ## Helpers
 

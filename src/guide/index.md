@@ -101,7 +101,7 @@ The builting block-helpers `{{#each}}` and `{{#with}}` allow you to change the c
 
 :::
 
-<Example examplePage="/examples/each-with" showInputOutput="true" />
+<Example examplePage="/examples/each-with" :showInputOutput="true" />
 
 ## Nested Handlebars Paths
 
@@ -112,7 +112,7 @@ properties nested below the current context.
 
 :::
 
-<Example examplePage="/examples/path-expressions-dot" showInputOutput="true" />
+<Example examplePage="/examples/path-expressions-dot" :showInputOutput="true" />
 
 This makes it possible to use Handlebars templates with more raw JSON objects. It is also possible, to use `/` as path
 delimiter:
@@ -121,7 +121,7 @@ delimiter:
 
 Nested handlebars paths can also include `../` segments, which evaluate their paths against a parent context.
 
-<Example examplePage="/examples/path-expressions-dot-dot" showInputOutput="true"/>
+<Example examplePage="/examples/path-expressions-dot-dot" :showInputOutput="true"/>
 
 Even though the name is printed while in the context of a comment, it can still go back to the main context (the
 root-object) to retrieve the prefix.
@@ -136,13 +136,11 @@ helpers such as `{{#if}}` do not.
 
 :::
 
-In this example all of the above reference the same permalink value even though they are located within different
-blocks. This behavior is new as of Handlebars 4, the release notes discuss the prior behavior as well as the migration
-plan. Handlebars also allows for name conflict resolution between helpers and data fields via a this reference:
+In this example all of the above reference the same prefix value even though they are located within different blocks.
+This behavior is new as of Handlebars 4, the release notes discuss the prior behavior as well as the migration plan.
+Handlebars also allows for name conflict resolution between helpers and data fields via a this reference:
 
-```handlebars
-<p>{{./name}} or {{this/name}} or {{this.name}}</p>
-```
+<Example examplePage="/examples/helper-data-name-conflict" :hidePreparationScript="true" />
 
 Any of the above would cause the name field on the current context to be used rather than a helper of the same name.
 
