@@ -178,9 +178,7 @@ Helpers receive the current context as the `this`-context of the function.
 Helper calls may also have literal values passed to them either as parameter arguments or hash arguments. Supported
 literals include numbers, strings, `true`, `false`, `null` and ? `undefined`.
 
-```handlebars
-{{agree_button "My Text" class="my-class" visible=true counter=4}}
-```
+<Example examplePage="/examples/helper-literals" :showInputOutput="false" />
 
 ## Block Expressions
 
