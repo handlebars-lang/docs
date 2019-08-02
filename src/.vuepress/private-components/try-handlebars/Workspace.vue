@@ -33,7 +33,7 @@
         @input="executeExample"
       />
     </div>
-    <div v-if="currentExample.preparationScript" class="workspace-row">
+    <div v-if="currentExample.preparationScript && !hidePreparationScript" class="workspace-row">
       <workspace-element
         v-model="currentExample.preparationScript"
         title="Preparation-Script"
@@ -76,7 +76,8 @@ export default {
   props: {
     parsedExample: { type: Object, required: true },
     interactive: { type: Boolean, default: false },
-    showInputOutput: { type: Boolean, default: false }
+    showInputOutput: { type: Boolean, default: false },
+    hidePreparationScript: { type: Boolean, default: false }
   },
   data() {
     let parsedExample = this.$props.parsedExample;

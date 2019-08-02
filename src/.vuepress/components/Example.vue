@@ -3,7 +3,11 @@
     <router-link class="example-show-in-playground" :to="normalizedPath">
       Open in interactive playground!
     </router-link>
-    <workspace :parsed-example="exampleData" :show-input-output="Boolean(showInputOutput)" />
+    <workspace
+      :parsed-example="exampleData"
+      :show-input-output="showInputOutput"
+      :hide-preparation-script="hidePreparationScript"
+    />
   </div>
   <div v-else class="handlebars-example error">
     <header>Error while parsing example "{{ normalizedPath }}":</header>
@@ -17,7 +21,8 @@ export default {
   components: { Workspace },
   props: {
     examplePage: { type: String, required: true },
-    showInputOutput: { type: [Boolean, String], default: false }
+    showInputOutput: { type: [Boolean], default: false },
+    hidePreparationScript: { type: [Boolean], default: false }
   },
   computed: {
     error() {
