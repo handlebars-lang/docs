@@ -25,3 +25,7 @@ people:
     lastname: Katz
     url: https://yehudakatz.com/
     resident-in: San Francisco
+  - firstname: Carl
+    lastname: Lerche
+  - firstname: Alan
+    lastname: Johnson

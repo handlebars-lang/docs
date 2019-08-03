@@ -178,31 +178,17 @@ literals include numbers, strings, `true`, `false`, `null` and ? `undefined`.
 
 <Example examplePage="/examples/helper-literals" :showInputOutput="false" />
 
-## Block Expressions
+## Block Helpers
 
 Block expressions allow you to define helpers that will invoke a section of your template with a different context than
 the current. These block helpers are identified by a `#` preceeding the helper name and require a matching closing
 mustache, `/`, of the same name. Let's consider a helper that will generate an HTML list:
 
-```handlebars
-{{#list people}}{{firstName}} {{lastName}}{{/list}}
-```
+<Example examplePage="/examples/helper-block" :showInputOutput="true" />
 
-If we have the following context:
-
-```json
-{
-  "people": [
-    { "firstName": "Yehuda", "lastName": "Katz" },
-    { "firstName": "Carl", "lastName": "Lerche" },
-    { "firstName": "Alan", "lastName": "Johnson" }
-  ]
-}
-```
-
-we would create a helper named list to generate our HTML list. The helper receives the people as its first parameter,
-and an options hash as its second parameter. The options hash contains a property named fn, which you can invoke with a
-context just as you would invoke a normal Handlebars template.
+The example creates a helper named `list` to generate our HTML list. The helper receives the `people` as its first
+parameter, and an `options` hash as its second parameter. The options hash contains a property named `fn`, which you can
+invoke with a context just as you would invoke a normal Handlebars template.
 
 ```js
 Handlebars.registerHelper("list", function(items, options) {
