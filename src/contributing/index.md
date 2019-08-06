@@ -37,6 +37,7 @@ This means that you can use syntax described in these sources:
 In addition to all those extensions, this site adds some custom Vue-components that can be embedded in source files.
 
 - [Interactive Examples](interactive-examples.md)
+- [Button Links](button-links.md)
 
 ## How should I behave?
 

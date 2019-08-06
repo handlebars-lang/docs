@@ -109,3 +109,24 @@ h1, h2, h3, h4, h5, h6 {
     // Makes the header end before a float-right div
     display: flex;
 }
+
+$buttonLinkBgColor = darken($baseColor, 10%);
+$buttonLinkColor = white;
+
+.button-link,.custom-block.warning a.button-link {
+    display: inline;
+    border: $borderColor;
+    background-color: $buttonLinkBgColor;
+    padding: 0.5rem;
+    color: $buttonLinkColor;
+    border-radius: 3px;
+    text-shadow: 1px 1px 2px black;
+
+    &:hover {
+        box-shadow: 1px 1px 2px black;
+    }
+
+    &:active:hover {
+        box-shadow: none;
+    }
+}

@@ -1,6 +1,6 @@
 # Guide
 
-[Installation](./installation.html)
+!button[Installation](./installation.html)
 
 ## Getting Started
 
@@ -10,7 +10,7 @@ Handlebars templates look like regular HTML, with embedded handlebars expression
 
 A handlebars expression is a `{{`, some contents, followed by a `}}`
 
-[Learn More: Expressions](expressions.html)
+!button[Learn More: Expressions](expressions.html)
 
 You can deliver a template to the browser by including it in a `<script>` tag.
 
@@ -45,7 +45,7 @@ Please note that this approach is not recommended for production applications. A
 templates. This will result in a smaller required runtime library and significant savings from not having to compile the
 template in the browser. This can be especially important when working with mobile devices.
 
-[Learn More: Precompilation](precompilation.html)
+!button[Learn More: Precompilation](precompilation.html)
 
 :::
 
@@ -67,7 +67,7 @@ results in
 </div>
 ```
 
-[Learn More: Execution](execution.html)
+!button[Learn More: Execution](execution.html)
 
 ## HTML Escaping
 
@@ -218,7 +218,7 @@ Block helpers have more features, such as the ability to create an `else` sectio
 Since the contents of a block helper are escaped when you call `options.fn(context)`, Handlebars does not escape the
 results of a block helper. If it did, inner content would be double-escaped!
 
-[Learn More: Block Helpers](block-helpers.html)
+!button[Learn More: Block Helpers](block-helpers.html)
 
 ## Partials
 
@@ -270,16 +270,16 @@ results in:
 </div>
 ```
 
-[Learn More: Partials](partials.html)
+!button[Learn More: Partials](partials.html)
 
 ## Built-In Helpers
 
 Handlebars offers a variety of built-in helpers such as the if conditional and each iterator.
 
-[Learn More: Built-In Helpers](builtin-helpers.html)
+!button[Learn More: Built-In Helpers](builtin-helpers.html)
 
 ## API Reference
 
 Handlebars offers a variety of APIs and utility methods for applications and helpers.
 
-[Learn More: API Reference](api-reference.html)
+!button[Learn More: API Reference](api-reference.html)
