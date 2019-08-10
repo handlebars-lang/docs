@@ -14,7 +14,7 @@ Attributes:
   it exists.
 
 The example itself is defined in the frontmatter of the referenced example page. See
-[src/examples/all-features.md][all-features-example-raw] for a complete demonstration of all features.
+[all-features-example-raw](../examples/all-features.md) for a complete demonstration of all features.
 
 The following frontmatter properties are supported:
 
