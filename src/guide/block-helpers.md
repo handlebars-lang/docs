@@ -361,8 +361,8 @@ This allows for nested helpers to avoid name conflicts that can occur with priva
 {{/each}}
 ```
 
-A number of [builtin helpers] support block parameters and any custom helper may provide them through the `blockParams`
-options field.
+A number of [builtin helpers](builtin-helpers.html) support block parameters and any custom helper may provide them
+through the `blockParams` options field.
 
 Implements a helper that allows for named variable declarations within a given block. This example would output `1 2 3`
 on render.
