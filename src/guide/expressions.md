@@ -64,7 +64,7 @@ A Handlebars helper call is a simple identifier, followed by zero or more parame
 parameter is a Handlebars expression.
 
 ```handlebars
-{{{link story}}}
+{{link story}}
 ```
 
 In this case, `link` is the name of a Handlebars helper, and story is a parameter to the helper. Handlebars evaluates
@@ -85,7 +85,7 @@ default. When using SafeString all unknown or unsafe data should be manually esc
 You can also pass a simple String, number, or boolean as a parameter to Handlebars helpers.
 
 ```handlebars
-{{{link "See more..." story.url}}}
+{{link "See more..." story.url}}
 ```
 
 In this case, Handlebars will pass the link helper two parameters: the String `"See more..."` and the result of
@@ -103,14 +103,14 @@ Handlebars.registerHelper("link", function(text, url) {
 You could use the exact same helper with dynamic text based on the value of `story.text`:
 
 ```handlebars
-{{{link story.text story.url}}}
+{{link story.text story.url}}
 ```
 
 Handlebars helpers can also receive an optional sequence of key-value pairs as their final parameter (referred to as
 hash arguments in the documentation):
 
 ```handlebars
-{{{link "See more..." href=story.url class="story"}}}
+{{link "See more..." href=story.url class="story"}}
 ```
 
 The keys in hash arguments must each be simple identifiers, and the values are Handlebars expressions. This means that
