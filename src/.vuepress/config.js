@@ -50,6 +50,13 @@ module.exports = {
   },
   plugins: [
     "@vuepress/pwa",
+    {
+      serviceWorker: true,
+      updatePopup: {
+        message: "New content available",
+        buttonText: "Refresh"
+      }
+    },
     require("./plugins/inject-handlebars-versions").storeHandlebarsVersionAtVuePrototype,
     require("./plugins/add-parsed-examples-to-page").addParsedExampleToPage,
     require("./plugins/button-link").buttonLink
