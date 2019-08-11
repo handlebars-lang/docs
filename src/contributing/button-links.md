@@ -6,6 +6,6 @@ In order to make a link look like a button, use the syntax
 !button[Link Text](./link-target.html)
 ```
 
-This will render the following HTML
+This will render the following HTML:
 
 !button[Link Text](./link-target.html)
