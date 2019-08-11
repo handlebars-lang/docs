@@ -8,14 +8,8 @@ module.exports = {
   base: basePath,
   title: "Handlebars (draft)",
   head: [
-    [
-      "link",
-      {
-        rel: "shortcut icon",
-        type: "image/png",
-        href: `/images/favicon.png`
-      }
-    ]
+    ["link", { rel: "shortcut icon", type: "image/png", href: `/images/favicon.png` }],
+    ["link", { rel: "manifest", href: "/manifest.json" }]
   ],
   dest: "target/",
   themeConfig: {
