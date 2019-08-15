@@ -52,6 +52,7 @@ module.exports = {
     ],
     require("./plugins/inject-handlebars-versions").storeHandlebarsVersionAtVuePrototype,
     require("./plugins/add-parsed-examples-to-page").addParsedExampleToPage,
-    require("./plugins/button-link").buttonLink
+    require("./plugins/button-link").buttonLink,
+    require("./plugins/ensure-gh-pages-custom-domain").ensureGhPagesCustomDomain
   ]
 };
