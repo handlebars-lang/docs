@@ -59,7 +59,7 @@
         style-class="workspace-output"
         language="html"
         :value="currentExample.output"
-        :interactive="false"
+        :interactive="interactive"
       />
     </div>
   </div>
