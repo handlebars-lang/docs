@@ -4,11 +4,10 @@
 import { ExampleParser } from "../lib/example-parser";
 import { ErrorCollector } from "./lib/error-collector";
 
-export default function addParsedExampleToPage() {
+export function addParsedExampleToPage() {
   const errorCollector = new ErrorCollector();
-
   return {
-    name: "prerender-example-code",
+    name: "add-parsed-example-to-page",
     extendPageData($page) {
       const { frontmatter, _filePath } = $page;
 

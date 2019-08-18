@@ -1,6 +1,6 @@
 /* eslint-env node */
 
-export default function buttonLink() {
+export function buttonLink() {
   return {
     name: "button link",
     extendMarkdown(md) {
