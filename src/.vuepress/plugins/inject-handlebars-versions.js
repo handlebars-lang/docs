@@ -3,7 +3,7 @@
 
 import { retrieveHandlebarsVersions } from "../lib/handlebars-versions";
 
-export function storeHandlebarsVersionAtVuePrototype() {
+export default function storeHandlebarsVersionAtVuePrototype() {
   return {
     name: "storeHandlebarsVersionAtVuePrototype",
     async enhanceAppFiles() {

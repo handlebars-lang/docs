@@ -53,9 +53,9 @@ module.exports = {
         updatePopup: true
       }
     ],
-    require("./plugins/inject-handlebars-versions").storeHandlebarsVersionAtVuePrototype,
-    require("./plugins/add-parsed-examples-to-page").addParsedExampleToPage,
-    require("./plugins/button-link").buttonLink,
-    require("./plugins/ensure-gh-pages-custom-domain").ensureGhPagesCustomDomain
+    require("./plugins/inject-handlebars-versions"),
+    require("./plugins/add-parsed-examples-to-page"),
+    require("./plugins/button-link"),
+    require("./plugins/ensure-gh-pages-custom-domain")
   ]
 };

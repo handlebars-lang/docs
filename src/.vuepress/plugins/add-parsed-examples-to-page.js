@@ -4,7 +4,7 @@
 import { ExampleParser } from "../lib/example-parser";
 import { ErrorCollector } from "./lib/error-collector";
 
-export function addParsedExampleToPage() {
+export default function addParsedExampleToPage() {
   const errorCollector = new ErrorCollector();
 
   return {
