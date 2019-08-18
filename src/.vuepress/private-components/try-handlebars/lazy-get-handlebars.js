@@ -19,7 +19,7 @@ async function loadHandlebarsWhenReady(version) {
 
 async function loadHandlebarsNow(version) {
   const script = createHandlebarsScriptElement(version);
-  return new Promise(async (resolve, reject) => {
+  return new Promise((resolve, reject) => {
     script.addEventListener("load", () => {
       try {
         let globalHandlebars = getAndRemoveGlobalHandlebars(version);
