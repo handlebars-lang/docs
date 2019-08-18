@@ -4,12 +4,15 @@
   "description": "The new-to-be handlebars documentation site",
   "private": true,
   "scripts": {
-    "dev": "vuepress dev src ",
     "clean": "rm -rf target  node_modules/@vuepress/core/node_modules/.cache/",
-    "build": "vuepress build src",
-    "preview": "npm run build && cd target && static-server",
-    "lintfix": "eslint --fix 'src/.vuepress/**/*.{js,vue}' ",
-    "format": "prettier --write 'src/**/*.{js,css,json,md,vue}'"
+    "dev": "vuepress dev src",
+    "preview": "npm run clean && npm run test-and-build && cd target && static-server",
+    "fix": "npm run format && npm run lintfix",
+    "test-and-build": "concurrently --kill-others npm:lint npm:test npm:build",
+    "lint": "eslint 'src/.vuepress/**/*.{js,vue}' ",
+    "test": "jest",
+    "format": "prettier --write 'src/**/*.{js,css,json,md,vue}'",
+    "build": "vuepress build src"
   },
   "repository": {
     "type": "git",
@@ -23,13 +26,17 @@
   },
   "homepage": "https://github.com/handlebars-lang/docs#readme",
   "devDependencies": {
+    "@vue/eslint-config-prettier": "^5.0.0",
     "@vuepress/plugin-pwa": "^1.0.0-rc.1",
     "axios": "^0.18.1",
+    "concurrently": "^4.1.2",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-jest": "^22.15.1",
     "eslint-plugin-vue": "^5.2.3",
     "fs-extra": "^8.1.0",
     "husky": "^2.7.0",
+    "jest": "^24.9.0",
     "lint-staged": "^8.2.1",
     "markdown-it": "^8.4.2",
     "prettier": "^1.18.2",

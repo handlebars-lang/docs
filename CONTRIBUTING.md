@@ -21,15 +21,24 @@ The following tools will help you developing
 
 # Setup / Commands
 
-After cloning the repository,
+After cloning the repository you probaby want to run the following commands:
 
 - `npm install` (required) installs the dependencies libraries and is required for building the site.
 - `npm run dev` runs a webpack-dev-server, usually on port 8080. This server features live-reloading. Styles will
   automatically be updated when you change the source files. Changes in markdown changes and Vue.js components will be
   visible immediately. _Note that changes to the file `src/.vuepress/config.js` are not part of the live-reload and
   require a restart of the command._
-- `npm run preview` will build and preview the site. This command gives a production-like preview of the site, serving
-  essentially the same files as on the actual site. Default port is 9080.
+- `npm run preview` should be run prior to creating a pull-request. It will clean the build-directories, run tests and
+  linters, the site. A production-like preview of the site can be viewed at port 9080
+
+Other commands are not needed as often:
+
+- `npm run fix` trys to fix all `eslint` errors and runs `prettier` to format everything. This is also done in a
+  pre-commit hook so it should not be necessary to run this command manually.
+- `npm run clean` removes all cached and built files. This can be helpful if you have errors that you cannot explain and
+  that just won't go away.
+- The scripts `test`,`lint`, `format` and `build` just exist to make the other commands in the `package.json` more
+  readable.
 
 ## Differences between dev-server and production
 
