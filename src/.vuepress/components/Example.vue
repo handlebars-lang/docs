@@ -9,9 +9,9 @@
       :hide-preparation-script="hidePreparationScript"
     />
   </div>
-  <div v-else class="handlebars-example error">
-    <header>Error while parsing example "{{ normalizedPath }}":</header>
-    <section>{{ error.stack }}</section>
+  <div v-else class="handlebars-example not-found">
+    <header>Example {{ normalizedPath }} not found</header>
+    <section>Please verify that the path is correct.</section>
   </div>
 </template>
 <script>
@@ -25,12 +25,6 @@ export default {
     hidePreparationScript: { type: [Boolean], default: false }
   },
   computed: {
-    error() {
-      if (this.examplePageData == null) {
-        return new Error(`Page "${this.normalizedPath}" not found`);
-      }
-      return this.examplePageData.frontmatter.errorWhileParsingExample;
-    },
     exampleData() {
       return this.examplePageData && this.examplePageData.frontmatter.parsedExample;
     },
@@ -62,7 +56,7 @@ export default {
         padding: 0.25rem;
     }
 
-  &.error {
+  &.not-found {
     color: darkred;
     border: 1px solid darkred;
 

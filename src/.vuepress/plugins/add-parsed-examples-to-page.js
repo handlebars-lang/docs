@@ -17,9 +17,7 @@ export function addParsedExampleToPage() {
 
       const exampleParser = new ExampleParser(frontmatter.example);
       frontmatter.parsedExample = exampleParser.parse();
-      frontmatter.errorWhileParsingExample = exampleParser.parseError;
 
-      errorCollector.collectErrorIfNotNull(_filePath, exampleParser.parseError);
       errorCollector.collectErrorIfNotNull(_filePath, exampleParser.handlebarsExecutionError);
     },
     generated() {

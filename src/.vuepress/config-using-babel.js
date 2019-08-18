@@ -8,7 +8,6 @@ import { addParsedExampleToPage } from "./plugins/add-parsed-examples-to-page";
 import { buttonLink } from "./plugins/button-link";
 import { ensureGhPagesCustomDomain } from "./plugins/ensure-gh-pages-custom-domain";
 
-console.log(addParsedExampleToPage);
 console.log(`basePath: ${basePath}`);
 export default {
   base: basePath,

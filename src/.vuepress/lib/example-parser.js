@@ -3,9 +3,18 @@ import Handlebars from "handlebars";
 
 export class ExampleParser {
   constructor(originalExample) {
-    this.originalExample = originalExample;
-    this.normalizedExample = null;
-    this.parseError = null;
+    const template = originalExample.template;
+    const partials = originalExample.partials || {};
+    const preparationScript = originalExample.preparationScript || "";
+
+    let input = originalExample.input;
+    if (input === undefined) {
+      input = null;
+    }
+
+    this.normalizedExample = { template, input, partials, preparationScript };
+
+    this.prettifiedInputAsString = null;
     this.handlebarsExecutionError = null;
     this.handlebarsOutput = null;
   }
@@ -14,25 +23,13 @@ export class ExampleParser {
    * Entrypoint for parsing
    */
   parse() {
-    this._normalizeExample();
-    this._tryToRunHandlebars();
-    return this._prepareResultForRendering();
-  }
-
-  _normalizeExample() {
-    this.normalizedExample = {
-      ...this.originalExample,
-      partials: this.originalExample.partials || {},
-      preparationScript: this.originalExample.preparationScript || ""
-    };
-  }
-
-  _tryToRunHandlebars() {
     try {
-      this.handlebarsOutput = this._runHandlebars();
+      this._runHandlebars();
+      this._prettifyInput();
     } catch (error) {
       this.handlebarsExecutionError = error;
     }
+    return this._prepareResultForRendering();
   }
 
   _runHandlebars() {
@@ -40,7 +37,7 @@ export class ExampleParser {
     handlebars.registerPartial(this.normalizedExample.partials);
     this._runPreparationScript(handlebars);
     const template = handlebars.compile(this.normalizedExample.template);
-    return template(this.normalizedExample.input);
+    this.handlebarsOutput = template(this.normalizedExample.input);
   }
 
   _runPreparationScript(handlebars) {
@@ -48,12 +45,19 @@ export class ExampleParser {
     compiledPreparationScript.call(undefined, handlebars);
   }
 
+  _prettifyInput() {
+    // if (this.normalizedExample.input == null) {
+    //   throw new Error("Example property 'input' may not be null or undefined")
+    // }
+    this.prettifiedInputAsString = prettifyJson(this.normalizedExample.input);
+  }
+
   _prepareResultForRendering() {
     return {
       template: this.normalizedExample.template,
       partials: this._partialsAsNameContentArray(),
       preparationScript: this.normalizedExample.preparationScript,
-      input: prettifyJson(this.normalizedExample.input),
+      input: this.prettifiedInputAsString,
       output: this.handlebarsOutput,
       error: this._handlebarsExecutionErrorWithEnumerableProperties()
     };
