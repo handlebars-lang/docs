@@ -1,6 +1,6 @@
 <template>
   <div class="workspace">
-    <div class="workspace-header" v-if="interactive">
+    <div v-if="interactive" class="workspace-header">
       <div class="version-chooser">
         Handlebars:
         <handlebars-version-chooser v-model="currentExample.handlebarsVersion" @input="executeExample" />
@@ -95,6 +95,27 @@ export default {
     };
   },
   methods: {
+    addPartial() {
+      if (this.currentExample.partials == null) {
+        this.currentExample.partials = [];
+      }
+      this.currentExample.partials.push({
+        name: "new_partial",
+        content: ""
+      });
+      this.exampleContentChanged();
+    },
+    deletePartial(index) {
+      this.currentExample.partials.splice(index, 1);
+      this.exampleContentChanged();
+    },
+    renamePartialTo(partial, newName) {
+      partial.name = newName;
+      this.exampleContentChanged();
+    },
+    exampleContentChanged() {
+      this.executeExample();
+    },
     executeExample() {
       Vue.nextTick(async () => {
         try {
@@ -104,24 +125,6 @@ export default {
           this.currentError = err;
         }
       });
-    },
-    addPartial() {
-      if (this.currentExample.partials == null) {
-        this.currentExample.partials = [];
-      }
-      this.currentExample.partials.push({
-        name: "new_partial",
-        content: ""
-      });
-      this.executeExample();
-    },
-    deletePartial(index) {
-      this.currentExample.partials.splice(index, 1);
-      this.executeExample();
-    },
-    renamePartialTo(partial, newName) {
-      partial.name = newName;
-      this.executeExample();
     }
   }
 };
