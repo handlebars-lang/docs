@@ -66,6 +66,7 @@
     "codemirror": "^5.48.2",
     "handlebars": "^4.1.2",
     "highlight.js": "^9.15.9",
+    "js-yaml": "^3.13.1",
     "json5": "^2.1.0",
     "vue-cm": "^1.1.0"
   }
