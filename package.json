@@ -8,7 +8,7 @@
     "dev": "vuepress dev src",
     "preview": "npm run clean && npm run test-and-build && cd target && static-server",
     "fix": "npm run format && npm run lintfix",
-    "test-and-build": "concurrently --kill-others npm:lint npm:test npm:build",
+    "test-and-build": "concurrently --kill-others-on-fail npm:lint npm:test npm:build",
     "lint": "eslint '**/*.{js,vue}' ",
     "test": "jest",
     "format": "prettier --write 'src/**/*.{js,css,json,md,vue}'",
