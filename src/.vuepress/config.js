@@ -3,6 +3,9 @@
 
 const basePath = process.env.VUEPRESS_BASE || "/";
 
+// allow es-modules in nodejs libs
+require("@babel/register");
+
 console.log(`basePath: ${basePath}`);
 module.exports = {
   base: basePath,

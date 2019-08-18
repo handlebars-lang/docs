@@ -1,13 +1,10 @@
 /* eslint-disable no-console */
+/* eslint-env node */
 
-const { ExampleParser } = require("./lib/example-parser");
-const { ErrorCollector } = require("./lib/error-collector");
+import { ExampleParser } from "../lib/example-parser";
+import { ErrorCollector } from "./lib/error-collector";
 
-module.exports = {
-  addParsedExampleToPage
-};
-
-function addParsedExampleToPage() {
+export function addParsedExampleToPage() {
   const errorCollector = new ErrorCollector();
 
   return {
@@ -19,7 +16,7 @@ function addParsedExampleToPage() {
         return;
       }
 
-      const exampleParser = new ExampleParser(frontmatter.example, _filePath);
+      const exampleParser = new ExampleParser(frontmatter.example);
       frontmatter.parsedExample = exampleParser.parse();
       frontmatter.errorWhileParsingExample = exampleParser.parseError;
 

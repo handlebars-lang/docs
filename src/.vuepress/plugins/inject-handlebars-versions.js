@@ -1,16 +1,13 @@
 /* eslint-disable no-console */
+/* eslint-env node */
 
-const handlebarsVersions = require("./lib/handlebars-versions");
+import { retrieveHandlebarsVersions } from "../lib/handlebars-versions";
 
-module.exports = {
-  storeHandlebarsVersionAtVuePrototype
-};
-
-function storeHandlebarsVersionAtVuePrototype() {
+export function storeHandlebarsVersionAtVuePrototype() {
   return {
     name: "storeHandlebarsVersionAtVuePrototype",
     async enhanceAppFiles() {
-      const versions = await handlebarsVersions.retrieveVersions();
+      const versions = await retrieveHandlebarsVersions();
       console.log("Injecting handlebars versions" + JSON.stringify(versions));
       return {
         name: "storeHandlebarsVersionAtVuePrototype",

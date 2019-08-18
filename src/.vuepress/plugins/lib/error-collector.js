@@ -1,10 +1,11 @@
 /* eslint-disable no-console */
 
-const path = require("path");
+import path from "path";
 
-class ErrorCollector {
-  constructor() {
+export class ErrorCollector {
+  constructor(workingDir) {
     this.filesAndErrors = [];
+    this.workingDir = workingDir;
   }
 
   collectErrorIfNotNull(filePath, error) {
@@ -27,7 +28,3 @@ class ErrorCollector {
     console.log("done");
   }
 }
-
-module.exports = {
-  ErrorCollector
-};

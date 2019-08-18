@@ -1,9 +1,8 @@
-const { prettifyJson } = require("./prettify-json");
-const Handlebars = require("handlebars");
+import { prettifyJson } from "./prettify-json";
+import Handlebars from "handlebars";
 
-class ExampleParser {
-  constructor(originalExample, filePath) {
-    this.filePath = filePath;
+export class ExampleParser {
+  constructor(originalExample) {
     this.originalExample = originalExample;
     this.normalizedExample = null;
     this.parseError = null;
@@ -79,7 +78,3 @@ class ExampleParser {
     });
   }
 }
-
-module.exports = {
-  ExampleParser
-};

@@ -1,7 +1,7 @@
-const axios = require("axios");
-const semver = require("semver");
+import axios from 'axios'
+import semver from 'semver'
 
-async function retrieveVersions() {
+export async function retrieveHandlebarsVersions() {
   const npmMetadata = await retrieveHandlebarsMetadataFromNpmjs();
 
   const allVersions = Object.keys(npmMetadata.versions).filter(version => semver.gte(version, "3.0.0"));
@@ -17,7 +17,3 @@ async function retrieveHandlebarsMetadataFromNpmjs() {
   const response = await axios.get("https://registry.npmjs.org/handlebars/");
   return response.data;
 }
-
-module.exports = {
-  retrieveVersions
-};

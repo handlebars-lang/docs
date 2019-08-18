@@ -1,11 +1,9 @@
-const fs = require("fs-extra");
-const path = require("path");
+/* eslint-env node */
 
-module.exports = {
-  ensureGhPagesCustomDomain
-};
+import fs from "fs-extra";
+import path from "path";
 
-function ensureGhPagesCustomDomain(options, ctx) {
+export function ensureGhPagesCustomDomain(options, ctx) {
   return {
     name: "copy CNAME to ensure custom domain settings on Github-pages",
     async generated() {

@@ -1,8 +1,6 @@
-module.exports = {
-  buttonLink
-};
+/* eslint-env node */
 
-function buttonLink() {
+export function buttonLink() {
   return {
     name: "button link",
     extendMarkdown(md) {
