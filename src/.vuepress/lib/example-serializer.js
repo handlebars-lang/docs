@@ -1,54 +1,50 @@
 import json5 from "json5";
 import yaml from "js-yaml";
 
-export class ExampleSerializer {
-  constructor(parsedExample) {
-    this.parsedExample = parsedExample;
-    this.exampleAsJsObject = undefined;
-  }
+export function serializeToYaml(parsedExample) {
+  const exampleAsJsObject = asFrontMatterJsObject(parsedExample);
+  return yaml.safeDump(exampleAsJsObject);
+}
 
-  toYaml() {
-    const exampleAsJsObject = this.toJsObject();
-    return yaml.safeDump(exampleAsJsObject);
+function asFrontMatterJsObject(parsedExample) {
+  if (parsedExample.template == null) {
+    throw new Error("Example must have a 'template' property: " + JSON.stringify(parsedExample));
   }
+  const exampleAsJsObject = {
+    template: parsedExample.template
+  };
+  _addPartialsToExample();
+  _addPreparationScriptToExample();
+  _addInputIfNotEmpty();
+  return exampleAsJsObject;
 
-  toJsObject() {
-    this.exampleAsJsObject = {
-      template: this.parsedExample.template
-    };
-    this._addInputIfNotEmpty();
-    this._addPreparationScriptToExample();
-    this._addPartialsToExample();
-    return this.exampleAsJsObject;
-  }
-
-  _addInputIfNotEmpty() {
-    let input = this.parsedExample.input;
-    if (input == null) {
+  function _addPartialsToExample() {
+    if (parsedExample.partials == null || parsedExample.partials.length === 0) {
       return;
     }
-    try {
-      this.exampleAsJsObject.input = json5.parse(input);
-    } catch (error) {
-      throw new Error(`Error while parsing json5-string '${input}': ` + error.message);
-    }
+    exampleAsJsObject.partials = {};
+    parsedExample.partials.forEach(partial => {
+      exampleAsJsObject.partials[partial.name] = partial.content;
+    });
   }
 
-  _addPreparationScriptToExample() {
-    let preparationScript = this.parsedExample.preparationScript;
+  function _addPreparationScriptToExample() {
+    let preparationScript = parsedExample.preparationScript;
     if (preparationScript == null || preparationScript.length === 0) {
       return;
     }
-    this.exampleAsJsObject.preparationScript = preparationScript;
+    exampleAsJsObject.preparationScript = preparationScript;
   }
 
-  _addPartialsToExample() {
-    if (this.parsedExample.partials == null || this.parsedExample.partials.length === 0) {
+  function _addInputIfNotEmpty() {
+    let input = parsedExample.input;
+    if (input == null || input.match(/^\s*{\s*}\s*$/)) {
       return;
     }
-    this.exampleAsJsObject.partials = {};
-    this.parsedExample.partials.forEach(partial => {
-      this.exampleAsJsObject.partials[partial.name] = partial.content;
-    });
+    try {
+      exampleAsJsObject.input = json5.parse(input);
+    } catch (error) {
+      throw new Error(`Error while parsing 'input' as json5 '${input}': ` + error.message);
+    }
   }
 }
