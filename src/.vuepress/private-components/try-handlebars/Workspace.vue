@@ -1,11 +1,15 @@
 <template>
   <div class="workspace">
+    <ExportYamlModal :yaml="exportedYaml" @close="deleteExportedYaml"></ExportYamlModal>
     <div v-if="interactive" class="workspace-header">
       <div class="version-chooser">
         Handlebars:
         <handlebars-version-chooser v-model="currentExample.handlebarsVersion" @input="executeExample" />
         <button @click="addPartial">
           Add partial
+        </button>
+        <button @click="copyAsYaml">
+          Copy as YAML
         </button>
       </div>
     </div>
@@ -70,9 +74,11 @@ import WorkspaceElement from "./WorkspaceElement.vue";
 import WorkspaceError from "./WorkspaceError.vue";
 import HandlebarsVersionChooser from "./HandlebarsVersionChooser.vue";
 import { executeExample } from "./execute-example";
+import { serializeToYaml } from "../../lib/example-serializer";
+import ExportYamlModal from "./ExportYamlModal";
 
 export default {
-  components: { WorkspaceElement, WorkspaceError, HandlebarsVersionChooser },
+  components: { WorkspaceElement, WorkspaceError, HandlebarsVersionChooser, ExportYamlModal },
   props: {
     parsedExample: { type: Object, required: true },
     interactive: { type: Boolean, default: false },
@@ -91,7 +97,8 @@ export default {
         handlebarsVersion: this.$handlebarsVersions.latest
       },
       currentError: parsedExample.error || null,
-      createdPartialCounter: 0
+      createdPartialCounter: 0,
+      exportedYaml: null
     };
   },
   methods: {
@@ -115,6 +122,12 @@ export default {
     },
     exampleContentChanged() {
       this.executeExample();
+    },
+    copyAsYaml() {
+      this.$data.exportedYaml = serializeToYaml(this.currentExample);
+    },
+    deleteExportedYaml() {
+      this.$data.exportedYaml = null;
     },
     executeExample() {
       Vue.nextTick(async () => {
