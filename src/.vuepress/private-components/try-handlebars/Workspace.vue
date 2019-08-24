@@ -153,6 +153,7 @@ export default {
       if (newExample) {
         this.$data.currentExample = newExample;
       }
+      this.executeExample();
     }
   }
 };
