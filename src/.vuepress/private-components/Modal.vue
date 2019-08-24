@@ -57,7 +57,6 @@ $modalBorderColor = darken(white, 10%);
 $modalFooterColor = darken(white, 10%);
 
 
-
 .modal-background {
     position: fixed;
     top: 0;
