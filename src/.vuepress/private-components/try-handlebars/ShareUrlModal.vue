@@ -54,7 +54,7 @@
 
       askQuestion() {
         const issueBody = `
-Please don't open issues for security issues!! Instead, file a report at https://www.npmjs.com/advisories/report?package=handlebars
+* [ ] This is NOT a security issues!! If it is, please file a report at https://www.npmjs.com/advisories/report?package=handlebars**
 
 # Example link
 
@@ -67,7 +67,7 @@ ${this.$props.urlForSharing}
       },
       fileBug() {
         const issueBody = `
-Please don't open issues for security issues!! Instead, file a report at https://www.npmjs.com/advisories/report?package=handlebars**
+* [ ] This is NOT a security issues!! If it is, please file a report at https://www.npmjs.com/advisories/report?package=handlebars**
 
 # Bug description
 
@@ -90,7 +90,6 @@ Here is a URL to verify the issue:
 ${this.$props.urlForSharing}
 
 `;
-
         document.location.href = `mailto:security@npmjs.com?body=${encodeURIComponent(body)}`;
       }
     }
