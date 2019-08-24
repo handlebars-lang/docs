@@ -1,6 +1,7 @@
 <template>
   <div class="workspace">
     <ExportYamlModal :yaml="exportedYaml" @close="deleteExportedYaml"></ExportYamlModal>
+    <ShareUrlModal :url-for-sharing="urlForSharing" @close="deleteUrlForSharing"></ShareUrlModal>
     <div v-if="interactive" class="workspace-header">
       <div class="version-chooser">
         Handlebars:
@@ -10,6 +11,9 @@
         </button>
         <button @click="copyAsYaml">
           Copy as YAML
+        </button>
+        <button @click="share">
+          Share (Experimental)
         </button>
       </div>
     </div>
@@ -76,9 +80,11 @@ import HandlebarsVersionChooser from "./HandlebarsVersionChooser.vue";
 import { executeExample } from "./execute-example";
 import { serializeToYaml } from "../../lib/example-serializer";
 import ExportYamlModal from "./ExportYamlModal";
+import { createSharedUrl, loadFromSharedUrl } from "./share-utils";
+import ShareUrlModal from "./ShareUrlModal";
 
 export default {
-  components: { WorkspaceElement, WorkspaceError, HandlebarsVersionChooser, ExportYamlModal },
+  components: { ShareUrlModal, WorkspaceElement, WorkspaceError, HandlebarsVersionChooser, ExportYamlModal },
   props: {
     parsedExample: { type: Object, required: true },
     interactive: { type: Boolean, default: false },
@@ -88,18 +94,15 @@ export default {
   data() {
     let parsedExample = this.$props.parsedExample;
     return {
-      currentExample: {
-        template: parsedExample.template,
-        partials: [...parsedExample.partials],
-        input: parsedExample.input,
-        output: parsedExample.output,
-        preparationScript: parsedExample.preparationScript,
-        handlebarsVersion: this.$handlebarsVersions.latest
-      },
+      currentExample: createCopyOfExample(this.$props.parsedExample, this.$handlebarsVersions.latest),
       currentError: parsedExample.error || null,
       createdPartialCounter: 0,
-      exportedYaml: null
+      exportedYaml: null,
+      urlForSharing: null
     };
+  },
+  mounted() {
+    this.loadSharedData();
   },
   methods: {
     addPartial() {
@@ -138,9 +141,32 @@ export default {
           this.currentError = err;
         }
       });
+    },
+    share() {
+      this.urlForSharing = createSharedUrl(this.$data.currentExample);
+    },
+    deleteUrlForSharing() {
+      this.urlForSharing = null;
+    },
+    loadSharedData() {
+      const newExample = loadFromSharedUrl();
+      if (newExample) {
+        this.$data.currentExample = newExample;
+      }
     }
   }
 };
+
+function createCopyOfExample(parsedExample, handlebarsVersion) {
+  return {
+    template: parsedExample.template,
+    partials: [...parsedExample.partials],
+    input: parsedExample.input,
+    output: parsedExample.output,
+    preparationScript: parsedExample.preparationScript,
+    handlebarsVersion
+  };
+}
 </script>
 <style lang="stylus">
 
