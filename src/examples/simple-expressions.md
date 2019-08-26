@@ -2,8 +2,7 @@
 layout: InteractivePlaygroundLayout
 example:
   template: |
-    {{firstname}} {{lastname}}
-  partials:
+    <p>{{firstname}} {{lastname}}</p>
   input:
     firstname: Yehuda
     lastname: Katz

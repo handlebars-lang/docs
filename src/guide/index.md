@@ -1,80 +1,41 @@
-# Guide
+# Language Guide
 
-!button[Installation](./installation.html)
+Handlebars is a simple templating language. If was first written for JavaScript, but has been ported to other languages
+like Java and even Rust.
 
-## Getting Started
+It uses a template and an input object to generate HTML or other text formats. Handlebars templates look like regular
+text, with embedded handlebars expressions.
 
-Handlebars templates look like regular HTML, with embedded handlebars expressions.
-
-<Example examplePage="/examples/simple-expressions" />
+<Example examplePage="/examples/simple-expressions" :showInputOutput="true"/>
 
 A handlebars expression is a `{{`, some contents, followed by a `}}`
 
 !button[Learn More: Expressions](expressions.html)
 
-You can deliver a template to the browser by including it in a `<script>` tag.
+## Installing and using Handlebars
 
-```html
-<script id="entry-template" type="text/x-handlebars-template">
-  <div class="entry">
-    <h1>{{title}}</h1>
-    <div class="body">
-      {{body}}
-    </div>
-  </div>
-</script>
-```
+The easiest way to use Handlebars in the browser is to load the script from a CDN. We have created a
+[JSFiddle](https://jsfiddle.net/L3ynz8ow/2/) to get you started quickly.
 
-::: warning
+::: warning Production setup
 
-It is important that you put the template inside a `<script>` tag. Do not put it into the HTML directly or the
-HTML-parser might modify it (for example, if it contains a table).
+We do not recommend this approach for any production use. If you want to use Handlebars in production however, you have
+a variety of options like
+
+- rendering HTML in a NodeJS-server,
+- precompiling templates at build-time, or
+- using a plugin for a build took like the `handlebars-loader` for Webpack
+
+!button[Lern More: Installing and using handlebars](/topics/installation.html)
 
 :::
-
-Compile a template in JavaScript by using `Handlebars.compile`
-
-```js
-var source = document.getElementById("entry-template").innerHTML;
-var template = Handlebars.compile(source);
-```
-
-::: warning
-
-Please note that this approach is not recommended for production applications. A better way is to precompile your
-templates. This will result in a smaller required runtime library and significant savings from not having to compile the
-template in the browser. This can be especially important when working with mobile devices.
-
-!button[Learn More: Precompilation](precompilation.html)
-
-:::
-
-Get the HTML result of evaluating a Handlebars template by executing the template with a context.
-
-```js
-var context = { title: "My New Post", body: "This is my first post!" };
-var html = template(context);
-```
-
-results in
-
-```html
-<div class="entry">
-  <h1>My New Post</h1>
-  <div class="body">
-    This is my first post!
-  </div>
-</div>
-```
-
-!button[Learn More: Execution](execution.html)
 
 ## HTML Escaping
 
 ::: v-pre
 
-Handlebars HTML-escapes values returned by a `{{expression}}`. If you don't want Handlebars to escape a value, use the
-"triple-stash", `{{{`.
+Because it was originally designed to generate HTML, Handlebars escapes values returned by a `{{expression}}`. If you
+don't want Handlebars to escape a value, use the "triple-stash", `{{{`.
 
 :::
 

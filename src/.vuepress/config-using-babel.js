@@ -20,7 +20,7 @@ export default {
   themeConfig: {
     nav: [
       { text: "Home", link: "/" },
-      { text: "Guide", link: "/guide/" },
+      { text: "Language Guide", link: "/guide/" },
       { text: "Improve the docs", link: "/contributing/" },
       {
         text: "Other sources",
@@ -30,13 +30,11 @@ export default {
     sidebar: [
       "/",
       "guide/",
-      "guide/installation.md",
+      "topics/installation.md",
       "guide/expressions.md",
-      "guide/execution.md",
-      "guide/precompilation.md",
+      "topics/precompilation.md",
       "guide/partials.md",
       "guide/block-helpers.md",
-      "guide/decorators.md",
       "guide/builtin-helpers.md",
       "guide/api-reference.md"
     ],
