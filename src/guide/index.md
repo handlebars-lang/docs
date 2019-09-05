@@ -1,6 +1,6 @@
 # Language Guide
 
-Handlebars is a simple templating language. If was first written for JavaScript, but has been ported to other languages
+Handlebars is a simple templating language. It was first written for JavaScript, but has been ported to other languages
 like Java and even Rust.
 
 It uses a template and an input object to generate HTML or other text formats. Handlebars templates look like regular
