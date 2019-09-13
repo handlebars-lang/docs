@@ -54,7 +54,7 @@ if the "triple-stash" is not used.
 
 ::: v-pre
 
-The builting block-helpers `{{#each}}` and `{{#with}}` allow you to change the current evaluation context.
+The built-in block-helpers `{{#each}}` and `{{#with}}` allow you to change the current evaluation context.
 
 - The `{{#each}}`-helper iterates an array, allowing to you access the properties of each object via simple handlebars
   expressions.
