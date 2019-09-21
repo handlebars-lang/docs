@@ -1,14 +1,16 @@
 # Interactive examples
 
+[[toc]]
+
 It is possible to define interactive examples. Examples or parts of an example can be **embedded in any page**. A
 auto-generated link enables the visitor to open the example in a **playground** where she can change the template,
 partials, input, and so on and can see the resulting output.
 
-## Defining examples
+## Creating examples
 
-In order to define an example, please create a new in the `examples`-directory. The example data is defined in the
-frontmatter of the referenced example page. See [all-features-example-raw](../examples/all-features.md) for a complete
-demonstration of all features.
+In order to define an example, create a new markdown file in the `examples`-directory. The example data is defined in
+the frontmatter of the referenced example page. See [all-features-example-raw](../examples/all-features.md) for a
+complete demonstration of all features.
 
 The following frontmatter properties are supported:
 
@@ -21,7 +23,9 @@ The following frontmatter properties are supported:
     as global variable in this script.
   - `input`: The template-input as embedded YAML-object.
 
-## Embedding an example.
+The output of the example is automatically computed using the latest release version of Handlebars.
+
+## Embedding parts of an example.
 
 The `<ExamplePart>`-component allows you to show a part of the example in the current part.
 
@@ -40,7 +44,7 @@ The props for this component are:
 
 The component is very useful if you want to embed the parts of an example into flowing text, You can insert the input
 JSON by using `<ExamplePart examplePage="/examples/all-features" show="input" />` and the following code snippet will
-appear in the page:   
+appear in the page:  
 <ExamplePart examplePage="/examples/all-features" show="input" />
 
 Then, in order to show the reader the template you can use `show="template"` with the same `examplePage`.
@@ -56,7 +60,10 @@ If you have an example with helpers, you might also want to include the preparat
 If you want to embed the whole examples, not just parts of it, you can use the `<Example>`-component.
 
 ::: warning Deprecation notice This was the original way for embedding examples, but you are more flexible by using
-`<ExamplePart>` :::
+
+`<ExamplePart>`
+
+:::
 
 ```vue
 <Example examplePage="/examples/all-features" :showInputOutput="true" />
