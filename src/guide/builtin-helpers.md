@@ -5,49 +5,34 @@
 You can use the `if` helper to conditionally render a block. If its argument returns `false`, `undefined`, `null`, `""`,
 `0`, or `[]`, Handlebars will not render the block.
 
-```html
-<div class="entry">
-  {{#if author}}
-  <h1>{{firstName}} {{lastName}}</h1>
-  {{/if}}
-</div>
-```
+<ExamplePart examplePage="/examples/builtin-helper-if-block.md" show="template" />
 
-when used with an empty `({})` context, `author` will be `undefined`, resulting in:
+When you pass the following input to the above template
+
+<ExamplePart examplePage="/examples/builtin-helper-if-block.md" show="input" />
+
+This will produce the result as below:
+
+<ExamplePart examplePage="/examples/builtin-helper-if-block.md" show="output" />
+
+If the input is an empty JSONObject `{}`, then `author` will become `undefined` and `if` condition fails, resulting in
+the output as follow:
 
 ```html
 <div class="entry"></div>
 ```
 
-::: v-pre
-
 When using a block expression, you can specify a template section to run if the expression returns a falsy value. The
-section, marked by `{{else}}` is called an "else section".
+section, marked by `else` is called an "else section".
 
-```html
-<div class="entry">
-  {{#if author}}
-  <h1>{{firstName}} {{lastName}}</h1>
-  {{else}}
-  <h1>Unknown Author</h1>
-  {{/if}}
-</div>
-```
-
-:::
+<ExamplePart examplePage="/examples/builtin-helper-ifelse-block.md" show="template" />
 
 ## The `unless` block helper
 
 You can use the `unless` helper as the inverse of the `if` helper. Its block will be rendered if the expression returns
 a falsy value.
 
-```html
-<div class="entry">
-  {{#unless license}}
-  <h3 class="warning">WARNING: This entry does not have a license!</h3>
-  {{/unless}}
-</div>
-```
+<ExamplePart examplePage="/examples/builtin-helper-unless-block.md" show="template" />
 
 If looking up `license` under the current context returns a falsy value, Handlebars will render the warning. Otherwise,
 it will render nothing.
@@ -57,45 +42,23 @@ it will render nothing.
 You can iterate over a list using the built-in `each` helper. Inside the block, you can use `this` to reference the
 element being iterated over.
 
-```html
-<ul class="people_list">
-  {{#each people}}
-  <li>{{this}}</li>
-  {{/each}}
-</ul>
-```
+<ExamplePart examplePage="/examples/builtin-helper-each-block.md" show="template" />
 
 when used with this context:
 
-```js
-{
-  people: ["Yehuda Katz", "Alan Johnson", "Charles Jolley"];
-}
-```
+<ExamplePart examplePage="/examples/builtin-helper-each-block.md" show="input" />
 
 will result in:
 
-```html
-<ul class="people_list">
-  <li>Yehuda Katz</li>
-  <li>Alan Johnson</li>
-  <li>Charles Jolley</li>
-</ul>
-```
+<ExamplePart examplePage="/examples/builtin-helper-each-block.md" show="output" />
 
 You can use the `this` expression in any context to reference the current context.
 
+You can optionally provide an `else` section which will display only when the list is empty.
+
+<ExamplePart examplePage="/examples/builtin-helper-eachelse-block.md" show="template" />
+
 ::: v-pre
-
-You can optionally provide an `{{else}}` section which will display only when the list is empty.
-
-```html
-{{#each paragraphs}}
-<p>{{this}}</p>
-{{else}}
-<p class="empty">No content</p>
-{{/each}}
-```
 
 When looping through items in `each`, you can optionally reference the current loop index via `{{@index}}`.
 
