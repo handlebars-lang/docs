@@ -46,7 +46,7 @@ function createHandlebarsScriptElement(version) {
 }
 
 function resolveHandlebarsUrl(version) {
-  return `https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/${version}/handlebars.min.js`;
+  return `https://unpkg.com/handlebars@${version}/dist/handlebars.min.js`;
 }
 
 function getAndRemoveGlobalHandlebars(version) {
