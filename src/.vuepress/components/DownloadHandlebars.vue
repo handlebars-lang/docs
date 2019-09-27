@@ -15,8 +15,8 @@ export default {
     const version = this.$handlebarsVersions.latest;
     return {
       urlForType: {
-        full: `https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/${version}/handlebars.min.js`,
-        runtime: `https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/${version}/handlebars-runtime.min.js`
+        full: `https://unpkg.com/handlebars@${version}/dist/handlebars.min.js`,
+        runtime: `https://unpkg.com/handlebars@${version}/dist/handlebars-runtime.min.js`
       }
     };
   },
