@@ -12,24 +12,6 @@ A handlebars expression is a `{{`, some contents, followed by a `}}`
 
 !button[Learn More: Expressions](expressions.html)
 
-## Installing and using Handlebars
-
-The easiest way to use Handlebars in the browser is to load the script from a CDN. We have created a
-[JSFiddle](https://jsfiddle.net/L3ynz8ow/2/) to get you started quickly.
-
-::: warning Production setup
-
-We do not recommend this approach for any production use. If you want to use Handlebars in production however, you have
-a variety of options like
-
-- rendering HTML in a NodeJS-server,
-- precompiling templates at build-time, or
-- using a plugin for a build took like the `handlebars-loader` for Webpack
-
-!button[Lern More: Installing and using handlebars](/topics/installation.html)
-
-:::
-
 ## HTML Escaping
 
 ::: v-pre

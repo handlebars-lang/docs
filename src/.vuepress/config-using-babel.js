@@ -28,9 +28,8 @@ export default {
       }
     ],
     sidebar: [
-      "/",
-      "guide/",
       "topics/installation.md",
+      "guide/",
       "guide/expressions.md",
       "topics/precompilation.md",
       "guide/partials.md",

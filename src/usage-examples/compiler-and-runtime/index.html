@@ -1,0 +1,6 @@
+<div id="output"></div>
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+<script>
+  var template = Handlebars.compile('Handlebars <b>{{doesWhat}}</b>');
+  document.getElementById('output').innerHTML = template({doesWhat: 'rocks!'})
+</script>
