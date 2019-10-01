@@ -1,10 +1,25 @@
-# Language Guide
+# Guide
 
 Handlebars is a simple templating language. It was first written for JavaScript, but has been ported to other languages
 like Java and even Rust.
 
 It uses a template and an input object to generate HTML or other text formats. Handlebars templates look like regular
 text, with embedded handlebars expressions.
+
+The fastest way to test Handlebars is to use into load it from a \*_CDN_ and and embed it in an HTML file.
+
+<<< @/src/usage-examples/compiler-and-runtime/index.html
+
+::: warning Not for production
+
+If you want to use Handlebars in production, please have a look at the chaper "Installation" for diverse installation
+scenarios
+
+:::
+
+!button[Learn more: Installation](../topics/installation.md)
+
+You can also test Handlebars by opening any of the examples in our playground.
 
 <Example examplePage="/examples/simple-expressions" :showInputOutput="true"/>
 

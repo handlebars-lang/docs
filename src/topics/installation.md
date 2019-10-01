@@ -1,21 +1,6 @@
 # Installation
 
-## Quick start
-
-The fastest route is to manually download the package and copy into your project. You can use this way to test
-Handlebars without having to setup a packager.
-
-<DownloadHandlebars :runtimeOnly="false" />
-
-You can also use a CDN to omit the download completely
-
-<<< @/src/usage-examples/compiler-and-runtime/index.html
-
-::: warning Not recommended for production
-
-If you want to use Handlebars in a production environment, please use a packaging tool or precompiled templates.
-
-:::
+There are a variety of ways to install Handlebars, depending on the programming language and environment you are using.
 
 ## Node.js
 
@@ -36,26 +21,17 @@ const template = Handlebars.compile("Name: {{name}}");
 console.log(template({ name: "Nils" }));
 ```
 
-## In the Web-Browser
+## In the web-browser
 
-::: warning Think twice before using Handlebars-templates in the browser
+::: warning Do you really need Handlebars?
 
-There are far more advanced frameworks like Ember, Vue.js, React and Angular. They are updating the page faster and
-provide a much more complete set of tools. They can not only render, but also to handle inputs.
+Handlebars is a pure rendering engine. It works well if you want to allow people to write templates for rendering
+HTML-pages, e-mails or markdown files.
 
-In contrast, Handlebars is a pure rendering engine. It works well if you want to allow people to write templates for
-rendering HTML-pages, e-mails or markdown files. Such things are mostly done on the server or in a command-line
-interface, executed in NodeJS or in another language for which an [implementation exists](#other-implementations)
+If you want to build a single-page application and you want to handle user-input, you should probably look for a
+framework like Angular, Ember, Ractive, React or Vue.js.
 
 :::
-
-### Precompiling Templates
-
-In the first example, we have loaded the compiler-and-runtime version of Handlebars. It is much more efficient, to
-compile your templates beforehand and include the precompiled version in your website. You can include the smaller
-runtime and the browser does not have to compile the templates before running them.
-
-!button[Learn More: Precompilation](precompilation.html)
 
 ### Webpack
 
@@ -64,6 +40,64 @@ TODO Add contents
 ### Browserify
 
 TODO Add content
+
+### Download Handlebars
+
+<DownloadHandlebars/>
+
+::: warning Not for production
+
+The following method is not meant for production. In production, you should use Webpack, browserify or another bundler.
+If you don't want to do that, you should at least use [precompilation](precompilation.html)
+
+:::
+
+You can deliver a template to the browser by including it in a `<script>` tag (it has to be a `<script>`-tag, because
+this is the only way the browser won't modify the DOM).
+
+```html
+<script id="entry-template" type="text/x-handlebars-template">
+  <div class="entry">
+    <h1>{{title}}</h1>
+    <div class="body">
+      {{body}}
+    </div>
+  </div>
+</script>
+```
+
+Compile a template in JavaScript by using Handlebars.compile
+
+```js
+var source = document.getElementById("entry-template").innerHTML;
+var template = Handlebars.compile(source);
+```
+
+Get the HTML result of evaluating a Handlebars template by executing the template with a context.
+
+```js
+var context = { title: "My New Post", body: "This is my first post!" };
+var html = template(context);
+```
+
+results in
+
+```html
+<div class="entry">
+  <h1>My New Post</h1>
+  <div class="body">
+    This is my first post!
+  </div>
+</div>
+```
+
+### Precompiling Templates
+
+In the first example, we have loaded the compiler-and-runtime version of Handlebars. It is much more efficient, to
+compile your templates beforehand and include the precompiled version in your website. You can include the smaller
+runtime and the browser does not have to compile the templates before running them.
+
+!button[Learn More: Precompilation](precompilation.html)
 
 ## Bower (deprecated)
 

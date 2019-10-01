@@ -12,7 +12,22 @@
 		C15.092,18.979,14.62,18.426,14.62,18.426z"
       />
     </svg>
-    <div v-if="runtimeOnly" class="download-link">
+    <div class="download-link">
+      <div class="header">Download Handlebars compiler + runtime</div>
+      <div>
+        <a
+          title="If unsure, use this one."
+          class="button-link first-download"
+          :href="linkPrefix + filename.full.uncompressed"
+          >{{ filename.full.uncompressed }}</a
+        >
+        (development version)
+      </div>
+      <div>
+        <a class="minified" :href="linkPrefix + filename.full.minified">{{ filename.full.minified }} (minified)</a>
+      </div>
+    </div>
+    <div class="download-link">
       <div class="header">Download Handlebars runtime only</div>
       <div>
         <a :href="linkPrefix + filename.runtime.uncompressed">{{ filename.runtime.uncompressed }}</a>
@@ -21,18 +36,6 @@
         <a class="minified" :href="linkPrefix + filename.runtime.minified"
           >{{ filename.runtime.minified }} (minified)</a
         >
-      </div>
-    </div>
-    <div v-else class="download-link">
-      <div class="header">Download Handlebars compiler + runtime</div>
-      <div>
-        <a title="If unsure, use this one." class="first-download" :href="linkPrefix + filename.full.uncompressed">{{
-          filename.full.uncompressed
-        }}</a>
-        (development version)
-      </div>
-      <div>
-        <a class="minified" :href="linkPrefix + filename.full.minified">{{ filename.full.minified }} (minified)</a>
       </div>
     </div>
   </div>
@@ -66,58 +69,60 @@ export default {
 };
 </script>
 <style lang="stylus" scoped>
-    .download-handlebars {
-        border-radius: 5px;
-        margin-left: auto;
-        margin-right: auto;
-        display: flex;
-        justify-content: left;
-        align-items: center;
+.download-handlebars {
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: left;
+    align-items: center;
 
-    }
+}
+
 @media (max-width: $MQNarrow) {
     .icon {
         display: none;
     }
 }
-    .icon {
-        width: 2em;
-        height: 2em;
-        margin: 1em;
 
-        path {
-            stroke: gray;
-            fill: gray;
-        }
+.icon {
+    width: 2em;
+    height: 2em;
+    margin: 1em;
+
+    path {
+        stroke: gray;
+        fill: gray;
+    }
+}
+
+.download-link {
+    display: block;
+    line-height: 150%;
+    margin: 0.5em;
+
+    a {
+        font-weight: normal;
     }
 
-    .download-link {
-        display: block;
-        line-height: 150%;
-        margin: 0.5em;
-
-        a {
-            font-weight: normal;
-        }
-
-        a.first-download {
-            font-weight: bold;
-            border: 1px solid $baseColor;
-            border-radius: 5px;
-            padding: 4px;
-            margin: -5px;
-            margin-right: 0px;
-        }
-
-    }
-
-    .header {
-        color: $textColor;
+    a.first-download {
         font-weight: bold;
-        font-size: 80%;
+        border: 1px solid $baseColor;
+        border-radius: 5px;
+        padding: 4px;
+        margin: -5px;
+        margin-right: 0px;
     }
 
-    .minified {
-        font-size: 80%;
-    }
+}
+
+.header {
+    color: $textColor;
+    font-weight: bold;
+    font-size: 80%;
+}
+
+.minified {
+    font-size: 80%;
+}
 </style>
