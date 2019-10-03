@@ -1,7 +1,8 @@
 <template>
-  <div v-if="examplePartAsString" class="handlebars-example-part" @click="openInPlayground">
-    <router-link class="show-in-playground" :to="normalizedPath"> Click to play with {{ normalizedPath }} </router-link>
-    <highlighted-code :language="language" :value="examplePartAsString" />
+  <div v-if="examplePartAsString != null" class="handlebars-example-part" @click="openInPlayground">
+    <span class="title">{{ title }}</span>
+    <router-link class="show-in-playground" :to="normalizedPath"> Click to try out</router-link>
+    <highlighted-code class="code" :language="language" :value="examplePartAsString" />
   </div>
   <div v-else-if="exampleData == null" class="handlebars-example-part not-found">
     <header>Example {{ normalizedPath }} not found</header>
@@ -64,6 +65,12 @@ export default {
     },
     normalizedPath() {
       return this.$props.examplePage.replace(/\.(html|md)$/, "") + ".html";
+    },
+    title() {
+      if (this.$props.show === "partial") {
+        return "partial: " + this.$props.name;
+      }
+      return this.$props.show;
     }
   },
   methods: {
@@ -77,21 +84,46 @@ export default {
 .handlebars-example-part {
     position: relative;
     cursor: pointer;
+    display: flex;
+    align-items: stretch;
 
     > .show-in-playground {
         position: absolute;
         z-index: 10;
-        top: 0;
+        bottom: 0;
         right: $exampleWorkspaceDefaultMargin;
         color: gray;
         float: right;
         vertical-align: middle;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         padding: 0.25rem;
+        overflow: hidden;
+        height: 0.8rem;
+    }
+
+    > .title {
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      right: $exampleWorkspaceDefaultMargin;
+      color: gray;
+      float: right;
+      vertical-align: middle;
+      font-size: 0.7rem;
+      padding: 0.25rem;
+      overflow: hidden;
+      height: 0.8rem;
+    }
+
+
+  > .code {
+      width: 100%;
+      margin: 0;
+      padding-top: 2rem;
     }
 
     &:hover {
-        > pre {
+        > .code {
             box-shadow: inset 2px 2px 5px $baseColor;
         }
 

@@ -2,16 +2,13 @@
 layout: InteractivePlaygroundLayout
 example:
   template: |
-    {{link text url}}
+    {{bold text}}
   partials:
   preparationScript: |
-    Handlebars.registerHelper("link", function(text, url) {
-      text = Handlebars.Utils.escapeExpression(text);
-      url = Handlebars.Utils.escapeExpression(url);
-      var result = '<a href="' + url + '">' + text + "</a>";
+    Handlebars.registerHelper("bold", function(text, url) {
+      var result = "<b>" + Handlebars.Utils.escapeExpression(text) + "</b>";
       return new Handlebars.SafeString(result);
     });
   input:
-    text: Yehuda's homepage
-    url: https://yehudakatz.com/
+    text: Isn't this great?
 ---

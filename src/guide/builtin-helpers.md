@@ -62,13 +62,13 @@ You can optionally provide an `else` section which will display only when the li
 
 When looping through items in `each`, you can optionally reference the current loop index via `{{@index}}`.
 
-```html
+```handlebars
 {{#each array}} {{@index}}: {{this}} {{/each}}
 ```
 
 Additionally for object iteration, `{{@key}}` references the current key name:
 
-```html
+```handlebars
 {{#each object}} {{@key}}: {{this}} {{/each}}
 ```
 
@@ -77,3 +77,9 @@ When iterating over an object only the `@first` is available. Nested each blocks
 depth based paths. To access the parent index, for example, `{{@../index}}` can be used.
 
 :::
+
+## The `with`-helper
+
+TODO: Add some text here
+
+<ExamplePart examplePage="/examples/builtin-helper-with-block.md" show="template" />

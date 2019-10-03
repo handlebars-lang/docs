@@ -3,7 +3,7 @@ layout: InteractivePlaygroundLayout
 example:
   template: |+
     {{#with person}}
-      {{firstname}} {{lastname}}
+    {{firstname}} {{lastname}}
     {{/with}}
   input:
     person:

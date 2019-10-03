@@ -24,8 +24,8 @@ export class ExampleParser {
    */
   parse() {
     try {
-      this._runHandlebars();
       this._prettifyInput();
+      this._runHandlebars();
     } catch (error) {
       this.handlebarsExecutionError = error;
     }
