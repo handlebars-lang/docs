@@ -19,7 +19,3 @@ example:
       - name: Nelson
         age: 40
 ---
-
-```handlebars
-test
-```
