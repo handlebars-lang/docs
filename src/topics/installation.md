@@ -2,7 +2,7 @@
 
 There are a variety of ways to install Handlebars, depending on the programming language and environment you are using.
 
-## Node.js
+## npm or yarn (recommended)
 
 The reference implementation of Handlebars is written in JavaScript. It is most commonly installed using `npm` or
 `yarn`:
@@ -21,39 +21,53 @@ const template = Handlebars.compile("Name: {{name}}");
 console.log(template({ name: "Nils" }));
 ```
 
-## In the web-browser
+::: tip
 
-::: warning Do you really need Handlebars?
+Using npm or yarn is the recommended way of using Handlebars. If you want to use Handlebars templates in the
+web-browser, we recommend that you use a build-engine such as Webpack, Browserify or Parcel.
 
-Handlebars is a pure rendering engine. It works well if you want to allow people to write templates for rendering
-HTML-pages, e-mails or markdown files.
+The [helper-packages](./helper-packages.html) page contains a list of plugins for those loaders that allow you to
+automatically precompile templates.
 
-If you want to build a single-page application and you want to handle user-input, you should probably look for a
-framework like Angular, Ember, Ractive, React or Vue.js.
+!button[Learn more: Helper packages](./helper-packages.md)
 
 :::
 
-### Webpack
+## Browser builds in the npm-package
 
-TODO Add contents
+The browser builds are located in the `node_modules/handlebars/dist/` directory. Making these accessible to the browser
+will depend on what build system you are using but this may be as simple as copying the files to an acessible place.
 
-### Browserify
+This is the preferred method of installation when using the precompiler as it ensures that your precompiled templates
+always run against the same version of the runtime.
 
-TODO Add content
+## Downloading Handlebars
 
-### Download Handlebars
+The following downloads are provided as a convenience to the community. They are not meant for production use, but they
+can give you a quick-start without having to set up a build-engine.
 
 <DownloadHandlebars/>
 
-::: warning Not for production
+All of Handlebar's released versions and CI builds are available for download on S3 in our
+[builds page](https://com.s3.amazonaws.com/builds.handlebarsjs/bucket-listing.html?sort=lastmod&sortdir=desc).
 
-The following method is not meant for production. In production, you should use Webpack, browserify or another bundler.
-If you don't want to do that, you should at least use [precompilation](precompilation.html)
+The latest passing master build is named `handlebars-latest.js` and each passing SHA on master will create a
+`handlebars-gitSHA.js` file. While these all pass the CI, it's preferrable to use one of the tagged releases.
 
-:::
+**Note**: The builds page is provided as a convenience for the community, but you should not use it for hosting
+Handlebars in production.
 
-You can deliver a template to the browser by including it in a `<script>` tag (it has to be a `<script>`-tag, because
-this is the only way the browser won't modify the DOM).
+## CDNs
+
+Handlebars is hosted on a number of free CDNs as well.
+
+- [cdnjs](https://cdnjs.com/libraries/handlebars.js)
+- [jsDelivr](http://www.jsdelivr.com/#!handlebarsjs). Advanced usage, such as
+  [version aliasing & concocting](https://github.com/jsdelivr/jsdelivr#usage), is available.
+
+## Usage
+
+You can deliver a template to the browser by including it in a `<script>` tag.
 
 ```html
 <script id="entry-template" type="text/x-handlebars-template">
@@ -65,6 +79,15 @@ this is the only way the browser won't modify the DOM).
   </div>
 </script>
 ```
+
+::: warning Always use a script-tag for your template
+
+If you use this method, you have to wrap your template with a script-tag. Otherwise the browser may remove or modify
+parts of your template if you don't. Have a look at
+["Unexpected markup in tables"](https://html.spec.whatwg.org/multipage/parsing.html#unexpected-markup-in-tables) for an
+example.
+
+:::
 
 Compile a template in JavaScript by using Handlebars.compile
 
@@ -93,7 +116,7 @@ results in
 
 ### Precompiling Templates
 
-In the first example, we have loaded the compiler-and-runtime version of Handlebars. It is much more efficient, to
+In the previous example, we have loaded the compiler-and-runtime version of Handlebars. It is much more efficient, to
 compile your templates beforehand and include the precompiled version in your website. You can include the smaller
 runtime and the browser does not have to compile the templates before running them.
 
@@ -103,44 +126,14 @@ runtime and the browser does not have to compile the templates before running th
 
 ::: warning
 
-[Bower is deprecated](https://bower.io/blog/2017/how-to-migrate-away-from-bower/). You should use the npm-version along
-with a bundler like webpack, browserify or parceljs if you want to use Handlebars in the browser.
+[Bower is deprecated](https://bower.io/blog/2017/how-to-migrate-away-from-bower/)
 
-Bower versions of Handlebars are still created (at the moment) for backwards compatibility. But if you are setting up a
-new project, you should not use it anymore.
+Bower versions of Handlebars are still published (at the moment) for backwards compatibility. But if you are setting up
+a new project, you should not use it anymore.
 
 :::
 
-## Manual Download (deprecated)
-
-All of Handlebar's released versions and CI builds are available for download on S3 in our
-[builds page](https://com.s3.amazonaws.com/builds.handlebarsjs/bucket-listing.html?sort=lastmod&sortdir=desc).
-
-The latest passing master build is named `handlebars-latest.js` and each passing SHA on master will create a
-`handlebars-gitSHA.js` file. While these all pass the CI, it's preferrable to use one of the tagged releases.
-
-**Note**: The S3 builds page is provided as a convenience for the community, but you should not use it for hosting
-Handlebars in production.
-
-## CDNs
-
-Handlebars is hosted on a number of free CDNs as well.
-
-- [cdnjs](https://cdnjs.com/libraries/handlebars.js)
-- [jsDelivr](http://www.jsdelivr.com/#!handlebarsjs). Advanced usage, such as
-  [version aliasing & concocting](https://github.com/jsdelivr/jsdelivr#usage), is available.
-
-## Browser builds in the npm-package
-
-The browser builds are located in the `node_modules/handlebars/dist/` directory. Making these accessible to the browser
-will depend on what build system you are using but this may be as simple as copying the files to an acessible place.
-
-This is the preferred method of installation when using the precompiler as it ensures that your precompiled templates
-always run against the same version of the runtime.
-
-### TODO Any other tools worth mentioning?
-
-## Other implementations
+## Other programming languages
 
 There are handlebars implementations for many programming languages.
 
