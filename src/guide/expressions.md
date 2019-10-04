@@ -9,27 +9,35 @@ them to a Handlebars helper, or use them as values in hash arguments.
 
 ## Basic Usage
 
-The simplest Handlebars expression is a simple identifier:
+Handlebars expressions are some contents enclosed by double curly braces `{{}}`. In the below template, `firstname` is a
+variable which is enclosed by double curly braces which is said to be an expression.
 
-<Example examplePage="/examples/simple-expressions" />
+<ExamplePart examplePage="/examples/simple-expressions.md" show="template" />
 
-This expression means "look up the `name` property in the current context". Block helpers may manipulate the current
-context, but they do not change the basic meaning of an expression.
+If the below input object is applied to the template
 
-Actually, it means "look for a helper named `name`, then do the above", but we'll get to that soon enough.
+<ExamplePart examplePage="/examples/simple-expressions.md" show="input" />
+
+Expressions are compiled to produce the output as follows:
+
+<ExamplePart examplePage="/examples/simple-expressions.md" show="output" />
 
 ## Path expressions
 
 Handlebars expressions can also be dot-separated paths.
 
-<Example examplePage="/examples/path-expressions-dot" />
+<ExamplePart examplePage="/examples/path-expressions-dot.md" show="template" />
 
-This expression means "look up the `article` property in the current context. Then look up the `title` property in the
-result".
+This expression looks up the `person` property in the input object and inturn looks up the `firstname` and `lastname`
+property within the `person` object.
+
+Pass the below input object to the template <ExamplePart examplePage="/examples/path-expressions-dot.md" show="input" />
+
+Output will be generated as below <ExamplePart examplePage="/examples/path-expressions-dot.md" show="output" />
 
 Handlebars also supports a deprecated `/` syntax, so you could write the above template as:
 
-<Example examplePage="/examples/path-expressions-slash" />
+<ExamplePart examplePage="/examples/path-expressions-slash.md" show="template" />
 
 ## Literal segments
 
@@ -40,7 +48,7 @@ Whitespace `!` `"` `#` `%` `&` `'` `(` `)` `*` `+` `,` `.` `/` `;` `<` `=` `>` `
 
 To reference a property that is not a valid identifier, you can use segment-literal notation, `[`:
 
-<Example examplePage="/examples/literal-segments" />
+<ExamplePart examplePage="/examples/literal-segments.md" show="template" />
 
 In the example above, the template will treat the `each` parameter roughly equivalent to this javascript:
 `articles[10]['#comments']`
@@ -51,12 +59,22 @@ JavaScript-style strings, `"` and `'`, may also be used vs. `[` pairs.
 
 ::: v-pre
 
-Handlebars HTML-escapes values returned by a `{{expression}}`. If you don't want Handlebars to escape a value, use the
+In Handlebars, the values returned by the `{{expression}}` are HTML-escaped. Say, If the expression contains `&`, then
+the returned HTML-escaped output is genarated as `&amp;` If you don't want Handlebars to escape a value, use the
 "triple-stash", `{{{`:
 
-:::
+::: In the below template, You can learn how to produce the HTML escaped and raw output.
 
-<Example examplePage="/examples/html-escaping" :showInputOutput="true" />
+<ExamplePart examplePage="/examples/html-escaping.md" show="template" />
+
+Pass the special characters to the template
+
+<ExamplePart examplePage="/examples/html-escaping.md" show="input" />
+
+Expressions enclosed by "triple-stash" (`{{{`) produces the raw output otherwise HTML-escaped output is generated as
+below.
+
+<ExamplePart examplePage="/examples/html-escaping.md" show="output" />
 
 ## Helpers
 
@@ -223,5 +241,5 @@ prefixing a mustache block with `\`. Raw blocks are created using `{{{{` mustach
 {{{{/raw}}}}
 ```
 
-Raw blocks operate in the same manner as other [block helpers](block_helpers.html) with the distinction of the child
+Raw blocks operate in the same manner as other [block helpers](block-helpers.html) with the distinction of the child
 content is treated as a literal string.
