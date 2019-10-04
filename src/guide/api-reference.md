@@ -45,6 +45,9 @@ The resulting template function can be called as `template(context, options)` wh
 - `partials` Pass in to provide custom partials in addition to the globally defined partials.  
   Values defined in this object will replace any values defined in the global object for the duration of the template
   execution.
+- `allowCallsToHelperMissing` (since 4.3.0, insecure): If set to `true`, calls like `{{helperMissing}}` and
+  `{{blockHelperMissing}}` will be allowed. Please not that this allows template authors to fabricate templates for
+  Remote Code Execution on the environment running Handlebars (see https://github.com/wycats/handlebars.js/issues/1558)
 
 :::
 

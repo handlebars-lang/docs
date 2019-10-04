@@ -1,8 +1,8 @@
-# Installing and using Handlebars
+# Installation
 
-[[toc]]
+There are a variety of ways to install Handlebars, depending on the programming language and environment you are using.
 
-## JavaScript (NodeJS)
+## npm or yarn (recommended)
 
 The reference implementation of Handlebars is written in JavaScript. It is most commonly installed using `npm` or
 `yarn`:
@@ -21,25 +21,55 @@ const template = Handlebars.compile("Name: {{name}}");
 console.log(template({ name: "Nils" }));
 ```
 
-## JavaScript (Browser)
+::: tip
 
-::: warning Think twice before using Handlebars-templates in the browser
+Using npm or yarn is the recommended way of using Handlebars. If you want to use Handlebars templates in the
+web-browser, we recommend that you use a build-engine such as Webpack, Browserify or Parcel.
 
-There are far more advanced frameworks like Ember, Vue.js, React and Angular. They are updating the page faster and
-provide a much more complete set of tools. They can not only render, but also to handle inputs.
+The [helper-packages](./helper-packages.html) page contains a list of plugins for those loaders that allow you to
+automatically precompile templates.
 
-In contrast, Handlebars is a pure rendering engine. It works well if you want to allow people to write templates for
-rendering HTML-pages, e-mails or markdown files. Such things are mostly done on the server or in a command-line
-interface, executed in NodeJS or in another language for which an [implementation exists](#other-implementations)
+!button[Learn more: Helper packages](./helper-packages.md)
 
 :::
 
-The simplest way to use Handlebars, although **not recommended for production**, is from a CDN. You can deliver a
-template to the browser by including it in a `<script>` tag.
+## Browser builds in the npm-package
+
+The browser builds are located in the `node_modules/handlebars/dist/` directory. Making these accessible to the browser
+will depend on what build system you are using but this may be as simple as copying the files to an acessible place.
+
+This is the preferred method of installation when using the precompiler as it ensures that your precompiled templates
+always run against the same version of the runtime.
+
+## Downloading Handlebars
+
+The following downloads are provided as a convenience to the community. They are not meant for production use, but they
+can give you a quick-start without having to set up a build-engine.
+
+<DownloadHandlebars/>
+
+All of Handlebar's released versions and CI builds are available for download on S3 in our
+[builds page](https://com.s3.amazonaws.com/builds.handlebarsjs/bucket-listing.html?sort=lastmod&sortdir=desc).
+
+The latest passing master build is named `handlebars-latest.js` and each passing SHA on master will create a
+`handlebars-gitSHA.js` file. While these all pass the CI, it's preferrable to use one of the tagged releases.
+
+**Note**: The builds page is provided as a convenience for the community, but you should not use it for hosting
+Handlebars in production.
+
+## CDNs
+
+Handlebars is hosted on a number of free CDNs as well.
+
+- [cdnjs](https://cdnjs.com/libraries/handlebars.js)
+- [jsDelivr](http://www.jsdelivr.com/#!handlebarsjs). Advanced usage, such as
+  [version aliasing & concocting](https://github.com/jsdelivr/jsdelivr#usage), is available.
+
+## Usage
+
+You can deliver a template to the browser by including it in a `<script>` tag.
 
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-
 <script id="entry-template" type="text/x-handlebars-template">
   <div class="entry">
     <h1>{{title}}</h1>
@@ -50,14 +80,16 @@ template to the browser by including it in a `<script>` tag.
 </script>
 ```
 
-::: warning
+::: warning Always use a script-tag for your template
 
-It is important that you put the template inside a `<script>` tag. Do not put it into the HTML directly or the
-HTML-parser might modify it (for example, if it contains a table).
+If you use this method, you have to wrap your template with a script-tag. Otherwise the browser may remove or modify
+parts of your template if you don't. Have a look at
+["Unexpected markup in tables"](https://html.spec.whatwg.org/multipage/parsing.html#unexpected-markup-in-tables) for an
+example.
 
 :::
 
-Compile a template in JavaScript by using `Handlebars.compile`
+Compile a template in JavaScript by using Handlebars.compile
 
 ```js
 var source = document.getElementById("entry-template").innerHTML;
@@ -82,46 +114,26 @@ results in
 </div>
 ```
 
-You can also download it and use that file instead of the CDN:
+### Precompiling Templates
 
-<DownloadHandlebars type="full">Download Handlebars {{$handlebarsVersions.latest}}</DownloadHandlebars>
+In the previous example, we have loaded the compiler-and-runtime version of Handlebars. It is much more efficient, to
+compile your templates beforehand and include the precompiled version in your website. You can include the smaller
+runtime and the browser does not have to compile the templates before running them.
 
-### Precompiling templates
+!button[Learn More: Precompilation](precompilation.html)
 
-A better way is to precompile your templates. This will result in a smaller required runtime library and significant
-savings from not having to compile the template in the browser. This can be especially important when working with
-mobile devices.
+## Bower (deprecated)
 
-!button[Learn More: Precompilation](./precompilation.html)
+::: warning
 
-TODO: Add instructions for precompilation
+[Bower is deprecated](https://bower.io/blog/2017/how-to-migrate-away-from-bower/)
 
-If you are using precompiled templates in you HTML, you don't need to include the compiler in your website. The runtime
-is smaller and can be downloaded separately:
-
-<DownloadHandlebars type="runtime">Download Handlebars runtime {{$handlebarsVersions.latest}}</DownloadHandlebars>
-
-### Webpack
-
-TODO Add contents
-
-### Browserify
-
-TODO Add content
-
-### TODO Any other tools worth mentioning?
-
-### Deprecated tools
-
-#### Bower
-
-::: warning Bower is deprecated
-
-Although Bower has been deprecated in favor of using `yarn` in combination with `webpack`.
+Bower versions of Handlebars are still published (at the moment) for backwards compatibility. But if you are setting up
+a new project, you should not use it anymore.
 
 :::
 
-## Other implementations
+## Other programming languages
 
 There are handlebars implementations for many programming languages.
 

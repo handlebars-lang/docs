@@ -1,109 +1,87 @@
-# Language Guide
+# Introduction
 
-Handlebars is a simple templating language. It was first written for JavaScript, but has been ported to other languages
-like Java and even Rust.
+## What is Handlebars?
+
+Handlebars is a simple **templating language**.
 
 It uses a template and an input object to generate HTML or other text formats. Handlebars templates look like regular
-text, with embedded handlebars expressions.
+text with embedded Handlebars expressions.
 
-<Example examplePage="/examples/simple-expressions" :showInputOutput="true"/>
+<ExamplePart examplePage="/examples/simple-expressions" show="template"/>
 
-A handlebars expression is a `{{`, some contents, followed by a `}}`
+A handlebars expression is a `{{`, some contents, followed by a `}}`. When the template is executed, these expressions a
+replace with values from an input object.
 
 !button[Learn More: Expressions](expressions.html)
 
-## Installing and using Handlebars
+## Installation
 
-The easiest way to use Handlebars in the browser is to load the script from a CDN. We have created a
-[JSFiddle](https://jsfiddle.net/L3ynz8ow/2/) to get you started quickly.
+The fastest way to test Handlebars is to use into load it from a _CDN_ and and embed it in an HTML file.
 
-::: warning Production setup
-
-We do not recommend this approach for any production use. If you want to use Handlebars in production however, you have
-a variety of options like
-
-- rendering HTML in a NodeJS-server,
-- precompiling templates at build-time, or
-- using a plugin for a build took like the `handlebars-loader` for Webpack
-
-!button[Lern More: Installing and using handlebars](/topics/installation.html)
-
-:::
-
-## HTML Escaping
-
-::: v-pre
-
-Because it was originally designed to generate HTML, Handlebars escapes values returned by a `{{expression}}`. If you
-don't want Handlebars to escape a value, use the "triple-stash", `{{{`.
-
-:::
-
-<Example examplePage="/examples/html-escaping" :showInputOutput="true" />
-
-Handlebars will not escape a `Handlebars.SafeString`. If you write a helper that generates its own HTML, you will
-usually want to return a `new Handlebars.SafeString(result)`. In such a circumstance, you will want to manually escape
-parameters.
-
-<Example examplePage="/examples/helper-safestring" :showInputOutput="false" />
-
-This will escape the passed in parameters, but mark the response as safe, so Handlebars will not try to escape it even
-if the "triple-stash" is not used.
-
-## Evaluation context
-
-::: v-pre
-
-The built-in block-helpers `{{#each}}` and `{{#with}}` allow you to change the current evaluation context.
-
-- The `{{#each}}`-helper iterates an array, allowing to you access the properties of each object via simple handlebars
-  expressions.
-- The `{{#with}}`-helper dives into an object-property, giving you access to its properties
-
-:::
-
-<Example examplePage="/examples/each-with" :showInputOutput="true" />
-
-## Nested Handlebars Paths
-
-::: v-pre
-
-In addition to simple paths like `<p>{{name}}</p>`, Handlebars also supports nested paths. This allows you to look up
-properties nested below the current context.
-
-:::
-
-<Example examplePage="/examples/path-expressions-dot" :showInputOutput="true" />
-
-This makes it possible to use Handlebars templates with more raw JSON objects. It is also possible, to use `/` as path
-delimiter:
-
-<Example examplePage="/examples/path-expressions-slash" />
-
-Nested handlebars paths can also include `../` segments, which evaluate their paths against a parent context.
-
-<Example examplePage="/examples/path-expressions-dot-dot" :showInputOutput="true"/>
-
-Even though the name is printed while in the context of a comment, it can still go back to the main context (the
-root-object) to retrieve the prefix.
-
-::: v-pre
+<<< @/src/usage-examples/compiler-and-runtime/simple-console-out.html
 
 ::: warning
 
-The exact value that `../` will resolve to varies based on the helper that is calling the block. Using `../` is only
-necessary when context changes. Children of helpers such as `{{#each}}` would require the use of `../` while children of
-helpers such as `{{#if}}` do not.
+This method can be used for small pages and for testing. There are several other ways to use Handlebars, when you target
+real production systems.
+
+!button[Learn more: Installation](../topics/installation.md)
 
 :::
 
-In this example all of the above reference the same prefix value even though they are located within different blocks.
-This behavior is new as of Handlebars 4, the release notes discuss the prior behavior as well as the migration plan.
-Handlebars also allows for name conflict resolution between helpers and data fields via a this reference:
+# Language features
 
-<Example examplePage="/examples/helper-data-name-conflict" :hidePreparationScript="true" />
+## Simple expressions
 
-Any of the above would cause the name field on the current context to be used rather than a helper of the same name.
+A shown before, the following template defines two Handlebars expressions
+
+<ExamplePart examplePage="/examples/simple-expressions" show="template"/>
+
+If applied to the input object
+
+<ExamplePart examplePage="/examples/simple-expressions" show="input"/>
+
+the expressions will be replaced by the corresponding properties. The result is then
+
+<ExamplePart examplePage="/examples/simple-expressions" show="output"/>
+
+## Nested input objects
+
+Sometimes, the input objects contains other objects or arrays. For example:
+
+<ExamplePart examplePage="/examples/path-expressions-dot" show="input" />
+
+In such a case, you can use a dot-notation to gain access to the nested properties
+
+<ExamplePart examplePage="/examples/path-expressions-dot" show="template"/>
+
+!button[Learn more: Expressions](./expressions.md)
+
+Some built-in helpers allow you to change the current context to a nested object. You can then access this object as if
+it were the root object
+
+## Evaluation context
+
+The built-in block-helpers `each` and `with` allow you to change the current evaluation context.
+
+The `with`-helper dives into an object-property, giving you access to its properties
+
+<Flex>
+
+<ExamplePart examplePage="/examples/builtin-helper-with-block" show="template"/>
+<ExamplePart examplePage="/examples/builtin-helper-with-block" show="input"/>
+
+</Flex>
+
+The `each`-helper iterates an array, allowing to you access the properties of each object via simple handlebars
+expressions.
+
+<Flex>
+<ExamplePart examplePage="/examples/builtin-helper-each-block" show="template"/>
+<ExamplePart examplePage="/examples/builtin-helper-each-block" show="input"/>
+</Flex>
+
+!button[Learn more: Built-in helpers](./builtin-helpers.md)
 
 ## Template comments
 
@@ -119,9 +97,9 @@ Any comments that must contain `}}` or other handlebars tokens should use the `{
 
 :::
 
-<Example examplePage="/examples/comments" />
+<ExamplePart examplePage="/examples/comments" show="template"/>
 
-## Helpers
+## Custom Helpers
 
 Handlebars helpers can be accessed from any context in a template. You can register a helper with the
 Handlebars.registerHelper method.
@@ -132,36 +110,17 @@ Helpers receive the current context as the `this`-context of the function.
 
 <Example examplePage="/examples/helper-this-context" :showInputOutput="false" />
 
-### Literals
-
-Helper calls may also have literal values passed to them either as parameter arguments or hash arguments. Supported
-literals include numbers, strings, `true`, `false`, `null` and ? `undefined`.
-
-<Example examplePage="/examples/helper-literals" :showInputOutput="false" />
-
 ## Block Helpers
 
 Block expressions allow you to define helpers that will invoke a section of your template with a different context than
 the current. These block helpers are identified by a `#` preceeding the helper name and require a matching closing
 mustache, `/`, of the same name. Let's consider a helper that will generate an HTML list:
 
-<Example examplePage="/examples/helper-block" :showInputOutput="true" />
+<ExamplePart examplePage="/examples/helper-block" show="preparationScript" />
 
 The example creates a helper named `list` to generate our HTML list. The helper receives the `people` as its first
 parameter, and an `options` hash as its second parameter. The options hash contains a property named `fn`, which you can
 invoke with a context just as you would invoke a normal Handlebars template.
-
-```js
-Handlebars.registerHelper("list", function(items, options) {
-  var out = "<ul>";
-
-  for (var i = 0, l = items.length; i < l; i++) {
-    out = out + "<li>" + options.fn(items[i]) + "</li>";
-  }
-
-  return out + "</ul>";
-});
-```
 
 When executed, the template will render:
 
@@ -181,55 +140,47 @@ results of a block helper. If it did, inner content would be double-escaped!
 
 !button[Learn More: Block Helpers](block-helpers.html)
 
+## HTML Escaping
+
+::: v-pre
+
+Because it was originally designed to generate HTML, Handlebars escapes values returned by a `{{expression}}`. If you
+don't want Handlebars to escape a value, use the "triple-stash", `{{{`.
+
+:::
+
+<ExamplePart examplePage="/examples/html-escaping" show="template" />
+
+The special characters in the second line will be escaped:
+
+<ExamplePart examplePage="/examples/html-escaping" show="output" />
+
+Handlebars will not escape a `Handlebars.SafeString`. If you write a helper that generates its own HTML, you will
+usually want to return a `new Handlebars.SafeString(result)`. In such a circumstance, you will want to manually escape
+parameters.
+
+<ExamplePart examplePage="/examples/helper-safestring" show="preparationScript" />
+
+This will escape the passed in parameters, but mark the response as safe, so Handlebars will not try to escape it even
+if the "triple-stash" is not used.
+
 ## Partials
 
-Handlebars partials allow for code reuse by creating shared templates. Rendering this template
+Handlebars partials allow for code reuse by creating shared templates. You can register a partial using the
+`registerPartial`-method:
 
-```handlebars
-<div class="post">
-  {{> userMessage tagName="h1" }}
+<ExamplePart examplePage="/examples/partials-register" show="preparationScript" />
 
-  <h1>Comments</h1>
+The following template and input:
 
-  {{#each comments}}
-    {{> userMessage tagName="h2" }}
-  {{/each}}
-</div>
-```
+<Flex>
+<ExamplePart examplePage="/examples/partials-register" show="template" />
+<ExamplePart examplePage="/examples/partials-register" show="input" />
+</Flex>
 
-when using this partial and context:
+will then provide the following result:
 
-```js
-Handlebars.registerPartial(
-  "userMessage",
-  "<{{tagName}}>By {{author.firstName}} {{author.lastName}}</{{tagName}}>" + '<div class="body">{{body}}</div>'
-);
-
-var context = {
-  author: { firstName: "Alan", lastName: "Johnson" },
-  body: "I Love Handlebars",
-  comments: [
-    {
-      author: { firstName: "Yehuda", lastName: "Katz" },
-      body: "Me too!"
-    }
-  ]
-};
-```
-
-results in:
-
-```html
-<div class="post">
-  <h1>By Alan Johnson</h1>
-  <div class="body">I Love Handlebars</div>
-
-  <h1>Comments</h1>
-
-  <h2>By Yehuda Katz</h2>
-  <div class="body">Me Too!</div>
-</div>
-```
+<ExamplePart examplePage="/examples/partials-register" show="output" />
 
 !button[Learn More: Partials](partials.html)
 

@@ -113,6 +113,17 @@ Handlebars.registerHelper("helper", () => {
       "Parse error on line 1:\n{{helper\n--^\nExpecting 'ID', 'STRING', 'NUMBER', 'BOOLEAN', 'UNDEFINED', 'NULL', 'DATA', got 'INVALID'"
     );
   });
+
+  it("should store the input, even if an error happens during the execution", () => {
+    let parser = new ExampleParser({
+      template: "{{helper",
+      input: { someVariable: 3 }
+    });
+
+    const parsedExample = parser.parse();
+
+    expect(parsedExample.input).toContain("someVariable");
+  });
 });
 
 function expectErrorInExample(parsedExample, errorMessage) {
