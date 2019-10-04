@@ -1,7 +1,12 @@
 <template>
-  <div v-if="examplePartAsString != null" class="handlebars-example-part" @click="openInPlayground">
+  <div
+    v-if="examplePartAsString != null"
+    class="handlebars-example-part"
+    title="Click to try out"
+    @click="openInPlayground"
+  >
     <span class="title">{{ title }}</span>
-    <router-link class="show-in-playground" :to="normalizedPath"> Click to try out</router-link>
+    <router-link class="show-in-playground" :to="normalizedPath"><TryoutIcon /></router-link>
     <highlighted-code class="example-part-code" :language="language" :value="examplePartAsString" />
   </div>
   <div v-else-if="exampleData == null" class="handlebars-example-part not-found">
@@ -15,6 +20,7 @@
 </template>
 <script>
 import HighlightedCode from "../private-components/try-handlebars/HighlightedCode";
+import TryoutIcon from "../private-components/try-handlebars/TryoutIcon";
 
 const partToLanguage = {
   input: "json",
@@ -25,7 +31,7 @@ const partToLanguage = {
 };
 
 export default {
-  components: { HighlightedCode },
+  components: { HighlightedCode, TryoutIcon },
   props: {
     examplePage: { type: String, required: true },
     show: {
@@ -84,7 +90,7 @@ export default {
 
 codebox-label() {
     position: absolute;
-    z-index: 10;
+    z-index: 3;
     font-size: 0.75rem;
     color: rgba(255,255,255,0.4);
     transition: color 2*$hoverTransitionDuration;
@@ -111,14 +117,14 @@ $hoverTransitionDuration = 0.25s;
 
     > .show-in-playground {
         codebox-label();
-        bottom: 0.8em;
-        right: 1em;
+        top: 0.25rem;
+        right: 0.25rem;
     }
 
     > .title {
         codebox-label();
         top: 0.8em;
-        right: 1em;
+        right: 2.5em;
     }
 
 
@@ -128,11 +134,12 @@ $hoverTransitionDuration = 0.25s;
         padding-top: 1.5rem;
         border-radius: 6px;
         background: transparent;
+        z-index: 10;
     }
 
     &:hover {
         box-shadow: $baseColor 0 0 10px inset ;
-        //background-color: darken($baseColor, 90%);
+        background-color: darken($baseColor, 90%);
 
         > .show-in-playground, > .title {
             color: $baseColor;

@@ -46,10 +46,10 @@ export default {
   }
 };
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
 code.ce-code-content {
-    height: 100%;
     box-sizing: border-box;
-    background: none;
+    background: transparent;
+    overflow: initial;
 }
 </style>
