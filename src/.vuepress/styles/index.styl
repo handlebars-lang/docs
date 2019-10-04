@@ -1,3 +1,7 @@
+// see https://github.com/vuejs/vuepress/tree/master/packages/%40vuepress/theme-default/styles for default styles
+// abd https://github.com/vuejs/vuepress/blob/master/packages/@vuepress/core/lib/client/style/config.styl for default
+// variable definitions
+
 html, body {
     background-color: $bodyBgColor !important;
 }
@@ -60,7 +64,7 @@ $contentBorderRadius = 0.5rem
 
         background-color: transparent !important;
 
-        @media (min-width: $MQMobile) {
+        @media (min-width: $MQMobile + 1px) {
             position: absolute;
             left: 0;
             top: $navbarHeight;

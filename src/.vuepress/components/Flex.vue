@@ -5,16 +5,14 @@
 </template>
 <style scoped lang="stylus">
 .flex {
-    display: flex;
-    align-items: stretch;
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-left: -0.5rem;
 
-    > * {
-        flex: 1 1 auto;
-        margin-left: 0.5rem;
-    }
-
-    > *:first-child {
-        margin-left: 0;
-    }
+  > * {
+    flex: 1 1 auto;
+    margin-left: 0.5rem;
+  }
 }
 </style>

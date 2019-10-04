@@ -2,7 +2,7 @@
   <div v-if="examplePartAsString != null" class="handlebars-example-part" @click="openInPlayground">
     <span class="title">{{ title }}</span>
     <router-link class="show-in-playground" :to="normalizedPath"> Click to try out</router-link>
-    <highlighted-code class="code" :language="language" :value="examplePartAsString" />
+    <highlighted-code class="example-part-code" :language="language" :value="examplePartAsString" />
   </div>
   <div v-else-if="exampleData == null" class="handlebars-example-part not-found">
     <header>Example {{ normalizedPath }} not found</header>
@@ -81,55 +81,61 @@ export default {
 };
 </script>
 <style lang="stylus">
+
+codebox-label() {
+    position: absolute;
+    z-index: 10;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+    transition: color 2*$hoverTransitionDuration;
+}
+
+$hoverTransitionDuration = 0.25s;
+
 .handlebars-example-part {
     position: relative;
     cursor: pointer;
     display: flex;
     align-items: stretch;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    background-color: #000;
+    transition: background-color $hoverTransitionDuration, box-shadow $hoverTransitionDuration;
+
+
+    @media (max-width: 419px) {
+        margin: 0.5rem -1.5rem;
+        border-radius: 0;
+    }
+
 
     > .show-in-playground {
-        position: absolute;
-        z-index: 10;
-        bottom: 0;
-        right: $exampleWorkspaceDefaultMargin;
-        color: gray;
-        float: right;
-        vertical-align: middle;
-        font-size: 0.7rem;
-        padding: 0.25rem;
-        overflow: hidden;
-        height: 0.8rem;
+        codebox-label();
+        bottom: 0.8em;
+        right: 1em;
     }
 
     > .title {
-      position: absolute;
-      z-index: 10;
-      top: 0;
-      right: $exampleWorkspaceDefaultMargin;
-      color: gray;
-      float: right;
-      vertical-align: middle;
-      font-size: 0.7rem;
-      padding: 0.25rem;
-      overflow: hidden;
-      height: 0.8rem;
+        codebox-label();
+        top: 0.8em;
+        right: 1em;
     }
 
 
-  > .code {
-      width: 100%;
-      margin: 0;
-      padding-top: 2rem;
+    > .example-part-code {
+        width: 100%;
+        margin: 0;
+        padding-top: 1.5rem;
+        border-radius: 6px;
+        background: transparent;
     }
 
     &:hover {
-        > .code {
-            box-shadow: inset 2px 2px 5px $baseColor;
-        }
+        box-shadow: $baseColor 0 0 10px inset ;
+        //background-color: darken($baseColor, 90%);
 
-        > .show-in-playground {
+        > .show-in-playground, > .title {
             color: $baseColor;
-            text-decoration: underline;
         }
     }
 
