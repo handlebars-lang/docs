@@ -1,12 +1,15 @@
 ---
 layout: InteractivePlaygroundLayout
 example:
-  template: |+
-    {{#with person}}
-      {{firstname}} {{lastname}}
-    {{/with}}
+  template: |-
+    <ul class="people_list">
+      {{#each people}}
+        <li>{{this}}</li>
+      {{/each}}
+    </ul>
   input:
-    person:
-      firstname: Yehuda
-      lastname: Katz
+    people:
+      - Yehuda Katz
+      - Alan Johnson
+      - Charles Jolley
 ---
