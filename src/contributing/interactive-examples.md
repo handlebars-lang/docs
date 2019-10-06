@@ -30,18 +30,12 @@ The output of the example is automatically computed using the latest release ver
 The `<ExamplePart>`-component allows you to show a part of the example in the current part.
 
 ```md
-<Flex>
 <ExamplePart examplePage="/examples/builtin-helper-each-block" show="template"/>
-<ExamplePart examplePage="/examples/builtin-helper-each-block" show="input"/>
-</Flex>
 ```
 
 will result in
 
-<Flex>
 <ExamplePart examplePage="/examples/builtin-helper-each-block" show="template"/>
-<ExamplePart examplePage="/examples/builtin-helper-each-block" show="input"/>
-</Flex>
 
 The props for this component are:
 
@@ -66,13 +60,21 @@ If you have an example with helpers, you might also want to include the preparat
 
 ## Horizontal layout
 
-If you want to layout two example-parts horizontally, you can use the `<Flex>`-component
+If you want to layout two example-parts horizontally, you can use the `<Flex>`-component.
 
-```vue
+```md
 <Flex>
-
+<ExamplePart examplePage="/examples/builtin-helper-each-block" show="template"/>
+<ExamplePart examplePage="/examples/builtin-helper-each-block" show="input"/>
 </Flex>
 ```
+
+becomes
+
+<Flex>
+<ExamplePart examplePage="/examples/builtin-helper-each-block" show="template"/>
+<ExamplePart examplePage="/examples/builtin-helper-each-block" show="input"/>
+</Flex>
 
 ## Embedding the complete example
 
