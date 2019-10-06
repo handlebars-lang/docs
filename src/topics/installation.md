@@ -33,7 +33,7 @@ automatically precompile templates.
 
 :::
 
-## Browser builds in the npm-package
+### Browser builds in the npm-package
 
 The browser builds are located in the `node_modules/handlebars/dist/` directory. Making these accessible to the browser
 will depend on what build system you are using but this may be as simple as copying the files to an acessible place.
@@ -46,7 +46,22 @@ always run against the same version of the runtime.
 The following downloads are provided as a convenience to the community. They are not meant for production use, but they
 can give you a quick-start without having to set up a build-engine.
 
-<DownloadHandlebars/>
+### Latest release (version {{$handlebarsVersions.latest}})
+
+<DownloadHandlebars>
+
+Use this version as a quick start, if you want to compile your templates in the browser.
+
+</DownloadHandlebars>
+
+<DownloadHandlebars :runtimeOnly="true">
+
+Use this version when you are using [precompiled templates](./precompilation.md) in the browser. This version does not
+include the compiler.
+
+</DownloadHandlebars>
+
+### Non-release builds
 
 All of Handlebar's released versions and CI builds are available for download on S3 in our
 [builds page](https://com.s3.amazonaws.com/builds.handlebarsjs/bucket-listing.html?sort=lastmod&sortdir=desc).
@@ -64,6 +79,21 @@ Handlebars is hosted on a number of free CDNs as well.
 - [cdnjs](https://cdnjs.com/libraries/handlebars.js)
 - [jsDelivr](http://www.jsdelivr.com/#!handlebarsjs). Advanced usage, such as
   [version aliasing & concocting](https://github.com/jsdelivr/jsdelivr#usage), is available.
+
+## RubyGems
+
+The office Handlebars build is available on https://rubygems.org/gems/handlebars-source
+
+## Bower, Component, Composer, jspm
+
+Handlebars can be enabled by using other package-managers as well, like
+
+- Bower (deprecated)
+- Component
+- Composer
+- jspm
+
+see https://github.com/components/handlebars.js for details
 
 ## Usage
 

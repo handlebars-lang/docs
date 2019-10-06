@@ -1,47 +1,27 @@
 <template>
-  <div title="Download Handlebars" class="download-handlebars">
-    <svg class="icon">
-      <path
-        d="M25.462,19.105v6.848H4.515v-6.848H0.489v8.861c0,1.111,0.9,2.012,2.016,2.012h24.967c1.115,0,2.016-0.9,2.016-2.012
-		v-8.861H25.462z"
-      />
-      <path
-        d="M14.62,18.426l-5.764-6.965c0,0-0.877-0.828,0.074-0.828s3.248,0,3.248,0s0-0.557,0-1.416c0-2.449,0-6.906,0-8.723
-		c0,0-0.129-0.494,0.615-0.494c0.75,0,4.035,0,4.572,0c0.536,0,0.524,0.416,0.524,0.416c0,1.762,0,6.373,0,8.742
-		c0,0.768,0,1.266,0,1.266s1.842,0,2.998,0c1.154,0,0.285,0.867,0.285,0.867s-4.904,6.51-5.588,7.193
-		C15.092,18.979,14.62,18.426,14.62,18.426z"
-      />
-    </svg>
-    <div class="download-link">
-      <div class="header">Download Handlebars compiler + runtime</div>
-      <div>
-        <a
-          title="If unsure, use this one."
-          class="button-link first-download"
-          :href="linkPrefix + filename.full.uncompressed"
-          >{{ filename.full.uncompressed }}</a
-        >
-        (development version)
-      </div>
-      <div>
-        <a class="minified" :href="linkPrefix + filename.full.minified">{{ filename.full.minified }} (minified)</a>
-      </div>
+  <div class="download-handlebars">
+    <div class="download-links">
+      <a :title="uncompressedTitle" class="uncompressed-download" :href="uncompressedLink">
+        {{ label }}
+        <DownloadIcon class="icon" />
+      </a>
+      <a :title="minifiedTitle" class="minified-download" :href="minifiedLink"
+        >minified
+        <DownloadIcon class="icon" />
+      </a>
     </div>
-    <div class="download-link">
-      <div class="header">Download Handlebars runtime only</div>
-      <div>
-        <a :href="linkPrefix + filename.runtime.uncompressed">{{ filename.runtime.uncompressed }}</a>
-      </div>
-      <div>
-        <a class="minified" :href="linkPrefix + filename.runtime.minified"
-          >{{ filename.runtime.minified }} (minified)</a
-        >
-      </div>
+    <div class="description">
+      <slot></slot>
     </div>
   </div>
 </template>
 <script>
+import DownloadIcon from "../private-components/DownloadIcon";
+
 export default {
+  components: {
+    DownloadIcon
+  },
   props: {
     runtimeOnly: {
       type: Boolean,
@@ -50,79 +30,97 @@ export default {
     }
   },
   data() {
-    const version = this.$handlebarsVersions.latest;
-    return {
-      version: version,
-      linkPrefix: "https://s3.amazonaws.com/builds.handlebarsjs.com/",
-      filename: {
-        full: {
-          uncompressed: `handlebars-v${version}.js`,
-          minified: `handlebars.min-v${version}.js`
-        },
-        runtime: {
-          uncompressed: `handlebars.runtime-v${version}.js`,
-          minified: `handlebars.runtime.min-v${version}.js`
-        }
-      }
-    };
+    return {};
+  },
+  computed: {
+    uncompressedTitle() {
+      return "Download " + this.label;
+    },
+    minifiedTitle() {
+      return "Download minified " + this.label;
+    },
+    label() {
+      return this.$props.runtimeOnly
+        ? `Handlebars ${this.version} (runtime only)`
+        : `Handlebars ${this.version} (compiler + runtime)`;
+    },
+    uncompressedLink() {
+      return this.linkPrefix + this.$props.runtimeOnly
+        ? `handlebars.runtime-v${this.version}.js`
+        : `handlebars-v${this.version}.js`;
+    },
+    minifiedLink() {
+      return this.linkPrefix + this.$props.runtimeOnly
+        ? `handlebars.runtime.min-v${this.version}.js`
+        : `handlebars.min-v${this.version}.js`;
+    },
+    linkPrefix() {
+      return "https://s3.amazonaws.com/builds.handlebarsjs.com/";
+    },
+    version() {
+      return this.$handlebarsVersions.latest;
+    }
   }
 };
 </script>
 <style lang="stylus" scoped>
+
+$downloadLinkPadding = 0.5rem;
+$borderRadius = 5px;
+
+
 .download-handlebars {
-    border-radius: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    justify-content: left;
-    align-items: center;
+  border-radius: $borderRadius
+  background-color: lightgray;
+  margin-top: 1rem;
+  padding: 0.5rem;
 
 }
 
-@media (max-width: $MQNarrow) {
-    .icon {
-        display: none;
-    }
+.download-links {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.minified-download, .uncompressed-download {
+  text-align: center;
+  padding: $downloadLinkPadding 0;
+  border-radius: 5px;
+}
+
+.uncompressed-download {
+  flex: 1 0 20rem;
+  background-color: $baseColor;
+  color: white;
+}
+
+.minified-download {
+  flex: 1 1 10rem;
+  text-align: center;
+}
+
+.description {
+  margin-top: -0.5rem;
 }
 
 .icon {
-    width: 2em;
-    height: 2em;
-    margin: 1em;
-
-    path {
-        stroke: gray;
-        fill: gray;
-    }
+  margin-left: 0.25rem;
+  width: 0.75rem;
+  height: 0.75rem;
 }
 
-.download-link {
-    display: block;
-    line-height: 150%;
-    margin: 0.5em;
-
-    a {
-        font-weight: normal;
-    }
-
-    a.first-download {
-        font-weight: bold;
-        border: 1px solid $baseColor;
-        border-radius: 5px;
-        padding: 4px;
-        margin: -5px;
-        margin-right: 0px;
-    }
-
+@media (max-width: $MQMobile) {
+  .download-handlebars {
+    padding: 0.5rem;
+  }
 }
 
-.header {
-    color: $textColor;
-    font-weight: bold;
-    font-size: 80%;
-}
+@media (max-width: $MQMobileNarrow) {
+  .download-handlebars {
+    margin: 0.5rem -1.5rem;
+    border-radius: 0;
+  }
 
-.minified {
-    font-size: 80%;
 }
 </style>
