@@ -28,7 +28,7 @@ Handlebars expressions can also be dot-separated paths.
 
 <ExamplePart examplePage="/examples/path-expressions-dot.md" show="template" />
 
-This expression looks up the `person` property in the input object and inturn looks up the `firstname` and `lastname`
+This expression looks up the `person` property in the input object and in turn looks up the `firstname` and `lastname`
 property within the `person` object.
 
 Pass the below input object to the template <ExamplePart examplePage="/examples/path-expressions-dot.md" show="input" />
@@ -46,16 +46,16 @@ Identifiers may be any unicode character except for the following:
 _Whitespace_ `!` `"` `#` `%` `&` `'` `(` `)` `*` `+` `,` `.` `/` `;` `<` `=` `>` `@` `[` `\` `]` `^` `` ` `` `{` `|` `}`
 `~`
 
-To reference a property that is not a valid identifier, you can use segment-literal notation, `[`:
+In addition, the words `true`, `false`, `null` and `undefined` are only allowed in the first part of a path expression.
+
+To reference a property that is not a valid identifier, you can use segment-literal notation, `[`. You may not include a
+closing `]` in a path-literal, but all other characters are allowed.
+
+JavaScript-style strings, `"` and `'`, may also be used instead `[` pairs.
 
 <ExamplePart examplePage="/examples/literal-segments.md" show="template" />
 
-In the example above, the template will treat the `each` parameter roughly equivalent to this javascript:
-`articles[10]['#comments']`
-
-You may not include a closing `]` in a path-literal, but all other characters are fair game.
-
-JavaScript-style strings, `"` and `'`, may also be used vs. `[` pairs.
+## HTML-escaping
 
 ::: v-pre
 
@@ -63,7 +63,9 @@ In Handlebars, the values returned by the `{{expression}}` are HTML-escaped. Say
 the returned HTML-escaped output is genarated as `&amp;` If you don't want Handlebars to escape a value, use the
 "triple-stash", `{{{`:
 
-::: In the below template, You can learn how to produce the HTML escaped and raw output.
+:::
+
+In the below template, You can learn how to produce the HTML escaped and raw output.
 
 <ExamplePart examplePage="/examples/html-escaping.md" show="template" />
 
@@ -82,33 +84,33 @@ below.
 
 ## Helpers
 
+Helpers can be used to implement functionality that is not part of the Handlebars language itself.
+
+A helper can be registered at the runtime via `Handlebars.registerHelper`, for example in order to uppercase all
+characters of a string.
+
+<ExamplePart examplePage="/examples/helper-simple.md" show="preparationScript" />
+
 A Handlebars helper call is a simple identifier, followed by zero or more parameters (separated by space). Each
-parameter is a Handlebars expression.
-
-### Helpers with Single Parameter
-
-Let us see an example explaining helper with a single parameter
+parameter is a Handlebars expression that is evaluated exactly the same way described above in "Basic Usage":
 
 <ExamplePart examplePage="/examples/helper-single-parameter.md" show="template" />
 
-In this case, `link` is the name of a Handlebars helper, and `people` is a parameter to the helper. The input `people`
-object is provided as below:
+In this case, `loud` is the name of a helper, and `lastname` is a parameter to the helper. The template will uppercase
+the `lastname` property of the input:
 
-<ExamplePart examplePage="/examples/helper-single-parameter.md" show="input" />
+<Flex>
+<ExamplePart examplePage="/examples/helper-simple.md" show="input" />
+<ExamplePart examplePage="/examples/helper-simple.md" show="output" />
+</Flex>
 
-Handlebars evaluates parameters in exactly the same way described above in "Basic Usage".
+### Prevent HTML-escaping of helper return values
 
-<ExamplePart examplePage="/examples/helper-single-parameter.md" show="preparationScript" />
+When your helper returns an instance of `Handlebars.Safestring` the return-value is not escaped, even if the helper is
+called with `{{` instead of `{{{`. You have to take care that all parameters are escaping properly using
+`Handlebars.escapeExpression`.
 
-About script explains the functionality of the helper `link`. The helper gets necessary values from the `people` object
-and return a HTML link as below:
-
-<ExamplePart examplePage="/examples/helper-single-parameter.md" show="output" />
-
-When returning HTML from a helper, you should return a Handlebars SafeString if you don't want it to be escaped by
-default. When using SafeString all unknown or unsafe data should be manually escaped with the `escapeExpression` method.
-
-You can also pass a simple String, number, or boolean as a parameter to Handlebars helpers.
+<ExamplePart examplePage="/examples/helper-safestring.md" show="preparationScript" />
 
 ### Helpers with Multiple Parameters
 
@@ -125,7 +127,7 @@ The helper function `link` is used to generate a hyperlink as described in the s
 
 <ExamplePart examplePage="/examples/helper-multiple-parameters.md" show="preparationScript" />
 
-We will obtain the HTML link output using the input parameters
+We will obtain the output using the input parameters
 
 <ExamplePart examplePage="/examples/helper-multiple-parameters.md" show="output" />
 
@@ -139,23 +141,24 @@ In the above example, You could use the exact same helper with dynamic text base
 ### Literal arguments
 
 Helper calls may also have literal values passed to them either as parameter arguments or hash arguments. Supported
-literals include numbers, strings, `true`, `false`, `null` and ? `undefined`.
+literals include numbers, strings, `true`, `false`, `null` and `undefined`:
 
-<Example examplePage="/examples/helper-literals" :showInputOutput="false" />
+<Flex>
+<ExamplePart examplePage="/examples/helper-literals" show="template" />
+</Flex>
 
 ### Helpers with Hash arguments
 
-Handlebars helpers can also receive an optional sequence of key-value pairs as their final parameter (referred to as
-hash arguments in the documentation):
+Handlebars provides additional metadata, such as Hash arguments, to helpers as a final parameter.
 
 <ExamplePart examplePage="/examples/helper-hash-arguments.md" show="template" />
 
-In tha template,the final parameter `href=people.url class="people"` are hash arguments sent to the helper.
+In that template,the final parameter `href=people.url class="people"` are hash arguments sent to the helper.
 
 The keys in hash arguments must each be simple identifiers, and the values are Handlebars expressions. This means that
 values can be simple identifiers, paths, or Strings.
 
-If we pass the below input to the template, the value of `people.url` can be obtained from the `people` object.
+If we pass the below input to the template, the value of `person.url` can be obtained from the `person` object.
 
 <ExamplePart examplePage="/examples/helper-hash-arguments.md" show="input" />
 
@@ -167,8 +170,6 @@ further processing within the helper.
 The output of above helper is generated as below
 
 <ExamplePart examplePage="/examples/helper-hash-arguments.md" show="output" />
-
-Handlebars provides additional metadata, such as Hash arguments, to helpers as a final parameter.
 
 Handlebars also offers a mechanism for invoking a helper with a block of the template. Block helpers can then invoke
 that block zero or more times with any context it chooses.
@@ -189,7 +190,7 @@ In this case, `inner-helper` will get invoked with the string argument `'abc'`, 
 returns will get passed in as the first argument to `outer-helper` (and `'def'` will get passed in as the second
 argument to `outer-helper`).
 
-# Whitespace Control
+## Whitespace Control
 
 Template whitespace may be omitted from either side of any mustache statement by adding a `~` character by the braces.
 When applied all whitespace on that side will be removed up to the first handlebars expression or non-whitespace
@@ -247,7 +248,7 @@ will render
 </a>
 ```
 
-## Escaping
+## Escaping Handlebars expressions
 
 ::: v-pre
 

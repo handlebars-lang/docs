@@ -5,8 +5,8 @@ example:
     {{bold text}}
   partials:
   preparationScript: |
-    Handlebars.registerHelper("bold", function(text, url) {
-      var result = "<b>" + Handlebars.Utils.escapeExpression(text) + "</b>";
+    Handlebars.registerHelper("bold", function(text) {
+      var result = "<b>" + Handlebars.escapeExpression(text) + "</b>";
       return new Handlebars.SafeString(result);
     });
   input:
