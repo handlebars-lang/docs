@@ -26,10 +26,10 @@ console.log(template({ name: "Nils" }));
 Using npm or yarn is the recommended way of using Handlebars. If you want to use Handlebars templates in the
 web-browser, we recommend that you use a build-engine such as Webpack, Browserify or Parcel.
 
-The [helper-packages](./helper-packages.html) page contains a list of plugins for those loaders that allow you to
-automatically precompile templates.
+The [integrations](integrations.md) page contains a list of plugins for those loaders that allow you to automatically
+precompile templates or use Handlebars otherwise.
 
-!button[Learn more: Helper packages](./helper-packages.md)
+!button[Learn more: Integrations](./integrations.md)
 
 :::
 

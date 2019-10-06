@@ -37,3 +37,10 @@ TODO: Copy from http://handlebarsjs.com/precompilation.html
 ## Precompiling Templates Inside NodeJS
 
 TODO: Copy from http://handlebarsjs.com/precompilation.html
+
+## Integrations
+
+Some npm-packages can be used to integrate the Handlebars precompiler into your build system (i.e. Webpack,
+Browserify...). Have a look at the integrations page:
+
+!button[Learn more: Integrations](integrations.md)
