@@ -94,7 +94,7 @@ characters of a string.
 A Handlebars helper call is a simple identifier, followed by zero or more parameters (separated by space). Each
 parameter is a Handlebars expression that is evaluated exactly the same way described above in "Basic Usage":
 
-<ExamplePart examplePage="/examples/helper-single-parameter.md" show="template" />
+<ExamplePart examplePage="/examples/helper-simple.md" show="template" />
 
 In this case, `loud` is the name of a helper, and `lastname` is a parameter to the helper. The template will uppercase
 the `lastname` property of the input:
