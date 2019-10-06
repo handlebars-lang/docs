@@ -43,7 +43,7 @@ Handlebars also supports a deprecated `/` syntax, so you could write the above t
 
 Identifiers may be any unicode character except for the following:
 
-Whitespace `!` `"` `#` `%` `&` `'` `(` `)` `*` `+` `,` `.` `/` `;` `<` `=` `>` `@` `[` `\` `]` `^` `` ` `` `{` `|` `}`
+_Whitespace_ `!` `"` `#` `%` `&` `'` `(` `)` `*` `+` `,` `.` `/` `;` `<` `=` `>` `@` `[` `\` `]` `^` `` ` `` `{` `|` `}`
 `~`
 
 To reference a property that is not a valid identifier, you can use segment-literal notation, `[`:
@@ -106,7 +106,7 @@ default. When using SafeString all unknown or unsafe data should be manually esc
 
 You can also pass a simple String, number, or boolean as a parameter to Handlebars helpers.
 
-### `Helpers with Multiple Parameters`
+### Helpers with Multiple Parameters
 
 Let us see another example of helpers with two parameters
 
@@ -132,7 +132,14 @@ In the above example, You could use the exact same helper with dynamic text base
 <ExamplePart examplePage="/examples/helper-dynamic-parameters.md" show="input" />
 </Flex>
 
-### `Helpers with Hash arguments`
+### Literal arguments
+
+Helper calls may also have literal values passed to them either as parameter arguments or hash arguments. Supported
+literals include numbers, strings, `true`, `false`, `null` and ? `undefined`.
+
+<Example examplePage="/examples/helper-literals" :showInputOutput="false" />
+
+### Helpers with Hash arguments
 
 Handlebars helpers can also receive an optional sequence of key-value pairs as their final parameter (referred to as
 hash arguments in the documentation):

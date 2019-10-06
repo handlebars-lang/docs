@@ -24,12 +24,3 @@ Handlebars also allows for name conflict resolution between helpers and data fie
 <Example examplePage="/examples/helper-data-name-conflict" :hidePreparationScript="true" />
 
 Any of the above would cause the name field on the current context to be used rather than a helper of the same name.
-
-## TODO: Move to "helpers"
-
-### Literals
-
-Helper calls may also have literal values passed to them either as parameter arguments or hash arguments. Supported
-literals include numbers, strings, `true`, `false`, `null` and ? `undefined`.
-
-<Example examplePage="/examples/helper-literals" :showInputOutput="false" />
