@@ -1,5 +1,7 @@
-The following packages provide help you using Handlebars in different environments. These packages are **not**
-officially supported by the Handlebars team.
+# Integrations
+
+The following packages integrate Handlebars in different environments. These packages are **not** officially supported
+by the Handlebars team.
 
 There are multiple webpack-plugins that allow you to use Handlebars in a Webpack environment.
 
