@@ -162,7 +162,7 @@ Handlebars provides additional metadata, such as Hash arguments, to helpers as a
 Handlebars also offers a mechanism for invoking a helper with a block of the template. Block helpers can then invoke
 that block zero or more times with any context it chooses.
 
-[Learn More: Block Helpers](block-helpers.html)
+!button[Learn More: Block Helpers](block-helpers.html)
 
 ## Subexpressions
 
