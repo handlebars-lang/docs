@@ -25,7 +25,3 @@ example:
       - name: Nelson
         age: 40
 ---
-
-This example shows all the features that can be used in Handlebars
-
-TODO: Add a decorator.
