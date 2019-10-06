@@ -81,77 +81,88 @@ below.
 A Handlebars helper call is a simple identifier, followed by zero or more parameters (separated by space). Each
 parameter is a Handlebars expression.
 
-```handlebars
-{{link story}}
-```
+### `Helpers with Single Parameter`
 
-In this case, `link` is the name of a Handlebars helper, and story is a parameter to the helper. Handlebars evaluates
-parameters in exactly the same way described above in "Basic Usage".
+Let us see an example explaining helper with a single parameter
 
-```js
-Handlebars.registerHelper("link", function(object) {
-  var url = Handlebars.escapeExpression(object.url),
-    text = Handlebars.escapeExpression(object.text);
+<ExamplePart examplePage="/examples/helper-single-parameter.md" show="template" />
 
-  return new Handlebars.SafeString("<a href='" + url + "'>" + text + "</a>");
-});
-```
+In this case, `link` is the name of a Handlebars helper, and `people` is a parameter to the helper. The input `people`
+object is provided as below:
+
+<ExamplePart examplePage="/examples/helper-single-parameter.md" show="input" />
+
+Handlebars evaluates parameters in exactly the same way described above in "Basic Usage".
+
+<ExamplePart examplePage="/examples/helper-single-parameter.md" show="preparationScript" />
+
+About script explains the functionality of the helper `link`. The helper gets necessary values from the `people` object
+and return a HTML link as below:
+
+<ExamplePart examplePage="/examples/helper-single-parameter.md" show="output" />
 
 When returning HTML from a helper, you should return a Handlebars SafeString if you don't want it to be escaped by
 default. When using SafeString all unknown or unsafe data should be manually escaped with the `escapeExpression` method.
 
 You can also pass a simple String, number, or boolean as a parameter to Handlebars helpers.
 
-```handlebars
-{{link "See more..." story.url}}
-```
+### `Helpers with Multiple Parameters`
 
-In this case, Handlebars will pass the link helper two parameters: the String `"See more..."` and the result of
-evaluating `story.url` in the current context.
+Let us see another example of helpers with two parameters
 
-```js
-Handlebars.registerHelper("link", function(text, url) {
-  url = Handlebars.escapeExpression(url);
-  text = Handlebars.escapeExpression(text);
+<ExamplePart examplePage="/examples/helper-multiple-parameters.md" show="template" />
 
-  return new Handlebars.SafeString("<a href='" + url + "'>" + text + "</a>");
-});
-```
+In this case, Handlebars will pass the link helper two parameters: the String `See Website` and the value of
+`people.url` from the below provided input `people` object.
 
-You could use the exact same helper with dynamic text based on the value of `story.text`:
+<ExamplePart examplePage="/examples/helper-multiple-parameters.md" show="input" />
 
-```handlebars
-{{link story.text story.url}}
-```
+The helper function `link` is used to generate a hyperlink as described in the script.
+
+<ExamplePart examplePage="/examples/helper-multiple-parameters.md" show="preparationScript" />
+
+We will obtain the HTML link output using the input parameters
+
+<ExamplePart examplePage="/examples/helper-multiple-parameters.md" show="output" />
+
+In the above example, You could use the exact same helper with dynamic text based on the value of `people.text`:
+
+<Flex>
+<ExamplePart examplePage="/examples/helper-dynamic-parameters.md" show="template" />
+<ExamplePart examplePage="/examples/helper-dynamic-parameters.md" show="input" />
+</Flex>
+
+### `Helpers with Hash arguments`
 
 Handlebars helpers can also receive an optional sequence of key-value pairs as their final parameter (referred to as
 hash arguments in the documentation):
 
-```handlebars
-{{link "See more..." href=story.url class="story"}}
-```
+<ExamplePart examplePage="/examples/helper-hash-arguments.md" show="template" />
+
+In tha template,the final parameter `href=people.url class="people"` are hash arguments sent to the helper.
 
 The keys in hash arguments must each be simple identifiers, and the values are Handlebars expressions. This means that
 values can be simple identifiers, paths, or Strings.
 
-```js
-Handlebars.registerHelper("link", function(text, options) {
-  var attrs = [];
+If we pass the below input to the template, the value of `people.url` can be obtained from the `people` object.
 
-  for (var prop in options.hash) {
-    attrs.push(Handlebars.escapeExpression(prop) + '="' + Handlebars.escapeExpression(options.hash[prop]) + '"');
-  }
+<ExamplePart examplePage="/examples/helper-hash-arguments.md" show="input" />
 
-  return new Handlebars.SafeString("<a " + attrs.join(" ") + ">" + Handlebars.escapeExpression(text) + "</a>");
-});
-```
+As described in the helper script below, the hash arguments can be obtained from the last parameter `options` for
+further processing within the helper.
+
+<ExamplePart examplePage="/examples/helper-hash-arguments.md" show="preparationScript" />
+
+The output of above helper is generated as below
+
+<ExamplePart examplePage="/examples/helper-hash-arguments.md" show="output" />
 
 Handlebars provides additional metadata, such as Hash arguments, to helpers as a final parameter.
 
 Handlebars also offers a mechanism for invoking a helper with a block of the template. Block helpers can then invoke
 that block zero or more times with any context it chooses.
 
-[Learn More: Block Helpers](block_helpers.html)
+[Learn More: Block Helpers](block-helpers.html)
 
 ## Subexpressions
 
