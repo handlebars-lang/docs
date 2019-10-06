@@ -81,7 +81,7 @@ below.
 A Handlebars helper call is a simple identifier, followed by zero or more parameters (separated by space). Each
 parameter is a Handlebars expression.
 
-### `Helpers with Single Parameter`
+### Helpers with Single Parameter
 
 Let us see an example explaining helper with a single parameter
 
