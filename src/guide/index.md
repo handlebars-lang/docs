@@ -124,13 +124,7 @@ invoke with a context just as you would invoke a normal Handlebars template.
 
 When executed, the template will render:
 
-```html
-<ul>
-  <li>Yehuda Katz</li>
-  <li>Carl Lerche</li>
-  <li>Alan Johnson</li>
-</ul>
-```
+<ExamplePart examplePage="/examples/helper-block" show="output" />
 
 Block helpers have more features, such as the ability to create an `else` section (used, for instance, by the built-in
 `if` helper).
