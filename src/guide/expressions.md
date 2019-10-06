@@ -71,8 +71,12 @@ Pass the special characters to the template
 
 <ExamplePart examplePage="/examples/html-escaping.md" show="input" />
 
+::: v-pre
+
 Expressions enclosed by "triple-stash" (`{{{`) produces the raw output otherwise HTML-escaped output is generated as
 below.
+
+:::
 
 <ExamplePart examplePage="/examples/html-escaping.md" show="output" />
 
