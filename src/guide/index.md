@@ -9,8 +9,7 @@ text with embedded Handlebars expressions.
 
 <ExamplePart examplePage="/examples/simple-expressions" show="template"/>
 
-A handlebars expression is a `{{`, some contents, followed by a `}}`. When the template is executed, these expressions a
-replace with values from an input object.
+A handlebars expression is a `{{`, some contents, followed by a `}}`. When the template is executed, these expressions are replaced with values from an input object.
 
 !button[Learn More: Expressions](expressions.html)
 
