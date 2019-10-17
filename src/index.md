@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /images/handlebars_logo.png
-tagline: Minimal templating on steriods
+tagline: Minimal templating on steroids
 actionText: Get Started →
 actionLink: /guide/
 features:
