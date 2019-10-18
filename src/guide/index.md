@@ -32,7 +32,7 @@ real production systems.
 
 ## Simple expressions
 
-A shown before, the following template defines two Handlebars expressions
+As shown before, the following template defines two Handlebars expressions
 
 <ExamplePart examplePage="/examples/simple-expressions" show="template"/>
 
