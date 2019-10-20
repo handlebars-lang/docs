@@ -29,7 +29,7 @@ web-browser, we recommend that you use a build-engine such as Webpack, Browserif
 The [integrations](integrations.md) page contains a list of plugins for those loaders that allow you to automatically
 precompile templates or use Handlebars otherwise.
 
-!button[Learn more: Integrations](./integrations.md)
+!button[Learn more: Integrations](integrations.md)
 
 :::
 
@@ -56,7 +56,7 @@ Use this version as a quick start, if you want to compile your templates in the 
 
 <DownloadHandlebars :runtimeOnly="true">
 
-Use this version when you are using [precompiled templates](./precompilation.md) in the browser. This version does not
+Use this version when you are using [precompiled templates](precompilation.md) in the browser. This version does not
 include the compiler.
 
 </DownloadHandlebars>

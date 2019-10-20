@@ -8,6 +8,7 @@ make a good choice of a framework.
 Add text here!
 
 - Handlebars is good for rendering in CLI-apps, non-HTML text content, server-side rendering of pure contents.
+- Handlebars has been ported to many programming languages (Java, Rust etc).
 - Handlebars is not good for fast (incremental) updates of the DOM, event-handling, frontend-backend communication.
 
 ::: warning A note on using Handlebars in the browser

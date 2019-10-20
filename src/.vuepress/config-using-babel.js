@@ -21,22 +21,19 @@ export default {
     nav: [
       { text: "Home", link: "/" },
       { text: "Language Guide", link: "/guide/" },
+      { text: "Installation", link: "/installation/" },
       { text: "Improve the docs", link: "/contributing/" },
       {
         text: "Other sources",
         items: [{ text: "handlebarsjs.com", link: "https://handlebarsjs.com" }]
       }
     ],
-    sidebar: [
-      "guide/",
-      "topics/installation.md",
-      "guide/expressions.md",
-      "topics/precompilation.md",
-      "guide/partials.md",
-      "guide/block-helpers.md",
-      "guide/builtin-helpers.md",
-      "guide/api-reference.md"
-    ],
+    sidebar: {
+      "/installation/": ["", "precompilation.md", "integrations.md", "when-to-use-handlebars.md"],
+      "/guide/": ["", "expressions.md", "partials.md", "block-helpers.md", "builtin-helpers.md"],
+      "/api-reference": [""],
+      "/contributing/": ["", "interactive-examples.md", "button-links.md"]
+    },
     displayAllHeaders: false,
     repo: "handlebars-lang/docs",
     lastUpdated: "Last Updated",

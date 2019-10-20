@@ -1,4 +1,4 @@
-# Interactive examples
+# Creating interactive examples
 
 [[toc]]
 

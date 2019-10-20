@@ -28,7 +28,7 @@ Include the Handlebars runtime and the precompile javascript.
 
 <<< @/src/usage-examples/precompilation/index.html
 
-The runtime is also available for download on the [installation page](./installation.md#downloading-handlebars).
+The runtime is also available for download on the [installation page](index.md#downloading-handlebars).
 
 ## Optimizations
 

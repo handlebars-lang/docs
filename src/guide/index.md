@@ -24,7 +24,7 @@ The fastest way to test Handlebars is to use into load it from a _CDN_ and and e
 This method can be used for small pages and for testing. There are several other ways to use Handlebars, when you target
 real production systems.
 
-!button[Learn more: Installation](../topics/installation.md)
+!button[Learn more: Installation](../installation/index.md)
 
 :::
 
