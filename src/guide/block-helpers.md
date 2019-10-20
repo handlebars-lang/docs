@@ -376,6 +376,8 @@ is optional and any additional parameters passed to the template will be silentl
 
 Raw blocks are available for templates needing to handle unprocessed mustache blocks.
 
+<ExamplePart examplePage="/examples/raw-blocks.md" show="template"/>
+
 ```handlebars
 {{{{raw-helper}}}}
   {{bar}}
