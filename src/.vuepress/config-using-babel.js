@@ -35,10 +35,11 @@ export default {
       "/contributing/": ["", "interactive-examples.md", "button-links.md"]
     },
     displayAllHeaders: false,
-    repo: "handlebars-lang/docs",
+    repo: "wycats/handlebars.js",
     lastUpdated: "Last Updated",
     editLinks: true,
     editLinkText: "Propose a change to this page!",
+    docsRepo: "handlebars-lang/docs",
     docsDir: "src"
   },
   plugins: [
