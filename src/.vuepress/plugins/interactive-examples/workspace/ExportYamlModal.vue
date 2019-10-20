@@ -11,7 +11,7 @@
   </Modal>
 </template>
 <script lang="js">
-import Modal from "../Modal.vue";
+import Modal from "../../../private-components/Modal.vue";
 
 export default {
   components: { Modal },

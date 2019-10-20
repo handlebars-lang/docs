@@ -19,8 +19,8 @@
   </div>
 </template>
 <script>
-import HighlightedCode from "../private-components/try-handlebars/HighlightedCode";
-import TryoutIcon from "../private-components/try-handlebars/TryoutIcon";
+import HighlightedCode from "../workspace/HighlightedCode";
+import TryoutIcon from "../workspace/TryoutIcon";
 
 const partToLanguage = {
   input: "json",

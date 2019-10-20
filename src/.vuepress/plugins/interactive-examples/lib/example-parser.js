@@ -1,4 +1,4 @@
-import { prettifyJson } from "./prettify-json";
+import { prettifyJson } from "../../../lib/prettify-json";
 import Handlebars from "handlebars";
 
 export class ExampleParser {

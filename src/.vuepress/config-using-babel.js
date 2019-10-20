@@ -4,7 +4,7 @@
 const basePath = process.env.VUEPRESS_BASE || "/";
 
 import { storeHandlebarsVersionAtVuePrototype } from "./plugins/inject-handlebars-versions";
-import { addParsedExampleToPage } from "./plugins/add-parsed-examples-to-page";
+import { interactiveExamples } from "./plugins/interactive-examples";
 import { buttonLink } from "./plugins/button-link";
 import { ensureGhPagesCustomDomain } from "./plugins/ensure-gh-pages-custom-domain";
 
@@ -53,7 +53,7 @@ export default {
       }
     ],
     storeHandlebarsVersionAtVuePrototype,
-    addParsedExampleToPage,
+    interactiveExamples,
     buttonLink,
     ensureGhPagesCustomDomain
   ]

@@ -78,7 +78,7 @@ import WorkspaceElement from "./WorkspaceElement.vue";
 import WorkspaceError from "./WorkspaceError.vue";
 import HandlebarsVersionChooser from "./HandlebarsVersionChooser.vue";
 import { executeExample } from "./execute-example";
-import { serializeToYaml } from "../../lib/example-serializer";
+import { serializeToYaml } from "../lib/example-serializer";
 import ExportYamlModal from "./ExportYamlModal";
 import { createSharedUrl, loadFromSharedUrl } from "./share-utils";
 import ShareUrlModal from "./ShareUrlModal";
@@ -135,7 +135,7 @@ export default {
     executeExample() {
       Vue.nextTick(async () => {
         try {
-          await executeExample(this.currentExample);
+          this.currentExample.output = await executeExample(this.currentExample);
           this.currentError = null;
         } catch (err) {
           this.currentError = err;

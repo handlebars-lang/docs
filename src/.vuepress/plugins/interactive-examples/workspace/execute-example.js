@@ -5,17 +5,17 @@ import json5 from "json5";
  * Return the output of the example
  */
 export async function executeExample(example) {
-  const handlebars = await getDedicatedHandlebarsInstance();
+  const handlebars = await getDedicatedHandlebarsInstance(example);
   prepareHandlebarsRuntime(handlebars, example);
 
   const template = handlebars.compile(example.template);
   const input = json5.parse(example.input);
-  example.output = template(input);
+  return template(input);
+}
 
-  async function getDedicatedHandlebarsInstance() {
-    const singletonHandlebarsInstance = await lazyGetHandlebars(example.handlebarsVersion);
-    return singletonHandlebarsInstance.create();
-  }
+async function getDedicatedHandlebarsInstance(example) {
+  const singletonHandlebarsInstance = await lazyGetHandlebars(example.handlebarsVersion);
+  return singletonHandlebarsInstance.create();
 }
 
 function prepareHandlebarsRuntime(Handlebars, example) {

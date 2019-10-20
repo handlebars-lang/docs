@@ -15,8 +15,8 @@
 </template>
 <script>
 import Layout from "@theme/layouts/Layout.vue";
-import Workspace from "../private-components/try-handlebars/Workspace.vue";
-import { deindent } from "../private-components/utils";
+import Workspace from "../workspace/Workspace.vue";
+import { deindent } from "../../../private-components/utils";
 
 export default {
   components: { Layout, Workspace },

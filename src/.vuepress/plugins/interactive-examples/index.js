@@ -1,13 +1,20 @@
 /* eslint-disable no-console */
 /* eslint-env node */
 
-import { ExampleParser } from "../lib/example-parser";
+import { ExampleParser } from "./lib/example-parser";
 import { ErrorCollector } from "./lib/error-collector";
+import path from "path";
 
-export function addParsedExampleToPage() {
+export function interactiveExamples() {
   const errorCollector = new ErrorCollector();
+  console.log("INTERACTIVE_EXAMPLES");
   return {
-    name: "add-parsed-example-to-page",
+    name: "interactive-examples",
+    plugins: {
+      "@vuepress/register-components": {
+        componentsDir: path.join(__dirname, "global-components")
+      }
+    },
     extendPageData($page) {
       const { frontmatter, _filePath } = $page;
 

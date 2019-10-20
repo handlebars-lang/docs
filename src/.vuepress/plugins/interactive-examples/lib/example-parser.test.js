@@ -1,5 +1,5 @@
 import { ExampleParser } from "./example-parser";
-import { multilineBlock } from "../../../test-utils/multilineblock";
+import { multilineBlock } from "../../../../../test-utils/multilineblock";
 
 describe("the example parser", () => {
   it("should parse a simple example", () => {

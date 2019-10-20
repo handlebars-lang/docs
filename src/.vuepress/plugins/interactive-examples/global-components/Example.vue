@@ -15,7 +15,7 @@
   </div>
 </template>
 <script>
-import Workspace from "../private-components/try-handlebars/Workspace.vue";
+import Workspace from "../workspace/Workspace.vue";
 
 export default {
   components: { Workspace },

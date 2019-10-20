@@ -56,8 +56,8 @@ const languageToModeMapping = {
 };
 </script>
 <style lang="stylus">
-@import '~codemirror/lib/codemirror.css'
-@import '~codemirror/theme/base16-dark.css'
+@import '../../../../../node_modules/codemirror/lib/codemirror.css'
+@import '../../../../../node_modules/codemirror/theme/base16-dark.css'
 
 .cm-s-base16-dark.CodeMirror {
     background: none;
