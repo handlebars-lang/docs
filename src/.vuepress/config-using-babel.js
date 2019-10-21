@@ -25,7 +25,14 @@ export default {
       { text: "Improve the docs", link: "/contributing/" },
       {
         text: "Other sources",
-        items: [{ text: "handlebarsjs.com", link: "https://handlebarsjs.com" }]
+        items: [
+          { text: "handlebarsjs.com", link: "https://handlebarsjs.com" },
+          { text: "Release notes", link: "https://github.com/wycats/handlebars.js/blob/master/release-notes.md" },
+          {
+            text: "Missing-doc issues",
+            link: "https://github.com/wycats/handlebars.js/issues?q=is%3Aopen+is%3Aissue+label%3Adocs-needed"
+          }
+        ]
       }
     ],
     sidebar: {
