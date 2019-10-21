@@ -9,7 +9,8 @@ text with embedded Handlebars expressions.
 
 <ExamplePart examplePage="/examples/simple-expressions" show="template"/>
 
-A handlebars expression is a `{{`, some contents, followed by a `}}`. When the template is executed, these expressions are replaced with values from an input object.
+A handlebars expression is a `{{`, some contents, followed by a `}}`. When the template is executed, these expressions
+are replaced with values from an input object.
 
 !button[Learn More: Expressions](expressions.html)
 
@@ -66,10 +67,8 @@ The built-in block-helpers `each` and `with` allow you to change the current eva
 The `with`-helper dives into an object-property, giving you access to its properties
 
 <Flex>
-
 <ExamplePart examplePage="/examples/builtin-helper-with-block" show="template"/>
 <ExamplePart examplePage="/examples/builtin-helper-with-block" show="input"/>
-
 </Flex>
 
 The `each`-helper iterates an array, allowing to you access the properties of each object via simple handlebars
@@ -103,11 +102,17 @@ Any comments that must contain `}}` or other handlebars tokens should use the `{
 Handlebars helpers can be accessed from any context in a template. You can register a helper with the
 Handlebars.registerHelper method.
 
-<Example examplePage="/examples/helper-simple" :showInputOutput="false" />
+<Flex>
+<ExamplePart examplePage="/examples/helper-simple" show="template" />
+<ExamplePart examplePage="/examples/helper-simple" show="preparationScript" />
+</Flex>
 
 Helpers receive the current context as the `this`-context of the function.
 
-<Example examplePage="/examples/helper-this-context" :showInputOutput="false" />
+<Flex>
+<ExamplePart examplePage="/examples/helper-this-context" show="template" />
+<ExamplePart examplePage="/examples/helper-this-context" show="preparationScript" />
+</Flex>
 
 ## Block Helpers
 

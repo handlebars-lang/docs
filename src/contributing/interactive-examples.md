@@ -75,29 +75,3 @@ becomes
 <ExamplePart examplePage="/examples/builtin-helper-each-block" show="template"/>
 <ExamplePart examplePage="/examples/builtin-helper-each-block" show="input"/>
 </Flex>
-
-## Embedding the complete example
-
-If you want to embed the whole examples, not just parts of it, you can use the `<Example>`-component.
-
-::: warning Deprecation notice This was the original way for embedding examples, but you are more flexible by using
-
-`<ExamplePart>`
-
-:::
-
-```vue
-<Example examplePage="/examples/all-features" :showInputOutput="true" />
-```
-
-Attributes:
-
-- `examplePage`: path to the example page below the `src`-folder
-- `showInputOutput`: (optional, default: false) wether or not to show the "input" and "output" fields in this page.
-- `hidePreparationScript`: (optional, default: false) if set to true, the preparation script will not be shown even if
-  it exists.
-
-The above line will import the example defined in the markdown file `src/examples/simple-expressions.md` and display the
-following example.
-
-<Example examplePage="/examples/all-features" :showInputOutput="true" />

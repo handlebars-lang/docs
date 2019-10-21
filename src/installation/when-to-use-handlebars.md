@@ -1,4 +1,4 @@
-# When to use Handlebars?
+# When (not) to use Handlebars?
 
 This section should give you an overview over the strengths and weaknesses of Handlebars. Ideally, it enables you to
 make a good choice of a framework.

@@ -39,6 +39,43 @@ Handlebars also supports a deprecated `/` syntax, so you could write the above t
 
 <ExamplePart examplePage="/examples/path-expressions-slash.md" show="template" />
 
+## Changing the context
+
+Some helpers like `#with` and `#each` allow you to dive into nested objects. When you include `../` segments into your
+path, Handlebars will change back into the parent context.
+
+<ExamplePart examplePage="/examples/path-expressions-dot-dot" show="template" />
+
+Even though the name is printed while in the context of a comment, it can still go back to the main context (the
+root-object) to retrieve the prefix.
+
+::: v-pre
+
+::: warning
+
+The exact value that `../` will resolve to varies based on the helper that is calling the block. Using `../` is only
+necessary when context changes. Children of helpers such as `{{#each}}` would require the use of `../` while children of
+helpers such as `{{#if}}` do not.
+
+```hbs
+{{permalink}}
+{{#each comments}}
+  {{../permalink}}
+
+  {{#if title}}
+    {{../permalink}}
+  {{/if}}
+{{/each}}
+```
+
+In this example all of the above reference the same prefix value even though they are located within different blocks.
+This behavior is new as of Handlebars 4, the
+[release notes](https://github.com/wycats/handlebars.js/blob/master/release-notes.md) discuss the prior behavior as well
+as the migration plan. Handlebars also allows for name conflict resolution between helpers and data fields via a this
+reference:
+
+:::
+
 ## Literal segments
 
 Identifiers may be any unicode character except for the following:
@@ -175,6 +212,18 @@ Handlebars also offers a mechanism for invoking a helper with a block of the tem
 that block zero or more times with any context it chooses.
 
 !button[Learn More: Block Helpers](block-helpers.html)
+
+### Disambiguating helpers calls and property lookup
+
+If a helper is registered by the same name as a property of an input object, the helper has priority over the input
+property. If you want to resolve the input property instead, you can prefix its name with `./` or `this.` (or the
+deprecated `this/`)
+
+<Flex>
+<ExamplePart examplePage="/examples/helper-data-name-conflict" show="template" />
+<ExamplePart examplePage="/examples/helper-data-name-conflict" show="input" />
+<ExamplePart examplePage="/examples/helper-data-name-conflict" show="preparationScript" />
+</Flex>
 
 ## Subexpressions
 
