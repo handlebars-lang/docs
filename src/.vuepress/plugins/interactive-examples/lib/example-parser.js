@@ -1,76 +1,39 @@
 import { prettifyJson } from "../../../lib/prettify-json";
+import { runExample } from "./handlebars-runner";
 import Handlebars from "handlebars";
 
 export class ExampleParser {
   constructor(originalExample) {
-    const template = originalExample.template;
-    const partials = originalExample.partials || {};
-    const preparationScript = originalExample.preparationScript || "";
+    const defaultValues = { template: "", input: null, partials: {}, preparationScript: "" };
+    this.normalizedExample = { ...defaultValues, ...originalExample };
+  }
 
-    let input = originalExample.input;
-    if (input === undefined) {
-      input = null;
-    }
-
-    this.normalizedExample = { template, input, partials, preparationScript };
-
-    this.prettifiedInputAsString = null;
-    this.handlebarsExecutionError = null;
-    this.handlebarsOutput = null;
+  static useDefaultValueIfMissing(value, defaultValue) {
+    return value == null ? defaultValue : value;
   }
 
   /**
    * Entrypoint for parsing
    */
   parse() {
-    try {
-      this._prettifyInput();
-      this._runHandlebars();
-    } catch (error) {
-      this.handlebarsExecutionError = error;
-    }
-    return this._prepareResultForRendering();
-  }
-
-  _runHandlebars() {
-    const handlebars = Handlebars.create();
-    handlebars.registerPartial(this.normalizedExample.partials);
-    this._runPreparationScript(handlebars);
-    const template = handlebars.compile(this.normalizedExample.template);
-    this.handlebarsOutput = template(this.normalizedExample.input);
-  }
-
-  _runPreparationScript(handlebars) {
-    const compiledPreparationScript = Function("Handlebars", this.normalizedExample.preparationScript);
-    compiledPreparationScript.call(undefined, handlebars);
-  }
-
-  _prettifyInput() {
-    // if (this.normalizedExample.input == null) {
-    //   throw new Error("Example property 'input' may not be null or undefined")
-    // }
-    this.prettifiedInputAsString = prettifyJson(this.normalizedExample.input);
-  }
-
-  _prepareResultForRendering() {
-    return {
+    const parsedExample = {
       template: this.normalizedExample.template,
       partials: this._partialsAsNameContentArray(),
       preparationScript: this.normalizedExample.preparationScript,
-      input: this.prettifiedInputAsString,
-      output: this.handlebarsOutput,
-      error: this._handlebarsExecutionErrorWithEnumerableProperties()
+      input: prettifyJson(this.normalizedExample.input)
     };
+
+    return this._executeAndBuildExample(parsedExample);
   }
 
-  _handlebarsExecutionErrorWithEnumerableProperties() {
-    if (this.handlebarsExecutionError == null) {
-      return null;
+  _executeAndBuildExample(parsedExample) {
+    try {
+      const output = runExample(Handlebars, parsedExample);
+      return { ...parsedExample, output, error: null };
+    } catch (error) {
+      const errorWithEnumerableProperties = this._handlebarsExecutionErrorWithEnumerableProperties(error);
+      return { ...parsedExample, output: null, error: errorWithEnumerableProperties };
     }
-    return {
-      message: this.handlebarsExecutionError.message,
-      stack: this.handlebarsExecutionError.stack
-    };
   }
 
   _partialsAsNameContentArray() {
@@ -80,5 +43,15 @@ export class ExampleParser {
         content: this.normalizedExample.partials[partialName]
       };
     });
+  }
+
+  _handlebarsExecutionErrorWithEnumerableProperties(error) {
+    if (error == null) {
+      return null;
+    }
+    return {
+      message: error.message,
+      stack: error.stack
+    };
   }
 }

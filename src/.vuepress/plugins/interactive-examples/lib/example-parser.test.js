@@ -131,5 +131,5 @@ function expectErrorInExample(parsedExample, errorMessage) {
   expect(parsedExample.error).toBeTruthy();
   expect(parsedExample.error.message).toEqual(errorMessage);
   expect(parsedExample.error.stack).toBeTruthy();
-  expect(parsedExample.error.output).toBeUndefined();
+  expect(parsedExample.output).toBeNull();
 }
