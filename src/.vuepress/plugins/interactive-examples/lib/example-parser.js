@@ -3,13 +3,13 @@ import { runExample } from "./handlebars-runner";
 import Handlebars from "handlebars";
 
 export class ExampleParser {
-  constructor(originalExample) {
-    const defaultValues = { template: "", input: null, partials: {}, preparationScript: "" };
-    this.normalizedExample = { ...defaultValues, ...originalExample };
-  }
-
-  static useDefaultValueIfMissing(value, defaultValue) {
-    return value == null ? defaultValue : value;
+  constructor({ template, input, partials, preparationScript }) {
+    this.normalizedExample = {
+      template: useDefaultValueIfMissing(template, ""),
+      input: useDefaultValueIfMissing(input, null),
+      partials: useDefaultValueIfMissing(partials, {}),
+      preparationScript: useDefaultValueIfMissing(preparationScript, "")
+    };
   }
 
   /**
@@ -26,6 +26,15 @@ export class ExampleParser {
     return this._executeAndBuildExample(parsedExample);
   }
 
+  _partialsAsNameContentArray() {
+    return Object.keys(this.normalizedExample.partials).map(partialName => {
+      return {
+        name: partialName,
+        content: this.normalizedExample.partials[partialName]
+      };
+    });
+  }
+
   _executeAndBuildExample(parsedExample) {
     try {
       const output = runExample(Handlebars, parsedExample);
@@ -34,15 +43,6 @@ export class ExampleParser {
       const errorWithEnumerableProperties = this._handlebarsExecutionErrorWithEnumerableProperties(error);
       return { ...parsedExample, output: null, error: errorWithEnumerableProperties };
     }
-  }
-
-  _partialsAsNameContentArray() {
-    return Object.keys(this.normalizedExample.partials).map(partialName => {
-      return {
-        name: partialName,
-        content: this.normalizedExample.partials[partialName]
-      };
-    });
   }
 
   _handlebarsExecutionErrorWithEnumerableProperties(error) {
@@ -54,4 +54,8 @@ export class ExampleParser {
       stack: error.stack
     };
   }
+}
+
+function useDefaultValueIfMissing(value, defaultValue) {
+  return value == null ? defaultValue : value;
 }

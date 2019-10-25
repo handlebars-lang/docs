@@ -1,6 +1,7 @@
 import json5 from "json5";
 
 export function runExample(Handlebars, parsedExample) {
+  console.log(Handlebars);
   const handlebars = Handlebars.create();
   parsedExample.partials.forEach(partial => {
     handlebars.registerPartial(partial.name, partial.content);
