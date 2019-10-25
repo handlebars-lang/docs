@@ -1,5 +1,5 @@
 import { prettifyJson } from "../../../lib/prettify-json";
-import { runExample } from "./handlebars-runner";
+import { executeExample } from "./execute-example";
 import Handlebars from "handlebars";
 
 export class ExampleParser {
@@ -37,7 +37,7 @@ export class ExampleParser {
 
   _executeAndBuildExample(parsedExample) {
     try {
-      const output = runExample(Handlebars, parsedExample);
+      const output = executeExample(Handlebars, parsedExample);
       return { ...parsedExample, output, error: null };
     } catch (error) {
       const errorWithEnumerableProperties = this._handlebarsExecutionErrorWithEnumerableProperties(error);

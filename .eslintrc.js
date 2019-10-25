@@ -7,6 +7,9 @@ module.exports = {
     ecmaVersion: 8,
     sourceType: "module"
   },
+  rules: {
+    "no-console": "warn"
+  },
   env: {
     "jest/globals": false,
     jest: false

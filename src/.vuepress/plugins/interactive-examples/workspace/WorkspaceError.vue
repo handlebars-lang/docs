@@ -14,7 +14,7 @@ export default {
   components: { WorkspaceElementDecorator },
   props: {
     error: {
-      type: Error,
+      type: Object,
       required: true
     }
   }

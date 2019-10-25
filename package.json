@@ -31,7 +31,6 @@
     "@babel/register": "^7.6.2",
     "@vuepress/plugin-pwa": "^1.1.0",
     "@vuepress/plugin-register-components": "^1.2.0",
-    "axios": "^0.19.0",
     "concurrently": "^4.1.2",
     "eslint": "^6.5.0",
     "eslint-config-prettier": "^6.3.0",
@@ -45,7 +44,8 @@
     "prettier": "^1.18.2",
     "semver": "^6.3.0",
     "static-server": "^2.2.1",
-    "vuepress": "^1.1.0"
+    "vuepress": "^1.2.0",
+    "worker-loader": "^2.0.0"
   },
   "husky": {
     "hooks": {
@@ -63,12 +63,15 @@
     ]
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "babel-eslint": "^10.0.3",
     "codemirror": "^5.49.0",
+    "debounce-promise": "^3.1.2",
     "handlebars": "^4.4.0",
     "highlight.js": "^9.15.10",
     "js-yaml": "^3.13.1",
     "json5": "^2.1.0",
+    "promise-worker": "^2.0.1",
     "vue-cm": "^1.1.0"
   }
 }

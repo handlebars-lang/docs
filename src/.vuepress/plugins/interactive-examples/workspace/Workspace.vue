@@ -77,7 +77,6 @@ import Vue from "vue";
 import WorkspaceElement from "./WorkspaceElement.vue";
 import WorkspaceError from "./WorkspaceError.vue";
 import HandlebarsVersionChooser from "./HandlebarsVersionChooser.vue";
-import { executeExample } from "./execute-example";
 import { serializeToYaml } from "../lib/example-serializer";
 import ExportYamlModal from "./ExportYamlModal";
 import { createSharedUrl, loadFromSharedUrl } from "./share-utils";
@@ -102,7 +101,10 @@ export default {
     };
   },
   mounted() {
-    this.loadSharedData();
+    import("../lib/in-browser-example-executor/client").then(module => {
+      this.$executeExample = module.executeExample;
+      this.loadSharedData();
+    });
   },
   methods: {
     addPartial() {
@@ -135,10 +137,10 @@ export default {
     executeExample() {
       Vue.nextTick(async () => {
         try {
-          this.currentExample.output = await executeExample(this.currentExample);
+          this.currentExample.output = await this.$executeExample(this.currentExample);
           this.currentError = null;
-        } catch (err) {
-          this.currentError = err;
+        } catch (error) {
+          this.currentError = { message: error.message, stack: error.stack };
         }
       });
     },

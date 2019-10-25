@@ -7,14 +7,13 @@
             :parsed-example="parsedExampleWithEnsuredPreparationScript"
             :interactive="true"
             :show-input-output="true"
-          />
-        </div>
-      </template>
+          /></div
+      ></template>
     </Layout>
   </div>
 </template>
 <script>
-import Layout from "@theme/layouts/Layout.vue";
+import Layout from "../layout/Layout.vue";
 import Workspace from "../workspace/Workspace.vue";
 import { deindent } from "../../../private-components/utils";
 

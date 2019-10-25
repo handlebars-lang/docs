@@ -1,4 +1,4 @@
-import { runExample } from "./handlebars-runner";
+import { executeExample } from "./execute-example";
 import Handlebars from "handlebars";
 
 describe("the handlebars runner", () => {
@@ -34,5 +34,5 @@ describe("the handlebars runner", () => {
 
 function runWithAppliedDefaultValues(incompleteExample) {
   const exampleDefaults = { template: "", partials: [], preparationScript: "", input: "{}" };
-  return runExample(Handlebars, { ...exampleDefaults, ...incompleteExample });
+  return executeExample(Handlebars, { ...exampleDefaults, ...incompleteExample });
 }
