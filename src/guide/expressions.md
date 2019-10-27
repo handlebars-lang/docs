@@ -57,7 +57,7 @@ The exact value that `../` will resolve to varies based on the helper that is ca
 necessary when context changes. Children of helpers such as `{{#each}}` would require the use of `../` while children of
 helpers such as `{{#if}}` do not.
 
-```hbs
+```handlebars
 {{permalink}}
 {{#each comments}}
   {{../permalink}}
