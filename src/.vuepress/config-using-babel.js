@@ -19,7 +19,6 @@ export default {
   dest: "target/",
   themeConfig: {
     nav: [
-      { text: "Home", link: "/" },
       { text: "Language Guide", link: "/guide/" },
       { text: "Installation", link: "/installation/" },
       { text: "API reference", link: "/api-reference/" },
