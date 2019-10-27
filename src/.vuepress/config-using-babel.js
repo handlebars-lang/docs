@@ -22,6 +22,7 @@ export default {
       { text: "Home", link: "/" },
       { text: "Language Guide", link: "/guide/" },
       { text: "Installation", link: "/installation/" },
+      { text: "API reference", link: "/api-reference/" },
       { text: "Improve the docs", link: "/contributing/" },
       {
         text: "Other sources",
@@ -38,7 +39,7 @@ export default {
     sidebar: {
       "/installation/": ["", "precompilation.md", "integrations.md", "when-to-use-handlebars.md"],
       "/guide/": ["", "expressions.md", "partials.md", "block-helpers.md", "builtin-helpers.md"],
-      "/api-reference": [""],
+      "/api-reference/": ["", "compilation.md", "runtime.md", "utilities.md", "data-variables.md"],
       "/contributing/": ["", "interactive-examples.md", "button-links.md"]
     },
     displayAllHeaders: false,
