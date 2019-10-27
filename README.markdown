@@ -2,7 +2,7 @@
 
 This is the repository for a new-to-come Handlebars documentation site.
 
-The site can be previewed at https://handlebars-lang.github.io/docs
+The site can be previewed at https://handlebars-draft.knappi.org
 
 When finished, it might become https://handlebarsjs.com some time...
 

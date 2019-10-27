@@ -27,6 +27,15 @@ module.exports = {
       env: {
         node: true
       }
+    },
+    {
+      files: ["src/usage-examples/precompilation/precompile-in-nodejs.js"],
+      env: {
+        node: true
+      },
+      rules: {
+        "no-console": "off"
+      }
     }
   ]
 };

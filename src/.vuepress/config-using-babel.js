@@ -7,6 +7,7 @@ import { storeHandlebarsVersionAtVuePrototype } from "./plugins/inject-handlebar
 import { interactiveExamples } from "./plugins/interactive-examples";
 import { buttonLink } from "./plugins/button-link";
 import { ensureGhPagesCustomDomain } from "./plugins/ensure-gh-pages-custom-domain";
+import { updateHandlebarsCliHelp } from "./plugins/update-handlebars-cli-help";
 
 console.log(`basePath: ${basePath}`);
 export default {
@@ -60,6 +61,7 @@ export default {
     storeHandlebarsVersionAtVuePrototype,
     interactiveExamples,
     buttonLink,
-    ensureGhPagesCustomDomain
+    ensureGhPagesCustomDomain,
+    updateHandlebarsCliHelp
   ]
 };

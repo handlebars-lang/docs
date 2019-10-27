@@ -1,5 +1,5 @@
-import axios from 'axios'
-import semver from 'semver'
+import axios from "axios";
+import semver from "semver";
 
 export async function retrieveHandlebarsVersions() {
   const npmMetadata = await retrieveHandlebarsMetadataFromNpmjs();

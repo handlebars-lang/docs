@@ -32,11 +32,51 @@ The runtime is also available for download on the [installation page](index.md#d
 
 ## Optimizations
 
-TODO: Copy from http://handlebarsjs.com/precompilation.html
+Because you are precompiling templates, you can also apply several optimization to the compiler. The first allows you to
+specify a list of the known helpers to the compiler
+
+```bash
+handlebars <input> -f <output> -k each -k if -k unless
+```
+
+The Handlebars compiler will optimize accesses to those helpers for performance. When all helpers are known at compile
+time, the `--knownOnly` option provides the smallest generated code that also provides the fastest execution.
+
+## Usage
+
+!HANDLEBARS_HELP!
+
+If using the precompiler's normal mode, the resulting templates will be stored to the Handlebars.templates object using
+the relative template name sans the extension. These templates may be executed in the same manner as templates. If using
+the simple mode the precompiler will generate a single javascript method. To execute this method it must be passed to
+the Handlebars.template method and the resulting object may be used as normal.
 
 ## Precompiling Templates Inside NodeJS
 
-TODO: Copy from http://handlebarsjs.com/precompilation.html
+If you wish to precompile templates from inside NodeJS--without invoking "handlebars" from the command line--that can be
+done with Handlebars.precompile. Transmit the string result of this function to your clients, and they can in turn parse
+that with Handlebars.template.
+
+<<< @/src/usage-examples/precompilation/precompile-in-nodejs.js
+
+The output will be the following:
+
+<<< @/src/usage-examples/precompilation/precompile-in-nodejs.output.js
+
+On the client side you have Javascript along the lines of the following.
+
+```js
+Handlebars.partials["test1"] = Handlebars.template({
+  /** insert compiled output here **/
+});
+```
+
+Finally, you can reference these templates dynamically in your Javascript.
+
+```js
+var result = Handlebars.partials["test1"]({ name: "yourname" });
+//do whatever you want with the result
+```
 
 ## Integrations
 
