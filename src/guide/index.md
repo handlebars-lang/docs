@@ -192,4 +192,4 @@ Handlebars offers a variety of built-in helpers such as the if conditional and e
 
 Handlebars offers a variety of APIs and utility methods for applications and helpers.
 
-!button[Learn More: API Reference](api-reference.html)
+!button[Learn More: API Reference](/api-reference/)
