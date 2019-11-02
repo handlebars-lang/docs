@@ -141,7 +141,6 @@ $hoverTransitionDuration = 0.25s;
         padding-top: 1.5rem;
         border-radius: 6px;
         background: transparent;
-        z-index: 10;
     }
 
     &:hover {
