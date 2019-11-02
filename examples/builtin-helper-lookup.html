@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Handlebars (draft)</title>
+    <meta name="description" content="">
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+  <link rel="manifest" href="/manifest.json">
+    
+    <link rel="preload" href="/assets/css/0.styles.464e2d1b.css" as="style"><link rel="preload" href="/assets/js/app.0fdf9f05.js" as="script"><link rel="preload" href="/assets/js/5.afddd489.js" as="script"><link rel="preload" href="/assets/js/35.dbd962b4.js" as="script"><link rel="preload" href="/assets/js/12.501425ec.js" as="script"><link rel="prefetch" href="/938eca982f9a6cfd3ce5.worker.js"><link rel="prefetch" href="/assets/js/1.e99aa2c6.js"><link rel="prefetch" href="/assets/js/10.092d3aa7.js"><link rel="prefetch" href="/assets/js/11.cc5fe5b7.js"><link rel="prefetch" href="/assets/js/13.ca46c829.js"><link rel="prefetch" href="/assets/js/14.2c12ceb9.js"><link rel="prefetch" href="/assets/js/15.819599f7.js"><link rel="prefetch" href="/assets/js/16.fe04632b.js"><link rel="prefetch" href="/assets/js/17.eac41dfd.js"><link rel="prefetch" href="/assets/js/18.c6a5b95e.js"><link rel="prefetch" href="/assets/js/19.d4bcb3f1.js"><link rel="prefetch" href="/assets/js/2.a86a2690.js"><link rel="prefetch" href="/assets/js/20.1558aeb1.js"><link rel="prefetch" href="/assets/js/21.1fa43d6b.js"><link rel="prefetch" href="/assets/js/22.e771337a.js"><link rel="prefetch" href="/assets/js/23.b47aa9f0.js"><link rel="prefetch" href="/assets/js/24.fd9f0911.js"><link rel="prefetch" href="/assets/js/25.b05647fe.js"><link rel="prefetch" href="/assets/js/26.f125edb8.js"><link rel="prefetch" href="/assets/js/27.328077b0.js"><link rel="prefetch" href="/assets/js/28.afd874ff.js"><link rel="prefetch" href="/assets/js/29.0f1ab6f3.js"><link rel="prefetch" href="/assets/js/3.895c9e43.js"><link rel="prefetch" href="/assets/js/30.e95bbf2a.js"><link rel="prefetch" href="/assets/js/31.24fc7456.js"><link rel="prefetch" href="/assets/js/32.33657011.js"><link rel="prefetch" href="/assets/js/33.2704cc79.js"><link rel="prefetch" href="/assets/js/34.82a792f5.js"><link rel="prefetch" href="/assets/js/36.f4933b42.js"><link rel="prefetch" href="/assets/js/37.21665022.js"><link rel="prefetch" href="/assets/js/38.b5b05d75.js"><link rel="prefetch" href="/assets/js/39.ad52e943.js"><link rel="prefetch" href="/assets/js/40.a22e79e4.js"><link rel="prefetch" href="/assets/js/41.9fc0c05d.js"><link rel="prefetch" href="/assets/js/42.fe39bced.js"><link rel="prefetch" href="/assets/js/43.e1f85177.js"><link rel="prefetch" href="/assets/js/44.92ccca75.js"><link rel="prefetch" href="/assets/js/45.407e6b52.js"><link rel="prefetch" href="/assets/js/46.88badac1.js"><link rel="prefetch" href="/assets/js/47.5a210992.js"><link rel="prefetch" href="/assets/js/48.0e8af735.js"><link rel="prefetch" href="/assets/js/49.1fec2bb4.js"><link rel="prefetch" href="/assets/js/50.cff2b799.js"><link rel="prefetch" href="/assets/js/51.67ac4356.js"><link rel="prefetch" href="/assets/js/52.62b26924.js"><link rel="prefetch" href="/assets/js/53.ad3e53fe.js"><link rel="prefetch" href="/assets/js/54.1f765c83.js"><link rel="prefetch" href="/assets/js/55.72338b0e.js"><link rel="prefetch" href="/assets/js/56.532d78ee.js"><link rel="prefetch" href="/assets/js/57.a470cfc2.js"><link rel="prefetch" href="/assets/js/58.a0be0958.js"><link rel="prefetch" href="/assets/js/59.bc07e97c.js"><link rel="prefetch" href="/assets/js/6.c6d43a9e.js"><link rel="prefetch" href="/assets/js/60.12e2c96f.js"><link rel="prefetch" href="/assets/js/61.2b4197b0.js"><link rel="prefetch" href="/assets/js/62.f5179892.js"><link rel="prefetch" href="/assets/js/63.6da5880f.js"><link rel="prefetch" href="/assets/js/64.fca2357c.js"><link rel="prefetch" href="/assets/js/65.0898dd11.js"><link rel="prefetch" href="/assets/js/66.345031c1.js"><link rel="prefetch" href="/assets/js/67.90ae3db8.js"><link rel="prefetch" href="/assets/js/68.074fceb0.js"><link rel="prefetch" href="/assets/js/69.cbfb5b0b.js"><link rel="prefetch" href="/assets/js/7.242d2460.js"><link rel="prefetch" href="/assets/js/70.ab2e1d4f.js"><link rel="prefetch" href="/assets/js/71.18210be1.js"><link rel="prefetch" href="/assets/js/72.9267ec54.js"><link rel="prefetch" href="/assets/js/8.71a32672.js"><link rel="prefetch" href="/assets/js/9.9b730ea0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.464e2d1b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Handlebars (draft)</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/guide/" class="nav-link">Language Guide</a></div><div class="nav-item"><a href="/installation/" class="nav-link">Installation</a></div><div class="nav-item"><a href="/api-reference/" class="nav-link">API reference</a></div><div class="nav-item"><a href="/contributing/" class="nav-link">Improve the docs</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Other sources" class="dropdown-title"><span class="title">Other sources</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://handlebarsjs.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  handlebarsjs.com
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/wycats/handlebars.js/blob/master/release-notes.md" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Release notes
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/wycats/handlebars.js/issues?q=is%3Aopen+is%3Aissue+label%3Adocs-needed" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Missing-doc issues
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <a href="https://github.com/wycats/handlebars.js" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/guide/" class="nav-link">Language Guide</a></div><div class="nav-item"><a href="/installation/" class="nav-link">Installation</a></div><div class="nav-item"><a href="/api-reference/" class="nav-link">API reference</a></div><div class="nav-item"><a href="/contributing/" class="nav-link">Improve the docs</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Other sources" class="dropdown-title"><span class="title">Other sources</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://handlebarsjs.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  handlebarsjs.com
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/wycats/handlebars.js/blob/master/release-notes.md" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Release notes
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/wycats/handlebars.js/issues?q=is%3Aopen+is%3Aissue+label%3Adocs-needed" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Missing-doc issues
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <a href="https://github.com/wycats/handlebars.js" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <!----> </aside> <main class="page"><div class="try-handlebars"><div class="workspace"><div class="modal-container export-yaml-modal" data-v-05e550a8 data-v-ec5f09d6><div class="modal-background" style="display:none;" data-v-05e550a8 data-v-05e550a8></div> <div class="modal-content" style="display:none;" data-v-05e550a8 data-v-05e550a8><header data-v-05e550a8>Export YAML <button class="modal-close-x" data-v-05e550a8>x</button></header> <main data-v-05e550a8> <p data-v-ec5f09d6>
+    You can copy the yaml-code below and use it as frontmatter for an example page.
+  </p> <hr data-v-ec5f09d6> <pre disabled="disabled" class="yaml-contents" data-v-ec5f09d6></pre></main> <footer data-v-05e550a8> <button data-v-05e550a8>Close</button></footer></div></div> <div class="modal-container" data-v-05e550a8 data-v-62a7a886><div class="modal-background" style="display:none;" data-v-05e550a8 data-v-05e550a8></div> <div class="modal-content" style="display:none;" data-v-05e550a8 data-v-05e550a8><header data-v-05e550a8>Share this example
+   <button class="modal-close-x" data-v-05e550a8>x</button></header> <main data-v-05e550a8> <p data-v-62a7a886>
+    You can paste this URL into github issues to order to share your setup when filing bugs or questions
+  </p> <hr data-v-62a7a886> <input type="text" onfocus="this.select()" class="url-for-sharing" data-v-62a7a886> <button data-v-62a7a886>Copy to clipboard</button> <div class="share" data-v-62a7a886><button data-v-62a7a886>Report a security issue</button> <button data-v-62a7a886>Ask question at github</button> <button data-v-62a7a886>File bug at github</button></div> <div class="success-notification" style="display:none;" data-v-62a7a886></div></main> <footer data-v-05e550a8> <button data-v-05e550a8>Close</button></footer></div></div> <div class="workspace-header"><div class="version-chooser">
+      Handlebars:
+      <select><option disabled="disabled" value="">
+    Please select one
+  </option> <option selected="selected" value="4.5.1">
+    4.5.1
+  </option><option value="4.5.0">
+    4.5.0
+  </option><option value="4.4.5">
+    4.4.5
+  </option><option value="4.4.4">
+    4.4.4
+  </option><option value="4.4.3">
+    4.4.3
+  </option><option value="4.4.2">
+    4.4.2
+  </option><option value="4.4.1">
+    4.4.1
+  </option><option value="4.4.0">
+    4.4.0
+  </option><option value="4.3.5">
+    4.3.5
+  </option><option value="4.3.4">
+    4.3.4
+  </option><option value="4.3.3">
+    4.3.3
+  </option><option value="4.3.2">
+    4.3.2
+  </option><option value="4.3.1">
+    4.3.1
+  </option><option value="4.3.0">
+    4.3.0
+  </option><option value="4.2.2">
+    4.2.2
+  </option><option value="4.2.1">
+    4.2.1
+  </option><option value="4.2.0">
+    4.2.0
+  </option><option value="4.1.2">
+    4.1.2
+  </option><option value="4.1.2-0">
+    4.1.2-0
+  </option><option value="4.1.1">
+    4.1.1
+  </option><option value="4.1.0">
+    4.1.0
+  </option><option value="4.0.14">
+    4.0.14
+  </option><option value="4.0.13">
+    4.0.13
+  </option><option value="4.0.12">
+    4.0.12
+  </option><option value="4.0.11">
+    4.0.11
+  </option><option value="4.0.10">
+    4.0.10
+  </option><option value="4.0.9">
+    4.0.9
+  </option><option value="4.0.8">
+    4.0.8
+  </option><option value="4.0.7">
+    4.0.7
+  </option><option value="4.0.6">
+    4.0.6
+  </option><option value="4.0.5">
+    4.0.5
+  </option><option value="4.0.4">
+    4.0.4
+  </option><option value="4.0.3">
+    4.0.3
+  </option><option value="4.0.2">
+    4.0.2
+  </option><option value="4.0.1">
+    4.0.1
+  </option><option value="4.0.0">
+    4.0.0
+  </option><option value="3.0.7">
+    3.0.7
+  </option><option value="3.0.6">
+    3.0.6
+  </option><option value="3.0.5">
+    3.0.5
+  </option><option value="3.0.4">
+    3.0.4
+  </option><option value="3.0.3">
+    3.0.3
+  </option><option value="3.0.2">
+    3.0.2
+  </option><option value="3.0.1">
+    3.0.1
+  </option><option value="3.0.0">
+    3.0.0
+  </option></select> <button>
+        Add partial
+      </button> <button>
+        Copy as YAML
+      </button> <button>
+        Share (Experimental)
+      </button></div></div> <div class="workspace-row"><div style-class="workspace-template" class="workspace-element"><div contenteditable="false" class="we-header">Template</div> <div class="we-actions"><!----> <!----></div> <pre class="we-content" data-v-93906360><code spellcheck="false" class="ce-code-content hljs handlebars" data-v-93906360><span class="xml"></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">each</span></span> people}}</span><span class="xml">
+   </span><span class="hljs-template-variable">{{.}}</span><span class="xml"> lives in </span><span class="hljs-template-variable">{{lookup ../cities @index}}</span><span class="xml">
+</span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">each</span></span>}}</span><span class="xml">
+</span></code></pre></div> </div> <div class="workspace-row"><div style-class="workspace-partial" class="workspace-element"><div contenteditable="false" class="we-header">Preparation-Script</div> <div class="we-actions"><!----> <!----></div> <pre class="we-content" data-v-93906360><code spellcheck="false" class="ce-code-content hljs javascript" data-v-93906360><span class="hljs-comment">// Handlebars.registerHelper('loud', function(string) {</span>
+<span class="hljs-comment">//    return string.toUpperCase()</span>
+<span class="hljs-comment">// });</span>
+</code></pre></div></div> <div class="workspace-row"><div style-class="workspace-input" class="workspace-element"><div contenteditable="false" class="we-header">Input</div> <div class="we-actions"><!----> <!----></div> <pre class="we-content" data-v-93906360><code spellcheck="false" class="ce-code-content hljs javascript" data-v-93906360>{
+  <span class="hljs-attr">people</span>: [<span class="hljs-string">"Nils"</span>, <span class="hljs-string">"Yehuda"</span>],
+  <span class="hljs-attr">cities</span>: [<span class="hljs-string">"Darmstadt"</span>, <span class="hljs-string">"San Francisco"</span>]
+}
+</code></pre></div> <div style-class="workspace-output" class="workspace-element"><div contenteditable="false" class="we-header">Output</div> <div class="we-actions"><!----> <!----></div> <pre class="we-content" data-v-93906360><code spellcheck="false" class="ce-code-content hljs xml" data-v-93906360>   Nils lives in Darmstadt
+   Yehuda lives in San Francisco
+</code></pre></div></div></div></div> <div class="theme-default-content content__default"></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/handlebars-lang/docs/edit/master/src/examples/builtin-helper-lookup.md" target="_blank" rel="noopener noreferrer">Propose a change to this page!</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">11/2/2019, 8:12:45 AM</span></div></footer> <!----> </main></div></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.0fdf9f05.js" defer></script><script src="/assets/js/5.afddd489.js" defer></script><script src="/assets/js/35.dbd962b4.js" defer></script><script src="/assets/js/12.501425ec.js" defer></script>
+  </body>
+</html>
