@@ -69,8 +69,15 @@ The `src` folder contains all sources of the page. That includes
 
 # Deployment
 
-When the master branch is pushed to GitHub, a [Travis-CI job](https://travis-ci.org/handlebars-lang/docs) will build and
-update the site. No setup is required.
+The deployment has two phases:
+
+- The preview site at https://handlebars-draft.knappi.org is automatically updated when changes are pushed to the
+  `master`-branch. The Github-pages are hosted in the `gh-pages`-branch of this repository.
+- The production site (currently the temporary site https://handlebars-prod.knappi.org) is updated when changes are
+  pushed to the `production`-branch. The Github-pages for the production site are hosted in the `master`-branch of the
+  [docs-prod-ghpages](https://github.com/handlebars-lang/docs-prod-ghpages) repository.
+
+In both cases, the deployment itself is performed via [Travis-CI job](https://travis-ci.org/handlebars-lang/docs)
 
 The Travis-CI job uses the [handlebars-site-bot](https://github.com/handlebars-site-bot) account to update the
 github-pages of this repository.
