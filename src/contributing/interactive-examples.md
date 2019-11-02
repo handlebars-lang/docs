@@ -22,9 +22,9 @@ The following frontmatter properties are supported:
   - `preparationScript`: A script that is executed before compiling and running the template. `Handlebars` is available
     as global variable in this script.
   - `input`: The template-input as embedded YAML-object.
-  - `errorExpected`: A boolean (default: `false`) that specifies that this example is should fail. By default, examples
-    that throw an error during execution, cause the build of this site to fail. If you write an example that describes
-    an error, you need to set this flag to `true`.
+  - `errorExpected`: A boolean (default: `false`) that specifies that this example is expected to throw an error. By
+    default, examples that throw an error during execution, cause the build of the whole site to fail. If you write an
+    example that describes an error, you need to set this flag to `true`.
 
 The output of the example is automatically computed using the latest release version of Handlebars.
 
