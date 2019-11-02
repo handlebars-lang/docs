@@ -80,6 +80,73 @@ depth based paths. To access the parent index, for example, `{{@../index}}` can 
 
 ## The `with`-helper
 
-TODO: Add some text here
+The `with`-helper allows you to change the evaluation context of template-part.
 
 <ExamplePart examplePage="/examples/builtin-helper-with-block.md" show="template" />
+
+when used with this context:
+
+<ExamplePart examplePage="/examples/builtin-helper-with-block.md" show="input" />
+
+will result in:
+
+<ExamplePart examplePage="/examples/builtin-helper-with-block.md" show="output" />
+
+`with` can also be used with block parameters to define known references in the current block. The example above can be
+converted to
+
+<ExamplePart examplePage="/examples/builtin-helper-with-block-param.md" show="template" />
+
+Which allows for complex templates to potentially provide clearer code than `../` depthed references allow for.
+
+::: v-pre
+
+You can optionally provide an `{{else}}` section which will display only when the passed value is empty.
+
+:::
+
+<Flex>
+<ExamplePart examplePage="/examples/builtin-helper-with-else.md" show="template" />
+<ExamplePart examplePage="/examples/builtin-helper-with-else.md" show="input" />
+</Flex>
+
+## The `lookup`-helper
+
+The `lookup` helper allows for dynamic parameter resolution using Handlebars variables.
+
+This is useful for resolving values for array indexes.
+
+<ExamplePart examplePage="/examples/builtin-helper-lookup.md" show="template" />
+
+It can also be used to lookup properties of object based on data from the input. The following is a more complex example
+that uses `lookup` in a sub-expression to change the evaluation context to another object based on a property-value.
+
+<ExamplePart examplePage="/examples/builtin-helper-lookup-dynamic-property.md" show="template" />
+
+## The `log`-helper
+
+The `log` helper allows for logging of context state while executing a template.
+
+<ExamplePart examplePage="/examples/builtin-helper-log.md" show="template" />
+
+It delegates to `Handlebars.logger.log` which may be overridden to perform custom logging.
+
+Any number of arguments may be passed to this method and all will be forwarded to the logger.
+
+<ExamplePart examplePage="/examples/builtin-helper-log-multiple-params.md" show="template" />
+
+The log level may be set using the level hash parameter. Supported values are debug, info, warn, and error. When
+omitted, info is the default value,
+
+Logging is conditional based on the level and to value set in `Handlebars.logger.level`, which defaults to `info`. All
+log statements at or above the current level will be output.
+
+<ExamplePart examplePage="/examples/builtin-helper-log-loglevel.md" show="template" />
+
+# The `blockHelperMissing`-helper
+
+TODO: copy from http://handlebarsjs.com/builtin_helpers.html
+
+# The `helperMissing`-helper
+
+TODO: copy from http://handlebarsjs.com/builtin_helpers.html

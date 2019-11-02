@@ -7,14 +7,15 @@ cities:
     summary: Darmstadt is a city in <b>Hesse</b>, Germany
     country: Germany
     location:
-      - north: 49.87
-      - east: 8.64
+      north: 49.87
+      east: 8.64
     population: 158254
   - name: San Francisco
     summary: San Francisco is the <b>cultural center</b> of <b>Northern California</b>
+    country: USA
     location:
-      - north: 37.73,
-      - east: -122.44
+      north: 37.73,
+      east: -122.44
     population: 883305
 people:
   - firstname: Nils
