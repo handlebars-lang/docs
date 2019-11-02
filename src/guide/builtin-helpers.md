@@ -1,6 +1,6 @@
 # Built-in Helpers
 
-## The `if` block helper
+## #if
 
 You can use the `if` helper to conditionally render a block. If its argument returns `false`, `undefined`, `null`, `""`,
 `0`, or `[]`, Handlebars will not render the block.
@@ -27,7 +27,7 @@ section, marked by `else` is called an "else section".
 
 <ExamplePart examplePage="/examples/builtin-helper-ifelse-block.md" show="template" />
 
-## The `unless` block helper
+## #unless
 
 You can use the `unless` helper as the inverse of the `if` helper. Its block will be rendered if the expression returns
 a falsy value.
@@ -37,7 +37,7 @@ a falsy value.
 If looking up `license` under the current context returns a falsy value, Handlebars will render the warning. Otherwise,
 it will render nothing.
 
-## The `each` block helper
+## #each
 
 You can iterate over a list using the built-in `each` helper. Inside the block, you can use `this` to reference the
 element being iterated over.
@@ -78,7 +78,7 @@ depth based paths. To access the parent index, for example, `{{@../index}}` can 
 
 :::
 
-## The `with`-helper
+## #with
 
 The `with`-helper allows you to change the evaluation context of template-part.
 
@@ -110,7 +110,7 @@ You can optionally provide an `{{else}}` section which will display only when th
 <ExamplePart examplePage="/examples/builtin-helper-with-else.md" show="input" />
 </Flex>
 
-## The `lookup`-helper
+## lookup
 
 The `lookup` helper allows for dynamic parameter resolution using Handlebars variables.
 
@@ -123,7 +123,7 @@ that uses `lookup` in a sub-expression to change the evaluation context to anoth
 
 <ExamplePart examplePage="/examples/builtin-helper-lookup-dynamic-property.md" show="template" />
 
-## The `log`-helper
+## log
 
 The `log` helper allows for logging of context state while executing a template.
 
@@ -142,11 +142,3 @@ Logging is conditional based on the level and to value set in `Handlebars.logger
 log statements at or above the current level will be output.
 
 <ExamplePart examplePage="/examples/builtin-helper-log-loglevel.md" show="template" />
-
-# The `blockHelperMissing`-helper
-
-TODO: copy from http://handlebarsjs.com/builtin_helpers.html
-
-# The `helperMissing`-helper
-
-TODO: copy from http://handlebarsjs.com/builtin_helpers.html

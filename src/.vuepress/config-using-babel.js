@@ -38,7 +38,7 @@ export default {
     ],
     sidebar: {
       "/installation/": ["", "precompilation.md", "integrations.md", "when-to-use-handlebars.md"],
-      "/guide/": ["", "expressions.md", "partials.md", "block-helpers.md", "builtin-helpers.md"],
+      "/guide/": ["", "expressions.md", "partials.md", "block-helpers.md", "builtin-helpers.md", "hooks.md"],
       "/api-reference/": ["", "compilation.md", "runtime.md", "utilities.md", "data-variables.md"],
       "/contributing/": ["", "interactive-examples.md", "button-links.md"]
     },

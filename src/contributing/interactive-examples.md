@@ -22,6 +22,9 @@ The following frontmatter properties are supported:
   - `preparationScript`: A script that is executed before compiling and running the template. `Handlebars` is available
     as global variable in this script.
   - `input`: The template-input as embedded YAML-object.
+  - `errorExpected`: A boolean (default: `false`) that specifies that this example is should fail. By default, examples
+    that throw an error during execution, cause the build of this site to fail. If you write an example that describes
+    an error, you need to set this flag to `true`.
 
 The output of the example is automatically computed using the latest release version of Handlebars.
 
@@ -41,18 +44,23 @@ The props for this component are:
 
 - `examplePage`: path to the example page below the `src`-folder
 - `show`: The part of the example that should be inserted into the page. Possible values are `template`, `input`,
-  `output`, `preparationScript` and `partial`
+  `output`, `error`, `preparationScript` and `partial`
 - `name` (optional): This prop is needed only when `show="partial"`. It defines the name of the partial that should be
   inserted into the example.
 
 The component is very useful if you want to embed the parts of an example into flowing text, You can insert the input
 JSON by using `<ExamplePart examplePage="/examples/all-features" show="input" />` and the following code snippet will
-appear in the page:  
+appear in the page:
+
 <ExamplePart examplePage="/examples/all-features" show="input" />
 
 Then, in order to show the reader the template you can use `show="template"` with the same `examplePage`.
 
 <ExamplePart examplePage="/examples/all-features" show="template" />
+
+You can render a partial using for example `show=partial` and `name=person`
+
+<ExamplePart examplePage="/examples/all-features" show="partial" name="person"/>
 
 If you have an example with helpers, you might also want to include the preparation script:
 

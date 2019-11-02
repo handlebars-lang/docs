@@ -8,9 +8,18 @@ export class ErrorCollector {
     this.workingDir = workingDir;
   }
 
-  collectErrorIfNotNull(filePath, error) {
+  expectSuccess(filePath, error) {
     if (error != null) {
       this.filesAndErrors.push({ filePath, error });
+    }
+  }
+
+  expectError(filePath, error) {
+    if (error == null) {
+      this.filesAndErrors.push({
+        filePath,
+        error: { message: "Error expected, but no error found", stack: "Error expected, but no error found" }
+      });
     }
   }
 

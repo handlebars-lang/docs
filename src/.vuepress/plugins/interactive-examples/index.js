@@ -7,7 +7,6 @@ import path from "path";
 
 export function interactiveExamples() {
   const errorCollector = new ErrorCollector();
-  console.log("INTERACTIVE_EXAMPLES");
   return {
     name: "interactive-examples",
     plugins: {
@@ -24,7 +23,11 @@ export function interactiveExamples() {
 
       const exampleParser = new ExampleParser(frontmatter.example);
       frontmatter.parsedExample = exampleParser.parse();
-      errorCollector.collectErrorIfNotNull(_filePath, frontmatter.parsedExample.error);
+      if (frontmatter.example.errorExpected === true) {
+        errorCollector.expectError(_filePath, frontmatter.parsedExample.error);
+      } else {
+        errorCollector.expectSuccess(_filePath, frontmatter.parsedExample.error);
+      }
     },
     generated() {
       // executed only when "building", not when "developing".
