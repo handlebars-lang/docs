@@ -5,11 +5,11 @@ import { interactiveExamples } from "./plugins/interactive-examples";
 import { buttonLink } from "./plugins/button-link";
 import { updateHandlebarsCliHelp } from "./plugins/update-handlebars-cli-help";
 
-const isDraft = process.env.DRAFT === "true";
+const isPreview = process.env.PREVIEW === "true";
 
 export default {
   base: "/",
-  title: isDraft ? "Handlebars (draft)" : "Handlebars",
+  title: isPreview ? "Handlebars (preview)" : "Handlebars",
   head: [
     ["link", { rel: "shortcut icon", type: "image/png", href: `/images/favicon.png` }],
     ["link", { rel: "manifest", href: "/manifest.json" }]

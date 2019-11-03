@@ -1,12 +1,12 @@
 jobs:
   include:
-    - name: deploy_draft
+    - name: deploy_preview
       if: branch = master
       language: node_js
       node_js:
         - lts/*
       script:
-        - DRAFT=true npm run test-and-build
+        - PREVIEW=true npm run test-and-build
       deploy:
         provider: pages
         fqdn: handlebars-preview.knappi.org
