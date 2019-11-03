@@ -12,12 +12,13 @@ jobs:
         fqdn: handlebars-preview.knappi.org
         repo: handlebars-lang/preview.handlebarsjs.com-github-pages
         target_branch: gh-pages
-        skip-cleanup: false
+        skip-cleanup: true
         local_dir: target
         github-token: $GITHUB_TOKEN
         keep-history: true
         on:
           branch: master
+
     - name: deploy_draft
       if: branch = production
       language: node_js
@@ -30,7 +31,7 @@ jobs:
         fqdn: handlebarsjs.knappi.org
         repo: handlebars-lang/handlebarsjs.com-github-pages
         target-branch: gh-pages
-        skip-cleanup: false
+        skip-cleanup: true
         local_dir: target
         github-token: $GITHUB_TOKEN
         keep-history: true
