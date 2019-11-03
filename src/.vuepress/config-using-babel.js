@@ -1,17 +1,15 @@
 /* eslint-env node */
 /* eslint-disable no-console */
-
-const basePath = process.env.VUEPRESS_BASE || "/";
-
 import { storeHandlebarsVersionAtVuePrototype } from "./plugins/inject-handlebars-versions";
 import { interactiveExamples } from "./plugins/interactive-examples";
 import { buttonLink } from "./plugins/button-link";
 import { updateHandlebarsCliHelp } from "./plugins/update-handlebars-cli-help";
 
-console.log(`basePath: ${basePath}`);
+const isDraft = process.env.DRAFT === "true";
+
 export default {
-  base: basePath,
-  title: "Handlebars (draft)",
+  base: "/",
+  title: isDraft ? "Handlebars (draft)" : "Handlebars",
   head: [
     ["link", { rel: "shortcut icon", type: "image/png", href: `/images/favicon.png` }],
     ["link", { rel: "manifest", href: "/manifest.json" }]
@@ -26,10 +24,10 @@ export default {
       {
         text: "Other sources",
         items: [
-          { text: "handlebarsjs.com", link: "https://handlebarsjs.com" },
+          { text: "The old handlebars-website", link: "https://handlebars-old.knappi.org" },
           { text: "Release notes", link: "https://github.com/wycats/handlebars.js/blob/master/release-notes.md" },
           {
-            text: "Missing-doc issues",
+            text: "Issues with label 'docs-needed'",
             link: "https://github.com/wycats/handlebars.js/issues?q=is%3Aopen+is%3Aissue+label%3Adocs-needed"
           }
         ]

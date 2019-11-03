@@ -6,7 +6,7 @@ jobs:
       node_js:
         - lts/*
       script:
-        - npm run test-and-build
+        - DRAFT=true npm run test-and-build
       deploy:
         provider: pages
         fqdn: handlebars-draft.knappi.org
