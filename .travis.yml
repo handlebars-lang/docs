@@ -9,11 +9,12 @@ jobs:
         - DRAFT=true npm run test-and-build
       deploy:
         provider: pages
-        fqdn: handlebars-draft.knappi.org
-        skip-cleanup: true
+        fqdn: handlebars-preview.knappi.org
+        repo: handlebars-lang/preview.handlebarsjs.com-github-pages
+        target_branch: gh-pages
+        skip-cleanup: false
         local_dir: target
         github-token: $GITHUB_TOKEN
-        target_branch: gh-pages
         keep-history: true
         on:
           branch: master
@@ -26,10 +27,10 @@ jobs:
         - npm run test-and-build
       deploy:
         provider: pages
-        fqdn: handlebars-prod.knappi.org
-        repo: handlebars-lang/docs-prod-ghpages
-        target-branch: master
-        skip-cleanup: true
+        fqdn: handlebarsjs.knappi.org
+        repo: handlebars-lang/handlebarsjs.com-github-pages
+        target-branch: gh-pages
+        skip-cleanup: false
         local_dir: target
         github-token: $GITHUB_TOKEN
         keep-history: true
