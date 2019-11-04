@@ -24,7 +24,7 @@ export default {
       {
         text: "Other sources",
         items: [
-          { text: "The old handlebars-website", link: "https://handlebars-old.knappi.org" },
+          { text: "The old handlebars-website", link: "https://handlebars-archive.knappi.org/" },
           { text: "Release notes", link: "https://github.com/wycats/handlebars.js/blob/master/release-notes.md" },
           {
             text: "Issues with label 'docs-needed'",
