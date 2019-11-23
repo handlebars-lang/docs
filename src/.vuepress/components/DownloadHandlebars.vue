@@ -1,11 +1,11 @@
 <template>
   <div class="download-handlebars">
     <div class="download-links">
-      <a :title="uncompressedTitle" class="uncompressed-download" :href="uncompressedLink">
+      <a :title="uncompressedTitle" class="uncompressed-download" :href="linkePrefix + uncompressedFilename">
         {{ label }}
         <DownloadIcon class="icon" />
       </a>
-      <a :title="minifiedTitle" class="minified-download" :href="minifiedLink"
+      <a :title="minifiedTitle" class="minified-download" :href="linkPrefix + minifiedFilename"
         >minified
         <DownloadIcon class="icon" />
       </a>
@@ -44,13 +44,11 @@ export default {
         ? `Handlebars ${this.version} (runtime only)`
         : `Handlebars ${this.version} (compiler + runtime)`;
     },
-    uncompressedLink() {
-      return this.linkPrefix + this.$props.runtimeOnly
-        ? `handlebars.runtime-v${this.version}.js`
-        : `handlebars-v${this.version}.js`;
+    uncompressedFilename() {
+      return this.$props.runtimeOnly ? `handlebars.runtime-v${this.version}.js` : `handlebars-v${this.version}.js`;
     },
-    minifiedLink() {
-      return this.linkPrefix + this.$props.runtimeOnly
+    minifiedFilename() {
+      return this.$props.runtimeOnly
         ? `handlebars.runtime.min-v${this.version}.js`
         : `handlebars.min-v${this.version}.js`;
     },
