@@ -28,7 +28,7 @@ jobs:
         - npm run test-and-build
       deploy:
         provider: pages
-        fqdn: handlebarsjs.knappi.org
+        fqdn: handlebarsjs.com
         repo: handlebars-lang/handlebarsjs.com-github-pages
         target-branch: gh-pages
         skip-cleanup: true
