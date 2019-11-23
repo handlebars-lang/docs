@@ -1,7 +1,7 @@
 <template>
   <div class="download-handlebars">
     <div class="download-links">
-      <a :title="uncompressedTitle" class="uncompressed-download" :href="linkePrefix + uncompressedFilename">
+      <a :title="uncompressedTitle" class="uncompressed-download" :href="linkPrefix + uncompressedFilename">
         {{ label }}
         <DownloadIcon class="icon" />
       </a>
