@@ -25,11 +25,11 @@ framework like
 
 :::
 
-# PRO HANDLEBARS
+# Pro Handlebars
 
 - Handlebars is good for rendering in CLI-apps, non-HTML text content, server-side rendering of pure contents.
 - Handlebars has been ported to many programming languages (Java, Rust etc).
 
-# CONTRA HANDLEBARS
+# Contra Handlebars
 
 - Handlebars is not good for fast (incremental) updates of the DOM, event-handling, frontend-backend communication.
