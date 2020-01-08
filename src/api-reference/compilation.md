@@ -33,6 +33,8 @@ Supports a variety of options that alter how the template executes.
 - `explicitPartialContext`: Disables implicit context for partials. When enabled, partials that are not passed a context
   value will execute against an empty object.
 
+## Runtime options
+
 The resulting template function can be called as `template(context, options)` where `context` is the input object.
 `options` is an object that can have any of the following properties
 
@@ -46,6 +48,31 @@ The resulting template function can be called as `template(context, options)` wh
 - `allowCallsToHelperMissing` (since 4.3.0, insecure): If set to `true`, calls like `{{helperMissing}}` and
   `{{blockHelperMissing}}` will be allowed. Please not that this allows template authors to fabricate templates for
   Remote Code Execution on the environment running Handlebars (see https://github.com/wycats/handlebars.js/issues/1558)
+- `allowedProtoMethods` (since 4.6.0): a string-to-boolean map of property-names that are allowed if they are methods of
+  the parent object.
+- `allowedProtoProperties` (since 4.6.0): a string-to-boolean map of property-names that are allowed if they are
+  properties but not methods of the parent object.
+
+  ```js
+  const template = handlebars.compile("{{aString.trim}}");
+  const result = template({ aString: "  abc  " });
+  // result is empty, because trim is defined at String prototype
+  ```
+
+  ```js
+  const template = handlebars.compile("{{aString.trim}}");
+  const result = template(
+    { aString: "  abc  " },
+    {
+      allowedProtoMethods: {
+        trim: true
+      }
+    }
+  );
+  // result = 'abc'
+  ```
+
+````
 
 :::
 
@@ -55,7 +82,7 @@ Precompiles a given template so it can be sent to the client and executed withou
 
 ```js
 var templateSpec = Handlebars.precompile("{{foo}}");
-```
+````
 
 Supports all of the same options parameters as the `Handlebars.compile` method. Additionally may pass:
 
