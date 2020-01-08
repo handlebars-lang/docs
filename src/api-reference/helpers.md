@@ -6,7 +6,7 @@ In addition to the parameters used in the helper-call, an `options`-object is pa
 parameter.
 
 - `lookupProperty(object, propertyName)`: a function that returns an "own property" of an object. Whitelists specified
-  in `allowedProtoProperties` and `allowedProtoMethods` are respected by this functions. Example:
+  in `allowedProtoProperties` and `allowedProtoMethods` are respected by this function. Example:
 
   <ExamplePart examplePage="/examples/helper-lookup-property.md" show="preparationScript" />
 
