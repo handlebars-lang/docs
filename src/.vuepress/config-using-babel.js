@@ -36,7 +36,15 @@ export default {
     sidebar: {
       "/installation/": ["", "precompilation.md", "integrations.md", "when-to-use-handlebars.md"],
       "/guide/": ["", "expressions.md", "partials.md", "block-helpers.md", "builtin-helpers.md", "hooks.md"],
-      "/api-reference/": ["", "compilation.md", "runtime.md", "utilities.md", "data-variables.md", "helpers.md"],
+      "/api-reference/": [
+        "",
+        "compilation.md",
+        "runtime-options.md",
+        "runtime.md",
+        "utilities.md",
+        "data-variables.md",
+        "helpers.md"
+      ],
       "/contributing/": ["", "interactive-examples.md", "button-links.md"]
     },
     displayAllHeaders: false,

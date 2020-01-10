@@ -1,4 +1,4 @@
-# Runtime
+# The Handlebars runtime
 
 ## `Handlebars.registerPartial(name, partial)`
 
