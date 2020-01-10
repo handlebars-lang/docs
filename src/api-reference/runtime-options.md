@@ -45,6 +45,9 @@ of [Mahmoud Gamal](http://mahmoudsec.blogspot.com/2019/04/handlebars-template-in
   forbidden, even if this option is set to `true`. They can be accessed only if the corresponding key in
   `allowedProtoMethods` is set to `true`.
 
+  Setting this option to any value disables the warning that Handlebars writes to the console if a proto-method-access
+  is attempted and forbidden.
+
 - `allowedProtoMethods` (since 4.6.0): a string-to-boolean map of property-names that are allowed if they are methods of
   the parent object. Undefined values revert the the value defined in `allowProtoMethodsByDefault`.
 - `allowProtoPropertiesByDefault` (since 4.7.0): a boolean (default: false) that defines whether non-method properties
@@ -52,6 +55,9 @@ of [Mahmoud Gamal](http://mahmoudsec.blogspot.com/2019/04/handlebars-template-in
 
   The property `__proto__` is forbidden, even if this option is set to `true`. It can only be accessed if the
   corresponding key in `allowedProtoProperties` is set to `true`.
+
+  Setting this option to any value disables the warning that Handlebars writes to the console if a proto-property-access
+  is attempted and forbidden.
 
 - `allowedProtoProperties` (since 4.6.0): a string-to-boolean map of property-names that are allowed if they are
   properties but not methods of the parent object. Undefined values revert to the value defined in
