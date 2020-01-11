@@ -12,39 +12,40 @@ them to a Handlebars helper, or use them as values in hash arguments.
 Handlebars expressions are some contents enclosed by double curly braces `{{}}`. In the below template, `firstname` is a
 variable which is enclosed by double curly braces which is said to be an expression.
 
-<ExamplePart examplePage="/examples/simple-expressions.md" show="template" />
+<ExamplePart examplePage="/zh/examples/simple-expressions.md" show="template" />
 
 If the below input object is applied to the template
 
-<ExamplePart examplePage="/examples/simple-expressions.md" show="input" />
+<ExamplePart examplePage="/zh/examples/simple-expressions.md" show="input" />
 
 Expressions are compiled to produce the output as follows:
 
-<ExamplePart examplePage="/examples/simple-expressions.md" show="output" />
+<ExamplePart examplePage="/zh/examples/simple-expressions.md" show="output" />
 
 ## Path expressions
 
 Handlebars expressions can also be dot-separated paths.
 
-<ExamplePart examplePage="/examples/path-expressions-dot.md" show="template" />
+<ExamplePart examplePage="/zh/examples/path-expressions-dot.md" show="template" />
 
 This expression looks up the `person` property in the input object and in turn looks up the `firstname` and `lastname`
 property within the `person` object.
 
-Pass the below input object to the template <ExamplePart examplePage="/examples/path-expressions-dot.md" show="input" />
+Pass the below input object to the template
+<ExamplePart examplePage="/zh/examples/path-expressions-dot.md" show="input" />
 
-Output will be generated as below <ExamplePart examplePage="/examples/path-expressions-dot.md" show="output" />
+Output will be generated as below <ExamplePart examplePage="/zh/examples/path-expressions-dot.md" show="output" />
 
 Handlebars also supports a deprecated `/` syntax, so you could write the above template as:
 
-<ExamplePart examplePage="/examples/path-expressions-slash.md" show="template" />
+<ExamplePart examplePage="/zh/examples/path-expressions-slash.md" show="template" />
 
 ## Changing the context
 
 Some helpers like `#with` and `#each` allow you to dive into nested objects. When you include `../` segments into your
 path, Handlebars will change back into the parent context.
 
-<ExamplePart examplePage="/examples/path-expressions-dot-dot" show="template" />
+<ExamplePart examplePage="/zh/examples/path-expressions-dot-dot" show="template" />
 
 Even though the name is printed while in the context of a comment, it can still go back to the main context (the
 root-object) to retrieve the prefix.
@@ -90,7 +91,7 @@ closing `]` in a path-literal, but all other characters are allowed.
 
 JavaScript-style strings, `"` and `'`, may also be used instead `[` pairs.
 
-<ExamplePart examplePage="/examples/literal-segments.md" show="template" />
+<ExamplePart examplePage="/zh/examples/literal-segments.md" show="template" />
 
 ## HTML-escaping
 
@@ -104,11 +105,11 @@ the returned HTML-escaped output is genarated as `&amp;` If you don't want Handl
 
 In the below template, You can learn how to produce the HTML escaped and raw output.
 
-<ExamplePart examplePage="/examples/html-escaping.md" show="template" />
+<ExamplePart examplePage="/zh/examples/html-escaping.md" show="template" />
 
 Pass the special characters to the template
 
-<ExamplePart examplePage="/examples/html-escaping.md" show="input" />
+<ExamplePart examplePage="/zh/examples/html-escaping.md" show="input" />
 
 ::: v-pre
 
@@ -117,7 +118,7 @@ below.
 
 :::
 
-<ExamplePart examplePage="/examples/html-escaping.md" show="output" />
+<ExamplePart examplePage="/zh/examples/html-escaping.md" show="output" />
 
 ## Helpers
 
@@ -126,19 +127,19 @@ Helpers can be used to implement functionality that is not part of the Handlebar
 A helper can be registered at the runtime via `Handlebars.registerHelper`, for example in order to uppercase all
 characters of a string.
 
-<ExamplePart examplePage="/examples/helper-simple.md" show="preparationScript" />
+<ExamplePart examplePage="/zh/examples/helper-simple.md" show="preparationScript" />
 
 A Handlebars helper call is a simple identifier, followed by zero or more parameters (separated by space). Each
 parameter is a Handlebars expression that is evaluated exactly the same way described above in "Basic Usage":
 
-<ExamplePart examplePage="/examples/helper-simple.md" show="template" />
+<ExamplePart examplePage="/zh/examples/helper-simple.md" show="template" />
 
 In this case, `loud` is the name of a helper, and `lastname` is a parameter to the helper. The template will uppercase
 the `lastname` property of the input:
 
 <Flex>
-<ExamplePart examplePage="/examples/helper-simple.md" show="input" />
-<ExamplePart examplePage="/examples/helper-simple.md" show="output" />
+<ExamplePart examplePage="/zh/examples/helper-simple.md" show="input" />
+<ExamplePart examplePage="/zh/examples/helper-simple.md" show="output" />
 </Flex>
 
 ### Prevent HTML-escaping of helper return values
@@ -147,32 +148,32 @@ When your helper returns an instance of `Handlebars.Safestring` the return-value
 called with `{{` instead of `{{{`. You have to take care that all parameters are escaping properly using
 `Handlebars.escapeExpression`.
 
-<ExamplePart examplePage="/examples/helper-safestring.md" show="preparationScript" />
+<ExamplePart examplePage="/zh/examples/helper-safestring.md" show="preparationScript" />
 
 ### Helpers with Multiple Parameters
 
 Let us see another example of helpers with two parameters
 
-<ExamplePart examplePage="/examples/helper-multiple-parameters.md" show="template" />
+<ExamplePart examplePage="/zh/examples/helper-multiple-parameters.md" show="template" />
 
 In this case, Handlebars will pass the link helper two parameters: the String `See Website` and the value of
 `people.url` from the below provided input `people` object.
 
-<ExamplePart examplePage="/examples/helper-multiple-parameters.md" show="input" />
+<ExamplePart examplePage="/zh/examples/helper-multiple-parameters.md" show="input" />
 
 The helper function `link` is used to generate a hyperlink as described in the script.
 
-<ExamplePart examplePage="/examples/helper-multiple-parameters.md" show="preparationScript" />
+<ExamplePart examplePage="/zh/examples/helper-multiple-parameters.md" show="preparationScript" />
 
 We will obtain the output using the input parameters
 
-<ExamplePart examplePage="/examples/helper-multiple-parameters.md" show="output" />
+<ExamplePart examplePage="/zh/examples/helper-multiple-parameters.md" show="output" />
 
 In the above example, You could use the exact same helper with dynamic text based on the value of `people.text`:
 
 <Flex>
-<ExamplePart examplePage="/examples/helper-dynamic-parameters.md" show="template" />
-<ExamplePart examplePage="/examples/helper-dynamic-parameters.md" show="input" />
+<ExamplePart examplePage="/zh/examples/helper-dynamic-parameters.md" show="template" />
+<ExamplePart examplePage="/zh/examples/helper-dynamic-parameters.md" show="input" />
 </Flex>
 
 ### Literal arguments
@@ -181,14 +182,14 @@ Helper calls may also have literal values passed to them either as parameter arg
 literals include numbers, strings, `true`, `false`, `null` and `undefined`:
 
 <Flex>
-<ExamplePart examplePage="/examples/helper-literals" show="template" />
+<ExamplePart examplePage="/zh/examples/helper-literals" show="template" />
 </Flex>
 
 ### Helpers with Hash arguments
 
 Handlebars provides additional metadata, such as Hash arguments, to helpers as a final parameter.
 
-<ExamplePart examplePage="/examples/helper-hash-arguments.md" show="template" />
+<ExamplePart examplePage="/zh/examples/helper-hash-arguments.md" show="template" />
 
 In that template,the final parameter `href=people.url class="people"` are hash arguments sent to the helper.
 
@@ -197,16 +198,16 @@ values can be simple identifiers, paths, or Strings.
 
 If we pass the below input to the template, the value of `person.url` can be obtained from the `person` object.
 
-<ExamplePart examplePage="/examples/helper-hash-arguments.md" show="input" />
+<ExamplePart examplePage="/zh/examples/helper-hash-arguments.md" show="input" />
 
 As described in the helper script below, the hash arguments can be obtained from the last parameter `options` for
 further processing within the helper.
 
-<ExamplePart examplePage="/examples/helper-hash-arguments.md" show="preparationScript" />
+<ExamplePart examplePage="/zh/examples/helper-hash-arguments.md" show="preparationScript" />
 
 The output of above helper is generated as below
 
-<ExamplePart examplePage="/examples/helper-hash-arguments.md" show="output" />
+<ExamplePart examplePage="/zh/examples/helper-hash-arguments.md" show="output" />
 
 Handlebars also offers a mechanism for invoking a helper with a block of the template. Block helpers can then invoke
 that block zero or more times with any context it chooses.
@@ -220,9 +221,9 @@ property. If you want to resolve the input property instead, you can prefix its 
 deprecated `this/`)
 
 <Flex>
-<ExamplePart examplePage="/examples/helper-data-name-conflict" show="template" />
-<ExamplePart examplePage="/examples/helper-data-name-conflict" show="input" />
-<ExamplePart examplePage="/examples/helper-data-name-conflict" show="preparationScript" />
+<ExamplePart examplePage="/zh/examples/helper-data-name-conflict" show="template" />
+<ExamplePart examplePage="/zh/examples/helper-data-name-conflict" show="input" />
+<ExamplePart examplePage="/zh/examples/helper-data-name-conflict" show="preparationScript" />
 </Flex>
 
 ## Subexpressions

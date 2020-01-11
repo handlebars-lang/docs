@@ -33,12 +33,12 @@ The output of the example is automatically computed using the latest release ver
 The `<ExamplePart>`-component allows you to show a part of the example in the current part.
 
 ```md
-<ExamplePart examplePage="/examples/builtin-helper-each-block" show="template"/>
+<ExamplePart examplePage="/zh/examples/builtin-helper-each-block" show="template"/>
 ```
 
 will result in
 
-<ExamplePart examplePage="/examples/builtin-helper-each-block" show="template"/>
+<ExamplePart examplePage="/zh/examples/builtin-helper-each-block" show="template"/>
 
 The props for this component are:
 
@@ -49,22 +49,22 @@ The props for this component are:
   inserted into the example.
 
 The component is very useful if you want to embed the parts of an example into flowing text, You can insert the input
-JSON by using `<ExamplePart examplePage="/examples/all-features" show="input" />` and the following code snippet will
+JSON by using `<ExamplePart examplePage="/zh/examples/all-features" show="input" />` and the following code snippet will
 appear in the page:
 
-<ExamplePart examplePage="/examples/all-features" show="input" />
+<ExamplePart examplePage="/zh/examples/all-features" show="input" />
 
 Then, in order to show the reader the template you can use `show="template"` with the same `examplePage`.
 
-<ExamplePart examplePage="/examples/all-features" show="template" />
+<ExamplePart examplePage="/zh/examples/all-features" show="template" />
 
 You can render a partial using for example `show=partial` and `name=person`
 
-<ExamplePart examplePage="/examples/all-features" show="partial" name="person"/>
+<ExamplePart examplePage="/zh/examples/all-features" show="partial" name="person"/>
 
 If you have an example with helpers, you might also want to include the preparation script:
 
-<ExamplePart examplePage="/examples/all-features" show="preparationScript" />
+<ExamplePart examplePage="/zh/examples/all-features" show="preparationScript" />
 
 ## Horizontal layout
 
@@ -72,14 +72,14 @@ If you want to layout two example-parts horizontally, you can use the `<Flex>`-c
 
 ```md
 <Flex>
-<ExamplePart examplePage="/examples/builtin-helper-each-block" show="template"/>
-<ExamplePart examplePage="/examples/builtin-helper-each-block" show="input"/>
+<ExamplePart examplePage="/zh/examples/builtin-helper-each-block" show="template"/>
+<ExamplePart examplePage="/zh/examples/builtin-helper-each-block" show="input"/>
 </Flex>
 ```
 
 becomes
 
 <Flex>
-<ExamplePart examplePage="/examples/builtin-helper-each-block" show="template"/>
-<ExamplePart examplePage="/examples/builtin-helper-each-block" show="input"/>
+<ExamplePart examplePage="/zh/examples/builtin-helper-each-block" show="template"/>
+<ExamplePart examplePage="/zh/examples/builtin-helper-each-block" show="input"/>
 </Flex>

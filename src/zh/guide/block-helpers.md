@@ -354,7 +354,7 @@ Handlebars.registerHelper("list", function(context, options) {
 
 RAW 代码块可用于处理不经由 mustache 模板处理的代码块。
 
-<ExamplePart examplePage="/examples/raw-blocks.md" show="template"/>
+<ExamplePart examplePage="/zh/examples/raw-blocks.md" show="template"/>
 
 ```handlebars
 {{{{raw-helper}}}}

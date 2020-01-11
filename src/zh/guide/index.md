@@ -7,7 +7,7 @@ Handlebars is a simple **templating language**.
 It uses a template and an input object to generate HTML or other text formats. Handlebars templates look like regular
 text with embedded Handlebars expressions.
 
-<ExamplePart examplePage="/examples/simple-expressions" show="template"/>
+<ExamplePart examplePage="/zh/examples/simple-expressions" show="template"/>
 
 A handlebars expression is a `{{`, some contents, followed by a `}}`. When the template is executed, these expressions
 are replaced with values from an input object.
@@ -35,25 +35,25 @@ real production systems.
 
 As shown before, the following template defines two Handlebars expressions
 
-<ExamplePart examplePage="/examples/simple-expressions" show="template"/>
+<ExamplePart examplePage="/zh/examples/simple-expressions" show="template"/>
 
 If applied to the input object
 
-<ExamplePart examplePage="/examples/simple-expressions" show="input"/>
+<ExamplePart examplePage="/zh/examples/simple-expressions" show="input"/>
 
 the expressions will be replaced by the corresponding properties. The result is then
 
-<ExamplePart examplePage="/examples/simple-expressions" show="output"/>
+<ExamplePart examplePage="/zh/examples/simple-expressions" show="output"/>
 
 ## Nested input objects
 
 Sometimes, the input objects contains other objects or arrays. For example:
 
-<ExamplePart examplePage="/examples/path-expressions-dot" show="input" />
+<ExamplePart examplePage="/zh/examples/path-expressions-dot" show="input" />
 
 In such a case, you can use a dot-notation to gain access to the nested properties
 
-<ExamplePart examplePage="/examples/path-expressions-dot" show="template"/>
+<ExamplePart examplePage="/zh/examples/path-expressions-dot" show="template"/>
 
 !button[Learn more: Expressions](./expressions.md)
 
@@ -67,16 +67,16 @@ The built-in block-helpers `each` and `with` allow you to change the current eva
 The `with`-helper dives into an object-property, giving you access to its properties
 
 <Flex>
-<ExamplePart examplePage="/examples/builtin-helper-with-block" show="template"/>
-<ExamplePart examplePage="/examples/builtin-helper-with-block" show="input"/>
+<ExamplePart examplePage="/zh/examples/builtin-helper-with-block" show="template"/>
+<ExamplePart examplePage="/zh/examples/builtin-helper-with-block" show="input"/>
 </Flex>
 
 The `each`-helper iterates an array, allowing to you access the properties of each object via simple handlebars
 expressions.
 
 <Flex>
-<ExamplePart examplePage="/examples/builtin-helper-each-block" show="template"/>
-<ExamplePart examplePage="/examples/builtin-helper-each-block" show="input"/>
+<ExamplePart examplePage="/zh/examples/builtin-helper-each-block" show="template"/>
+<ExamplePart examplePage="/zh/examples/builtin-helper-each-block" show="input"/>
 </Flex>
 
 !button[Learn more: Built-in helpers](./builtin-helpers.md)
@@ -95,7 +95,7 @@ Any comments that must contain `}}` or other handlebars tokens should use the `{
 
 :::
 
-<ExamplePart examplePage="/examples/comments" show="template"/>
+<ExamplePart examplePage="/zh/examples/comments" show="template"/>
 
 ## Custom Helpers
 
@@ -103,15 +103,15 @@ Handlebars helpers can be accessed from any context in a template. You can regis
 Handlebars.registerHelper method.
 
 <Flex>
-<ExamplePart examplePage="/examples/helper-simple" show="template" />
-<ExamplePart examplePage="/examples/helper-simple" show="preparationScript" />
+<ExamplePart examplePage="/zh/examples/helper-simple" show="template" />
+<ExamplePart examplePage="/zh/examples/helper-simple" show="preparationScript" />
 </Flex>
 
 Helpers receive the current context as the `this`-context of the function.
 
 <Flex>
-<ExamplePart examplePage="/examples/helper-this-context" show="template" />
-<ExamplePart examplePage="/examples/helper-this-context" show="preparationScript" />
+<ExamplePart examplePage="/zh/examples/helper-this-context" show="template" />
+<ExamplePart examplePage="/zh/examples/helper-this-context" show="preparationScript" />
 </Flex>
 
 ## Block Helpers
@@ -120,7 +120,7 @@ Block expressions allow you to define helpers that will invoke a section of your
 the current. These block helpers are identified by a `#` preceeding the helper name and require a matching closing
 mustache, `/`, of the same name. Let's consider a helper that will generate an HTML list:
 
-<ExamplePart examplePage="/examples/helper-block" show="preparationScript" />
+<ExamplePart examplePage="/zh/examples/helper-block" show="preparationScript" />
 
 The example creates a helper named `list` to generate our HTML list. The helper receives the `people` as its first
 parameter, and an `options` hash as its second parameter. The options hash contains a property named `fn`, which you can
@@ -128,7 +128,7 @@ invoke with a context just as you would invoke a normal Handlebars template.
 
 When executed, the template will render:
 
-<ExamplePart examplePage="/examples/helper-block" show="output" />
+<ExamplePart examplePage="/zh/examples/helper-block" show="output" />
 
 Block helpers have more features, such as the ability to create an `else` section (used, for instance, by the built-in
 `if` helper).
@@ -147,17 +147,17 @@ don't want Handlebars to escape a value, use the "triple-stash", `{{{`.
 
 :::
 
-<ExamplePart examplePage="/examples/html-escaping" show="template" />
+<ExamplePart examplePage="/zh/examples/html-escaping" show="template" />
 
 The special characters in the second line will be escaped:
 
-<ExamplePart examplePage="/examples/html-escaping" show="output" />
+<ExamplePart examplePage="/zh/examples/html-escaping" show="output" />
 
 Handlebars will not escape a `Handlebars.SafeString`. If you write a helper that generates its own HTML, you will
 usually want to return a `new Handlebars.SafeString(result)`. In such a circumstance, you will want to manually escape
 parameters.
 
-<ExamplePart examplePage="/examples/helper-safestring" show="preparationScript" />
+<ExamplePart examplePage="/zh/examples/helper-safestring" show="preparationScript" />
 
 This will escape the passed in parameters, but mark the response as safe, so Handlebars will not try to escape it even
 if the "triple-stash" is not used.
@@ -167,18 +167,18 @@ if the "triple-stash" is not used.
 Handlebars partials allow for code reuse by creating shared templates. You can register a partial using the
 `registerPartial`-method:
 
-<ExamplePart examplePage="/examples/partials-register" show="preparationScript" />
+<ExamplePart examplePage="/zh/examples/partials-register" show="preparationScript" />
 
 The following template and input:
 
 <Flex>
-<ExamplePart examplePage="/examples/partials-register" show="template" />
-<ExamplePart examplePage="/examples/partials-register" show="input" />
+<ExamplePart examplePage="/zh/examples/partials-register" show="template" />
+<ExamplePart examplePage="/zh/examples/partials-register" show="input" />
 </Flex>
 
 will then provide the following result:
 
-<ExamplePart examplePage="/examples/partials-register" show="output" />
+<ExamplePart examplePage="/zh/examples/partials-register" show="output" />
 
 !button[Learn More: Partials](partials.html)
 
