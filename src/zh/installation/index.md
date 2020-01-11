@@ -41,7 +41,7 @@ console.log(template({ name: "张三" }));
 
 以下下载内容是为了方便社区。它们不是供生产使用的，但是它们无需设置构建引擎即可快速入门。
 
-### 最新版本 （{{$$ handlebarsVersions.latest}}）
+### 最新版本 （{{$handlebarsVersions.latest}}）
 
 <DownloadHandlebars>
 
@@ -103,9 +103,9 @@ Handlebars 也托管在许多免费的 CDN 上。
 </script>
 ```
 
-::: warning 必须对模板使用 `<script>` 标签
+::: warning 必须对模板使用 script 标签
 
-如果使用此方法，则必须使用 `<script>` 标签包装模板。否则浏览器可能会删除或修改如果没有，则模板的各个部分。看一下
+如果使用此方法，则必须使用 script 标签包装模板。否则浏览器可能会删除或修改如果没有，则模板的各个部分。看一下
 [“表格中的意外标记”](https://html.spec.whatwg.org/multipage/parsing.html#unexpected-markup-in-tables) 例。
 
 :::
