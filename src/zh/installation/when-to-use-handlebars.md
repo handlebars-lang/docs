@@ -1,17 +1,16 @@
-# When (not) to use Handlebars?
+# 什么时候使用/不使用 Handlebars？
 
-This section should give you an overview over the strengths and weaknesses of Handlebars. Ideally, it enables you to see
-if handlebars fits your use case and make an informed decision about choosing handlebars or not.
+本节概述了 Handlebars 的优缺点。它能够让你了解 Handlebars 是否适合你的实际情况，并使你就是否选择 Handlebars 做出明智的决
+定。
 
-::: warning A note on using Handlebars in the browser
+::: warning 关于在浏览器中使用 Handlebars 的注意事项
 
-Handlebars is a pure rendering engine. It works well if you want to allow people to write templates for rendering
-HTML-pages, e-mails or markdown files.
+Handlebars 是一个纯渲染引擎。如果你要允许人们自己编写用于渲染 HTML 页面，电子邮件或者 Markdown 文件的模板，那么使用
+Handlebars 效果将会很好。
 
-It has **no** built-in support for **event-handling**, accessing **backend-services** or incremental **DOM updates**.
+Handlebars **没有事件处理**，访问 **后端服务** 或增量 **DOM 更新** 的内置支持。
 
-If you want to build a **single-page application** and you want to handle user-input, you should probably look for a
-framework like
+如果你想构建一个 **单页应用程序（SPA）** 并且想要处理用户输入，则可能应该寻找一个前端框架：
 
 - [Angular](https://angular.io/)
 - [Aurelia](https://aurelia.io/)
@@ -25,11 +24,8 @@ framework like
 
 :::
 
-# Pro Handlebars
+# 高级
 
-- Handlebars is good for rendering in CLI-apps, non-HTML text content, server-side rendering of pure contents.
-- Handlebars has been ported to many programming languages (Java, Rust etc).
-
-# Contra Handlebars
-
-- Handlebars is not good for fast (incremental) updates of the DOM, event-handling, frontend-backend communication.
+- Handlebars 非常适合在 CLI 应用渲染，非 HTML 文本内容，在服务器端呈现纯内容。
+- Handlebars 已移植到许多编程语言上（Java、Rust 等）。
+- Handlebars 不利于 DOM 的快速（增量）更新，事件处理和前后端通信。

@@ -1,21 +1,19 @@
-# Integrations
+# 集成
 
-The following packages integrate Handlebars in different environments. These packages are **not** officially supported
-by the Handlebars team.
+以下软件包在不同的环境中集成了 Handlebars。这些软件包 **并非** 由 Handlebars 团队负责。
 
-There are multiple webpack-plugins that allow you to use Handlebars in a Webpack environment.
+有多个 Webpack 插件，可让你在 Webpack 环境中使用 Handlebars。
 
 ## Webpack: handlebars-loader
 
-The [handlebars-loader](https://github.com/pcardune/handlebars-loader) allow you to import
-[precompiled](./precompilation.html) template. Just write your handlebars-template into a `template.handlebars`-file and
-import it using
+[handlebars-loader](https://github.com/pcardune/handlebars-loader) 允许你导入 [预编译](./precompilation.html) 模板。只需
+将你的 handlebars-template 写入 `template.handlebars` 文件中，然后使用
 
 ```js
 const compiledTemplate = require("./template.handlebars");
 ```
 
-or
+或是
 
 ```js
 import compiledTemplate from "./template.handlebars";
@@ -23,26 +21,23 @@ import compiledTemplate from "./template.handlebars";
 
 ## Webpack: handlebars-webpack-plugin
 
-The [handlebars-webpack-plugin](https://github.com/sagold/handlebars-webpack-plugin) uses Handlebars to build your
-HTML-pages statically when compiling your application
+[handlebars-webpack-plugin](https://github.com/sagold/handlebars-webpack-plugin) 使用 Handlebars 构建你的静态 HTML 页面
 
 ## Babel: handlebars-inline-precompile
 
-The
-[babel-plugin-handlebars-inline-precompile](https://github.com/jamiebuilds/babel-plugin-handlebars-inline-precompile)
-precompiles Handlebars templates that are provided as template literals in the JavaScript source code:
+[babel-plugin-handlebars-inline-precompile](https://github.com/jamiebuilds/babel-plugin-handlebars-inline-precompile) 提
+供了预编译的 Handlebars 模板，这些模板在 JavaScript 源代码中作为模板文本提供：
 
 ```js
 import hbs from "handlebars-inline-precompile";
 const compiledTemplate = hbs`{{name}}`;
 ```
 
-Please refer to the documentation of the package for setup instructions.
+请参阅包文档以获取设置说明。
 
 ### Browserify: hbsfy
 
-The [hbsfy](https://www.npmjs.com/package/hbsfy) package allows you to import precompiled templates in a browserify
-environment:
+[hbsfy](https://www.npmjs.com/package/hbsfy) 包可让你在浏览器中导入预编译的模板环境：
 
 ```js
 const compiledTemplate = require("./template.handlebars");
@@ -50,16 +45,16 @@ const compiledTemplate = require("./template.handlebars");
 
 ## parcel-plugin-handlebars-precompile
 
-TODO: Write text here
+TODO: 在此填写
 
 https://www.npmjs.com/package/parcel-plugin-handlebars-precompile
 
 ## parcel-plugin-handlebars
 
-TODO: Write text here
+TODO: 在此填写
 
 https://www.npmjs.com/package/parcel-plugin-handlebars
 
-(there are many forks of this package in npm. It is not clear, which is the best version)
+（npm 中此软件包有很多 forks。尚不清楚其他的 forks，但这是最佳版本）
 
 https://www.npmjs.com/search?q=parcel-plugin-handlebars

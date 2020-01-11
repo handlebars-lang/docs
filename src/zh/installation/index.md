@@ -1,103 +1,96 @@
-# Installations
+# 安装
 
-There are a variety of ways to install Handlebars, depending on the programming language and environment you are using.
+有多种安装 Handlebars 的方法，具体取决于你所使用的编程语言和环境。
 
-## npm or yarn (recommended)
+## npm 或 yarn （推荐）
 
-The reference implementation of Handlebars is written in JavaScript. It is most commonly installed using `npm` or
-`yarn`:
+Handlebars 引擎使用 JavaScript 编写。我们最常使用 `npm` 或 `yarn` 来安装：
 
 ```bash
 npm install handlebars
-# or
+# 或者
 yarn add handlebars
 ```
 
-You can then use Handlebars using `require`
+然后，你可以通过 `require` 来使用 Handlebars。
 
 ```js
 const Handlebars = require("handlebars");
 const template = Handlebars.compile("Name: {{name}}");
-console.log(template({ name: "Nils" }));
+console.log(template({ name: "张三" }));
 ```
 
 ::: tip
 
-Using npm or yarn is the recommended way of using Handlebars. If you want to use Handlebars templates in the
-web-browser, we recommend that you use a build-engine such as Webpack, Browserify or Parcel.
+建议使用 npm 或 yarn 来使用 Handlebars。如果你想在浏览器上使用，建议你使用 Webpack、Browserify 或 Parcel 等构建引擎。
 
-The [integrations](integrations.md) page contains a list of plugins for those loaders that allow you to automatically
-precompile templates or use Handlebars otherwise.
+[集成](integrations.md) 页面包含了一份使你能够使用自动预编译或仅使用 Handlebars 的插件列表。
 
-!button[Learn more: Integrations](integrations.md)
+!button[了解更多：集成](integrations.md)
 
 :::
 
-### Browser builds in the npm-package
+### 内置在 npm-package 中的浏览器预编译版本
 
-The browser builds are located in the `node_modules/handlebars/dist/` directory. Making these accessible to the browser
-will depend on what build system you are using but this may be as simple as copying the files to an acessible place.
+浏览器预编译版本位于 `node_modules/handlebars/dist/` 让 Handlebars 可供浏览器使用取决于你所使用的编译系统，但使用预编译
+的话事情就会变得像复制文件一样简单。
 
-This is the preferred method of installation when using the precompiler as it ensures that your precompiled templates
-always run against the same version of the runtime.
+这是使用预编译器时的首选安装方法，因为它可以确保预编译的模板始终在相同版本的运行时上运行。
 
-## Downloading Handlebars
+## 下载 Handlebars
 
-The following downloads are provided as a convenience to the community. They are not meant for production use, but they
-can give you a quick-start without having to set up a build-engine.
+以下下载内容是为了方便社区。它们不是供生产使用的，但是它们无需设置构建引擎即可快速入门。
 
-### Latest release (version {{$handlebarsVersions.latest}})
+### 最新版本 （{{$$ handlebarsVersions.latest}}）
 
 <DownloadHandlebars>
 
-Use this version as a quick start, if you want to compile your templates in the browser.
+如果要在浏览器中编译模板，请使用此版本作为快速入门。
 
 </DownloadHandlebars>
 
 <DownloadHandlebars :runtimeOnly="true">
 
-Use this version when you are using [precompiled templates](precompilation.md) in the browser. This version does not
-include the compiler.
+若要在浏览器中使用 [预编译模板](precompilation.md)，请使用此版本。这个版本不包括编译器。
 
 </DownloadHandlebars>
 
-### Non-release builds
+### 非发行版
 
-All of Handlebar's released versions and CI builds are available for download on S3 in our
-[builds page](https://com.s3.amazonaws.com/builds.handlebarsjs/bucket-listing.html?sort=lastmod&sortdir=desc).
+所有 Handlebars 的发行版本和 CI 版本都可以在我们的 S3 上下载
+[Build 页面](https://com.s3.amazonaws.com/builds.handlebarsjs/bucket-listing.html?sort=lastmod&sortdir=desc)。
 
-The latest passing master build is named `handlebars-latest.js` and each passing SHA on master will create a
-`handlebars-gitSHA.js` file. While these all pass the CI, it's preferrable to use one of the tagged releases.
+最新通过的主版本的名称是 `handlebars-latest.js` ，master 上的每个通过的 SHA 都会创建一个 `handlebars-gitSHA.js` 文件。尽
+管所有文件都通过了 CI，你仍应使用带标记的发行版。
 
-**Note**: The builds page is provided as a convenience for the community, but you should not use it for hosting
-Handlebars in production.
+**注意**: 构建页面是为了方便社区而提供的，你不应将其用于生产环境。
 
 ## CDNs
 
-Handlebars is hosted on a number of free CDNs as well.
+Handlebars 也托管在许多免费的 CDN 上。
 
 - [cdnjs](https://cdnjs.com/libraries/handlebars.js)
-- [jsDelivr](http://www.jsdelivr.com/#!handlebarsjs). Advanced usage, such as
-  [version aliasing & concocting](https://github.com/jsdelivr/jsdelivr#usage), is available.
+- [jsDelivr](http://www.jsdelivr.com/#!handlebarsjs)。高级用法，例如
+    [version aliasing & concocting](https://github.com/jsdelivr/jsdelivr#usage)。
 
 ## RubyGems
 
-The office Handlebars build is available on https://rubygems.org/gems/handlebars-source
+可在 https://rubygems.org/gems/handlebars-source 上获得官方的 Handlebars 构建。
 
 ## Bower, Component, Composer, jspm
 
-Handlebars can be enabled by using other package-managers as well, like
+也可以使用其他包管理器来安装 Handlebars，例如
 
-- Bower (deprecated)
+- Bower (已弃用)
 - Component
 - Composer
 - jspm
 
-see https://github.com/components/handlebars.js for details
+有关详细信息，请参见 https://github.com/components/handlebars.js。
 
-## Usage
+## 用法
 
-You can deliver a template to the browser by including it in a `<script>` tag.
+你可以通过将模板包含在 `<script>` 标签中来将模板传递给浏览器。
 
 ```html
 <script id="entry-template" type="text/x-handlebars-template">
@@ -110,61 +103,57 @@ You can deliver a template to the browser by including it in a `<script>` tag.
 </script>
 ```
 
-::: warning Always use a script-tag for your template
+::: warning 必须对模板使用 `<script>` 标签
 
-If you use this method, you have to wrap your template with a script-tag. Otherwise the browser may remove or modify
-parts of your template if you don't. Have a look at
-["Unexpected markup in tables"](https://html.spec.whatwg.org/multipage/parsing.html#unexpected-markup-in-tables) for an
-example.
+如果使用此方法，则必须使用 `<script>` 标签包装模板。否则浏览器可能会删除或修改如果没有，则模板的各个部分。看一下
+[“表格中的意外标记”](https://html.spec.whatwg.org/multipage/parsing.html#unexpected-markup-in-tables) 例。
 
 :::
 
-Compile a template in JavaScript by using Handlebars.compile
+使用 Handlebars.compile 在 JavaScript 中编译模板
 
 ```js
 var source = document.getElementById("entry-template").innerHTML;
 var template = Handlebars.compile(source);
 ```
 
-Get the HTML result of evaluating a Handlebars template by executing the template with a context.
+通过调用 Handlebars.compile 并传递一个模板参数来获得 HTML。
 
 ```js
-var context = { title: "My New Post", body: "This is my first post!" };
+var context = { title: "我的新文章", body: "这是我的第一篇文章！" };
 var html = template(context);
 ```
 
-results in
+结果：
 
 ```html
 <div class="entry">
-  <h1>My New Post</h1>
+  <h1>我的新文章</h1>
   <div class="body">
-    This is my first post!
+    这是我的第一篇文章！
   </div>
 </div>
 ```
 
-### Precompiling Templates
+### 预编译模板
 
-In the previous example, we have loaded the compiler-and-runtime version of Handlebars. It is much more efficient, to
-compile your templates beforehand and include the precompiled version in your website. You can include the smaller
-runtime and the browser does not have to compile the templates before running them.
+在前面的示例中，我们加载了 Handlebars 的编译器和运行时版本。预编译模板在你的网站中包含预编译的版本要高效得多。你可以引用
+较小的运行时让浏览器不必在运行模板之前对其进行编译。
 
-!button[Learn More: Precompilation](precompilation.html)
+!button[了解更多：预编译](precompilation.html)
 
-## Bower (deprecated)
+## Bower （已弃用）
 
 ::: warning
 
-[Bower is deprecated](https://bower.io/blog/2017/how-to-migrate-away-from-bower/)
+[不推荐使用 Bower](https://bower.io/blog/2017/how-to-migrate-away-from-bower/)
 
-Bower versions of Handlebars are still published (at the moment) for backwards compatibility. But if you are setting up
-a new project, you should not use it anymore.
+为了向后兼容，目前仍在发布了 Bower 版本的 Handlebars。但是如果你要开启一个新项目，你不应再使用它。
 
 :::
 
-## Other programming languages
+## 其他语言
 
-There are handlebars implementations for many programming languages.
+许多语言都实现了 Handlebars。
 
-- TODO: Add list here
+- TODO: 在此添加列表

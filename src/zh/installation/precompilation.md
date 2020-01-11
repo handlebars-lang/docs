@@ -1,86 +1,81 @@
-# Precompiling templates
+# 预编译模板
 
-Using the Handlebars precompiler, you can precompile your Handlebars templates to save time on the client and reduce the
-required runtime size of the handlebars library.
+使用 Handlebars 预编译器，你可以预编译 Handlebars 模板以节省客户端时间并减少 Handlebars 库所需的运行时大小。
 
-## Getting started
+## 入门
 
-First, you will need to have _Node.js and npm_. Go to [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
-to find out how to do that on your OS.
+首先，你需要 _Node.js 和 npm_ 。转到 [https://nodejs.org/en/download/](https://nodejs.org/en/download/) 了解如何在你的操
+作系统上执行此操作。
 
-Next, install the Handlebars npm package, which contains the precompiler.
+接下来，安装 Handlebars npm 软件包，其中包含了预编译器。
 
 ```bash
 npm install -g handlebars
 ```
 
-Create a file name `example.handlebars` containing your template:
+创建一个文件 `example.handlebars` 来包含模板：
 
 <<< @/src/usage-examples/precompilation/example.handlebars
 
-Run the precompiler.
+运行预编译器。
 
 ```bash
 handlebars example.handlebars -f example.precompiled.js
 ```
 
-Include the Handlebars runtime and the precompile javascript.
+引用 Handlebars 运行时和预编译的 JavaScript。
 
 <<< @/src/usage-examples/precompilation/index.html
 
-The runtime is also available for download on the [installation page](index.md#downloading-handlebars).
+也可以在 [安装页面](index.md#downloading-handlebars) 上下载运行时。
 
-## Optimizations
+## 优化
 
-Because you are precompiling templates, you can also apply several optimization to the compiler. The first allows you to
-specify a list of the known helpers to the compiler
+因为你在预编译模板，所以你还可以对编译器进行多种优化。首先你可以指定一个已知 helper 的列表：
 
 ```bash
 handlebars <input> -f <output> -k each -k if -k unless
 ```
 
-The Handlebars compiler will optimize accesses to those helpers for performance. When all helpers are known at compile
-time, the `--knownOnly` option provides the smallest generated code that also provides the fastest execution.
+Handlebars 编译器将优化对这些 helper 的访问以提高性能。当所有 helper 都在编译时时候，`--knownOnly` 选项提供了最小的生成
+代码，也提供了最快的执行速度。
 
-## Usage
+## 用法
 
 !HANDLEBARS_HELP!
 
-If using the precompiler's normal mode, the resulting templates will be stored to the Handlebars.templates object using
-the relative template name sans the extension. These templates may be executed in the same manner as templates. If using
-the simple mode the precompiler will generate a single javascript method. To execute this method it must be passed to
-the Handlebars.template method and the resulting object may be used as normal.
+如果使用预编译器的 normal 模式，则预编译结果将存储到 Handlebars.templates 对象下对应的模板名称（不带扩展名）的对象中。这
+些预编译模板可以以和普通模板相同的方式执行。如果使用 simple 模式，预编译器将生成一个 JavaScript 方法。要执行此方法，必须
+将其传递给 Handlebars.template 方法，生成的对象也可以以相同的方式使用。
 
-## Precompiling Templates Inside NodeJS
+## 在 NodeJS 中预编译模板
 
-If you wish to precompile templates from inside NodeJS--without invoking "handlebars" from the command line--that can be
-done with Handlebars.precompile. Transmit the string result of this function to your clients, and they can in turn parse
-that with Handlebars.template.
+如果你希望从 NodeJS 内部预编译模板而无需从命令行调用 Handlebars，则可以使用 Handlebars.precompile 完成。将此函数的字符串
+结果传递给你的前端，前端即可使用 Handlebars.template 来解析。
 
 <<< @/src/usage-examples/precompilation/precompile-in-nodejs.js
 
-The output will be the following:
+输出如下：
 
 <<< @/src/usage-examples/precompilation/precompile-in-nodejs.output.js
 
-On the client side you have Javascript along the lines of the following.
+在客户端，你将通过以下方式使用 JavaScript。
 
 ```js
 Handlebars.partials["test1"] = Handlebars.template({
-  /** insert compiled output here **/
+  /** 在此处插入编译的输出 **/
 });
 ```
 
-Finally, you can reference these templates dynamically in your Javascript.
+最后，你可以在 JavaScript 中动态引用这些模板。
 
 ```js
 var result = Handlebars.partials["test1"]({ name: "yourname" });
-//do whatever you want with the result
+// 使用得到的 result
 ```
 
-## Integrations
+## 集成
 
-Some npm-packages can be used to integrate the Handlebars precompiler into your build system (i.e. Webpack,
-Browserify...). Have a look at the integrations page:
+一些 npm 包可用于将 Handlebars 预编译器集成到你的构建系统中（如 Webpack， Browserify ...）。参阅 集成 页面：
 
-!button[Learn more: Integrations](integrations.md)
+!button[了解更多：集成](integrations.md)
