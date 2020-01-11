@@ -1,73 +1,69 @@
-# Partials
+# 代码片段
 
-Handlebars allows for template reuse through partials. Partials are normal Handlebars templates that may be called
-directly by other templates.
+Handlebars 允许代码片段的复用。代码片段是一段普通的 Handlebars 模板，但它们可以直接由其他模板调用。
 
-## Basic Partials
+## 基本代码片段
 
-In order to use a partial, it must be registered via `Handlebars.registerPartial`.
+一个代码片段必须通过 `Handlebars.registerPartial` 注册。
 
 ```js
 Handlebars.registerPartial("myPartial", "{{name}}");
 ```
 
-This call will register the `myPartial` partial. Partials may be precompiled and the precompiled template passed into
-the second parameter.
+这个方法将注册代码片段 `myPartial`。可以对代码片段进行预编译，并将预编译的模板传到第二个参数。
 
-Calling the partial is done through the partial call syntax:
+调用代码片段是通过「代码片段调用语法」完成的：
 
 ```handlebars
 {{> myPartial }}
 ```
 
-Will render the partial named `myPartial`. When the partial executes, it will be run under the current execution
-context.
+将渲染名为 `myPartial` 的代码片段。当代码片段执行时，它会在当前的代码块的上下文中运行。
 
-## Dynamic Partials
+## 动态代码片段
 
-It's possible to dynamically select the partial to be executed by using sub expression syntax.
+使用子表达式语法可以动态选择要执行的部分。
 
 ```handlebars
 {{> (whichPartial) }}
 ```
 
-Will evaluate `whichPartial` and then render the partial whose name is returned by this function.
+这将计算 `whichPartial`，然后渲染以函数的返回值作为名称的代码片段。
 
-Subexpressions do not resolve variables so `whichPartial` must be a function. If a simple variable has the partial name,
-it's possible to resolve it via the `lookup` helper.
+子表达式不会解析变量，因此 `whichPartial` 必须是一个函数。如果代码片段的名称是储存在一个变量里面的，则可以通过 `lookup`
+帮助程序来解决它。
 
 ```handlebars
 {{> (lookup . 'myVariable') }}
 ```
 
-## Partial Contexts
+## 代码片段上下文
 
-It's possible to execute partials on a custom context by passing in the context to the partial call.
+通过将上下文传递给代码片段，你可以在自定义上下文中执行代码片段。
 
 ```handlebars
 {{> myPartial myOtherContext }}
 ```
 
-## Partial Parameters
+## 代码片段参数
 
-Custom data can be passed to partials through hash parameters.
+可以通过 Hash 参数将自定义数据传递到代码片段。
 
 ```handlebars
 {{> myPartial parameter=value }}
 ```
 
-Will set parameter to `value` when the partial runs.
+代码片段运行时会将参数设置为 `value`。
 
-This is particularly useful for exposing data from parent contexts to the partial:
+这对于把数据从父级传递到代码片段的上下文中的时候特别有用：
 
 ```handlebars
 {{> myPartial name=../name }}
 ```
 
-## Partial Blocks
+## 代码片段代码块
 
-The normal behavior when attempting to render a partial that is not found is for the implementation to throw an error.
-If failover is desired instead, partials may be called using the block syntax.
+一般来讲，尝试渲染一个未注册的代码片段会抛出错误。如果需要阻止错误抛出，可以在代码块中嵌套代码片段。
 
 ```handlebars
 {{#> myPartial }}
@@ -75,10 +71,9 @@ If failover is desired instead, partials may be called using the block syntax.
 {{/myPartial}}
 ```
 
-Which will render `Failover content` if the `myPartial` partial is not registered.
+如果代码片段 `myPartial` 尚未注册，则 `Failover content` 将被渲染。
 
-This block syntax may also be used to pass templates to the partial, which can be executed by the specially named
-partial, `@partial-block`. A template of
+这种代码块的语法也可以用于将模板传递到代码片段中。有专门的代码片段执行此操作：`@partial-block`。考虑如下模板：
 
 ```handlebars
 {{#> layout }}
@@ -86,21 +81,21 @@ partial, `@partial-block`. A template of
 {{/layout}}
 ```
 
-with the `layout` partial containing
+`layout` 代码片段包含
 
 ```handlebars
 Site Content
 {{> @partial-block }}
 ```
 
-Would render
+这将渲染：
 
 ```html
 Site Content My Content
 ```
 
-When called in this manner, the block will execute under the context of the partial at the time of the call. Depthed
-paths and block parameters operate relative to the partial block rather than the partial template.
+当以这种方式调用时，代码块将在 **调用时代码片段中的上下文** 中执行。此时深度路径查询和代码块参数是相对于代码片段的，而非
+代码片段的模板。
 
 ```handlebars
 {{#each children as |child|}}
@@ -110,11 +105,11 @@ paths and block parameters operate relative to the partial block rather than the
 {{/each}}
 ```
 
-Will render `child.value` from this template, not the partial.
+这将渲染模板中的 `child.value` 而非代码片段。
 
-## Inline Partials
+## 内联代码片段
 
-Templates may define block scoped partials via the `inline` decorator.
+模板可以通过 `inline` 修饰符定义代码块范围之内的代码片段。
 
 ```handlebars
 {{#*inline "myPartial"}}
@@ -125,10 +120,9 @@ Templates may define block scoped partials via the `inline` decorator.
 {{/each}}
 ```
 
-Which will render the `myPartial` partial for each child.
+这将为每个 child 渲染 `myPartial`。
 
-Each inline partial is available to the current block and all children, including execution of other partials. This
-allows for layout templates and similar functionality:
+每个内联代码片段均可用于当前代码块和所有子代码块（包括代码片段）。这使得「布局模板」和其他类似的功能成为可能：
 
 ```handlebars
 {{#> layout}}
@@ -141,7 +135,7 @@ allows for layout templates and similar functionality:
 {{/layout}}
 ```
 
-Where the `layout` partial may be:
+其中 `layout` 可能是：
 
 ```html
 <div class="nav">

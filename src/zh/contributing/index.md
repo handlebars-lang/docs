@@ -19,7 +19,7 @@ Handlebars 是一个开源项目。没有 _“文档部门” _ 使文档保持�
 
 ## 如何编写内容？
 
-该文档使用 Markdown 编写，并使用 [VuePress](https://v1.vuepress.vuejs.org/) 呈现。 VuePress 使用 `markdown-it` 包来渲染
+该文档使用 Markdown 编写，并使用 [VuePress](https://v1.vuepress.vuejs.org/) 渲染。 VuePress 使用 `markdown-it` 包来渲染
 markdown。markdown-it 实现了 CommonMark 语法。
 
 这意味着你可以使用以下资源中描述的语法：
