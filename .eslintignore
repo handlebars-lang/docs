@@ -4,3 +4,5 @@ target
 !.vuepress
 /src/usage-examples/precompilation/example.precompiled.js
 /src/usage-examples/precompilation/precompile-in-nodejs.output.js
+/src/zh/usage-examples/precompilation/example.precompiled.js
+/src/zh/usage-examples/precompilation/precompile-in-nodejs.output.js
