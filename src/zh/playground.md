@@ -9,8 +9,8 @@ example:
         return aString.toUpperCase()
     })
   input:
-    firstname: Yehuda
-    lastname: Katz
+    firstname: 张
+    lastname: 三
 ---
 
 <!--

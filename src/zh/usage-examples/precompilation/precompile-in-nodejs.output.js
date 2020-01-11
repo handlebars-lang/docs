@@ -3,5 +3,5 @@
 
   return "Handlebars <b>"
     + container.escapeExpression(((helper = (helper = helpers.doesWhat || (depth0 != null ? depth0.doesWhat : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"doesWhat","hash":{},"data":data}) : helper)))
-    + "</b> precompiled!";
+    + "</b> 预编译！";
 },"useData":true}

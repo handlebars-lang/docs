@@ -1,73 +1,61 @@
-# Improving the documentation
+# 帮助改进此文档
 
 [[toc]]
 
-Handlebars is an open-source project. There is no _"documentation department"_ that keeps the docs up-to-date. This
-documentation site requires your help to be a good and helpful site.
+Handlebars 是一个开源项目。没有 _“文档部门” _ 使文档保持最新。 Handlebars 文档站需要你的帮助才能变得更加优秀。
 
-The following sections should help you help us improve the documentation.
+以下各节将帮助你帮助我们改进文档。
 
-## How do I submit contributions?
+## 如何提交更改？
 
-This site is hosted on [Github](https://github.com/handlebars-lang/docs) and rendered with
-[VuePress](https://v1.vuepress.vuejs.org/)
+该站点托管在 [Github](https://github.com/handlebars-lang/docs) 上，并使用 [VuePress](https://v1.vuepress.vuejs.org/)。
 
-- Please create a [pull requests](https://help.github.com/en/articles/about-pull-requests) for any change that you would
-  like to see on the page.
-- If your change only affects the contents of a single page, you can simply click the link
-  `{{$themeConfig.editLinkText}}` at the button of this page (see
-  [Editing files in another user's repository](https://help.github.com/en/articles/editing-files-in-another-users-repository))
-  for details.
-- For more complex changes (styling, multiple pages, new pages, fixing build problems), you should
-  [fork the repository](https://help.github.com/en/articles/fork-a-repo) and submit a pull request when you are done.
-  The [CONTRIBUTING.md page in the repo][contributing-page-in-repo] contains more information about. This approach
-  allows you to use a dev-server and preview your changes befor submitting them.
+- 请为你要进行的影响此文档的任何更改创建一个 [pull requests](https://help.github.com/en/articles/about-pull-requests)。
+- 如果更改仅影响单页内容，则只需单击该页面底部的 {{$ themeConfig.editLinkText}}} 按钮。（请参阅
+   [编辑另一个用户存储库中的文件](https://help.github.com/en/articles/editing-files-in-another-users-repository)。）
+- 对于更复杂的更改（样式，多个页面，新页面，修复构建问题），你应该
+   [fork repo](https://help.github.com/en/articles/fork-a-repo) 并在完成之后提交 Pull Request。 [Contributing
+  页][contributing-page-in-repo] 包含更多信息。它可以让你使用开发服务器并在提交更改之前预览更改。
 
-## How do I write content?
+## 如何编写内容？
 
-The documentation is written in Markdown and rendered with [VuePress](https://v1.vuepress.vuejs.org/). VuePress uses the
-`markdown-it` package to render markdown. `markdown-it` implements the CommonMark dialect.
+该文档使用 Markdown 编写，并使用 [VuePress](https://v1.vuepress.vuejs.org/) 呈现。 VuePress 使用 `markdown-it` 包来渲染
+markdown。markdown-it 实现了 CommonMark 语法。
 
-This means that you can use syntax described in these sources:
+这意味着你可以使用以下资源中描述的语法：
 
-- [CommonMark help](https://commonmark.org/help/)
-- [syntax extensions added by markdown-it](https://github.com/markdown-it/markdown-it#syntax-extensions)
-- [syntax extensions added by VuePress](https://v1.vuepress.vuejs.org/guide/markdown.html)
+- [CommonMark 帮助](https://commonmark.org/help/)
+- [markdown-it 添加的语法扩展](https://github.com/markdown-it/markdown-it#syntax-extensions)
+- [VuePress 添加的语法扩展](https://v1.vuepress.vuejs.org/guide/markdown.html)
 
-In addition to all those extensions, this site adds some custom Vue-components that can be embedded in source files.
+除这些扩展之外，本站还添加了一些可以嵌入到源文件中的自定义 Vue 组件。
 
-- [Interactive Examples](interactive-examples.md)
-- [Button Links](button-links.md)
+- [互动示例]（interactive-examples.md）
+- [按钮链接]（button-links.md）
 
-## How should I behave?
+## 我应该怎么做？
 
-::: danger
+::: 危险
 
-- **Respect intellectual property**: Please only submit texts and other media if you have created it yourself or if you
-  have copied it from [handlebarsjs.com](https://handlebarsjs.com). There are many blog posts about Handlebars, but the
-  text from these posts is intellectual property of their authors.
-- **License**: By submitting content, you agree that it is published on this site under the license of this site.
+- **尊重知识产权**: 提交的文本必须是你自己创建或是从 [handlebarsjs.com](https://handlebarsjs.com) 上复制的。有很多关于
+  Handlebars 的博客文章，但这些文章的知识产权归其作者所有。
+- **许可**: 提交内容即表示你同意在本网站的许可下将其发布在本网站上。
 
-- **Code of conduct**: Please be respectful to others and avoid sexualized or coarse language.
+- **行为准则**: 请尊重他人，避免使用色情或粗俗语言。
 
 :::
 
-## What can I contribute?
+## 我能贡献什么？
 
-- **Move content from http://handlebarsjs.com to the new site**. Although there are many complaints about the old site,
-  there is still a lot of content. [@wycats](https://github.com/wycats/) has specifically asked to have a walkthrough
-  guide on the new site as well. The main index page should have about the same contents as the main page on the old
-  site.
-- **Look for issues labeled as
-  [docs-needed](https://github.com/wycats/handlebars.js/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Adocs-needed+) in the
-  [handlebars.js](https://github.com/wycats/handlebars.js)-repository.** Those are issues that describe something that
-  should be documented.
-- **Propose and submit new content.** If you are unsure about your proposal, you can create an issue before submitting a
-  pull-request. This might save you from wasting time.
-- **Improve existing content.** You can propose changes to the navigation, fix typos, improve language and correct wrong
-  content.
-- **Fix CSS-styling issues.** The styling on this page is far from perfect. If you feel like improving it, please go
-  ahead. For larger changes, please get in touch by opening an issue.
+- **将内容从 http://handlebarsjs.com 移至新站点。**。尽管有很多关于旧网站的抱怨，    但旧网站仍然有很多内容。
+  [@wycats](https://github.com/wycats/) 非常希望在新网站上能够有入门指南。新索引页的内容应与旧索引页的内容大致相同。
+- ** 在 [handlebars.js](https://github.com/wycats/handlebars.js) 存储库中寻找标记为
+  [docs-needed](https://github.com/wycats/handlebars.js/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Adocs-needed+) 的内
+  容 **。这些 Issues 描述了一些应当出现在文档中的内容。
+- **提出并提交新内容。** 如果不确定的话，可以先提出 Issue，然后再提交Pull Requests。这样可以节省你的时间。
+- **改善现有内容。** 你可以提出导航建议，修正错别字，改善语言并纠正错误内容。
+- **修复 CSS 样式问题。** 此页面上的样式绝非完美。请继续完善这个页面的样式。如需更大的更改，请先打开一个 Issue 以取得联
+  系。
 
 [contributing-page-in-repo]: https://github.com/handlebars-lang/docs/blob/master/CONTRIBUTING.md
 [all-features-example-raw]: https://raw.githubusercontent.com/handlebars-lang/docs/master/src/examples/all-features.md

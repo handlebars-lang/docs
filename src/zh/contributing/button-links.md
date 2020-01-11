@@ -1,11 +1,11 @@
-# Button links
+# 链接按钮
 
-In order to make a link look like a button, use the syntax
+如果需要使链接以按钮的方式显示，使用如下语法：
 
 ```markdown
 !button[Link Text](./link-target.html)
 ```
 
-This will render the following HTML:
+这会渲染如下 HTML：
 
 !button[Link Text](./link-target.html)

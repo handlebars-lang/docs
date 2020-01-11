@@ -22,7 +22,7 @@
               })
             : helper)
         ) +
-        "</b> precompiled!"
+        "</b> 预编译！"
       );
     },
     useData: true
