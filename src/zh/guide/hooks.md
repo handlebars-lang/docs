@@ -1,34 +1,33 @@
-# Hooks
+# 钩子
 
-There are several places where you can hook into Handlebars function calls.
+你可以在几个地方挂接到 Handlebars 函数调用。
 
 ## helperMissing
 
-This hook is called when a mustache or a block-statement
+当 Mustache 或表达式是如下情况时钩子会被调用：
 
-- a simple mustache-expression is not a registered helper AND
-- is not a property of the current evaluation context.
+- Mustache 表达式不是一个已经注册的帮助程序，**并且**
+- 不是当前上下文的计算属性。
 
-you can add custom handling for those situations by registering the helper `helperMissing`:
+你可以通过注册 `helperMissing` 帮助程序为这些情况添加自定义处理：
 
 <ExamplePart examplePage="/zh/examples/hook-helper-missing.md" show="template" />
 <ExamplePart examplePage="/zh/examples/hook-helper-missing.md" show="preparationScript" />
 <ExamplePart examplePage="/zh/examples/hook-helper-missing.md" show="output" />
 
-The helper receives the same arguments and options (`hash`, `name` etc) as any custom helper or block-helper. The
-`options.name` is the name of the helper being called.
+与任何自定义帮助程序或代码块帮助程序一样，该帮助程序接收相同的参数和选项（`hash`，`name`等）。 `option.name` 是被调用的
+帮助程序的名称。
 
-### Default behavior
+### 默认行为
 
-If no parameters are passed to the mustache, the default behaviour is to do nothing and ignore the whole mustache
-expression or the whole block:
+如果没有参数传递给 Mustache，则默认行为是不执行任何操作并忽略整个表达式或代码块：
 
 <Flex>
 <ExamplePart examplePage="/zh/examples/hook-helper-missing-default-no-param.md" show="template" />
 <ExamplePart examplePage="/zh/examples/hook-helper-missing-default-no-param.md" show="output" />
 </Flex>
 
-If parameter is passed to the mustache, Handlebars with throw an exception:
+如果有参数传递给 Mustache，则 Handlebars 将引发异常：
 
 <Flex>
 <ExamplePart examplePage="/zh/examples/hook-helper-missing-default-param.md" show="template" />
@@ -37,24 +36,22 @@ If parameter is passed to the mustache, Handlebars with throw an exception:
 
 ## blockHelperMissing
 
-This hook is called, when a
+遇到如下情况时，钩子将会被调用：
 
-- block-expression calls a helper that is not registered,
-- but the name matches a property in the current evaluation context.
+- 代码块表达式尝试调用未注册的帮助程序，
+- 但是这个帮助程序的名称与当前计算上下文中的某个属性相同。
 
-You can handle this situation by registering a helper named `blockHelperMissing`.
+你可以通过注册一个名为 `blockHelperMissing` 的帮助程序来处理这种情况。
 
 <ExamplePart examplePage="/zh/examples/hook-block-helper-missing.md" show="template" />
 <ExamplePart examplePage="/zh/examples/hook-block-helper-missing.md" show="preparationScript" />
 <ExamplePart examplePage="/zh/examples/hook-block-helper-missing.md" show="output" />
 
-### Default behavior
+### 默认行为
 
-The hook will be called with the resolved property value on the current context and the `options.name` field set to the
-name of the property.
+钩子将在当前上下文中使用已解析的属性值作为参数进行调用，并且将 `options.name` 字段设置为属性的名称。
 
-If the hook is not overridden, then the default implementation will mimic the behavior of Mustache and just call the
-block.
+如果钩子没有被覆盖，则默认实现将模仿 Mustache 的行为：只调用代码块。
 
 <ExamplePart examplePage="/zh/examples/hook-block-helper-missing-default.md" show="template" />
 <ExamplePart examplePage="/zh/examples/hook-block-helper-missing-default.md" show="output" />
