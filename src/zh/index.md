@@ -18,5 +18,5 @@ footer: MIT 许可 | Copyright (C) 2011-2019 by Yehuda Katz
 ---
 
 <a class="devswag" href="https://www.devswag.com/collections/handlebars">
-    <img src="images/handlebars-devswag.png">
+    <img src="/images/handlebars-devswag.png">
 </a>
