@@ -55,27 +55,27 @@ Handlebars 表达式是一个 `{{`，一些内容，后跟一个 `}}`。执行�
 
 !button[了解更多: 表达式](./expressions.md)
 
-一些内置的帮助程序允许你将当前上下文更改为嵌套对象。然后，你就可以像访问跟对象一样访问该对象了。
+一些内置的助手代码允许你将当前上下文更改为嵌套对象。然后，你就可以像访问跟对象一样访问该对象了。
 
 ## 计算上下文
 
-内置的代码块帮助程序 `each` 和 `with` 允许你更改当前代码块的值。
+内置的代码块助手代码 `each` 和 `with` 允许你更改当前代码块的值。
 
-`with` 帮助程序注入到对象的属性中，使你可以访问其属性。
+`with` 助手代码注入到对象的属性中，使你可以访问其属性。
 
 <Flex>
 <ExamplePart examplePage="/zh/examples/builtin-helper-with-block" show="template"/>
 <ExamplePart examplePage="/zh/examples/builtin-helper-with-block" show="input"/>
 </Flex>
 
-`each` 帮助程序会迭代一个数组，使你可以通过 Handlebars 简单访问每个对象的属性表达式。
+`each` 助手代码会迭代一个数组，使你可以通过 Handlebars 简单访问每个对象的属性表达式。
 
 <Flex>
 <ExamplePart examplePage="/zh/examples/builtin-helper-each-block" show="template"/>
 <ExamplePart examplePage="/zh/examples/builtin-helper-each-block" show="input"/>
 </Flex>
 
-!button[了解更多: 内置帮助程序](./builtin-helpers.md)
+!button[了解更多: 内置助手代码](./builtin-helpers.md)
 
 ## 模板注释
 
@@ -94,40 +94,40 @@ Handlebars 表达式是一个 `{{`，一些内容，后跟一个 `}}`。执行�
 
 ## 自定义助手
 
-通过调用 Handlebars.registerHelper 方法，你可以从模板中的任何上下文中访问 Handlebars 帮助程序。
+通过调用 Handlebars.registerHelper 方法，你可以从模板中的任何上下文中访问 Handlebars 助手代码。
 
 <Flex>
 <ExamplePart examplePage="/zh/examples/helper-simple" show="template" />
 <ExamplePart examplePage="/zh/examples/helper-simple" show="preparationScript" />
 </Flex>
 
-帮助程序将当前上下文作为函数的 `this` 指针接收。
+助手代码将当前上下文作为函数的 `this` 指针接收。
 
 <Flex>
 <ExamplePart examplePage="/zh/examples/helper-this-context" show="template" />
 <ExamplePart examplePage="/zh/examples/helper-this-context" show="preparationScript" />
 </Flex>
 
-## 代码块帮助程序
+## 代码块助手代码
 
-代码块表达式使你可以自定义这样的帮助程序：这个帮助程序可以使用与当前上下文不同的上下文来调用模板。这些代码块帮助程序在名
-称前以 # 号标识，并且需要一个名称相同的结束模板 `/`。让我们考虑一个生成 HTML 列表的帮助程序：
+代码块表达式使你可以自定义这样的助手代码：这个助手代码可以使用与当前上下文不同的上下文来调用模板。这些代码块助手代码在名
+称前以 # 号标识，并且需要一个名称相同的结束模板 `/`。让我们考虑一个生成 HTML 列表的助手代码：
 
 <ExamplePart examplePage="/zh/examples/helper-block" show="preparationScript" />
 
-这个示例创建了一个名为 `list` 的帮助程序来生成我们的 HTML 列表。帮助程序接收一个 `people` 参数和一个 `options` 参数
+这个示例创建了一个名为 `list` 的助手代码来生成我们的 HTML 列表。助手代码接收一个 `people` 参数和一个 `options` 参数
 。`options` 包含一个名为 `fn` 的属性，这个属性使你能够像调用普通的 Handlebars 模板一样调用代码块的上下文。
 
 执行后，模板将渲染：
 
 <ExamplePart examplePage="/zh/examples/helper-block" show="output" />
 
-代码块帮助程序具有其他功能，例如能够创建 `else` （例如，由内置的 `if` 函数使用）
+代码块助手代码具有其他功能，例如能够创建 `else` （例如，由内置的 `if` 函数使用）
 
-因为调用 `options.fn(context)` 时 Handlebars 会转义代码块帮助程序的内容，因此 Handlebars 不会转义代码块帮助程序的返回结
+因为调用 `options.fn(context)` 时 Handlebars 会转义代码块助手代码的内容，因此 Handlebars 不会转义代码块助手代码的返回结
 果。如果这样做，代码块内部的内容将被两次转义。
 
-!button[了解更多: 代码块帮助程序](block-helpers.html)
+!button[了解更多: 代码块助手代码](block-helpers.html)
 
 ## HTML 转义
 
@@ -144,7 +144,7 @@ Handlebars 表达式是一个 `{{`，一些内容，后跟一个 `}}`。执行�
 
 <ExamplePart examplePage="/zh/examples/html-escaping" show="output" />
 
-Handlebars 不会转义 `Handlebars.SafeString`。如果你正在编写一个自己的生成 HTML 的帮助程序，你通常会想返回一个
+Handlebars 不会转义 `Handlebars.SafeString`。如果你正在编写一个自己的生成 HTML 的助手代码，你通常会想返回一个
 `new Handlebars.SafeString(result)`。这种情况下，你将需要手动转义参数。
 
 <ExamplePart examplePage="/zh/examples/helper-safestring" show="preparationScript" />
@@ -170,14 +170,14 @@ Handlebars 代码片段通过创建共享模板允许代码复用。你可以使
 
 !button[了解更多: 代码片段](partials.html)
 
-## 内置帮助程序
+## 内置助手代码
 
-Handlebars 提供了各种内置帮助程序，例如 `if` 条件代码块和 `each` 迭代器。
+Handlebars 提供了各种内置助手代码，例如 `if` 条件代码块和 `each` 迭代器。
 
-!button[了解更多: 内置帮助程序](builtin-helpers.html)
+!button[了解更多: 内置助手代码](builtin-helpers.html)
 
 ## API 参考
 
-Handlebars 为应用程序和帮助程序提供了各种 API 和实用的方法。
+Handlebars 为应用程序和助手代码提供了各种 API 和实用的方法。
 
 !button[了解更多: API 参考](/api-reference/)

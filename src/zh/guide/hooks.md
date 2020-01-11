@@ -6,17 +6,17 @@
 
 当 Mustache 或表达式是如下情况时钩子会被调用：
 
-- Mustache 表达式不是一个已经注册的帮助程序，**并且**
+- Mustache 表达式不是一个已经注册的助手代码，**并且**
 - 不是当前上下文的计算属性。
 
-你可以通过注册 `helperMissing` 帮助程序为这些情况添加自定义处理：
+你可以通过注册 `helperMissing` 助手代码为这些情况添加自定义处理：
 
 <ExamplePart examplePage="/zh/examples/hook-helper-missing.md" show="template" />
 <ExamplePart examplePage="/zh/examples/hook-helper-missing.md" show="preparationScript" />
 <ExamplePart examplePage="/zh/examples/hook-helper-missing.md" show="output" />
 
-与任何自定义帮助程序或代码块帮助程序一样，该帮助程序接收相同的参数和选项（`hash`，`name`等）。 `option.name` 是被调用的
-帮助程序的名称。
+与任何自定义助手代码或代码块助手代码一样，该助手代码接收相同的参数和选项（`hash`，`name`等）。 `option.name` 是被调用的
+助手代码的名称。
 
 ### 默认行为
 
@@ -38,10 +38,10 @@
 
 遇到如下情况时，钩子将会被调用：
 
-- 代码块表达式尝试调用未注册的帮助程序，
-- 但是这个帮助程序的名称与当前计算上下文中的某个属性相同。
+- 代码块表达式尝试调用未注册的助手代码，
+- 但是这个助手代码的名称与当前计算上下文中的某个属性相同。
 
-你可以通过注册一个名为 `blockHelperMissing` 的帮助程序来处理这种情况。
+你可以通过注册一个名为 `blockHelperMissing` 的助手代码来处理这种情况。
 
 <ExamplePart examplePage="/zh/examples/hook-block-helper-missing.md" show="template" />
 <ExamplePart examplePage="/zh/examples/hook-block-helper-missing.md" show="preparationScript" />

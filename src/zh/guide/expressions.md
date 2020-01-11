@@ -2,61 +2,61 @@
 
 ::: v-pre
 
-Handlebars expressions are the basic unit of a Handlebars template. You can use them alone in a `{{mustache}}`, pass
-them to a Handlebars helper, or use them as values in hash arguments.
+Handlebars 表达式是 Handlebars 模板的基本单位。 您可以在 `{{mustache}}` 中单独使用它们或将它们用作 Handlebars 助手代码，
+或将其用作 Hash 参数中的值。
 
 :::
 
-## Basic Usage
+## 基本用法
 
-Handlebars expressions are some contents enclosed by double curly braces `{{}}`. In the below template, `firstname` is a
-variable which is enclosed by double curly braces which is said to be an expression.
+Handlebars 表达式是一些以双花括号 `{{}}` 括起来的内容。在以下的模版中，`firstname` 是一个被声明为表达式的变量，且被双花
+括号括起来。
 
 <ExamplePart examplePage="/zh/examples/simple-expressions.md" show="template" />
 
-If the below input object is applied to the template
+如果将以下对象输入模板：
 
 <ExamplePart examplePage="/zh/examples/simple-expressions.md" show="input" />
 
-Expressions are compiled to produce the output as follows:
+表达式会编译为如下输出：
 
 <ExamplePart examplePage="/zh/examples/simple-expressions.md" show="output" />
 
-## Path expressions
+## 路径表达式
 
-Handlebars expressions can also be dot-separated paths.
+Handlebars 表达式亦可为以句点分隔的路径。
 
 <ExamplePart examplePage="/zh/examples/path-expressions-dot.md" show="template" />
 
-This expression looks up the `person` property in the input object and in turn looks up the `firstname` and `lastname`
-property within the `person` object.
+这个表达式将会在输入对象中查找 `person` 属性，然后查找 `person` 对象中的 `firstname` 和`lastname`属性。 person 对象内的
+属性。
 
-Pass the below input object to the template
+将如下输入传入模版：
+
 <ExamplePart examplePage="/zh/examples/path-expressions-dot.md" show="input" />
 
-Output will be generated as below <ExamplePart examplePage="/zh/examples/path-expressions-dot.md" show="output" />
+会获得如下输出：
 
-Handlebars also supports a deprecated `/` syntax, so you could write the above template as:
+<ExamplePart examplePage="/zh/examples/path-expressions-dot.md" show="output" />
+
+Handlebars 同时支持一个已弃用的 `/` 语法，因此你可以将上面的例子这样写：
 
 <ExamplePart examplePage="/zh/examples/path-expressions-slash.md" show="template" />
 
-## Changing the context
+## 更改上下文
 
-Some helpers like `#with` and `#each` allow you to dive into nested objects. When you include `../` segments into your
-path, Handlebars will change back into the parent context.
+一些诸如 `#with` and `#each` 的助手代码使你能够操作嵌套的对象。当你在路径中包含 `../` 时，Handlebars 将转回父级上下文。
 
 <ExamplePart examplePage="/zh/examples/path-expressions-dot-dot" show="template" />
 
-Even though the name is printed while in the context of a comment, it can still go back to the main context (the
-root-object) to retrieve the prefix.
+即使在注释的上下文中输出了名称，它仍然可以返回到主上下文（根对象）以检索前缀。
 
 ::: v-pre
 
 ::: warning
 
-The exact value that `../` will resolve to varies based on the helper that is calling the block. Using `../` is only
-necessary when context changes. Children of helpers such as `{{#each}}` would require the use of `../` while children of
-helpers such as `{{#if}}` do not.
+`../` 解析的确切值根据调用该代码块的助手代码不同而有所不同。仅在上下文更改必要时使用 `../`。诸如 `{{#each}}` 之类的子助
+手代码将需要使用 `../` ，而诸如 `{{#if}}` 之类的助手代码则不需要。
 
 ```handlebars
 {{permalink}}
@@ -69,11 +69,9 @@ helpers such as `{{#if}}` do not.
 {{/each}}
 ```
 
-In this example all of the above reference the same prefix value even though they are located within different blocks.
-This behavior is new as of Handlebars 4, the
-[release notes](https://github.com/wycats/handlebars.js/blob/master/release-notes.md) discuss the prior behavior as well
-as the migration plan. Handlebars also allows for name conflict resolution between helpers and data fields via a this
-reference:
+在此示例中，以上所有引用相同的前缀值，即使它们位于不同的块中也是如此。这样的行为是从 Handlebars 4 开始的，
+[发行说明](https://github.com/wycats/handlebars.js/blob/master/release-notes.md) 也讨论了先前的行为作为迁移计划。
+Handlebars 还允许通过 this 来解决助手和数据字段之间的名称冲突。参考：
 
 :::
 
@@ -93,126 +91,119 @@ JavaScript-style strings, `"` and `'`, may also be used instead `[` pairs.
 
 <ExamplePart examplePage="/zh/examples/literal-segments.md" show="template" />
 
-## HTML-escaping
+## HTML 转义
 
 ::: v-pre
 
-In Handlebars, the values returned by the `{{expression}}` are HTML-escaped. Say, If the expression contains `&`, then
-the returned HTML-escaped output is genarated as `&amp;` If you don't want Handlebars to escape a value, use the
-"triple-stash", `{{{`:
+在 Handlebars 中，由 `{{expression}}` 返回的值是 HTML 转义的。也就是说，如果一个表达式包含 `&`，那么返回的 HTML 转义的内
+容将会包含 `&amp;`。如果你不希望 Handlebars 转义字符的话，请使用 `{{{`。
 
 :::
 
-In the below template, You can learn how to produce the HTML escaped and raw output.
+在以下模板中，你将了解如何生成 HTML 转义的和原始的输出。
 
 <ExamplePart examplePage="/zh/examples/html-escaping.md" show="template" />
 
-Pass the special characters to the template
+将如下特殊的输入传入模版：
 
 <ExamplePart examplePage="/zh/examples/html-escaping.md" show="input" />
 
 ::: v-pre
 
-Expressions enclosed by "triple-stash" (`{{{`) produces the raw output otherwise HTML-escaped output is generated as
-below.
+使用 `{{{` 会输出原始结果。否则将会输出 HTML 转义之后的结果，如下面的例子所示。
 
 :::
 
 <ExamplePart examplePage="/zh/examples/html-escaping.md" show="output" />
 
-## Helpers
+## 助手代码
 
-Helpers can be used to implement functionality that is not part of the Handlebars language itself.
+助手代码可以实现一些并非 Handlesbars 语言本身的功能。
 
-A helper can be registered at the runtime via `Handlebars.registerHelper`, for example in order to uppercase all
-characters of a string.
+在运行时可以用 `HandleBars.registerHelper` 可以注册助手代码。例如为了将字符串中的所有字符转换为大写。
 
 <ExamplePart examplePage="/zh/examples/helper-simple.md" show="preparationScript" />
 
-A Handlebars helper call is a simple identifier, followed by zero or more parameters (separated by space). Each
-parameter is a Handlebars expression that is evaluated exactly the same way described above in "Basic Usage":
+Handlebars 助手代码的调用需要一个简单标识符，且可紧接一个或多个参数（以空格分割）。每一参数为一个 Handlebars 表达式，且
+将会用于上方“基本用法”中相同的方法来计算。
 
 <ExamplePart examplePage="/zh/examples/helper-simple.md" show="template" />
 
-In this case, `loud` is the name of a helper, and `lastname` is a parameter to the helper. The template will uppercase
-the `lastname` property of the input:
+此例子中，`load` 是助手代码的名称，而 `lastname` 为传递给助手代码的参数。此模板，将会将输入的 `uppercase` 属性正确地转换
+为大写：
 
 <Flex>
 <ExamplePart examplePage="/zh/examples/helper-simple.md" show="input" />
 <ExamplePart examplePage="/zh/examples/helper-simple.md" show="output" />
 </Flex>
 
-### Prevent HTML-escaping of helper return values
+### 避免助手代码的返回值被 HTML 转义
 
-When your helper returns an instance of `Handlebars.Safestring` the return-value is not escaped, even if the helper is
-called with `{{` instead of `{{{`. You have to take care that all parameters are escaping properly using
-`Handlebars.escapeExpression`.
+即使当使用 `{{` 而非 `{{{` 来调用助手代码时，当你的助手代码返回一个 `Handlebars.Safestring` 的实例，返回值也并不会被转义
+。你需要留心将所有参数正确地使用 `Handlebars.escapeExpression` 来转义。
 
 <ExamplePart examplePage="/zh/examples/helper-safestring.md" show="preparationScript" />
 
-### Helpers with Multiple Parameters
+### 具有多个参数的助手代码
 
-Let us see another example of helpers with two parameters
+我们观察一下另一个具有两个参数的助手代码：
 
 <ExamplePart examplePage="/zh/examples/helper-multiple-parameters.md" show="template" />
 
-In this case, Handlebars will pass the link helper two parameters: the String `See Website` and the value of
-`people.url` from the below provided input `people` object.
+此例子中，Handlebars 将把两个参数传递给 `link` 助手代码：字符串 `See Website` 与从下面提供的 `people` 输入对象中的
+`people.value`。
 
 <ExamplePart examplePage="/zh/examples/helper-multiple-parameters.md" show="input" />
 
-The helper function `link` is used to generate a hyperlink as described in the script.
+如同代码中所述，此助手代码 `link` 用于生成一个超链接。
 
 <ExamplePart examplePage="/zh/examples/helper-multiple-parameters.md" show="preparationScript" />
 
-We will obtain the output using the input parameters
+我们会从上面的输入获得如下输出：
 
 <ExamplePart examplePage="/zh/examples/helper-multiple-parameters.md" show="output" />
 
-In the above example, You could use the exact same helper with dynamic text based on the value of `people.text`:
+在此例中，你可以使用同一助手代码，但使用基于 `people.text` 的值的动态文本：
 
 <Flex>
 <ExamplePart examplePage="/zh/examples/helper-dynamic-parameters.md" show="template" />
 <ExamplePart examplePage="/zh/examples/helper-dynamic-parameters.md" show="input" />
 </Flex>
 
-### Literal arguments
+### 字面量参数
 
-Helper calls may also have literal values passed to them either as parameter arguments or hash arguments. Supported
-literals include numbers, strings, `true`, `false`, `null` and `undefined`:
+帮助代码调用亦可含字面量，作为参数抑或是 Hash 参数。支持的字面量有数字、字符串、`true`, `false`, `null` 及 `undefined`：
 
 <Flex>
 <ExamplePart examplePage="/zh/examples/helper-literals" show="template" />
 </Flex>
 
-### Helpers with Hash arguments
+### 含有 Hash 参数的助手代码
 
-Handlebars provides additional metadata, such as Hash arguments, to helpers as a final parameter.
+Handlebars 提供了额外的元数据，例如 Hash 参数来作为助手代码的最后一个参数。
 
 <ExamplePart examplePage="/zh/examples/helper-hash-arguments.md" show="template" />
 
-In that template,the final parameter `href=people.url class="people"` are hash arguments sent to the helper.
+在此模版中，最后一个参数 `href=people.url class="people"` 为传送至助手代码的 Hash 参数。
 
-The keys in hash arguments must each be simple identifiers, and the values are Handlebars expressions. This means that
-values can be simple identifiers, paths, or Strings.
+Hash 参数中的键必须为简单标识符，且值为 Handlebars 表达式。这意味着值可以为简单标识符，路径或字符串。
 
-If we pass the below input to the template, the value of `person.url` can be obtained from the `person` object.
+若将如下输入传入模版，其中 `person.url` 的值可以从 `person` 中获取。
 
 <ExamplePart examplePage="/zh/examples/helper-hash-arguments.md" show="input" />
 
-As described in the helper script below, the hash arguments can be obtained from the last parameter `options` for
-further processing within the helper.
+正如以下助手代码中的描述，Hash 参数可以从最后一个参数 `options` 获取，以用于助手代码内部的进一步处理。
 
 <ExamplePart examplePage="/zh/examples/helper-hash-arguments.md" show="preparationScript" />
 
-The output of above helper is generated as below
+上述助手代码产生的输出如下：
 
 <ExamplePart examplePage="/zh/examples/helper-hash-arguments.md" show="output" />
 
-Handlebars also offers a mechanism for invoking a helper with a block of the template. Block helpers can then invoke
-that block zero or more times with any context it chooses.
+Handlebars 亦提供了使用一个模版块来调用助手代码的机制。块助手代码可用于执行任意次数（包括零次）的代码块并且使用它所选择
+的任意上下文。
 
-!button[Learn More: Block Helpers](block-helpers.html)
+!button[了解更多：代码块助手代码](block-helpers.html)
 
 ### Disambiguating helpers calls and property lookup
 
@@ -226,25 +217,22 @@ deprecated `this/`)
 <ExamplePart examplePage="/zh/examples/helper-data-name-conflict" show="preparationScript" />
 </Flex>
 
-## Subexpressions
+## 子级表达式
 
-Handlebars offers support for subexpressions, which allows you to invoke multiple helpers within a single mustache, and
-pass in the results of inner helper invocations as arguments to outer helpers. Subexpressions are delimited by
-parentheses.
+Handlebars 对子级表达式提供了支持，这使你可以在单个 Mustache 模板中调用多个助手代码，并且将内部助手代码调用的返回值作为
+外部助手代码的参数传递。子级表达式使用括号定界。
 
 ```handlebars
 {{outer-helper (inner-helper 'abc') 'def'}}
 ```
 
-In this case, `inner-helper` will get invoked with the string argument `'abc'`, and whatever the `inner-helper` function
-returns will get passed in as the first argument to `outer-helper` (and `'def'` will get passed in as the second
-argument to `outer-helper`).
+上例中，`inner-helper` 会被调用并带有字符串参数 `'abc'`，同时不论 `inner-helper` 返回了什么，返回值都将被作为第一个参数
+传递给 `outer-helper`（同时 `'def'` 会作为第二个参数传递）。
 
-## Whitespace Control
+## 空格控制
 
-Template whitespace may be omitted from either side of any mustache statement by adding a `~` character by the braces.
-When applied all whitespace on that side will be removed up to the first handlebars expression or non-whitespace
-character on that side.
+通过在括号中添加一个 `~` 字符，你可以从任何 Mustache 模板代码块的任何一侧省略模板中的空格。应用之后，该侧的所有空格将被
+删除，直到第一个位于同一侧的 Handlebars 表达式或非空格字符出现。
 
 ```handlebars
 {{#each nav ~}}
@@ -258,7 +246,7 @@ character on that side.
 {{~/each}}
 ```
 
-with this context:
+以及如下内容：
 
 ```js
 {
@@ -266,14 +254,13 @@ with this context:
 }
 ```
 
-results in output sans newlines and formatting whitespace:
+输出没有换行符并格式化了空格的结果：
 
 ```html
 <a href="foo">bar</a><a href="bar">Empty</a>
 ```
 
-This expands the default behavior of stripping lines that are "standalone" helpers (only a block helper, comment, or
-partial and whitespace).
+这扩展了「独立」助手代码（代码块助手代码、注释、代码片段或是空白符）在换行符时的默认行为。
 
 ```handlebars
 {{#each nav}}
@@ -287,7 +274,7 @@ partial and whitespace).
 {{~/each}}
 ```
 
-will render
+将会渲染
 
 ```html
 <a href="foo">
@@ -298,12 +285,12 @@ will render
 </a>
 ```
 
-## Escaping Handlebars expressions
+## 转义 Handlebars 表达式
 
 ::: v-pre
 
-Handlebars content may be escaped in one of two ways, inline escapes or raw block helpers. Inline escapes created by
-prefixing a mustache block with `\`. Raw blocks are created using `{{{{` mustache braces.
+Handlebars 可以从这两种方式中的任何一种转义：「内联转义」或「RAW 代码块助手代码」。内联转义通过 Mustache 代码块前置 `\`
+实现，而 RAW 代码块通过使用 `{{{{` 实现。
 
 :::
 
@@ -314,5 +301,5 @@ prefixing a mustache block with `\`. Raw blocks are created using `{{{{` mustach
 {{{{/raw}}}}
 ```
 
-Raw blocks operate in the same manner as other [block helpers](block-helpers.html) with the distinction of the child
-content is treated as a literal string.
+RAW 代码块的操作方式与其他 [代码块助手代码](block-helpers.html) 均相同，但区别在于它的子内容被 Handlebars 视为一段字符串
+。

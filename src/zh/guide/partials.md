@@ -31,7 +31,7 @@ Handlebars.registerPartial("myPartial", "{{name}}");
 这将计算 `whichPartial`，然后渲染以函数的返回值作为名称的代码片段。
 
 子表达式不会解析变量，因此 `whichPartial` 必须是一个函数。如果代码片段的名称是储存在一个变量里面的，则可以通过 `lookup`
-帮助程序来解决它。
+助手代码来解决它。
 
 ```handlebars
 {{> (lookup . 'myVariable') }}

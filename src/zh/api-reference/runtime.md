@@ -1,14 +1,14 @@
-# The Handlebars runtime
+# Handlebars 运行时
 
 ## `Handlebars.registerPartial(name, partial)`
 
-Registers partials accessible by any template in the environment.
+注册使得代码片段在环境中可被任何模板调用。
 
 ```js
 Handlebars.registerPartial("foo", partial);
 ```
 
-Also supports registering multiple partials at once.
+同时支持一次性注册多个代码片段。
 
 ```js
 Handlebars.registerPartial({ foo: partial, bar: partial });

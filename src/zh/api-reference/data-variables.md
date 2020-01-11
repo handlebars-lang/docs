@@ -1,4 +1,4 @@
-# `@data` variables
+# `@data` 变量
 
 The following `@data` variables are implemented by Handlebars and its builtin helpers.
 

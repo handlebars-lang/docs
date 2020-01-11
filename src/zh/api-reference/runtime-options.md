@@ -1,4 +1,4 @@
-# Runtime options
+# 运行时参数
 
 ::: v-pre
 

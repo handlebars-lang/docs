@@ -1,8 +1,8 @@
-# 内置帮助程序
+# 内置助手代码
 
 ## #if
 
-你可以使用 `if` 帮助程序来根据条件渲染代码块。如果其参数返回 `false`、`undefined`、`null`、`""`、 `0` 或者
+你可以使用 `if` 助手代码来根据条件渲染代码块。如果其参数返回 `false`、`undefined`、`null`、`""`、 `0` 或者
 `[]`，Handlebars 将不会渲染该块。
 
 <ExamplePart examplePage="/zh/examples/builtin-helper-if-block.md" show="template" />
@@ -27,7 +27,7 @@
 
 ## #unless
 
-你可以将 `unless` 帮助程序看作与 `if` 帮助程序相反。如果表达式返回 false 则将渲染代码块。
+你可以将 `unless` 助手代码看作与 `if` 助手代码相反。如果表达式返回 false 则将渲染代码块。
 
 <ExamplePart examplePage="/zh/examples/builtin-helper-unless-block.md" show="template" />
 
@@ -35,7 +35,7 @@
 
 ## #each
 
-你可以使用内置的 `each` 帮助程序遍历列表。在块内，你可以使用 `this` 来引用被迭代的元素。
+你可以使用内置的 `each` 助手代码遍历列表。在块内，你可以使用 `this` 来引用被迭代的元素。
 
 <ExamplePart examplePage="/zh/examples/builtin-helper-each-block.md" show="template" />
 
@@ -74,7 +74,7 @@
 
 ## #with
 
-`with` 帮助程序允许你更改 `template-part` 的上下文表达式。
+`with` 助手代码允许你更改 `template-part` 的上下文表达式。
 
 <ExamplePart examplePage="/zh/examples/builtin-helper-with-block.md" show="template" />
 
@@ -105,7 +105,7 @@
 
 ## lookup
 
-`lookup` 帮助程序允许使用 Handlebars 变量进行动态的参数解析。
+`lookup` 助手代码允许使用 Handlebars 变量进行动态的参数解析。
 
 这对于解析数组索引的值非常有用。
 
@@ -118,7 +118,7 @@
 
 ## log
 
-`log` 帮助程序允许在执行模板时记录上下文的状态。
+`log` 助手代码允许在执行模板时记录上下文的状态。
 
 <ExamplePart examplePage="/zh/examples/builtin-helper-log.md" show="template" />
 
