@@ -47,7 +47,7 @@ markdown。markdown-it 实现了 CommonMark 语法。
 
 ## 我能贡献什么？
 
-- **将内容从 http://handlebarsjs.com 移至新站点。**。尽管有很多关于旧网站的抱怨，    但旧网站仍然有很多内容。
+- **将内容从 http://handlebarsjs.com 移至新站点。**。尽管有很多关于旧网站的抱怨，但旧网站仍然有很多内容。
   [@wycats](https://github.com/wycats/) 非常希望在新网站上能够有入门指南。新索引页的内容应与旧索引页的内容大致相同。
 - ** 在 [handlebars.js](https://github.com/wycats/handlebars.js) 存储库中寻找标记为
   [docs-needed](https://github.com/wycats/handlebars.js/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Adocs-needed+) 的内容

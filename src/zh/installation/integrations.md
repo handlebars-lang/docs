@@ -35,7 +35,7 @@ const compiledTemplate = hbs`{{name}}`;
 
 请参阅包文档以获取设置说明。
 
-### Browserify: hbsfy
+## Browserify: hbsfy
 
 [hbsfy](https://www.npmjs.com/package/hbsfy) 包可让你在浏览器中导入预编译的模板环境：
 

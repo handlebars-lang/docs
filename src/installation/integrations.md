@@ -39,7 +39,7 @@ const compiledTemplate = hbs`{{name}}`;
 
 Please refer to the documentation of the package for setup instructions.
 
-### Browserify: hbsfy
+## Browserify: hbsfy
 
 The [hbsfy](https://www.npmjs.com/package/hbsfy) package allows you to import precompiled templates in a browserify
 environment:
