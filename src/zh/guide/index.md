@@ -1,195 +1,183 @@
-# Introduction
+# 介绍
 
-## What is Handlebars?
+## 什么是 Handlebars？
 
-Handlebars is a simple **templating language**.
+Handlebars 是一种简单的 **模板语言**。
 
-It uses a template and an input object to generate HTML or other text formats. Handlebars templates look like regular
-text with embedded Handlebars expressions.
+它使用模板和输入对象来生成 HTML 或其他文本格式。Handlebars 模板看起来像常规的文本，但是它带有嵌入式的 Handlebars 表达式
+。
 
 <ExamplePart examplePage="/zh/examples/simple-expressions" show="template"/>
 
-A handlebars expression is a `{{`, some contents, followed by a `}}`. When the template is executed, these expressions
-are replaced with values from an input object.
+Handlebars 表达式是一个 `{{`，一些内容，后跟一个 `}}`。执行模板时，这些表达式会被输入对象中的值所替换。
 
-!button[Learn More: Expressions](expressions.html)
+!button[了解更多: 表达式](expressions.html)
 
-## Installation
+## 安装
 
-The fastest way to test Handlebars is to use into load it from a _CDN_ and and embed it in an HTML file.
+测试 Handlebars 的最快方法是使用 _CDN_ 加载它并将其嵌入 HTML 文件中。
 
 <<< @/src/usage-examples/compiler-and-runtime/simple-console-out.html
 
 ::: warning
 
-This method can be used for small pages and for testing. There are several other ways to use Handlebars, when you target
-real production systems.
+此方法可用于小页面和测试用途。在生产环境中还有其他几种使用 Handlebars 的方法。
 
-!button[Learn more: Installation](../installation/index.md)
+!button[了解更多: 安装](../installation/index.md)
 
 :::
 
-# Language features
+# 语言特性
 
-## Simple expressions
+## 简单的表达式
 
-As shown before, the following template defines two Handlebars expressions
+如上文所示，以下模板定义了两个 Handlebars 表达式：
 
 <ExamplePart examplePage="/zh/examples/simple-expressions" show="template"/>
 
-If applied to the input object
+如果应用于输入对象：
 
 <ExamplePart examplePage="/zh/examples/simple-expressions" show="input"/>
 
-the expressions will be replaced by the corresponding properties. The result is then
+则表达式将被相应的属性替换。结果是：
 
 <ExamplePart examplePage="/zh/examples/simple-expressions" show="output"/>
 
-## Nested input objects
+## 嵌套输入对象
 
-Sometimes, the input objects contains other objects or arrays. For example:
+有时，输入对象包含其他对象或数组。例如：
 
 <ExamplePart examplePage="/zh/examples/path-expressions-dot" show="input" />
 
-In such a case, you can use a dot-notation to gain access to the nested properties
+在这种情况下，你可以使用点符号来访问嵌套属性：
 
 <ExamplePart examplePage="/zh/examples/path-expressions-dot" show="template"/>
 
-!button[Learn more: Expressions](./expressions.md)
+!button[了解更多: 表达式](./expressions.md)
 
-Some built-in helpers allow you to change the current context to a nested object. You can then access this object as if
-it were the root object
+一些内置的帮助程序允许你将当前上下文更改为嵌套对象。然后，你就可以像访问跟对象一样访问该对象了。
 
-## Evaluation context
+## 计算上下文
 
-The built-in block-helpers `each` and `with` allow you to change the current evaluation context.
+内置的代码块帮助程序 `each` 和 `with` 允许你更改当前代码块的值。
 
-The `with`-helper dives into an object-property, giving you access to its properties
+`with` 帮助程序注入到对象的属性中，使你可以访问其属性。
 
 <Flex>
 <ExamplePart examplePage="/zh/examples/builtin-helper-with-block" show="template"/>
 <ExamplePart examplePage="/zh/examples/builtin-helper-with-block" show="input"/>
 </Flex>
 
-The `each`-helper iterates an array, allowing to you access the properties of each object via simple handlebars
-expressions.
+`each` 帮助程序会迭代一个数组，使你可以通过 Handlebars 简单访问每个对象的属性表达式。
 
 <Flex>
 <ExamplePart examplePage="/zh/examples/builtin-helper-each-block" show="template"/>
 <ExamplePart examplePage="/zh/examples/builtin-helper-each-block" show="input"/>
 </Flex>
 
-!button[Learn more: Built-in helpers](./builtin-helpers.md)
+!button[了解更多: 内置帮助程序](./builtin-helpers.md)
 
-## Template comments
+## 模板注释
 
 ::: v-pre
 
-You can use comments in your handlebars code just as you would in your code. Since there is generally some level of
-logic, this is a good practice.
+你可以像在其他语言的代码中一样在 Handlebars 代码中使用注释。由于 Handlebars 代码中通常存在一定程度的逻辑，因此这是一个好
+习惯。
 
-The comments will not be in the resulting output. If you'd like the comments to show up. Just use html comments, and
-they will be output.
+注释将不会出现在结果输出中。如果你想显示注释。只需使用 html 注释。它们将被输出。
 
-Any comments that must contain `}}` or other handlebars tokens should use the `{{!-- --}}` syntax.
+任何包含 `}}` 或其他 Handlebars 标记的注释都应该使用 `{{!--}}` 语法。
 
 :::
 
 <ExamplePart examplePage="/zh/examples/comments" show="template"/>
 
-## Custom Helpers
+## 自定义助手
 
-Handlebars helpers can be accessed from any context in a template. You can register a helper with the
-Handlebars.registerHelper method.
+通过调用 Handlebars.registerHelper 方法，你可以从模板中的任何上下文中访问 Handlebars 帮助程序。
 
 <Flex>
 <ExamplePart examplePage="/zh/examples/helper-simple" show="template" />
 <ExamplePart examplePage="/zh/examples/helper-simple" show="preparationScript" />
 </Flex>
 
-Helpers receive the current context as the `this`-context of the function.
+帮助程序将当前上下文作为函数的 `this` 指针接收。
 
 <Flex>
 <ExamplePart examplePage="/zh/examples/helper-this-context" show="template" />
 <ExamplePart examplePage="/zh/examples/helper-this-context" show="preparationScript" />
 </Flex>
 
-## Block Helpers
+## 代码块帮助程序
 
-Block expressions allow you to define helpers that will invoke a section of your template with a different context than
-the current. These block helpers are identified by a `#` preceeding the helper name and require a matching closing
-mustache, `/`, of the same name. Let's consider a helper that will generate an HTML list:
+代码块表达式使你可以自定义这样的帮助程序：这个帮助程序可以使用与当前上下文不同的上下文来调用模板。这些代码块帮助程序在名
+称前以 # 号标识，并且需要一个名称相同的结束模板 `/`。让我们考虑一个生成 HTML 列表的帮助程序：
 
 <ExamplePart examplePage="/zh/examples/helper-block" show="preparationScript" />
 
-The example creates a helper named `list` to generate our HTML list. The helper receives the `people` as its first
-parameter, and an `options` hash as its second parameter. The options hash contains a property named `fn`, which you can
-invoke with a context just as you would invoke a normal Handlebars template.
+这个示例创建了一个名为 `list` 的帮助程序来生成我们的 HTML 列表。帮助程序接收一个 `people` 参数和一个 `options` 参数
+。`options` 包含一个名为 `fn` 的属性，这个属性使你能够像调用普通的 Handlebars 模板一样调用代码块的上下文。
 
-When executed, the template will render:
+执行后，模板将渲染：
 
 <ExamplePart examplePage="/zh/examples/helper-block" show="output" />
 
-Block helpers have more features, such as the ability to create an `else` section (used, for instance, by the built-in
-`if` helper).
+代码块帮助程序具有其他功能，例如能够创建 `else` （例如，由内置的 `if` 函数使用）
 
-Since the contents of a block helper are escaped when you call `options.fn(context)`, Handlebars does not escape the
-results of a block helper. If it did, inner content would be double-escaped!
+因为调用 `options.fn(context)` 时 Handlebars 会转义代码块帮助程序的内容，因此 Handlebars 不会转义代码块帮助程序的返回结
+果。如果这样做，代码块内部的内容将被两次转义。
 
-!button[Learn More: Block Helpers](block-helpers.html)
+!button[了解更多: 代码块帮助程序](block-helpers.html)
 
-## HTML Escaping
+## HTML 转义
 
 ::: v-pre
 
-Because it was originally designed to generate HTML, Handlebars escapes values returned by a `{{expression}}`. If you
-don't want Handlebars to escape a value, use the "triple-stash", `{{{`.
+因为 Handlebars 最初是设计用来生成 HTML 的，所以它会转义由 `{{expression}}` 返回的值。如果你不想让 Handlebars 转义某个值
+，请使用“三重隐藏”（`{{{`）。
 
 :::
 
 <ExamplePart examplePage="/zh/examples/html-escaping" show="template" />
 
-The special characters in the second line will be escaped:
+第二行中的特殊字符将被转义：
 
 <ExamplePart examplePage="/zh/examples/html-escaping" show="output" />
 
-Handlebars will not escape a `Handlebars.SafeString`. If you write a helper that generates its own HTML, you will
-usually want to return a `new Handlebars.SafeString(result)`. In such a circumstance, you will want to manually escape
-parameters.
+Handlebars 不会转义 `Handlebars.SafeString`。如果你正在编写一个自己的生成 HTML 的帮助程序，你通常会想返回一个
+`new Handlebars.SafeString(result)`。这种情况下，你将需要手动转义参数。
 
 <ExamplePart examplePage="/zh/examples/helper-safestring" show="preparationScript" />
 
-This will escape the passed in parameters, but mark the response as safe, so Handlebars will not try to escape it even
-if the "triple-stash" is not used.
+这将转义传入的参数，但是 response 会被标记为 safe，因此即使未使用“三重隐藏”， Handlebars 也不会尝试转义它。
 
-## Partials
+## 代码片段
 
-Handlebars partials allow for code reuse by creating shared templates. You can register a partial using the
-`registerPartial`-method:
+Handlebars 代码片段通过创建共享模板允许代码复用。你可以使用 `registerPartial` 方法：
 
 <ExamplePart examplePage="/zh/examples/partials-register" show="preparationScript" />
 
-The following template and input:
+以下模板和输入：
 
 <Flex>
 <ExamplePart examplePage="/zh/examples/partials-register" show="template" />
 <ExamplePart examplePage="/zh/examples/partials-register" show="input" />
 </Flex>
 
-will then provide the following result:
+将渲染得到以下结果：
 
 <ExamplePart examplePage="/zh/examples/partials-register" show="output" />
 
-!button[Learn More: Partials](partials.html)
+!button[了解更多: 代码片段](partials.html)
 
-## Built-In Helpers
+## 内置帮助程序
 
-Handlebars offers a variety of built-in helpers such as the if conditional and each iterator.
+Handlebars 提供了各种内置帮助程序，例如 `if` 条件代码块和 `each` 迭代器。
 
-!button[Learn More: Built-In Helpers](builtin-helpers.html)
+!button[了解更多: 内置帮助程序](builtin-helpers.html)
 
-## API Reference
+## API 参考
 
-Handlebars offers a variety of APIs and utility methods for applications and helpers.
+Handlebars 为应用程序和帮助程序提供了各种 API 和实用的方法。
 
-!button[Learn More: API Reference](/api-reference/)
+!button[了解更多: API 参考](/api-reference/)
