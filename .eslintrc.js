@@ -29,7 +29,10 @@ module.exports = {
       }
     },
     {
-      files: ["src/usage-examples/precompilation/precompile-in-nodejs.js"],
+      files: [
+        "src/usage-examples/precompilation/precompile-in-nodejs.js",
+        "src/usage-examples/precompilation/precompile-in-nodejs.js"
+      ],
       env: {
         node: true
       },
