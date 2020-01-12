@@ -17,7 +17,7 @@
 
 :::
 
-## 控制原型访问的选项：
+## 控制原型访问的选项
 
 从 4.6.0 版本开始，由于各种安全原因， Handlebars 默认禁止访问原型的属性以及上下文对象的方法。以下选项可以用来控制原型的
 可访问性。
@@ -27,7 +27,7 @@
 允许这些属性可能会使得模版作者可以在运行 Handlebars 的机器上执行任意代码。尽管有限制，攻击者还是可能假造模版并且使得机器
 崩溃。
 
-详细情况可以在 npm-security 中以及博客文章中找到（链接见英文文档）。
+详细情况可以在 npm-security 中以及博客文章中找到（英文文档）：
 
 [1164](https://www.npmjs.com/advisories/1164)，[1316](https://www.npmjs.com/advisories/1316)，
 [1324](https://www.npmjs.com/advisories/1324) 和 [1325](https://www.npmjs.com/advisories/1325) 以及博客文章

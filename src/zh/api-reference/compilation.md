@@ -1,6 +1,4 @@
-# (Pre-)Compilation
-
-# (预-)编译
+# 编译和预编译
 
 ## `Handlebars.compile(template, options)`
 

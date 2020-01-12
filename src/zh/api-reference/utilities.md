@@ -35,7 +35,7 @@ Handlebars.Utils.escapeExpression(string);
 
 ### `Handlebars.createFrame(data)`
 
-由代码块助手代码使用以创建子数据对象。
+由块助手代码使用以创建子数据对象。
 
 ```js
 if (options.data) {

@@ -1,6 +1,6 @@
 # 钩子
 
-你可以在几个地方挂接到 Handlebars 函数调用。
+你可以在几个地方使用钩子挂接到 Handlebars 的函数调用。
 
 ## helperMissing
 
@@ -15,8 +15,8 @@
 <ExamplePart examplePage="/zh/examples/hook-helper-missing.md" show="preparationScript" />
 <ExamplePart examplePage="/zh/examples/hook-helper-missing.md" show="output" />
 
-与任何自定义助手代码或代码块助手代码一样，该助手代码接收相同的参数和选项（`hash`，`name`等）。 `option.name` 是被调用的
-助手代码的名称。
+与任何自定义助手代码或块助手代码一样，该助手代码接收相同的参数和选项（`hash`，`name`等）。 `option.name` 是被调用的助手
+代码的名称。
 
 ### 默认行为
 
