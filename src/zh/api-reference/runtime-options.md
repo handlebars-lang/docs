@@ -2,66 +2,59 @@
 
 ::: v-pre
 
-The function 'Handlebars.compile' and 'Handlebars.precompile' create a function. This function can be called as
-`template(context, options)` where `context` is the input object.
+'Handlebars.compile' 与 'Handlebars.precompile' 函数构造了另一个函数。构造的函数可以用 `template(context, options)` 调用
+。`context` 是输入的对象。
 
-`options` is an object that can have any of the following properties
+`options` 是可能具有以下属性的对象：
 
-- `data` Pass in an object to define custom `@variable` private variables.
-- `helpers` Pass in to provide custom helpers in addition to the globally defined helpers.  
-  Values defined in this object will replace any values defined in the global object for the duration of the template
-  execution.
-- `partials` Pass in to provide custom partials in addition to the globally defined partials.  
-  Values defined in this object will replace any values defined in the global object for the duration of the template
-  execution.
-- `allowCallsToHelperMissing` (since 4.3.0, insecure): If set to `true`, calls like `{{helperMissing}}` and
-  `{{blockHelperMissing}}` will be allowed. Please not that this allows template authors to fabricate templates for
-  Remote Code Execution on the environment running Handlebars (see https://github.com/wycats/handlebars.js/issues/1558)
+- `data` 输入一个对象以设定自定义的 `@variable` 的私有值。
+- `helpers` 输入以提供自定义助手代码以及全局的助手代码。在模版运行时，本项所定义的值将会替换全局对象所定义的任何值。
+- `partials` 输入以提供自定义代码片段以及全局定义的代码片段。在模版运行时，本项所定义的值将会替换全局对象所定义的任何值
+  。
+- `allowCallsToHelperMissing` （从 4.3.0 开始, 不安全）：如果设置为 `true`，类似 `{{helperMissing}}` 或
+  `{{blockHelperMissing}}` 的调用将会被允许。请注意，这允许模版作者假造模版并在运行 Handlebars 的环境下远程执行代码。（
+  见https://github.com/wycats/handlebars.js/issues/1558）
 
 :::
 
-## Options to control prototype access:
+## 控制原型访问的选项
 
-From version 4.6.0 on, Handlebars forbids accessing prototype properties and methods of the context object by default.
-The reason are various security issues that arise from this possibility. The following options can be used to control
-this access.
+从 4.6.0 版本开始，由于各种安全原因， Handlebars 默认禁止访问原型的属性以及上下文对象的方法。以下选项可以用来控制原型的
+可访问性。
 
-::: danger Using these properties may open security holes.
+::: danger 使用以下选项有安全风险。
 
-Allowing prototype properties may allow template authors to execute arbitray code on you the machine where Handlebars is
-running. Even with some restrictions in place, an attacker may fabricate Handlebars templates that crash your machine.
+允许这些属性可能会使得模版作者可以在运行 Handlebars 的机器上执行任意代码。尽管有限制，攻击者还是可能假造模版并且使得机器
+崩溃。
 
-Details can be found in the npm-security advisories [755](https://www.npmjs.com/advisories/755),
-[1164](https://www.npmjs.com/advisories/1164), [1316](https://www.npmjs.com/advisories/1316),
-[1324](https://www.npmjs.com/advisories/1324) and [1325](https://www.npmjs.com/advisories/1325) and in the blog-article
-of [Mahmoud Gamal](http://mahmoudsec.blogspot.com/2019/04/handlebars-template-injection-and-rce.html).
+详细情况可以在 npm-security 中以及博客文章中找到（英文文档）：
+
+[1164](https://www.npmjs.com/advisories/1164)，[1316](https://www.npmjs.com/advisories/1316)，
+[1324](https://www.npmjs.com/advisories/1324) 和 [1325](https://www.npmjs.com/advisories/1325) 以及博客文章
+[Mahmoud Gamal](http://mahmoudsec.blogspot.com/2019/04/handlebars-template-injection-and-rce.html)。
 
 :::
 
-- `allowProtoMethodsByDefault` (since 4.7.0): a boolean (default: false) that defines whether methods that are define on
-  the prototype of an object should be resolvable or not, by default.
+- `allowProtoMethodsByDefault` （自 4.7.0 开始）：默认为 false 的布尔值，定义了在对象的原型中定义的方法是否可以被解析。
 
-  The methods `constructor`, `__defineGetter__`, `__defineSetter__`, `__lookupGetter__` and `__lookupSetter__` are
-  forbidden, even if this option is set to `true`. They can be accessed only if the corresponding key in
-  `allowedProtoMethods` is set to `true`.
+  即使本项被设置为 `true`，`constructor`，`__defineGetter__`，`__defineSetter__`，`__lookupGetter__` 与
+  `__lookupSetter__` 还是会被禁止。只有在 `allowedProtoMethods` 内对应键被设置为 `true` 时，以上方法才可以被访问。
 
-  Setting this option to any value disables the warning that Handlebars writes to the console if a proto-method-access
-  is attempted and forbidden.
+  对本项给定任何值都会禁止 Handlebars 在一个 proto-method-access 尝试并失败的情况下向控制台写入警告。
 
-- `allowedProtoMethods` (since 4.6.0): a string-to-boolean map of property-names that are allowed if they are methods of
-  the parent object. Undefined values revert the the value defined in `allowProtoMethodsByDefault`.
-- `allowProtoPropertiesByDefault` (since 4.7.0): a boolean (default: false) that defines whether non-method properties
-  that are defined on the prototype of an object should be resolvable or not, by default.
+- `allowedProtoMethods` （自 4.6.0 开始）：一个储存「字符串-布尔」类型的映射表。若「属性-名称」是父对象的方法，则将会被
+  包含在表中。若未定义，将会使用　`allowProtoMethodsByDefault` 内定义的值。
 
-  The property `__proto__` is forbidden, even if this option is set to `true`. It can only be accessed if the
-  corresponding key in `allowedProtoProperties` is set to `true`.
+- `allowProtoPropertiesByDefault` （自 4.7.0 开始）：默认为 false 的布尔变量。决定了在对象原型中定义的非方法的属性是否可
+  以被解析。
 
-  Setting this option to any value disables the warning that Handlebars writes to the console if a proto-property-access
-  is attempted and forbidden.
+  即使该选项被设定为 `true`，属性 `__proto__` 依旧会被禁止。只有 `allowedProtoProperties` 中的对应键值被设定为 `true` 的
+  时候它才能被访问。
 
-- `allowedProtoProperties` (since 4.6.0): a string-to-boolean map of property-names that are allowed if they are
-  properties but not methods of the parent object. Undefined values revert to the value defined in
-  `allowProtoPropertiesByDefault`
+  对本项给定任何值都会禁止 Handlebars 在一个 proto-method-access 尝试并失败的情况下向控制台写入警告。
+
+- `allowedProtoProperties` （自 4.6.0 开始）：一个储存「字符串-布尔」类型的映射表。若一个属性不是父对象的方法，则「属性-
+  名称」对将会被包含在这个表里。若未定义，将会使用 `allowProtoPropertiesByDefault` 内定义的值。
 
   ```js
   const template = handlebars.compile("{{aString.trim}}");

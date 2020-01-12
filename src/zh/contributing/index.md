@@ -30,12 +30,12 @@ markdown。markdown-it 实现了 CommonMark 语法。
 
 除这些扩展之外，本站还添加了一些可以嵌入到源文件中的自定义 Vue 组件。
 
-- [互动示例]（interactive-examples.md）
-- [按钮链接]（button-links.md）
+- [互动示例](interactive-examples.md)
+- [按钮链接](button-links.md)
 
 ## 我应该怎么做？
 
-::: 危险
+::: danger
 
 - **尊重知识产权**: 提交的文本必须是你自己创建或是从 [handlebarsjs.com](https://handlebarsjs.com) 上复制的。有很多关于
   Handlebars 的博客文章，但这些文章的知识产权归其作者所有。
@@ -49,11 +49,11 @@ markdown。markdown-it 实现了 CommonMark 语法。
 
 - **将内容从 http://handlebarsjs.com 移至新站点。**。尽管有很多关于旧网站的抱怨，但旧网站仍然有很多内容。
   [@wycats](https://github.com/wycats/) 非常希望在新网站上能够有入门指南。新索引页的内容应与旧索引页的内容大致相同。
-- ** 在 [handlebars.js](https://github.com/wycats/handlebars.js) 存储库中寻找标记为
-  [docs-needed](https://github.com/wycats/handlebars.js/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Adocs-needed+) 的内容
-  **。这些 Issues 描述了一些应当出现在文档中的内容。
+- **在 [handlebars.js](https://github.com/wycats/handlebars.js) 存储库中寻找标记为
+  [docs-needed](https://github.com/wycats/handlebars.js/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Adocs-needed+) 的内
+  容**。这些 Issues 描述了一些应当出现在文档中的内容。
 - **提出并提交新内容。** 如果不确定的话，可以先提出 Issue，然后再提交 Pull Requests。这样可以节省你的时间。
-- **改善现有内容。** 你可以提出导航建议，修正错别字，改善语言并纠正错误内容。
+- **改善现有内容。** 你可以提出导航栏的改进建议，修正错别字，改善语言并纠正错误内容。
 - **修复 CSS 样式问题。** 此页面上的样式绝非完美。请继续完善这个页面的样式。如需更大的更改，请先打开一个 Issue 以取得联
   系。
 

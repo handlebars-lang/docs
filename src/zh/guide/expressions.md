@@ -75,19 +75,18 @@ Handlebars 还允许通过 this 来解决助手和数据字段之间的名称冲
 
 :::
 
-## Literal segments
+## 文字
 
-Identifiers may be any unicode character except for the following:
+除了以下字符，标识符可以是任何 Unicode 文本：
 
 _Whitespace_ `!` `"` `#` `%` `&` `'` `(` `)` `*` `+` `,` `.` `/` `;` `<` `=` `>` `@` `[` `\` `]` `^` `` ` `` `{` `|` `}`
 `~`
 
-In addition, the words `true`, `false`, `null` and `undefined` are only allowed in the first part of a path expression.
+除此之外，`true`, `false`, `null` 和 `undefined` 只允许在路径表达式的开头出现。
 
-To reference a property that is not a valid identifier, you can use segment-literal notation, `[`. You may not include a
-closing `]` in a path-literal, but all other characters are allowed.
+若想引用一个并非合法的标识符，你可以使用 `[`。在路径表达式中你不必使用 `]` 来关闭它，但其他表达式中是需要的。
 
-JavaScript-style strings, `"` and `'`, may also be used instead `[` pairs.
+JavaScript 样式的字符串如 `"` 和 `'` 也是可以使用的。
 
 <ExamplePart examplePage="/zh/examples/literal-segments.md" show="template" />
 
@@ -203,13 +202,12 @@ Hash 参数中的键必须为简单标识符，且值为 Handlebars 表达式。
 Handlebars 亦提供了使用一个模版块来调用助手代码的机制。块助手代码可用于执行任意次数（包括零次）的代码块并且使用它所选择
 的任意上下文。
 
-!button[了解更多：代码块助手代码](block-helpers.html)
+!button[了解更多：块助手代码](block-helpers.html)
 
-### Disambiguating helpers calls and property lookup
+### 助手代码和属性查找时的消歧义
 
-If a helper is registered by the same name as a property of an input object, the helper has priority over the input
-property. If you want to resolve the input property instead, you can prefix its name with `./` or `this.` (or the
-deprecated `this/`)
+如果助手代码注册时的名称和一个输入的属性名重复，则助手代码的优先级更高。如果你想使用输入的属性，请在其名称前加 `./` 或
+`this.`。（或是已弃用的 `this/`。）
 
 <Flex>
 <ExamplePart examplePage="/zh/examples/helper-data-name-conflict" show="template" />
@@ -260,7 +258,7 @@ Handlebars 对子级表达式提供了支持，这使你可以在单个 Mustache
 <a href="foo">bar</a><a href="bar">Empty</a>
 ```
 
-这扩展了「独立」助手代码（代码块助手代码、注释、代码片段或是空白符）在换行符时的默认行为。
+这扩展了「独立」助手代码（块助手代码、注释、代码片段或是空白符）在换行符时的默认行为。
 
 ```handlebars
 {{#each nav}}
@@ -289,8 +287,8 @@ Handlebars 对子级表达式提供了支持，这使你可以在单个 Mustache
 
 ::: v-pre
 
-Handlebars 可以从这两种方式中的任何一种转义：「内联转义」或「RAW 代码块助手代码」。内联转义通过 Mustache 代码块前置 `\`
-实现，而 RAW 代码块通过使用 `{{{{` 实现。
+Handlebars 可以从这两种方式中的任何一种转义：「内联转义」或「RAW 块助手代码」。内联转义通过 Mustache 代码块前置 `\` 实现
+，而 RAW 代码块通过使用 `{{{{` 实现。
 
 :::
 
@@ -301,5 +299,4 @@ Handlebars 可以从这两种方式中的任何一种转义：「内联转义」
 {{{{/raw}}}}
 ```
 
-RAW 代码块的操作方式与其他 [代码块助手代码](block-helpers.html) 均相同，但区别在于它的子内容被 Handlebars 视为一段字符串
-。
+RAW 代码块的操作方式与其他 [块助手代码](block-helpers.html) 均相同，但区别在于它的子内容被 Handlebars 视为一段字符串。

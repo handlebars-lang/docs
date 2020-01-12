@@ -55,11 +55,11 @@ Handlebars 表达式是一个 `{{`，一些内容，后跟一个 `}}`。执行�
 
 !button[了解更多: 表达式](./expressions.md)
 
-一些内置的助手代码允许你将当前上下文更改为嵌套对象。然后，你就可以像访问跟对象一样访问该对象了。
+一些内置的助手代码允许你将当前上下文更改为嵌套对象。然后，你就可以像访问根对象一样访问该对象了。
 
 ## 计算上下文
 
-内置的代码块助手代码 `each` 和 `with` 允许你更改当前代码块的值。
+内置的块助手代码 `each` 和 `with` 允许你更改当前代码块的值。
 
 `with` 助手代码注入到对象的属性中，使你可以访问其属性。
 
@@ -108,10 +108,10 @@ Handlebars 表达式是一个 `{{`，一些内容，后跟一个 `}}`。执行�
 <ExamplePart examplePage="/zh/examples/helper-this-context" show="preparationScript" />
 </Flex>
 
-## 代码块助手代码
+## 块助手代码
 
-代码块表达式使你可以自定义这样的助手代码：这个助手代码可以使用与当前上下文不同的上下文来调用模板。这些代码块助手代码在名
-称前以 # 号标识，并且需要一个名称相同的结束模板 `/`。让我们考虑一个生成 HTML 列表的助手代码：
+代码块表达式使你可以自定义这样的助手代码：这个助手代码可以使用与当前上下文不同的上下文来调用模板。这些块助手代码在名称前
+以 # 号标识，并且需要一个名称相同的结束模板 `/`。让我们考虑一个生成 HTML 列表的助手代码：
 
 <ExamplePart examplePage="/zh/examples/helper-block" show="preparationScript" />
 
@@ -122,12 +122,12 @@ Handlebars 表达式是一个 `{{`，一些内容，后跟一个 `}}`。执行�
 
 <ExamplePart examplePage="/zh/examples/helper-block" show="output" />
 
-代码块助手代码具有其他功能，例如能够创建 `else` （例如，由内置的 `if` 函数使用）
+块助手代码具有其他功能，例如能够创建 `else` （例如，由内置的 `if` 函数使用）
 
-因为调用 `options.fn(context)` 时 Handlebars 会转义代码块助手代码的内容，因此 Handlebars 不会转义代码块助手代码的返回结
-果。如果这样做，代码块内部的内容将被两次转义。
+因为调用 `options.fn(context)` 时 Handlebars 会转义块助手代码的内容，因此 Handlebars 不会转义块助手代码的返回结果。如果
+这样做，代码块内部的内容将被两次转义。
 
-!button[了解更多: 代码块助手代码](block-helpers.html)
+!button[了解更多: 块助手代码](block-helpers.html)
 
 ## HTML 转义
 
