@@ -63,7 +63,7 @@ include the compiler.
 
 ### Non-release builds
 
-All of Handlebar's released versions and CI builds are available for download on S3 in our
+All of Handlebars' released versions and CI builds are available for download on S3 in our
 [builds page](https://com.s3.amazonaws.com/builds.handlebarsjs/bucket-listing.html?sort=lastmod&sortdir=desc).
 
 The latest passing master build is named `handlebars-latest.js` and each passing SHA on master will create a
@@ -82,7 +82,7 @@ Handlebars is hosted on a number of free CDNs as well.
 
 ## RubyGems
 
-The office Handlebars build is available on https://rubygems.org/gems/handlebars-source
+The official Handlebars build is available on https://rubygems.org/gems/handlebars-source
 
 ## Bower, Component, Composer, jspm
 
