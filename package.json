@@ -13,7 +13,7 @@
     "test": "jest",
     "format": "prettier --write 'src/**/*.{js,css,json,md,vue}'",
     "build": "vuepress build src",
-    "deploy-to-production": "git checkout production && git merge master && git push origin production && git checkout master"
+    "deploy-to-production": "git push origin refs/heads/master:refs/heads/production --force"
   },
   "repository": {
     "type": "git",
