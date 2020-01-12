@@ -112,7 +112,10 @@ export default {
         docsRepo: "handlebars-lang/docs",
         docsDir: "src/zh"
       }
-    }
+    },
+    repo: "wycats/handlebars.js",
+    docsRepo: "handlebars-lang/docs",
+    docsDir: "src"
   },
   plugins: [
     [
