@@ -1,21 +1,21 @@
 # `@data` 变量
 
-The following `@data` variables are implemented by Handlebars and its builtin helpers.
+下面的`@data`变量是由 Handlebars 及其内建助手代码实现的。
 
 ## `@root`
 
-Initial context with which the template was executed.
+初始化模版被执行时的上下文。
 
 ```handlebars
 {{#each array}} {{@root.foo}} {{/each}}
 ```
 
-Unless explicitly modified, this value is consistent across all portions of the page rendering, meaning it can be used
-within partials where depthed parameters are unable to reference their parent templates.
+除非特意改变，对于页面渲染时的每一部分，本项的值恒定。因此，当深度参数不能够引用它们的父模版时，本项可以在代码片段内使用
+。
 
 ## `@first`
 
-Set to true by the `each` helper for the first step of iteration.
+本项会被 `each` 助手代码在迭代的第一步被设置为 true。
 
 ```handlebars
 {{#each array}} {{#if @first}} First! {{/if}} {{/each}}
@@ -23,7 +23,7 @@ Set to true by the `each` helper for the first step of iteration.
 
 ## `@index`
 
-Zero-based index for the current iteration step. Set by the `each` helper.
+从零开始的编号，表示当前的迭代次数。由 `each` 助手代码设置。
 
 ```handlebars
 {{#each array}} {{@index}} {{/each}}
@@ -31,7 +31,7 @@ Zero-based index for the current iteration step. Set by the `each` helper.
 
 ## `@key`
 
-Key name for the current iteration step. Set by the `each` helper when iterating over objects.
+当前迭代次数的键。在遍历对象时被 `each` 助手代码设置。
 
 ```handlebars
 {{#each array}} {{@key}} {{/each}}
@@ -39,7 +39,7 @@ Key name for the current iteration step. Set by the `each` helper when iterating
 
 ## `@last`
 
-Set to true by the `each` helper for the last step of iteration.
+在迭代的最后一步被 `each` 助手代码设置为 true。
 
 ```handlebars
 {{#each array}} {{#if @last}} Last :( {{/if}} {{/each}}
@@ -47,14 +47,13 @@ Set to true by the `each` helper for the last step of iteration.
 
 ## `@level`
 
-Assigned log level.
+设定 log 的输出级别。
 
 ```js
 template({}, { data: { level: Handlebars.logger.WARN } });
 ```
 
-May be set to one of `Handlebars.logger.DEBUG` , `Handlebars.logger.INFO` , `Handlebars.logger.WARN` , or
+可以为以下值：`Handlebars.logger.DEBUG`，`Handlebars.logger.INFO`，`Handlebars.logger.WARN` 或者
 `Handlebars.logger.ERROR`
 
-When set, the logger will include in its output only messages with a log level of `Handlebars.logger.level` or higher.
-The default value is `Handlebars.logger.ERROR`.
+当设定时，程序会按照设定的级别选择输出的信息。默认值为 `Handlebars.logger.ERROR`。

@@ -1,58 +1,53 @@
-# 编译和预编译
+# (Pre-)Compilation
+
+# (预-)编译
 
 ## `Handlebars.compile(template, options)`
 
-Compiles a template so it can be executed immediately.
+编译一个模版以立即运行。
 
 ```js
 const template = Handlebars.compile("{{foo}}");
 template({});
 ```
 
-Supports a variety of options that alter how the template executes.
+支持多种选项以更改模版的执行方式。
 
 ::: v-pre
 
-- `data`: Set to false to disable `@data` tracking.
-- `compat`: Set to true to enable recursive field lookup.
-- `knownHelpers`: Hash containing list of helpers that are known to exist (truthy) at template execution time. Passing
-  this allows the compiler to optimize a number of cases. Builtin helpers are automatically included in this list and
-  may be omitted by setting that value to `false`.
-- `knownHelpersOnly`: Set to true to allow further optimzations based on the known helpers list.
-- `noEscape`: Set to true to not HTML escape any content.
-- `strict`: Run in strict mode. In this mode, templates will throw rather than silently ignore missing fields. This has
-  the side effect of disabling inverse operations such as `{{^foo}}{{/foo}}` unless fields are explicitly included in
-  the source object.
-- `assumeObjects`: Removes object existence checks when traversing paths. This is a subset of `strict` mode that
-  generates optimized templates when the data inputs are known to be safe.
-- `preventIndent`: By default, an indented partial-call causes the output of the whole partial being indented by the
-  same amount. This can lead to unexpected behavior when the partial writes `pre`-tags. Setting this option to `true`
-  will disable the auto-indent feature.
-- `ignoreStandalone`: Disables standalone tag removal when set to `true`. When set, blocks and partials that are on
-  their own line will not remove the whitespace on that line.
-- `explicitPartialContext`: Disables implicit context for partials. When enabled, partials that are not passed a context
-  value will execute against an empty object.
+- `data`: 设置为 false 以终止 `@data` 跟踪。
+- `compat`: 设置为 true 以允许递归领域查找。
+- `knownHelpers`: 将已知在模版运行时会真实存在的助手代码列表 Hash 化。输入本参数会使编译器在一些情况下优化。内置助手代码
+  已经在本列表里包含，但若设置本项为 `false`，内置的助手代码可能会被忽视。
+- `knownHelpersOnly`: 设置为 true 以允许基于已知助手代码列表的进一步优化。
+- `noEscape`: 设置为 true 以避免 HTML 的内容转义。
+- `strict`: 在严格模式下运行。在这个模式下，模版将会对缺失参数抛出异常，而非静默忽略。同时，这种模式将会禁止逆操作，比如
+  `{{^foo}}{{/foo}}`，除非领域被特意包含在源对象中。
+- `assumeObjects`: 在遍历路径时，不再检查对象是否存在。这是严格模式的子集，本子集在已知输入安全的情况下会生成最优模版。
+- `preventIndent`: 默认情况下，缩进的代码片段调用将会导致代码片段整体全部被缩进。在代码片段写入 `pre` 标签时，这会造成未
+  预料到的结果。将本项设置成 `true` 可以避免这种自动缩进的功能。
+- `ignoreStandalone`: 当设置为 `true` 时，将不会去除单独的标签。在这种情况下，不在同一行的代码块和代码片段将不会去除本行
+  里的空格。
+- `explicitPartialContext`: 对代码片段的上下文进行精确设置。当开启时，没有设置上下文的代码片段将会依托空对象执行。
 
 :::
 
 ## `Handlebars.precompile(template, options)`
 
-Precompiles a given template so it can be sent to the client and executed without compilation.
+对一个模版进行预编译，这样可以直接将模版送到客户端并执行而不需要再编译。
 
 ```js
 var templateSpec = Handlebars.precompile("{{foo}}");
 ```
 
-Supports all of the same options parameters as the `Handlebars.compile` method. Additionally may pass:
+与 `Handlebars.compile` 方法的参数相同，并且额外的参数有：
 
-- `srcName`: Passed to generate the source map for the input file. When run in this manner, the return structure is
-  `{code, map}` with `code` containing the template definition and `map` containing the source map.
-- `destName`: Optional parameter used in conjunction with `srcName` to provide a destination file name when generating
-  source maps.
+- `srcName`: 生成输入文件的源键值表。当运行时，返回的结构为 `{code, map}`。 `code` 包含模版的定义，`map` 包含源键值表。
+- `destName`: 可选，本参数可以与 `srcName` 一起使用以在生成源键值表的时候同时提供目标文件的名称。
 
 ## `Handlebars.template(templateSpec)`
 
-Sets up a template that was precompiled with `Handlebars.precompile`.
+设置一个已经被 `Handlebars.precompile` 预编译的模版。
 
 ```js
 var template = Handlebars.template(templateSpec);
