@@ -81,3 +81,8 @@ of [Mahmoud Gamal](http://mahmoudsec.blogspot.com/2019/04/handlebars-template-in
   );
   // result = 'abc'
   ```
+
+You can also use the package
+[@handlebars/allow-prototype-access](https://www.npmjs.com/package/@handlebars/allow-prototype-access) revert to 4.5.3
+behavior in cases where you cannot pass runtime-options, like in
+[express-handlebars](https://www.npmjs.com/package/express-handlebars).
