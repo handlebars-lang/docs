@@ -74,3 +74,8 @@
   );
   // result = 'abc'
   ```
+
+如果你在某些地方无法传递运行时选项，例如在 [express-handlebars](https://www.npmjs.com/package/express-handlebars) 的情况
+下，你也可以使用这个包：
+[@handlebars/allow-prototype-access](https://www.npmjs.com/package/@handlebars/allow-prototype-access) 使 Handlebars 回
+退到 4.5.3 时的表现。
