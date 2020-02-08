@@ -3,8 +3,13 @@ import { executeExample } from "./execute-example";
 import Handlebars from "handlebars";
 
 export class ExampleParser {
-  constructor({ template = "", input = null, partials = {}, preparationScript = "" }) {
-    this.normalizedExample = { template, input, partials, preparationScript };
+  constructor({ template, input, partials, preparationScript }) {
+    this.normalizedExample = {
+      template: useDefaultValueIfMissing(template, ""),
+      input: useDefaultValueIfMissing(input, null),
+      partials: useDefaultValueIfMissing(partials, {}),
+      preparationScript: useDefaultValueIfMissing(preparationScript, "")
+    };
   }
 
   /**
@@ -49,4 +54,8 @@ export class ExampleParser {
       stack: error.stack
     };
   }
+}
+
+function useDefaultValueIfMissing(value, defaultValue) {
+  return value == null ? defaultValue : value;
 }
