@@ -162,6 +162,13 @@ parameters.
 This will escape the passed in parameters, but mark the response as safe, so Handlebars will not try to escape it even
 if the "triple-stash" is not used.
 
+::: warning
+
+Handlebars does not escape JavaScript strings. Using Handlebars in JavaScript such as in inline event handlers could
+potentially lead to cross-site scripting vulnerabilities.
+
+:::
+
 ## Partials
 
 Handlebars partials allow for code reuse by creating shared templates. You can register a partial using the
