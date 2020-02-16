@@ -164,8 +164,8 @@ if the "triple-stash" is not used.
 
 ::: warning
 
-Handlebars does not escape JavaScript strings. Using Handlebars in JavaScript, such as in inline event handlers, could
-potentially lead to cross-site scripting vulnerabilities.
+Handlebars does not escape JavaScript strings. Using Handlebars to generate JavaScript, such as inline event handlers,
+could potentially lead to cross-site scripting vulnerabilities.
 
 :::
 
