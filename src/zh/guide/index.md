@@ -151,6 +151,13 @@ Handlebars 不会转义 `Handlebars.SafeString`。如果你正在编写一个自
 
 这将转义传入的参数，但是 response 会被标记为 safe，因此即使未使用“三重隐藏”， Handlebars 也不会尝试转义它。
 
+::: warning
+
+Handlebars 不会转义 JavaScript 字串。使用 Handlebars 生成 JavaScript（例如内联事件处理程序），可能会产生跨域脚本攻击漏洞
+。
+
+:::
+
 ## 代码片段
 
 Handlebars 代码片段通过创建共享模板允许代码复用。你可以使用 `registerPartial` 方法：
