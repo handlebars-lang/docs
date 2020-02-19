@@ -27,6 +27,21 @@ section, marked by `else` is called an "else section".
 
 <ExamplePart examplePage="/examples/builtin-helper-ifelse-block.md" show="template" />
 
+### Sub-Expressions
+
+Helpers are the proposed way to add custom logic to templates. You can write any helper and use it in a sub-expression.
+
+For example, in checking for initialization of a variable the built-in `#if` check might not be appropriate as it
+returns false for empty collections (see [Utils.isEmpty](/api-reference/utilities.html#handlebars-utils-isempty-value)).
+
+You could write a helper that checks for "undefined" such as:
+
+<ExamplePart examplePage="/examples/builtin-helper-if-subexpression.md" show="preparationScript" />
+
+Then use your helper as a sub-expression:
+
+<ExamplePart examplePage="/examples/builtin-helper-if-subexpression.md" show="template" />
+
 ## #unless
 
 You can use the `unless` helper as the inverse of the `if` helper. Its block will be rendered if the expression returns
