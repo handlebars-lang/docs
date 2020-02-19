@@ -372,25 +372,6 @@ which is an integer count. This value represents the number of block parameters 
 template. Parameters beyond this count will never be referenced and can safely be omitted by the helper if desired. This
 is optional and any additional parameters passed to the template will be silently ignored.
 
-## Sub-Expressions
-
-Helpers are the proposed way to add custom logic to templates.  You can write any helper and use it in a sub-expression.
-
-For example, in checking for initialization of a variable the [built-in `#if`](builtin-helpers.html#if) check might not 
-be appropriate as it returns false for empty collections.  You could write a helper that checks for "undefined" such as:
-
-```js
-Handlebars.registerHelper('isdefined', function (value) {
-  return value !== undefined;
-});
-```
-
-Then use your helper as a sub-expression:
-
-```handlebars
-{{#if (isdefined value)}}true{{else}}false{{/if}}
-```
-
 ## Raw Blocks
 
 Raw blocks are available for templates needing to handle unprocessed mustache blocks.
