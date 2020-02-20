@@ -174,18 +174,18 @@ could potentially lead to cross-site scripting vulnerabilities.
 Handlebars partials allow for code reuse by creating shared templates. You can register a partial using the
 `registerPartial`-method:
 
-<ExamplePart examplePage="/examples/partials-register" show="preparationScript" />
+<ExamplePart examplePage="/examples/partials/register" show="preparationScript" />
 
 The following template and input:
 
 <Flex>
-<ExamplePart examplePage="/examples/partials-register" show="template" />
-<ExamplePart examplePage="/examples/partials-register" show="input" />
+<ExamplePart examplePage="/examples/partials/register" show="template" />
+<ExamplePart examplePage="/examples/partials/register" show="input" />
 </Flex>
 
 will then provide the following result:
 
-<ExamplePart examplePage="/examples/partials-register" show="output" />
+<ExamplePart examplePage="/examples/partials/register" show="output" />
 
 !button[Learn More: Partials](partials.html)
 

@@ -162,18 +162,18 @@ Handlebars 不会转义 JavaScript 字串。使用 Handlebars 生成 JavaScript�
 
 Handlebars 代码片段通过创建共享模板允许代码复用。你可以使用 `registerPartial` 方法：
 
-<ExamplePart examplePage="/zh/examples/partials-register" show="preparationScript" />
+<ExamplePart examplePage="/zh/examples/partials/register" show="preparationScript" />
 
 以下模板和输入：
 
 <Flex>
-<ExamplePart examplePage="/zh/examples/partials-register" show="template" />
-<ExamplePart examplePage="/zh/examples/partials-register" show="input" />
+<ExamplePart examplePage="/zh/examples/partials/register" show="template" />
+<ExamplePart examplePage="/zh/examples/partials/register" show="input" />
 </Flex>
 
 将渲染得到以下结果：
 
-<ExamplePart examplePage="/zh/examples/partials-register" show="output" />
+<ExamplePart examplePage="/zh/examples/partials/register" show="output" />
 
 !button[了解更多: 代码片段](partials.html)
 
