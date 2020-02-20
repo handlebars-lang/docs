@@ -1,0 +1,17 @@
+---
+layout: InteractivePlaygroundLayout
+example:
+  template: |
+    {{#each people}}
+      {{> myPartial prefix=../prefix firstname=firstname lastname=lastname}}.
+    {{/each}}
+  preparationScript: |
+    Handlebars.registerPartial('myPartial', '{{prefix}}, {{firstname}} {{lastname}}');
+  input:
+    people:
+      - firstname: Nils
+        lastname: Knappmeier
+      - firstname: Yehuda
+        lastname: Katz
+    prefix: Hello
+---
