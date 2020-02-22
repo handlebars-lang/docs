@@ -28,6 +28,13 @@ The following frontmatter properties are supported:
 
 The output of the example is automatically computed using the latest release version of Handlebars.
 
+## Example data
+
+If possible, examples should use variations of a common data set. Therefore, the file
+[src/examples/\_example-base-data.yaml](https://github.com/handlebars-lang/docs/blob/master/src/examples/_example-base-data.yaml)
+contains data that can be reused and adapted to each example. If the data in that file is insufficient, please add new
+data, but please make sure it is somehow related.
+
 ## Embedding parts of an example.
 
 The `<ExamplePart>`-component allows you to show a part of the example in the current part.
