@@ -20,6 +20,12 @@
 
 使用最新版本的 Handlebars 自动渲染示例的输出。
 
+## 示例数据
+
+如果可能的话，示例应该使用通用数据集中提供的变量。因此，文件
+[src/zh/examples/\_example-base-data.yaml](https://github.com/handlebars-lang/docs/blob/master/src/zh/examples/_example-base-data.yaml)
+包含了可重复使用并适用于每个示例的数据。如果该文件中的数据不足，请添加新的数据，但请确保它们之间存在关联。
+
 ## 嵌入示例
 
 `<ExamplePart>` 组件允许您在当前段落中显示示例的一部分。
