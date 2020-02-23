@@ -25,6 +25,21 @@
 
 <ExamplePart examplePage="/zh/examples/builtin-helper-ifelse-block.md" show="template" />
 
+### 子表达式
+
+建议使用助手代码向模板添加逻辑。你可以编写助手代码并将其应用到子表达式中。
+
+例如，在检查变量的初始化时，内置的 `#if` 检查可能不合适，因为它对于空集合返回 false（参见
+[Utils.isEmpty](/zh/api-reference/utilities.html#handlebars-utils-isempty-value)）。
+
+你可以写一段助手代码来检查 "undefined"，如：
+
+<ExamplePart examplePage="/zh/examples/builtin-helper-if-subexpression.md" show="preparationScript" />
+
+然后将助手代码用作子表达式：
+
+<ExamplePart examplePage="/zh/examples/builtin-helper-if-subexpression.md" show="template" />
+
 ## #unless
 
 你可以将 `unless` 助手代码看作与 `if` 助手代码相反。如果表达式返回 false 则将渲染代码块。
