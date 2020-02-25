@@ -10,13 +10,12 @@ example:
         My Content
       {{/inline}}
     {{/layout}}
-  preparationScript: |
-    Handlebars.registerPartial('layout' ,`
+  partials:
+    layout: |-
       <div class="nav">
         {{> nav}}
       </div>
       <div class="content">
         {{> content}}
       </div>
-    `);
 ---

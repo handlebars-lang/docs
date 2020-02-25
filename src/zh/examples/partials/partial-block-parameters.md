@@ -2,14 +2,14 @@
 layout: InteractivePlaygroundLayout
 example:
   template: |-
-    {{#each children as |child|}}
+    {{#each people as |person|}}
       {{#> childEntry}}
-        {{child.value}}
+        {{person.firstname}}
       {{/childEntry}}
     {{/each}}
   input:
-    children:
-      - value: 1
-      - value: 2
-      - value: 3
+    people:
+      - firstname: Nils
+      - firstname: Yehuda
+      - firstname: Carl
 ---

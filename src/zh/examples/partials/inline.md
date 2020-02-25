@@ -5,11 +5,11 @@ example:
     {{#*inline "myPartial"}}
       My Content
     {{/inline}}
-    {{#each children}}
+    {{#each people}}
       {{> myPartial}}
     {{/each}}
   input:
-    children:
-      - 1
-      - 2
+    people:
+      - firstname: Nils
+      - firstname: Yehuda
 ---

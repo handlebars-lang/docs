@@ -3,7 +3,7 @@ layout: InteractivePlaygroundLayout
 example:
   template: "{{> myPartial }}"
   preparationScript: |
-    Handlebars.registerPartial('myPartial', '{{name}}');
+    Handlebars.registerPartial('myPartial', '{{prefix}}');
   input:
-    name: Nils
+    prefix: Hello
 ---
