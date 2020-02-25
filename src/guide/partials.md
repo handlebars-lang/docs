@@ -66,7 +66,7 @@ partial, `@partial-block`. A template of
 
 with the `layout` partial containing
 
-<ExamplePart examplePage="/examples/partials/partial-block.md" show="preparationScript"/>
+<ExamplePart examplePage="/examples/partials/partial-block.md" show="partial" name="layout"/>
 
 Would render
 
@@ -94,4 +94,4 @@ allows for layout templates and similar functionality:
 
 Where the `layout` partial may be:
 
-<ExamplePart examplePage="/examples/partials/inline-blocks.md" show="preparationScript"/>
+<ExamplePart examplePage="/examples/partials/inline-blocks.md" show="partial" name="layout"/>

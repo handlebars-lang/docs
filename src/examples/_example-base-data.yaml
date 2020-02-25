@@ -30,3 +30,5 @@ people:
     lastname: Lerche
   - firstname: Alan
     lastname: Johnson
+prefix: Hello
+favoriteNumber: 123

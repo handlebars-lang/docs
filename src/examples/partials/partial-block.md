@@ -1,10 +1,10 @@
 ---
 layout: InteractivePlaygroundLayout
 example:
-  template: |
+  template: |-
     {{#> layout }}
     My Content
     {{/layout}}
-  preparationScript: |
-    Handlebars.registerPartial('layout', 'Site Content {{> @partial-block }}');
+  partials:
+    layout: Site Content {{> @partial-block }}
 ---

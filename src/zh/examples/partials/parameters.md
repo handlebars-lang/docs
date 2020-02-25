@@ -1,9 +1,9 @@
 ---
 layout: InteractivePlaygroundLayout
 example:
-  template: "{{> myPartial parameter=value }}"
+  template: "{{> myPartial parameter=favoriteNumber }}"
   preparationScript: |
     Handlebars.registerPartial('myPartial', 'The result is {{parameter}}');
   input:
-    value: 123
+    favoriteNumber: 123
 ---

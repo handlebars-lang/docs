@@ -61,7 +61,7 @@ Handlebars 允许代码片段的复用。代码片段是一段普通的 Handleba
 
 `layout` 代码片段包含
 
-<ExamplePart examplePage="/zh/examples/partials/partial-block.md" show="preparationScript"/>
+<ExamplePart examplePage="/zh/examples/partials/partial-block.md" show="partial" name="layout"/>
 
 这将渲染：
 
@@ -88,4 +88,4 @@ Handlebars 允许代码片段的复用。代码片段是一段普通的 Handleba
 
 其中 `layout` 可能是：
 
-<ExamplePart examplePage="/zh/examples/partials/inline-blocks.md" show="preparationScript"/>
+<ExamplePart examplePage="/zh/examples/partials/inline-blocks.md" show="partial" name="layout"/>
