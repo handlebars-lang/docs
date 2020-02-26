@@ -6,13 +6,13 @@ on:
       - production
 jobs:
   deploy-prod:
+    env: PREVIEW=false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - env: PREVIEW=false
       - run: npm ci
       - run: npm run test-and-build
       - uses: peaceiris/actions-gh-pages@v3

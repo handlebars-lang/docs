@@ -7,12 +7,12 @@ on:
 jobs:
   deploy-preview:
     runs-on: ubuntu-latest
+    env: PREVIEW=true
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - env: PREVIEW=true
       - run: npm ci
       - run: npm run test-and-build
       - uses: peaceiris/actions-gh-pages@v3
