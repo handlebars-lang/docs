@@ -1,21 +1,22 @@
-name: build-and-deploy-stage
+name: build-and-deploy-prod
 
 on:
   push:
     branches:
-      - master
+      - production
 jobs:
-  build:
+  deploy-prod:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
           node-version: 12
+      - env: PREVIEW=false
       - run: npm ci
-      - run: PREVIEW=true npm run test-and-build
+      - run: npm run test-and-build
       - uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          deploy_key: ${{ secrets.PROD_DEPLOY_KEY }}
           publish_dir: ./target
-          cname: handlebars-preview.knappi.org
+          cname: handlebarsjs.com

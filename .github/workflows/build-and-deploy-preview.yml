@@ -1,0 +1,22 @@
+name: build-and-deploy-preview
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - env: PREVIEW=true
+      - run: npm ci
+      - run: npm run test-and-build
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./target
+          cname: handlebars-preview.knappi.org
