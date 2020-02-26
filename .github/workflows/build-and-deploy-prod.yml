@@ -20,4 +20,5 @@ jobs:
         with:
           deploy_key: ${{ secrets.PROD_DEPLOY_KEY }}
           publish_dir: ./target
+          external_repository: handlebars-lang/handlebarsjs.com-github-pages
           cname: handlebarsjs.com
