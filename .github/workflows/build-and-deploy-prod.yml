@@ -6,7 +6,8 @@ on:
       - production
 jobs:
   deploy-prod:
-    env: PREVIEW=false
+    env:
+      PREVIEW: false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
