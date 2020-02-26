@@ -1,24 +1,5 @@
 jobs:
   include:
-    - name: deploy_preview
-      if: branch = master
-      language: node_js
-      node_js:
-        - lts/*
-      script:
-        - PREVIEW=true npm run test-and-build
-      deploy:
-        provider: pages
-        fqdn: handlebars-preview.knappi.org
-        repo: handlebars-lang/preview.handlebarsjs.com-github-pages
-        target_branch: gh-pages
-        skip-cleanup: true
-        local_dir: target
-        github-token: $GITHUB_TOKEN
-        keep-history: true
-        on:
-          branch: master
-
     - name: deploy_draft
       if: branch = production
       language: node_js
