@@ -5,7 +5,7 @@ on:
     branches:
       - master
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -14,6 +14,9 @@ jobs:
           node-version: 12
       - run: npm ci
       - run: PREVIEW=true npm run test-and-build
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
       - uses: peaceiris/actions-gh-pages@v3
           with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
