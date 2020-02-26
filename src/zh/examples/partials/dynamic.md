@@ -2,8 +2,8 @@
 layout: InteractivePlaygroundLayout
 example:
   template: "{{> (whichPartial) }}"
-  preparationScript: >-
+  preparationScript: |
     Handlebars.registerHelper('whichPartial', function(context, options) { return 'dynamicPartial' });
-
-    Handlebars.registerPartial('dynamicPartial', 'Dynamo!');
+  partials:
+    dynamicPartial: Dynamo!
 ---

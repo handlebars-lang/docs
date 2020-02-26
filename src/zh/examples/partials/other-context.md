@@ -2,8 +2,8 @@
 layout: InteractivePlaygroundLayout
 example:
   template: "{{> myPartial myOtherContext }}"
-  preparationScript: |
-    Handlebars.registerPartial('myPartial', '{{information}}');
+  partials:
+    myPartial: "{{information}}"
   input:
     myOtherContext:
       information: Interesting!

@@ -5,8 +5,8 @@ example:
     {{#each people}}
       {{> myPartial prefix=../prefix firstname=firstname lastname=lastname}}.
     {{/each}}
-  preparationScript: |
-    Handlebars.registerPartial('myPartial', '{{prefix}}, {{firstname}} {{lastname}}');
+  partials:
+    myPartial: "{{prefix}}, {{firstname}} {{lastname}}"
   input:
     people:
       - firstname: Nils
