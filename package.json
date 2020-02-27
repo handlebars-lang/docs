@@ -13,7 +13,7 @@
     "test": "jest",
     "format": "prettier --write 'src/**/*.{js,css,json,md,vue}'",
     "build": "vuepress build src",
-    "deploy-to-production": "git push origin refs/heads/master:refs/heads/production --force"
+    "deploy-to-production": "git push git@github.com:handlebars-lang/handlebarsjs.com-github-pages.git refs/heads/master:refs/heads/production --force"
   },
   "repository": {
     "type": "git",
