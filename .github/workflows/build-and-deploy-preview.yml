@@ -20,4 +20,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./target
-          cname: handlebars-preview.knappi.org
