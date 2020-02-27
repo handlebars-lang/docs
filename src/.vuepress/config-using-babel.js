@@ -5,7 +5,7 @@ import { interactiveExamples } from "./plugins/interactive-examples";
 import { buttonLink } from "./plugins/button-link";
 import { updateHandlebarsCliHelp } from "./plugins/update-handlebars-cli-help";
 
-const isPreview = process.env.PREVIEW === "true";
+const isPreview = process.env.IS_PREVIEW === "true";
 
 export default {
   base: "/",

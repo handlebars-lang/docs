@@ -8,7 +8,7 @@ jobs:
   deploy-preview:
     runs-on: ubuntu-latest
     env:
-      PREVIEW: ${{ github.repository != 'handlebars-lang/handlebarsjs.com-github-pages' }}
+      IS_PREVIEW: ${{ github.repository != 'handlebars-lang/handlebarsjs.com-github-pages' }}
       PREVIEW_SITE: handlebars-preview.knappi.org
       PRODUCTION_SITE: handlebarsjs.com
     steps:
