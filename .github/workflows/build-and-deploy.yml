@@ -1,0 +1,30 @@
+name: build-and-deploy
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    env:
+      PREVIEW: ${{ github.repository == 'handlebars-lang/docs' }}
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm ci
+      - run: npm run test-and-build
+      - if: ${{ github.repository == 'handlebars-lang/docs' }}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./target
+          cname: handlebars-preview.knappi.org
+      - if: ${{ github.repository == 'handlebars-lang/handlebarsjs.com-github-pages' }}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./target
+          cname: handlebarsjs.com
