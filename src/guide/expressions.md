@@ -10,7 +10,7 @@ them to a Handlebars helper, or use them as values in hash arguments.
 ## Basic Usage
 
 Handlebars expressions are some contents enclosed by double curly braces `{{}}`. In the below template, `firstname` is a
-variable which is enclosed by double curly braces which is said to be an expression.
+variable that is enclosed by double curly braces, which is said to be an expression.
 
 <ExamplePart examplePage="/examples/simple-expressions.md" show="template" />
 
@@ -41,7 +41,7 @@ Handlebars also supports a deprecated `/` syntax, so you could write the above t
 
 ## Changing the context
 
-Some helpers like `#with` and `#each` allow you to dive into nested objects. When you include `../` segments into your
+Some helpers like `#with` and `#each` allow you to dive into nested objects. When you include `../` segments in your
 path, Handlebars will change back into the parent context.
 
 <ExamplePart examplePage="/examples/path-expressions-dot-dot" show="template" />
@@ -69,7 +69,7 @@ helpers such as `{{#if}}` do not.
 ```
 
 In this example all of the above reference the same prefix value even though they are located within different blocks.
-This behavior is new as of Handlebars 4, the
+This behavior is new as of Handlebars 4; the
 [release notes](https://github.com/wycats/handlebars.js/blob/master/release-notes.md) discuss the prior behavior as well
 as the migration plan. Handlebars also allows for name conflict resolution between helpers and data fields via a this
 reference:
@@ -96,13 +96,13 @@ JavaScript-style strings, `"` and `'`, may also be used instead `[` pairs.
 
 ::: v-pre
 
-In Handlebars, the values returned by the `{{expression}}` are HTML-escaped. Say, If the expression contains `&`, then
-the returned HTML-escaped output is genarated as `&amp;` If you don't want Handlebars to escape a value, use the
+In Handlebars, the values returned by the `{{expression}}` are HTML-escaped. Say, if the expression contains `&`, then
+the returned HTML-escaped output is genarated as `&amp;`. If you don't want Handlebars to escape a value, use the
 "triple-stash", `{{{`:
 
 :::
 
-In the below template, You can learn how to produce the HTML escaped and raw output.
+In the below template, you can learn how to produce the HTML escaped and raw output.
 
 <ExamplePart examplePage="/examples/html-escaping.md" show="template" />
 
@@ -112,7 +112,7 @@ Pass the special characters to the template
 
 ::: v-pre
 
-Expressions enclosed by "triple-stash" (`{{{`) produces the raw output otherwise HTML-escaped output is generated as
+Expressions enclosed by "triple-stash" (`{{{`) produce the raw output. Otherwise, HTML-escaped output is generated as
 below.
 
 :::
@@ -123,13 +123,13 @@ below.
 
 Helpers can be used to implement functionality that is not part of the Handlebars language itself.
 
-A helper can be registered at the runtime via `Handlebars.registerHelper`, for example in order to uppercase all
+A helper can be registered at runtime via `Handlebars.registerHelper`, for example in order to uppercase all
 characters of a string.
 
 <ExamplePart examplePage="/examples/helper-simple.md" show="preparationScript" />
 
-A Handlebars helper call is a simple identifier, followed by zero or more parameters (separated by space). Each
-parameter is a Handlebars expression that is evaluated exactly the same way described above in "Basic Usage":
+A Handlebars helper call is a simple identifier, followed by zero or more parameters (separated by a space). Each
+parameter is a Handlebars expression that is evaluated exactly the same way as described above in "Basic Usage":
 
 <ExamplePart examplePage="/examples/helper-simple.md" show="template" />
 
@@ -144,7 +144,7 @@ the `lastname` property of the input:
 ### Prevent HTML-escaping of helper return values
 
 When your helper returns an instance of `Handlebars.Safestring` the return-value is not escaped, even if the helper is
-called with `{{` instead of `{{{`. You have to take care that all parameters are escaping properly using
+called with `{{` instead of `{{{`. You have to take care that all parameters are escaped properly using
 `Handlebars.escapeExpression`.
 
 <ExamplePart examplePage="/examples/helper-safestring.md" show="preparationScript" />
