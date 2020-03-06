@@ -3,8 +3,8 @@ layout: InteractivePlaygroundLayout
 example:
   template: |
     {{> (lookup . 'myVariable') }}
-  preparationScript: |
-    Handlebars.registerPartial('lookupMyPartial', 'Found!');
+  partials:
+    lookupMyPartial: Found!
   input:
     myVariable: lookupMyPartial
 ---
