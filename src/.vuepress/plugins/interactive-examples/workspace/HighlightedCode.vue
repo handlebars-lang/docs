@@ -14,7 +14,6 @@ import hljsHandlebars from "../lib/hljs-handlebars-next";
 import hljsJavaScript from "highlight.js/lib/languages/javascript";
 import hljsXml from "highlight.js/lib/languages/xml";
 import hljsPlaintext from "highlight.js/lib/languages/plaintext";
-import "highlight.js/styles/a11y-dark.css";
 
 hljs.registerLanguage("handlebars", hljsHandlebars);
 hljs.registerLanguage("xml", hljsXml);

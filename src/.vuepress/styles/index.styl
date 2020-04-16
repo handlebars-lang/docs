@@ -2,13 +2,14 @@
 // abd https://github.com/vuejs/vuepress/blob/master/packages/@vuepress/core/lib/client/style/config.styl for default
 // variable definitions
 
+@import './include/highlighting.styl'
+
 html, body {
     background-color: $bodyBgColor !important;
 }
 
 .navbar, .navbar .links {
     background-color: $navbarBgColor !important
-    
 }
 
 .sidebar {
@@ -59,7 +60,7 @@ $contentBorderRadius = 0.5rem
     .feature p {
         color: $accentColor !important
     }
-    
+
     .theme-default-content {
 
         background-color: transparent !important;
@@ -72,7 +73,7 @@ $contentBorderRadius = 0.5rem
         }
 
     }
-    
+
     .footer {
         border: none !important
     }
@@ -134,3 +135,4 @@ $buttonLinkColor = white;
         box-shadow: none;
     }
 }
+

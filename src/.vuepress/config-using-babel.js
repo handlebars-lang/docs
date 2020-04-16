@@ -4,6 +4,7 @@ import { storeHandlebarsVersionAtVuePrototype } from "./plugins/inject-handlebar
 import { interactiveExamples } from "./plugins/interactive-examples";
 import { buttonLink } from "./plugins/button-link";
 import { updateHandlebarsCliHelp } from "./plugins/update-handlebars-cli-help";
+import { useHighlightJsForCode } from "./plugins/use-highlightjs-for-code";
 
 const isPreview = process.env.IS_PREVIEW === "true";
 
@@ -128,6 +129,7 @@ export default {
     storeHandlebarsVersionAtVuePrototype,
     interactiveExamples,
     buttonLink,
-    updateHandlebarsCliHelp
+    updateHandlebarsCliHelp,
+    useHighlightJsForCode
   ]
 };
