@@ -1,4 +1,4 @@
-# Installations
+# Installation
 
 There are a variety of ways to install Handlebars, depending on the programming language and environment you are using.
 
