@@ -11,7 +11,7 @@
 </template>
 <script>
 import hljs from "highlight.js/lib/highlight";
-import hljsHandlebars from "highlight.js/lib/languages/handlebars";
+import hljsHandlebars from "../lib/hljs-handlebars-next";
 import hljsJavaScript from "highlight.js/lib/languages/javascript";
 import hljsXml from "highlight.js/lib/languages/xml";
 import hljsPlaintext from "highlight.js/lib/languages/plaintext";
