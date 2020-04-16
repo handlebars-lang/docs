@@ -10,6 +10,7 @@
     "fix": "npm run format && npm run lintfix",
     "test-and-build": "concurrently --kill-others-on-fail npm:lint npm:test npm:build",
     "lint": "eslint '**/*.{js,vue}' ",
+    "lintfix": "eslint --fix '**/*.{js,vue}' ",
     "test": "jest",
     "format": "prettier --write 'src/**/*.{js,css,json,md,vue}'",
     "build": "vuepress build src",
