@@ -1,8 +1,7 @@
 <template>
   <!-- eslint-disable vue/no-v-html -->
-  <pre ref="container" :class="cssClass"><!--
+  <pre :class="cssClass"><!--
   --><code
-            ref="codeElement"
             spellcheck="false"
             :class="['ce-code-content', 'hljs', hljsLanguage]"
             v-html="codeHtml"
