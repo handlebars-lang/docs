@@ -1,8 +1,6 @@
 <template>
   <Modal :show="show" @close="$emit('close')">
-    <template v-slot:header
-      >Share this example
-    </template>
+    <template v-slot:header>Share this example </template>
     <p>
       You can paste this URL into github issues to order to share your setup when filing bugs or questions
     </p>

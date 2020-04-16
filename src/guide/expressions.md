@@ -123,8 +123,8 @@ below.
 
 Helpers can be used to implement functionality that is not part of the Handlebars language itself.
 
-A helper can be registered at runtime via `Handlebars.registerHelper`, for example in order to uppercase all
-characters of a string.
+A helper can be registered at runtime via `Handlebars.registerHelper`, for example in order to uppercase all characters
+of a string.
 
 <ExamplePart examplePage="/examples/helper-simple.md" show="preparationScript" />
 

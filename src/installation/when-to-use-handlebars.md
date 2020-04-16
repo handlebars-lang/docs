@@ -1,7 +1,7 @@
 # When (not) to use Handlebars?
 
-This section should give you an overview over the strengths and weaknesses of Handlebars. 
-Ideally, it enables you to see if handlebars fits your use case and make an informed decision about choosing handlebars or not. 
+This section should give you an overview over the strengths and weaknesses of Handlebars. Ideally, it enables you to see
+if handlebars fits your use case and make an informed decision about choosing handlebars or not.
 
 ::: warning A note on using Handlebars in the browser
 
@@ -11,7 +11,7 @@ HTML-pages, e-mails or markdown files.
 It has **no** built-in support for **event-handling**, accessing **backend-services** or incremental **DOM updates**.
 
 If you want to build a **single-page application** and you want to handle user-input, you should probably look for a
-framework like 
+framework like
 
 - [Angular](https://angular.io/)
 - [Aurelia](https://aurelia.io/)

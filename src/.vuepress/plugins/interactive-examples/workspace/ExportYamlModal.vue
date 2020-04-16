@@ -1,8 +1,6 @@
 <template>
   <Modal :show="show" class="export-yaml-modal" @close="$emit('close')">
-    <template v-slot:header
-      >Export YAML</template
-    >
+    <template v-slot:header>Export YAML</template>
     <p>
       You can copy the yaml-code below and use it as frontmatter for an example page.
     </p>
