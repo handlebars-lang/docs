@@ -26,6 +26,10 @@ export default {
   ],
   dest: "target/",
   themeConfig: {
+    algolia: {
+      apiKey: 'ceae3bc4e38c4b10f99cc802d1e6db96',
+      indexName: 'handlebarsjs'
+    },
     locales: {
       "/": {
         selectText: "Languages",
