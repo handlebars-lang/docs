@@ -13,8 +13,7 @@
     "lintfix": "eslint --fix '**/*.{js,vue}' ",
     "test": "jest",
     "format": "prettier --write 'src/**/*.{js,css,json,md,vue}'",
-    "build": "vuepress build src",
-    "deploy-to-production": "git push git@github.com:handlebars-lang/handlebarsjs.com-github-pages.git master --force"
+    "build": "vuepress build src"
   },
   "repository": {
     "type": "git",

@@ -2,8 +2,7 @@
 
 This is the repository for a new-to-come Handlebars documentation site.
 
-* Preview (`master`-branch): https://handlebars-preview.knappi.org
-* Production (`production`-branch): https://handlebarsjs.com
+* Target-URL: https://handlebarsjs.com
 
 # Why vuepress?
 

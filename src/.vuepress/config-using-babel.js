@@ -6,29 +6,27 @@ import { buttonLink } from "./plugins/button-link";
 import { updateHandlebarsCliHelp } from "./plugins/update-handlebars-cli-help";
 import { useHighlightJsForCode } from "./plugins/use-highlightjs-for-code";
 
-const isPreview = process.env.IS_PREVIEW === "true";
-
 export default {
   base: "/",
   locales: {
     "/": {
       lang: "en-US",
-      title: isPreview ? "Handlebars (preview)" : "Handlebars"
+      title: "Handlebars",
     },
     "/zh/": {
       lang: "zh-CN",
-      title: isPreview ? "Handlebars (预览)" : "Handlebars"
-    }
+      title: "Handlebars",
+    },
   },
   head: [
     ["link", { rel: "shortcut icon", type: "image/png", href: `/images/favicon.png` }],
-    ["link", { rel: "manifest", href: "/manifest.json" }]
+    ["link", { rel: "manifest", href: "/manifest.json" }],
   ],
   dest: "target/",
   themeConfig: {
     algolia: {
-      apiKey: 'ceae3bc4e38c4b10f99cc802d1e6db96',
-      indexName: 'handlebarsjs'
+      apiKey: "ceae3bc4e38c4b10f99cc802d1e6db96",
+      indexName: "handlebarsjs",
     },
     locales: {
       "/": {
@@ -47,10 +45,10 @@ export default {
               { text: "Release notes", link: "https://github.com/wycats/handlebars.js/blob/master/release-notes.md" },
               {
                 text: "Issues with label 'docs-needed'",
-                link: "https://github.com/wycats/handlebars.js/issues?q=is%3Aopen+is%3Aissue+label%3Adocs-needed"
-              }
-            ]
-          }
+                link: "https://github.com/wycats/handlebars.js/issues?q=is%3Aopen+is%3Aissue+label%3Adocs-needed",
+              },
+            ],
+          },
         ],
         sidebar: {
           "/installation/": ["", "precompilation.md", "integrations.md", "when-to-use-handlebars.md"],
@@ -62,9 +60,9 @@ export default {
             "runtime.md",
             "utilities.md",
             "data-variables.md",
-            "helpers.md"
+            "helpers.md",
           ],
-          "/contributing/": ["", "interactive-examples.md", "button-links.md"]
+          "/contributing/": ["", "interactive-examples.md", "button-links.md"],
         },
         displayAllHeaders: false,
         repo: "wycats/handlebars.js",
@@ -72,7 +70,7 @@ export default {
         editLinks: true,
         editLinkText: "Propose a change to this page!",
         docsRepo: "handlebars-lang/docs",
-        docsDir: "src"
+        docsDir: "src",
       },
       "/zh/": {
         selectText: "语言",
@@ -90,10 +88,10 @@ export default {
               { text: "发行说明", link: "https://github.com/wycats/handlebars.js/blob/master/release-notes.md" },
               {
                 text: "带有 'docs-needed' 标签的 Issues",
-                link: "https://github.com/wycats/handlebars.js/issues?q=is%3Aopen+is%3Aissue+label%3Adocs-needed"
-              }
-            ]
-          }
+                link: "https://github.com/wycats/handlebars.js/issues?q=is%3Aopen+is%3Aissue+label%3Adocs-needed",
+              },
+            ],
+          },
         ],
         sidebar: {
           "/zh/installation/": ["", "precompilation.md", "integrations.md", "when-to-use-handlebars.md"],
@@ -105,9 +103,9 @@ export default {
             "runtime.md",
             "utilities.md",
             "data-variables.md",
-            "helpers.md"
+            "helpers.md",
           ],
-          "/zh/contributing/": ["", "interactive-examples.md", "button-links.md"]
+          "/zh/contributing/": ["", "interactive-examples.md", "button-links.md"],
         },
         displayAllHeaders: false,
         repo: "wycats/handlebars.js",
@@ -115,25 +113,25 @@ export default {
         editLinks: true,
         editLinkText: "向这个页面提交更改！",
         docsRepo: "handlebars-lang/docs",
-        docsDir: "src/zh"
-      }
+        docsDir: "src/zh",
+      },
     },
     repo: "wycats/handlebars.js",
     docsRepo: "handlebars-lang/docs",
-    docsDir: "src"
+    docsDir: "src",
   },
   plugins: [
     [
       "@vuepress/pwa",
       {
         serviceWorker: true,
-        updatePopup: true
-      }
+        updatePopup: true,
+      },
     ],
     storeHandlebarsVersionAtVuePrototype,
     interactiveExamples,
     buttonLink,
     updateHandlebarsCliHelp,
-    useHighlightJsForCode
-  ]
+    useHighlightJsForCode,
+  ],
 };

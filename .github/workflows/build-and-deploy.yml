@@ -5,12 +5,10 @@ on:
     branches:
       - master
 jobs:
-  deploy-preview:
+  build-and-deploy:
     runs-on: ubuntu-latest
     env:
-      IS_PREVIEW: ${{ github.repository != 'handlebars-lang/handlebarsjs.com-github-pages' }}
-      PREVIEW_SITE: handlebars-preview.knappi.org
-      PRODUCTION_SITE: handlebarsjs.com
+      TARGET_URL: handlebarsjs.com
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
@@ -19,18 +17,9 @@ jobs:
       - run: npm ci
       - run: npm run test-and-build
 
-      - name: Deploy to ${{ env.PREVIEW_SITE }}
-        if: ${{ github.repository == 'handlebars-lang/docs' }}
+      - name: Deploy to ${{ env.TARGET_URL }}
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./target
-          cname: ${{ env.PREVIEW_SITE }}
-
-      - name: Deploy to ${{ env.PRODUCTION_SITE }}
-        if: ${{ github.repository == 'handlebars-lang/handlebarsjs.com-github-pages' }}
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./target
-          cname: ${{ env.PRODUCTION_SITE }}
+          cname: ${{ env.TARGET_URL }}
