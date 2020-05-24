@@ -16,7 +16,7 @@ are replaced with values from an input object.
 
 ## Installation
 
-The fastest way to test Handlebars is to use into load it from a _CDN_ and and embed it in an HTML file.
+The fastest way to test Handlebars is to load it from a _CDN_ and embed it in an HTML file.
 
 <<< @/src/usage-examples/compiler-and-runtime/simple-console-out.html
 
