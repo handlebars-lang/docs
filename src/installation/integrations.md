@@ -53,7 +53,7 @@ const compiledTemplate = require("./template.handlebars");
 There is an old plugin for parcel:
 https://www.npmjs.com/package/parcel-plugin-handlebars
 
-But you should one of the many forks of this package, which are more up-to-date:
+But you should use one of the many forks of this package, which are more up-to-date:
 https://www.npmjs.com/search?q=parcel-plugin-handlebars
 
 The most recent one is:
