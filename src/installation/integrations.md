@@ -48,18 +48,19 @@ environment:
 const compiledTemplate = require("./template.handlebars");
 ```
 
-## parcel-plugin-handlebars-precompile
+## Parcel: parcel-plugin-handlebars
+
+There is an old plugin for parcel:
+https://www.npmjs.com/package/parcel-plugin-handlebars
+
+But you should use one of the many forks of this package, which are more up-to-date:
+https://www.npmjs.com/search?q=parcel-plugin-handlebars
+
+The most recent one is:
+https://www.npmjs.com/package/@inventory/parcel-plugin-handlebars
+
+## Parcel: parcel-plugin-handlebars-precompile
 
 TODO: Write text here
 
 https://www.npmjs.com/package/parcel-plugin-handlebars-precompile
-
-## parcel-plugin-handlebars
-
-TODO: Write text here
-
-https://www.npmjs.com/package/parcel-plugin-handlebars
-
-(there are many forks of this package in npm. It is not clear, which is the best version)
-
-https://www.npmjs.com/search?q=parcel-plugin-handlebars
