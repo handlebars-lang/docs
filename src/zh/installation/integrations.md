@@ -43,18 +43,16 @@ const compiledTemplate = hbs`{{name}}`;
 const compiledTemplate = require("./template.handlebars");
 ```
 
-## parcel-plugin-handlebars-precompile
+## 包：parcel-plugin-handlebars
+
+这里有一个较老的插件包： https://www.npmjs.com/package/parcel-plugin-handlebars
+
+但是你应该使用这些 forks 里面的其中一个，因为它们较新： https://www.npmjs.com/search?q=parcel-plugin-handlebars
+
+最新的一个包是： https://www.npmjs.com/package/@inventory/parcel-plugin-handlebars
+
+## 包：parcel-plugin-handlebars-precompile
 
 TODO: 在此填写
 
 https://www.npmjs.com/package/parcel-plugin-handlebars-precompile
-
-## parcel-plugin-handlebars
-
-TODO: 在此填写
-
-https://www.npmjs.com/package/parcel-plugin-handlebars
-
-（npm 中此软件包有很多 forks。尚不清楚其他的 forks，但这是最佳版本）
-
-https://www.npmjs.com/search?q=parcel-plugin-handlebars
