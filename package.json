@@ -64,7 +64,7 @@
     ]
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-eslint": "^10.1.0",
     "codemirror": "^5.52.2",
     "debounce-promise": "^3.1.2",
