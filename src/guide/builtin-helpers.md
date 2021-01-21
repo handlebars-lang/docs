@@ -3,7 +3,8 @@
 ## #if
 
 You can use the `if` helper to conditionally render a block. If its argument returns `false`, `undefined`, `null`, `""`,
-`0`, or `[]`, Handlebars will not render the block.
+`0`, or `[]`, Handlebars will not render the block. 
+Note: You can add the `includeZero=true` argument to make `0` render the block.
 
 <ExamplePart examplePage="/examples/builtin-helper-if-block.md" show="template" />
 
