@@ -20,7 +20,7 @@ The helper receives the same arguments and options (`hash`, `name` etc) as any c
 
 ### Default behavior
 
-If no parameters are passed to the mustache, the default behaviour is to do nothing and ignore the whole mustache
+If no parameters are passed to the mustache, the default behavior is to do nothing and ignore the whole mustache
 expression or the whole block:
 
 <Flex>

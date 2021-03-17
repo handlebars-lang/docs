@@ -93,4 +93,4 @@ Determines if an object is a function.
 
 Logger used by the `log` helper.
 
-May be overriden if desired.
+May be overridden if desired.

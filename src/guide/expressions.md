@@ -97,7 +97,7 @@ JavaScript-style strings, `"` and `'`, may also be used instead of `[` pairs.
 ::: v-pre
 
 In Handlebars, the values returned by the `{{expression}}` are HTML-escaped. Say, if the expression contains `&`, then
-the returned HTML-escaped output is genarated as `&amp;`. If you don't want Handlebars to escape a value, use the
+the returned HTML-escaped output is generated as `&amp;`. If you don't want Handlebars to escape a value, use the
 "triple-stash", `{{{`:
 
 :::

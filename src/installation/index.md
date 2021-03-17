@@ -36,7 +36,7 @@ precompile templates or use Handlebars otherwise.
 ### Browser builds in the npm-package
 
 The browser builds are located in the `node_modules/handlebars/dist/` directory. Making these accessible to the browser
-will depend on what build system you are using but this may be as simple as copying the files to an acessible place.
+will depend on what build system you are using but this may be as simple as copying the files to an accessible place.
 
 This is the preferred method of installation when using the precompiler as it ensures that your precompiled templates
 always run against the same version of the runtime.
@@ -67,7 +67,7 @@ All of Handlebars' released versions and CI builds are available for download on
 [builds page](https://com.s3.amazonaws.com/builds.handlebarsjs/bucket-listing.html?sort=lastmod&sortdir=desc).
 
 The latest passing master build is named `handlebars-latest.js` and each passing SHA on master will create a
-`handlebars-gitSHA.js` file. While these all pass the CI, it's preferrable to use one of the tagged releases.
+`handlebars-gitSHA.js` file. While these all pass the CI, it's preferable to use one of the tagged releases.
 
 **Note**: The builds page is provided as a convenience for the community, but you should not use it for hosting
 Handlebars in production.
