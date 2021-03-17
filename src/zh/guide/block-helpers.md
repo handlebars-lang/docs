@@ -82,8 +82,12 @@ Handlebars.registerHelper("bold", function(options) {
 
 ```
 
+::: v-pre
+
 实现这样的助手代码并不像实现 `noop` 一样。助手代码可以获取参数，并且参数的计算就像直接在 `{{mustache}}` 代码块中直接使用
 的表达式一样。
+
+:::
 
 ```js
 Handlebars.registerHelper("with", function(context, options) {

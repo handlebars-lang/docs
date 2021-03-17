@@ -88,8 +88,12 @@ want to avoid repeating the parent name. The above template could be useful with
 
 ```
 
+::: v-pre
+
 Implementing a helper like this is a lot like implementing the `noop` helper. Helpers can take parameters, and
 parameters are evaluated just like expressions used directly inside `{{mustache}}` blocks.
+
+:::
 
 ```js
 Handlebars.registerHelper("with", function(context, options) {
