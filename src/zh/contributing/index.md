@@ -11,7 +11,7 @@ Handlebars 是一个开源项目。没有 _“文档部门”_ 使文档保持�
 该站点托管在 [Github](https://github.com/handlebars-lang/docs) 上，并使用 [VuePress](https://v1.vuepress.vuejs.org/)。
 
 - 请为你要进行的影响此文档的任何更改创建一个 [pull requests](https://help.github.com/en/articles/about-pull-requests)。
-- 如果更改仅影响单页内容，则只需单击该页面底部的 {{$themeConfig.editLinkText}}} 按钮。（请参阅
+- 如果更改仅影响单页内容，则只需单击该页面底部的 `{{$themeLocaleConfig.editLinkText}}` 按钮。（请参阅
    [编辑另一个用户存储库中的文件](https://help.github.com/en/articles/editing-files-in-another-users-repository)。）
 - 对于更复杂的更改（样式，多个页面，新页面，修复构建问题），你应该
    [fork repo](https://help.github.com/en/articles/fork-a-repo) 并在完成之后提交 Pull Request。 [Contributing

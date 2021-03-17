@@ -15,7 +15,7 @@ This site is hosted on [Github](https://github.com/handlebars-lang/docs) and ren
 - Please create a [pull requests](https://help.github.com/en/articles/about-pull-requests) for any change that you would
   like to see on the page.
 - If your change only affects the contents of a single page, you can simply click the link
-  `{{$themeConfig.editLinkText}}` at the bottom of this page (see
+  `{{$themeLocaleConfig.editLinkText}}` at the bottom of this page (see
   [Editing files in another user's repository](https://help.github.com/en/articles/editing-files-in-another-users-repository))
   for details.
 - For more complex changes (styling, multiple pages, new pages, fixing build problems), you should
