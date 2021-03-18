@@ -71,7 +71,7 @@ The `with`-helper dives into an object-property, giving you access to its proper
 <ExamplePart examplePage="/examples/builtin-helper-with-block" show="input"/>
 </Flex>
 
-The `each`-helper iterates an array, allowing to you access the properties of each object via simple handlebars
+The `each`-helper iterates an array, allowing you to access the properties of each object via simple handlebars
 expressions.
 
 <Flex>

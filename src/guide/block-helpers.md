@@ -336,7 +336,7 @@ Make sure you create a new data frame in each helper that assigns its own data. 
 unexpectedly mutate upstream variables.
 
 Also ensure that the `data` field is defined prior to attempting to interact with an existing data object. The private
-variable behavior is condtionally compiled and some templates might not create this field.
+variable behavior is conditionally compiled and some templates might not create this field.
 
 ## Block Parameters
 

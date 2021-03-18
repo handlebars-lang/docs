@@ -21,7 +21,7 @@ This site is hosted on [Github](https://github.com/handlebars-lang/docs) and ren
 - For more complex changes (styling, multiple pages, new pages, fixing build problems), you should
   [fork the repository](https://help.github.com/en/articles/fork-a-repo) and submit a pull request when you are done.
   The [CONTRIBUTING.md page in the repo][contributing-page-in-repo] contains more information about. This approach
-  allows you to use a dev-server and preview your changes befor submitting them.
+  allows you to use a dev-server and preview your changes before submitting them.
 
 ## How do I write content?
 
