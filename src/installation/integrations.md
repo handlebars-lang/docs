@@ -64,3 +64,17 @@ https://www.npmjs.com/package/@inventory/parcel-plugin-handlebars
 TODO: Write text here
 
 https://www.npmjs.com/package/parcel-plugin-handlebars-precompile
+
+## Vite: vite-plugin-handlebars
+
+The [vite-plugin-handlebars](https://github.com/alexlafroscia/vite-plugin-handlebars) package for Vite 2 allows for
+running your HTML files through the Handlebars compiler. Once installed, it can be added to Vite like so:
+
+```js
+// vite.config.js
+import handlebars from "vite-plugin-handlebars";
+
+export default {
+  plugins: [handlebars()],
+};
+```
