@@ -38,6 +38,6 @@ function highlightCodeWithLanguage(str, lang) {
   if (languageMapping[lang] == null) {
     return highlightFallback(str, lang);
   }
-  let code = hljs.highlight(languageMapping[lang], str);
+  let code = hljs.highlight(str, { language: languageMapping[lang] });
   return `<pre v-pre class="language-${lang}"><code>${code.value}</code></pre>`;
 }

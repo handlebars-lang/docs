@@ -39,7 +39,7 @@ export default {
     },
     codeHtml() {
       this.$emit("beforeUpdateHtml");
-      return hljs.highlight(this.hljsLanguage, this.value).value;
+      return hljs.highlight(this.value, { language: this.hljsLanguage }).value;
     },
   },
 };
