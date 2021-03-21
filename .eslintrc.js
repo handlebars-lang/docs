@@ -5,40 +5,43 @@ module.exports = {
   parserOptions: {
     parser: "babel-eslint",
     ecmaVersion: 8,
-    sourceType: "module"
+    sourceType: "module",
   },
   rules: {
-    "no-console": "warn"
+    "no-console": "warn",
   },
   env: {
     "jest/globals": false,
-    jest: false
+    jest: false,
   },
   overrides: [
     {
       files: ["**/*.test.js"],
       env: {
         "jest/globals": true,
-        jest: true
-      }
+        jest: true,
+      },
+      rules: {
+        "jest/expect-expect": ["warn", { assertFunctionNames: ["expect", "expectErrorInExample", "assertYamlEquals"] }],
+      },
     },
     {
       files: ["src/.vuepress/plugins/**/*.js"],
       env: {
-        node: true
-      }
+        node: true,
+      },
     },
     {
       files: [
         "src/usage-examples/precompilation/precompile-in-nodejs.js",
-        "src/zh/usage-examples/precompilation/precompile-in-nodejs.js"
+        "src/zh/usage-examples/precompilation/precompile-in-nodejs.js",
       ],
       env: {
-        node: true
+        node: true,
       },
       rules: {
-        "no-console": "off"
-      }
-    }
-  ]
+        "no-console": "off",
+      },
+    },
+  ],
 };
