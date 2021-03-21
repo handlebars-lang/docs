@@ -1,6 +1,6 @@
 import highlightFallback from "@vuepress/markdown/lib/highlight";
-import hljs from "highlight.js/lib/highlight";
-import hljsHandlebars from "../plugins/interactive-examples/lib/hljs-handlebars-next";
+import hljs from "highlight.js/lib/core";
+import hljsHandlebars from "highlight.js/lib/languages/handlebars";
 import hljsJavaScript from "highlight.js/lib/languages/javascript";
 import hljsXml from "highlight.js/lib/languages/xml";
 import hljsPlaintext from "highlight.js/lib/languages/plaintext";
@@ -10,7 +10,7 @@ export function useHighlightJsForCode() {
     name: "use highlight.js for code-highlighting",
     chainMarkdown(config) {
       config.options.highlight(highlightCode);
-    }
+    },
   };
 }
 
@@ -24,7 +24,7 @@ const languageMapping = {
   javascript: "javascript",
   html: "xml",
   handlebars: "handlebars",
-  hbs: "handlebars"
+  hbs: "handlebars",
 };
 
 function highlightCode(str, lang) {

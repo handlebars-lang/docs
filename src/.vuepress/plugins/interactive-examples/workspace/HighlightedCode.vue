@@ -9,8 +9,8 @@
 --></pre>
 </template>
 <script>
-import hljs from "highlight.js/lib/highlight";
-import hljsHandlebars from "../lib/hljs-handlebars-next";
+import hljs from "highlight.js/lib/core";
+import hljsHandlebars from "highlight.js/lib/languages/handlebars";
 import hljsJavaScript from "highlight.js/lib/languages/javascript";
 import hljsXml from "highlight.js/lib/languages/xml";
 import hljsPlaintext from "highlight.js/lib/languages/plaintext";
@@ -24,14 +24,14 @@ const languageMapping = {
   json: "javascript",
   javascript: "javascript",
   html: "xml",
-  handlebars: "handlebars"
+  handlebars: "handlebars",
 };
 
 export default {
   props: {
     value: { type: String, default: "" },
     cssClass: { type: String, default: "" },
-    language: { type: String, required: true }
+    language: { type: String, required: true },
   },
   computed: {
     hljsLanguage() {
@@ -40,8 +40,8 @@ export default {
     codeHtml() {
       this.$emit("beforeUpdateHtml");
       return hljs.highlight(this.hljsLanguage, this.value).value;
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="stylus" scoped>
