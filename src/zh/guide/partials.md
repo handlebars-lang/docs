@@ -72,7 +72,7 @@ Handlebars 允许代码片段的复用。代码片段是一段普通的 Handleba
 
 <ExamplePart examplePage="/zh/examples/partials/partial-block-parameters.md" show="template"/>
 
-这将渲染模板中的 `child.value` 而非代码片段。
+这将渲染模板中的 `person.firstname` 而非代码片段。
 
 ## 内联代码片段
 

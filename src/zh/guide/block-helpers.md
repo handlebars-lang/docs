@@ -348,8 +348,6 @@ Handlebars.registerHelper("list", function(context, options) {
 
 许多 [内置助手代码](builtin-helpers.html) 支持代码块参数，而任何自定义的助手代码都可以通过 `blockParams` 字段提供参数。
 
-实现一个允许在给定的代码块内进行命名变量的声明的助手代码。此示例将渲染输出 `1 2 3`。
-
 助手代码可以通过 `options.fn.blockParams` 字段确定模板引用的代码块参数的数量（整数）。这个值表示了子模板可以引用的代码块
 参数的数量。超出此数量的参数将不会被引用，并且可以根据需要安全地忽略。这是可选的，并且传递给模板的所有其他参数都将被忽略
 。
