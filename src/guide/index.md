@@ -88,7 +88,7 @@ expressions.
 You can use comments in your handlebars code just as you would in your code. Since there is generally some level of
 logic, this is a good practice.
 
-The comments will not be in the resulting output. If you'd like the comments to show up. Just use html comments, and
+The comments will not be in the resulting output. If you'd like the comments to show up just use HTML comments, and
 they will be output.
 
 Any comments that must contain `}}` or other handlebars tokens should use the `{{!-- --}}` syntax.

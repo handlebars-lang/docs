@@ -77,7 +77,7 @@ paths and block parameters operate relative to the partial block rather than the
 
 <ExamplePart examplePage="/examples/partials/partial-block-parameters.md" show="template"/>
 
-Will render `child.value` from this template, not the partial.
+Will render `person.firstname` from this template, not the partial.
 
 ## Inline Partials
 

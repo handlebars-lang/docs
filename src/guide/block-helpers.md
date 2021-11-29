@@ -368,9 +368,6 @@ This allows for nested helpers to avoid name conflicts that can occur with priva
 A number of [builtin helpers](builtin-helpers.html) support block parameters and any custom helper may provide them
 through the `blockParams` options field.
 
-Implements a helper that allows for named variable declarations within a given block. This example would output `1 2 3`
-on render.
-
 Helpers can determine the number of block parameters referenced by the template via the `options.fn.blockParams` field,
 which is an integer count. This value represents the number of block parameters that could be referenced by the child
 template. Parameters beyond this count will never be referenced and can safely be omitted by the helper if desired. This
