@@ -87,9 +87,15 @@ Additionally for object iteration, `{{@key}}` references the current key name:
 {{#each object}} {{@key}}: {{this}} {{/each}}
 ```
 
-The first and last steps of iteration are noted via the `@first` and `@last` variables when iterating over an array.
-When iterating over an object only the `@first` is available. Nested each blocks may access the iteration variables via
-depth based paths. To access the parent index, for example, `{{@../index}}` can be used.
+:::
+
+The first and last steps of iteration are noted via the [`@first`](../api-reference/data-variables.md#first) and
+[`@last`](../api-reference/data-variables.md#last) variables when iterating over an array.
+
+::: v-pre
+
+Nested `each` blocks may access the iteration variables via depth based paths. To access the parent index, for example,
+`{{@../index}}` can be used.
 
 :::
 
