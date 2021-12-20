@@ -82,8 +82,14 @@
 {{#each object}} {{@key}}: {{this}} {{/each}}
 ```
 
-在数组上进行迭代时，通过 `@first` 和 `@last` 变量记录迭代的第一项和最后一项。嵌套的每个块都可以通过基于深度的路径来访问
-迭代变量。例如，要访问父级的索引，可以使用 `{{@../index}}`。
+:::
+
+在数组上进行迭代时，通过 [`@first`](../api-reference/data-variables.md#first) 和
+[`@last`](../api-reference/data-variables.md#last) 变量记录迭代的第一项和最后一项。
+
+::: v-pre
+
+嵌套的每个块都可以通过基于深度的路径来访问迭代变量。例如，要访问父级的索引，可以使用 `{{@../index}}`。
 
 :::
 
