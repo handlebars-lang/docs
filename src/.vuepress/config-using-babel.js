@@ -128,6 +128,15 @@ export default {
         updatePopup: true,
       },
     ],
+    [
+      "vuepress-plugin-container",
+      {
+        type: "playground",
+        defaultTitle: "",
+        before: (content) => `<div class="playground">${content}`,
+        after: "</div>",
+      },
+    ],
     storeHandlebarsVersionAtVuePrototype,
     interactiveExamples,
     buttonLink,
