@@ -22,3 +22,7 @@ footer: MIT licensed | Copyright (C) 2011-2019 by Yehuda Katz
 <a class="devswag" href="https://www.devswag.com/collections/handlebars">
     <img src="images/handlebars-devswag.png">
 </a>
+
+::: playground
+[Live Demo →](playground.md)
+:::

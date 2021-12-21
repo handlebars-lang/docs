@@ -64,14 +64,26 @@ $contentBorderRadius = 0.5rem
     .theme-default-content {
 
         background-color: transparent !important;
+        text-align: center;
 
-        @media (min-width: $MQMobile + 1px) {
-            position: absolute;
-            left: 0;
-            top: $navbarHeight;
-            margin: 1rem;
+        .devswag {
+            @media (min-width: $MQMobile + 1px) {
+                position: absolute;
+                left: 0;
+                top: $navbarHeight;
+                margin: 1rem;
+            }
         }
 
+        .playground a {
+            display: inline-block;
+            width: 100%;
+            max-width: 400px;
+            background-color: $featuresBgColor;
+            border: 1px solid $borderColor;
+            border-radius: 4px;
+            padding: .8rem 0;
+        }
     }
 
     .footer {
