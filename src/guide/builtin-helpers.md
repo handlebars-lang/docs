@@ -27,6 +27,17 @@ section, marked by `else` is called an "else section".
 
 <ExamplePart examplePage="/examples/builtin-helper-ifelse-block.md" show="template" />
 
+### includeZero
+
+The `includeZero=true` option may be set to treat the conditional as not empty.
+This effectively determines if `0` is handled by the positive or negative path.
+
+```handlebars
+{{#if 0 includeZero=true}}
+<h1>Does render</h1>
+{{/if}}
+```
+
 ### Sub-Expressions
 
 Helpers are the proposed way to add custom logic to templates. You can write any helper and use it in a sub-expression.
