@@ -21,4 +21,6 @@ footer: MIT 许可 | Copyright (C) 2011-2019 by Yehuda Katz
     <img src="/images/handlebars-devswag.png">
 </a>
 
-::: playground [在线演示 →](playground.md) :::
+::: playground
+[在线演示 →](playground.md)
+:::
