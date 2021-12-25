@@ -86,3 +86,75 @@ You can also use the package
 [@handlebars/allow-prototype-access](https://www.npmjs.com/package/@handlebars/allow-prototype-access) revert to 4.5.3
 behavior in cases where you cannot pass runtime-options, like in
 [express-handlebars](https://www.npmjs.com/package/express-handlebars).
+
+## Express Handlebars Example Usage
+
+At some point, [express-handlebars](https://www.npmjs.com/package/express-handlebars) implemented options to access runtime.  There are a few options available, but here is one example using the `engine` method to use a simple HandleBars instance. 
+
+### Context 
+  - from the express-handlebars package v.6.0.2 README
+
+#### Package Design
+
+This package was designed to work great for both the simple and complex use cases. I _intentionally_ made sure the full implementation is exposed and is easily overridable.
+
+The package exports a function which can be invoked with no arguments or with a `config` object and it will return a function (closed over sensible defaults) which can be registered with an Express app. It's an engine factory function.
+
+This exported engine factory has two properties which expose the underlying implementation:
+
+* `ExpressHandlebars()`: The constructor function which holds the internal implementation on its `prototype`. This produces instance objects which store their configuration, `compiled` and `precompiled` templates, and expose an `engine()` function which can be registered with an Express app.
+
+* `create()`: A convenience factory function for creating `ExpressHandlebars` instances.
+
+An instance-based approach is used so that multiple `ExpressHandlebars` instances can be created with their own configuration, templates, partials, and helpers.
+
+### Example `express-handlebars` Engine Implementation
+
+> Override-Most Example - NOT RECOMMENDED
+
+``` js
+// (app.js) or similar
+
+import {engine} from "express-handlebars";
+import * as helpers from "./lib/helpers.js";
+
+const app = express();
+
+const hbs = engine({
+	extname: ".hbs",
+	helpers: helpers,
+	runtimeOptions: {
+		allowProtoMethodsByDefault: true,
+		allowProtoPropertiesByDefault: true
+	}
+});
+
+app.engine(".hbs", hbs);
+app.set("view engine", ".hbs");
+```
+
+> Specific Prop Example - Better
+
+``` js
+// (app.js) or similar
+
+import {engine} from "express-handlebars";
+import * as helpers from "./lib/helpers.js";
+
+const app = express();
+
+const hbs = engine({
+	extname: ".hbs",
+	helpers: helpers,
+	runtimeOptions: {
+		allowedProtoMethods: {
+			trim: true
+		}
+	}
+});
+
+app.engine(".hbs", hbs);
+app.set("view engine", ".hbs");
+```
+
+For more, read [the express-handlebars docs](https://www.npmjs.com/package/express-handlebars)
