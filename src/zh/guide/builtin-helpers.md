@@ -25,6 +25,16 @@
 
 <ExamplePart examplePage="/zh/examples/builtin-helper-ifelse-block.md" show="template" />
 
+### includeZero
+
+设置 `includeZero=true` 可将 `0` 视为非空值，这可以控制 `0` 在条件判断时是作为 true 还是 false。
+
+```handlebars
+{{#if 0 includeZero=true}}
+<h1>这里会渲染</h1>
+{{/if}}
+```
+
 ### 子表达式
 
 建议使用助手代码向模板添加逻辑。你可以编写助手代码并将其应用到子表达式中。
