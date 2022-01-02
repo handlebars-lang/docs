@@ -1,19 +1,18 @@
 <template>
-  <div>
-    <Layout>
-      <template v-slot:page-top>
-        <div class="try-handlebars">
-          <workspace
-            :parsed-example="parsedExampleWithEnsuredPreparationScript"
-            :interactive="true"
-            :show-input-output="true"
-          /></div
-      ></template>
-    </Layout>
-  </div>
+  <Layout class="interactive-playground">
+    <template v-slot:page-top>
+      <div class="try-handlebars">
+        <workspace
+          :parsed-example="parsedExampleWithEnsuredPreparationScript"
+          :interactive="true"
+          :show-input-output="true"
+        />
+      </div>
+    </template>
+  </Layout>
 </template>
 <script>
-import Layout from "../layout/Layout.vue";
+import Layout from "@theme/layouts/Layout.vue";
 import Workspace from "../workspace/Workspace.vue";
 import { deindent } from "../../../private-components/utils";
 
@@ -21,16 +20,16 @@ export default {
   components: { Layout, Workspace },
   data() {
     return {
-      nonInteractiveForPrerendering: true
+      nonInteractiveForPrerendering: true,
     };
   },
   computed: {
     parsedExampleWithEnsuredPreparationScript() {
       return {
         ...this.$frontmatter.parsedExample,
-        preparationScript: this.$frontmatter.parsedExample.preparationScript || this.emptyPreparationScript()
+        preparationScript: this.$frontmatter.parsedExample.preparationScript || this.emptyPreparationScript(),
       };
-    }
+    },
   },
   mounted() {
     this.nonInteractiveForPrerendering = false;
@@ -42,8 +41,8 @@ export default {
       //    return string.toUpperCase()
       // });
       `;
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="stylus">
