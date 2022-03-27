@@ -1,9 +1,9 @@
 # Development setup
 
-This site uses [Vuepress](https://v1.vuepress.vuejs.org/) as static page generator. It is a static page generator based
-on [vue.js](https://vuejs.org/) and created to write the documentation of that framework.
+This site uses [VuePress](https://v1.vuepress.vuejs.org/) as static page generator. It is a static page generator based
+on [Vue.js](https://vuejs.org/) and created to write the documentation of that framework.
 
-Vuepress is based on markdown files. Each HTML-page on the site has a corresponding markdown file in this repository.
+VuePress is based on markdown files. Each HTML-page on the site has a corresponding markdown file in this repository.
 
 # Requirements and recommended tools
 
@@ -42,7 +42,7 @@ Other commands are not needed as often:
 
 ## Differences between dev-server and production
 
-The Vuepress site is a Vue.js application. While the dev-server runs the whole application in the browser, the
+The VuePress site is a Vue.js application. While the dev-server runs the whole application in the browser, the
 production site is pre-rendered with subsequent changes running in the browser.
 
 Vue.js components that only work in the browser will work correctly in the dev-server, but will fail in production.
@@ -53,7 +53,7 @@ for details.
 
 A few notes on the site and the build processes
 
-- The site uses the Vuepress default-theme with a few custom styles.
+- The site uses the VuePress default-theme with a few custom styles.
 - Markdown files in this repository automatically become HTML-files on the site.
 
 ## Files and directories
@@ -65,7 +65,7 @@ The `src` folder contains all sources of the page. That includes
   documentation link)
 - `src/.vuepress/components`: custom Vue.js components and Layouts created for this site (TODO add documentation link)
 - `src/.vuepress/public/`: root directory for public files that are copied to the site as-is.
-- `src/.vuepress/plugins/`: Vuepress-plugins created for this site.
+- `src/.vuepress/plugins/`: VuePress-plugins created for this site.
 
 # Deployment
 
