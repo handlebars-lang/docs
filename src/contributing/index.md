@@ -5,6 +5,10 @@
 Handlebars is an open-source project. There is no _"documentation department"_ that keeps the docs up-to-date. This
 documentation site requires your help to be a good and helpful site.
 
+[Release notes](https://github.com/wycats/handlebars.js/blob/master/release-notes.md)<br>
+[Issues with label 'docs-needed'](https://github.com/wycats/handlebars.js/issues?q=is%3Aopen+is%3Aissue+label%3Adocs-needed)<br>
+[The old Handlebars website](https://handlebars-archive.knappi.org)
+
 The following sections should help you help us improve the documentation.
 
 ## How do I submit contributions?
