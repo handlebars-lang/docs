@@ -54,10 +54,6 @@ In addition to all those extensions, this site adds some custom Vue-components t
 
 ## What can I contribute?
 
-- **Move content from http://handlebarsjs.com to the new site**. Although there are many complaints about the old site,
-  there is still a lot of content. [@wycats](https://github.com/wycats/) has specifically asked to have a walkthrough
-  guide on the new site as well. The main index page should have about the same contents as the main page on the old
-  site.
 - **Look for issues labeled as
   [docs-needed](https://github.com/wycats/handlebars.js/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Adocs-needed+) in the
   [handlebars.js](https://github.com/wycats/handlebars.js)-repository.** Those are issues that describe something that
