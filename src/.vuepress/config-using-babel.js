@@ -38,17 +38,6 @@ export default {
           { text: "Installation", link: "/installation/" },
           { text: "API reference", link: "/api-reference/" },
           { text: "Improve the docs", link: "/contributing/" },
-          {
-            text: "Other sources",
-            items: [
-              { text: "The old handlebars-website", link: "https://handlebars-archive.knappi.org/" },
-              { text: "Release notes", link: "https://github.com/wycats/handlebars.js/blob/master/release-notes.md" },
-              {
-                text: "Issues with label 'docs-needed'",
-                link: "https://github.com/wycats/handlebars.js/issues?q=is%3Aopen+is%3Aissue+label%3Adocs-needed",
-              },
-            ],
-          },
         ],
         sidebar: {
           "/installation/": ["", "precompilation.md", "integrations.md", "when-to-use-handlebars.md"],
@@ -81,17 +70,6 @@ export default {
           { text: "安装", link: "/zh/installation/" },
           { text: "API 参考", link: "/zh/api-reference/" },
           { text: "改进文档", link: "/zh/contributing/" },
-          {
-            text: "其他资源",
-            items: [
-              { text: "Handlebars 网站（旧）", link: "https://handlebars-archive.knappi.org/" },
-              { text: "发行说明", link: "https://github.com/wycats/handlebars.js/blob/master/release-notes.md" },
-              {
-                text: "带有 'docs-needed' 标签的 Issues",
-                link: "https://github.com/wycats/handlebars.js/issues?q=is%3Aopen+is%3Aissue+label%3Adocs-needed",
-              },
-            ],
-          },
         ],
         sidebar: {
           "/zh/installation/": ["", "precompilation.md", "integrations.md", "when-to-use-handlebars.md"],

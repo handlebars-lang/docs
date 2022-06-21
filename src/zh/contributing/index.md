@@ -2,7 +2,11 @@
 
 [[toc]]
 
-Handlebars 是一个开源项目。没有 _“文档部门”_ 使文档保持最新。 Handlebars 文档站需要你的帮助才能变得更加优秀。
+Handlebars 是一个开源项目。没有 _“文档部门”_ 使文档保持最新。 Handlebars 文档站需要你的帮助才能变得更加优秀.
+
+[发行说明](https://github.com/wycats/handlebars.js/blob/master/release-notes.md)<br>
+[带有 'docs-needed' 标签的 Issues](https://github.com/wycats/handlebars.js/issues?q=is%3Aopen+is%3Aissue+label%3Adocs-needed)<br>
+[Handlebars 网站（旧](https://handlebars-archive.knappi.org)
 
 以下各节将帮助你帮助我们改进文档。
 
