@@ -23,6 +23,4 @@ footer: MIT licensed | Copyright (C) 2011-2019 by Yehuda Katz
     <img src="images/handlebars-devswag.png">
 </a>
 
-::: playground
-[Live Demo →](playground.md)
-:::
+::: playground [Live Demo →](playground.md)<br><br> [GitHub →](https://github.com/handlebars-lang/handlebars.js) :::

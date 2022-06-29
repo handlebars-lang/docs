@@ -94,9 +94,6 @@ export default {
         docsDir: "src/zh",
       },
     },
-    repo: "wycats/handlebars.js",
-    docsRepo: "handlebars-lang/docs",
-    docsDir: "src",
   },
   plugins: [
     [
