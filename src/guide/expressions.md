@@ -88,8 +88,6 @@ In addition, the words `true`, `false`, `null` and `undefined` are only allowed 
 To reference a property that is not a valid identifier, you can use segment-literal notation, `[`. You may not include a
 closing `]` in a path-literal, but all other characters are allowed.
 
-JavaScript-style strings, `"` and `'`, may also be used instead of `[` pairs.
-
 <ExamplePart examplePage="/examples/literal-segments.md" show="template" />
 
 ## HTML-escaping
