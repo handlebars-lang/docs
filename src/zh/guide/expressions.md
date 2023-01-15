@@ -86,8 +86,6 @@ _Whitespace_ `!` `"` `#` `%` `&` `'` `(` `)` `*` `+` `,` `.` `/` `;` `<` `=` `>`
 
 若想引用一个并非合法的标识符，你可以使用 `[`。在路径表达式中你不必使用 `]` 来关闭它，但其他表达式中是需要的。
 
-JavaScript 样式的字符串如 `"` 和 `'` 也可用于替代 `[`。
-
 <ExamplePart examplePage="/zh/examples/literal-segments.md" show="template" />
 
 ## HTML 转义
