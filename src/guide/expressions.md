@@ -70,7 +70,7 @@ helpers such as `{{#if}}` do not.
 
 In this example all of the above reference the same prefix value even though they are located within different blocks.
 This behavior is new as of Handlebars 4; the
-[release notes](https://github.com/wycats/handlebars.js/blob/master/release-notes.md) discuss the prior behavior as well
+[release notes](https://github.com/handlebars-lang/handlebars.js/blob/master/release-notes.md) discuss the prior behavior as well
 as the migration plan. Handlebars also allows for name conflict resolution between helpers and data fields via a this
 reference:
 

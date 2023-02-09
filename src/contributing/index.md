@@ -5,8 +5,8 @@
 Handlebars is an open-source project. There is no _"documentation department"_ that keeps the docs up-to-date. This
 documentation site requires your help to be a good and helpful site.
 
-[Release notes](https://github.com/wycats/handlebars.js/blob/master/release-notes.md)<br>
-[Issues with label 'docs-needed'](https://github.com/wycats/handlebars.js/issues?q=is%3Aopen+is%3Aissue+label%3Adocs-needed)<br>
+[Release notes](https://github.com/handlebars-lang/handlebars.js/blob/master/release-notes.md)<br>
+[Issues with label 'docs-needed'](https://github.com/handlebars-lang/handlebars.js/issues?q=is%3Aopen+is%3Aissue+label%3Adocs-needed)<br>
 [The old Handlebars website](https://handlebars-archive.knappi.org)
 
 The following sections should help you help us improve the documentation.
@@ -59,8 +59,8 @@ In addition to all those extensions, this site adds some custom Vue-components t
 ## What can I contribute?
 
 - **Look for issues labeled as
-  [docs-needed](https://github.com/wycats/handlebars.js/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Adocs-needed+) in the
-  [handlebars.js](https://github.com/wycats/handlebars.js)-repository.** Those are issues that describe something that
+  [docs-needed](https://github.com/handlebars-lang/handlebars.js/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Adocs-needed+) in the
+  [handlebars.js](https://github.com/handlebars-lang/handlebars.js)-repository.** Those are issues that describe something that
   should be documented.
 - **Propose and submit new content.** If you are unsure about your proposal, you can create an issue before submitting a
   pull-request. This might save you from wasting time.

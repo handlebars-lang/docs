@@ -4,8 +4,8 @@
 
 Handlebars 是一个开源项目。没有 _“文档部门”_ 使文档保持最新。 Handlebars 文档站需要你的帮助才能变得更加优秀.
 
-[发行说明](https://github.com/wycats/handlebars.js/blob/master/release-notes.md)<br>
-[带有 'docs-needed' 标签的 Issues](https://github.com/wycats/handlebars.js/issues?q=is%3Aopen+is%3Aissue+label%3Adocs-needed)<br>
+[发行说明](https://github.com/handlebars-lang/handlebars.js/blob/master/release-notes.md)<br>
+[带有 'docs-needed' 标签的 Issues](https://github.com/handlebars-lang/handlebars.js/issues?q=is%3Aopen+is%3Aissue+label%3Adocs-needed)<br>
 [Handlebars 网站（旧](https://handlebars-archive.knappi.org)
 
 以下各节将帮助你帮助我们改进文档。
@@ -51,8 +51,8 @@ markdown。markdown-it 实现了 CommonMark 语法。
 
 ## 我能贡献什么？
 
-- **在 [handlebars.js](https://github.com/wycats/handlebars.js) 存储库中寻找标记为
-  [docs-needed](https://github.com/wycats/handlebars.js/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Adocs-needed+) 的内
+- **在 [handlebars.js](https://github.com/handlebars-lang/handlebars.js) 存储库中寻找标记为
+  [docs-needed](https://github.com/handlebars-lang/handlebars.js/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Adocs-needed+) 的内
   容**。这些 Issues 描述了一些应当出现在文档中的内容。
 - **提出并提交新内容。** 如果不确定的话，可以先提出 Issue，然后再提交 Pull Requests。这样可以节省你的时间。
 - **改善现有内容。** 你可以提出导航栏的改进建议，修正错别字，改善语言并纠正错误内容。
