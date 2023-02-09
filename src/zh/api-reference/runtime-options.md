@@ -13,7 +13,7 @@
   。
 - `allowCallsToHelperMissing` （从 4.3.0 开始, 不安全）：如果设置为 `true`，类似 `{{helperMissing}}` 或
   `{{blockHelperMissing}}` 的调用将会被允许。请注意，这允许模版作者假造模版并在运行 Handlebars 的环境下远程执行代码。（
-  见https://github.com/wycats/handlebars.js/issues/1558）
+  见https://github.com/handlebars-lang/handlebars.js/issues/1558）
 
 :::
 

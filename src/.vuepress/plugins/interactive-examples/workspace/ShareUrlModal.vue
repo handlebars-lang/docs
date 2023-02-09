@@ -61,7 +61,7 @@ ${this.$props.urlForSharing}
 # Question
 
 `;
-        document.location.href = `https://github.com/wycats/handlebars.js/issues/new?body=${encodeURIComponent(issueBody)}`;
+        document.location.href = `https://github.com/handlebars-lang/handlebars.js/issues/new?body=${encodeURIComponent(issueBody)}`;
       },
       fileBug() {
         const issueBody = `
@@ -76,7 +76,7 @@ ${this.$props.urlForSharing}
 # Expected outcome
 
 # Actual outcome`;
-        document.location.href = `https://github.com/wycats/handlebars.js/issues/new?body=${encodeURIComponent(issueBody)}`;
+        document.location.href = `https://github.com/handlebars-lang/handlebars.js/issues/new?body=${encodeURIComponent(issueBody)}`;
       },
       reportSecurityIssue() {
         const body = `

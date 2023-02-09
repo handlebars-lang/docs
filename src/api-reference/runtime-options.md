@@ -16,7 +16,7 @@ The function 'Handlebars.compile' and 'Handlebars.precompile' create a function.
   execution.
 - `allowCallsToHelperMissing` (since 4.3.0, insecure): If set to `true`, calls like `{{helperMissing}}` and
   `{{blockHelperMissing}}` will be allowed. Please note that this allows template authors to fabricate templates for
-  Remote Code Execution on the environment running Handlebars (see https://github.com/wycats/handlebars.js/issues/1558)
+  Remote Code Execution on the environment running Handlebars (see https://github.com/handlebars-lang/handlebars.js/issues/1558)
 
 :::
 
