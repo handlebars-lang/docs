@@ -302,12 +302,12 @@ will render
 ::: v-pre
 
 Handlebars content may be escaped in one of two ways, inline escapes or raw block helpers. Inline escapes created by
-prefixing a mustache block with `\`. Raw blocks are created using `{{{{` mustache braces.
+prefixing a mustache block with `\\`. Raw blocks are created using `{{{{` mustache braces.
 
 :::
 
 ```handlebars
-\{{escaped}}
+\\{{escaped}}
 {{{{raw}}}}
   {{escaped}}
 {{{{/raw}}}}

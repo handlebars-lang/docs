@@ -287,13 +287,13 @@ Handlebars 对子级表达式提供了支持，这使你可以在单个 Mustache
 
 ::: v-pre
 
-Handlebars 可以从这两种方式中的任何一种转义：「内联转义」或「RAW 块助手代码」。内联转义通过 Mustache 代码块前置 `\` 实现
+Handlebars 可以从这两种方式中的任何一种转义：「内联转义」或「RAW 块助手代码」。内联转义通过 Mustache 代码块前置 `\\` 实现
 ，而 RAW 代码块通过使用 `{{{{` 实现。
 
 :::
 
 ```handlebars
-\{{escaped}}
+\\{{escaped}}
 {{{{raw}}}}
   {{escaped}}
 {{{{/raw}}}}
