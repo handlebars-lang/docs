@@ -75,7 +75,7 @@ Handlebars 也托管在许多免费的 CDN 上。
 
 ## RubyGems
 
-可在 https://rubygems.org/gems/handlebars-source 上获得官方的 Handlebars 构建。
+可在 <https://rubygems.org/gems/handlebars-source> 上获得官方的 Handlebars 构建。
 
 ## Bower, Component, Composer, jspm
 
@@ -86,7 +86,7 @@ Handlebars 也托管在许多免费的 CDN 上。
 - Composer
 - jspm
 
-有关详细信息，请参见 https://github.com/components/handlebars.js。
+有关详细信息，请参见 <https://github.com/components/handlebars.js>。
 
 ## 用法
 
@@ -156,4 +156,11 @@ var html = template(context);
 
 许多语言都实现了 Handlebars。
 
-- TODO: 在此添加列表
+- [.Net](https://github.com/Handlebars-Net/Handlebars.Net)
+- [C](https://github.com/jbboehr/handlebars.c)
+- [Go](https://github.com/aymerick/raymond)
+- [Java](https://github.com/jknack/handlebars.java)
+- [PHP (LightnCandy)](https://github.com/zordius/lightncandy)
+- [Python](https://github.com/wbond/pybars3)
+- [Ruby](https://github.com/cowboyd/handlebars.rb)
+- [Rust](https://github.com/sunng87/handlebars-rust)

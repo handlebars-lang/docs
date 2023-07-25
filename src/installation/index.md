@@ -9,11 +9,21 @@ The reference implementation of Handlebars is written in JavaScript. It is most 
 
 ```bash
 npm install handlebars
-# or
+```
+or
+```bash
 yarn add handlebars
 ```
 
-You can then use Handlebars using `require`
+You can then use Handlebars by importing it:
+
+```js
+import Handlebars from "handlebars";
+const template = Handlebars.compile("Name: {{name}}");
+console.log(template({ name: "Nils" }));
+```
+
+If you are using Handlebars in a CommonJS environment, you can use `require`:
 
 ```js
 const Handlebars = require("handlebars");
@@ -82,7 +92,7 @@ Handlebars is hosted on a number of free CDNs as well.
 
 ## RubyGems
 
-The official Handlebars build is available on https://rubygems.org/gems/handlebars-source
+The official Handlebars build is available on <https://rubygems.org/gems/handlebars-source>.
 
 ## Bower, Component, Composer, jspm
 
@@ -93,7 +103,7 @@ Handlebars can be enabled by using other package-managers as well, like
 - Composer
 - jspm
 
-see https://github.com/components/handlebars.js for details
+See <https://github.com/components/handlebars.js> for details.
 
 ## Usage
 
@@ -165,6 +175,13 @@ a new project, you should not use it anymore.
 
 ## Other programming languages
 
-There are handlebars implementations for many programming languages.
+There are Handlebars implementations for many programming languages.
 
-- TODO: Add list here
+- [.Net](https://github.com/Handlebars-Net/Handlebars.Net)
+- [C](https://github.com/jbboehr/handlebars.c)
+- [Go](https://github.com/aymerick/raymond)
+- [Java](https://github.com/jknack/handlebars.java)
+- [PHP (LightnCandy)](https://github.com/zordius/lightncandy)
+- [Python](https://github.com/wbond/pybars3)
+- [Ruby](https://github.com/cowboyd/handlebars.rb)
+- [Rust](https://github.com/sunng87/handlebars-rust)
