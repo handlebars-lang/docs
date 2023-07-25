@@ -1,7 +1,8 @@
 {
   "name": "docs",
   "version": "1.0.0",
-  "description": "The new-to-be handlebars documentation site",
+  "description": "The handlebars documentation site",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "clean": "rm -rf target  node_modules/@vuepress/core/node_modules/.cache/",
@@ -19,13 +20,22 @@
     "type": "git",
     "url": "git+https://github.com/handlebars-lang/docs.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/handlebars-lang/docs/issues"
   },
   "homepage": "https://github.com/handlebars-lang/docs#readme",
+  "dependencies": {
+    "axios": "^0.21.2",
+    "babel-eslint": "^10.1.0",
+    "codemirror": "^5.60.0",
+    "debounce-promise": "^3.1.2",
+    "handlebars": "^4.7.7",
+    "highlight.js": "^10.7.1",
+    "js-yaml": "^3.14.1",
+    "json5": "^2.2.2",
+    "promise-worker": "^2.0.1",
+    "vue-cm": "^1.1.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.13.10",
     "@babel/node": "^7.13.10",
@@ -62,17 +72,5 @@
       "eslint --fix",
       "git add"
     ]
-  },
-  "dependencies": {
-    "axios": "^0.21.2",
-    "babel-eslint": "^10.1.0",
-    "codemirror": "^5.60.0",
-    "debounce-promise": "^3.1.2",
-    "handlebars": "^4.7.7",
-    "highlight.js": "^10.7.1",
-    "js-yaml": "^3.14.1",
-    "json5": "^2.2.2",
-    "promise-worker": "^2.0.1",
-    "vue-cm": "^1.1.0"
   }
 }
