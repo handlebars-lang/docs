@@ -8,11 +8,23 @@ Handlebars 引擎使用 JavaScript 编写。我们最常使用 `npm` 或 `yarn` 
 
 ```bash
 npm install handlebars
-# 或者
+```
+
+或者
+
+```bash
 yarn add handlebars
 ```
 
-然后，你可以通过 `require` 来使用 Handlebars。
+之后，你可以导入 Handlebars 来使用它。
+
+```js
+import Handlebars from "handlebars";
+const template = Handlebars.compile("Name: {{name}}");
+console.log(template({ name: "张三" }));
+```
+
+如果你在 CommonJS 环境下使用 Handlebars，你可以使用 `require`：
 
 ```js
 const Handlebars = require("handlebars");
