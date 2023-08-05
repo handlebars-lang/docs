@@ -70,7 +70,7 @@ console.log(template({ name: "张三" }));
 ### 非发行版
 
 所有 Handlebars 的发行版本和 CI 版本都可以在我们的 S3 上下载
-[Build 页面](https://com.s3.amazonaws.com/builds.handlebarsjs/bucket-listing.html?sort=lastmod&sortdir=desc)。
+[Build 页面](https://s3.amazonaws.com/builds.handlebarsjs.com/index.html)。
 
 最新通过的主版本的名称是 `handlebars-latest.js` ，master 上的每个通过的 SHA 都会创建一个 `handlebars-gitSHA.js` 文件。尽
 管所有文件都通过了 CI，你仍应使用带标记的发行版。
