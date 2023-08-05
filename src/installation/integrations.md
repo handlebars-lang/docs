@@ -26,6 +26,12 @@ import compiledTemplate from "./template.handlebars";
 The [handlebars-webpack-plugin](https://github.com/sagold/handlebars-webpack-plugin) uses Handlebars to build your
 HTML-pages statically when compiling your application
 
+## Webpack: html-bundler-webpack-plugin
+
+The [html-bundler-webpack-plugin](https://github.com/webdiscus/html-bundler-webpack-plugin) uses various templating
+engines, [including Handlebars](https://github.com/webdiscus/html-bundler-webpack-plugin#using-the-handlebars), to
+render templates and bundle styles and scripts into generated HTML.
+
 ## Babel: handlebars-inline-precompile
 
 The
@@ -50,14 +56,12 @@ const compiledTemplate = require("./template.handlebars");
 
 ## Parcel: parcel-plugin-handlebars
 
-There is an old plugin for parcel:
-https://www.npmjs.com/package/parcel-plugin-handlebars
+There is an old plugin for parcel: https://www.npmjs.com/package/parcel-plugin-handlebars
 
 But you should use one of the many forks of this package, which are more up-to-date:
 https://www.npmjs.com/search?q=parcel-plugin-handlebars
 
-The most recent one is:
-https://www.npmjs.com/package/@inventory/parcel-plugin-handlebars
+The most recent one is: https://www.npmjs.com/package/@inventory/parcel-plugin-handlebars
 
 ## Parcel: parcel-plugin-handlebars-precompile
 
