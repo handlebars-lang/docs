@@ -74,7 +74,7 @@ include the compiler.
 ### Non-release builds
 
 All of Handlebars' released versions and CI builds are available for download on S3 in our
-[builds page](https://com.s3.amazonaws.com/builds.handlebarsjs/bucket-listing.html?sort=lastmod&sortdir=desc).
+[builds page](https://s3.amazonaws.com/builds.handlebarsjs.com/index.html).
 
 The latest passing master build is named `handlebars-latest.js` and each passing SHA on master will create a
 `handlebars-gitSHA.js` file. While these all pass the CI, it's preferable to use one of the tagged releases.
