@@ -23,6 +23,12 @@ import compiledTemplate from "./template.handlebars";
 
 [handlebars-webpack-plugin](https://github.com/sagold/handlebars-webpack-plugin) 使用 Handlebars 构建你的静态 HTML 页面
 
+## Webpack: html-bundler-webpack-plugin
+
+[html-bundler-webpack-plugin](https://github.com/webdiscus/html-bundler-webpack-plugin) 支持使用包括
+[Handlebars](https://github.com/webdiscus/html-bundler-webpack-plugin#using-the-handlebars)
+在内的几种模板引擎来渲染模板，并将样式和脚本打包到生成的 HTML 文件中。
+
 ## Babel: handlebars-inline-precompile
 
 [babel-plugin-handlebars-inline-precompile](https://github.com/jamiebuilds/babel-plugin-handlebars-inline-precompile) 提
