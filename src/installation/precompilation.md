@@ -49,7 +49,7 @@ time, the `--knownOnly` option provides the smallest generated code that also pr
 If using the precompiler's normal mode, the resulting templates will be stored to the Handlebars.templates object using
 the relative template name sans the extension. These templates may be executed in the same manner as templates. If using
 the simple mode the precompiler will generate a single javascript method. To execute this method it must be passed to
-the Handlebars.template method and the resulting object may be used as normal.
+the `Handlebars.template()` method and the resulting object may be used as normal.
 
 ## Precompiling Templates Inside NodeJS
 
@@ -75,7 +75,7 @@ Finally, you can reference these templates dynamically in your Javascript.
 
 ```js
 var result = Handlebars.partials["test1"]({ name: "yourname" });
-//do whatever you want with the result
+// do whatever you want with the result
 ```
 
 ## Integrations
