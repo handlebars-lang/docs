@@ -46,7 +46,7 @@ Handlebars 编译器将优化对这些 helper 的访问以提高性能。当所�
 
 如果使用预编译器的 normal 模式，则预编译结果将存储到 Handlebars.templates 对象下对应的模板名称（不带扩展名）的对象中。这
 些预编译模板可以以和普通模板相同的方式执行。如果使用 simple 模式，预编译器将生成一个 JavaScript 方法。要执行此方法，必须
-将其传递给 Handlebars.template 方法，生成的对象也可以以相同的方式使用。
+将其传递给 `Handlebars.template()` 方法，生成的对象也可以以相同的方式使用。
 
 ## 在 NodeJS 中预编译模板
 

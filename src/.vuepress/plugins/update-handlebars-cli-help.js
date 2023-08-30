@@ -8,7 +8,7 @@ export function updateHandlebarsCliHelp() {
   return {
     name: "update the 'handlebars --help' output.",
     extendMarkdown(md) {
-      md.block.ruler.before("fence", "handlebars_help_output", function(state, startLine, endLine, silent) {
+      md.block.ruler.before("fence", "handlebars_help_output", function (state, startLine, endLine, silent) {
         const pos = state.bMarks[startLine] + state.tShift[startLine];
         const max = state.eMarks[startLine];
         if (state.src.slice(pos, max) !== "!HANDLEBARS_HELP!") {
@@ -29,17 +29,17 @@ export function updateHandlebarsCliHelp() {
         token.map = [startLine, startLine + 1];
         return true;
       });
-    }
+    },
   };
 }
 
 function getHandlebarsHelpFromCli() {
   const handlebarsCli = require.resolve("handlebars/bin/handlebars");
   const nodeExecutable = process.argv[0];
-  const { stderr } = cp.spawnSync(nodeExecutable, [handlebarsCli, "--help"], {
+  const { stdout } = cp.spawnSync(nodeExecutable, [handlebarsCli, "--help"], {
     argv0: "handlebars",
     stdio: ["pipe", "pipe", "pipe"],
-    encoding: "utf-8"
+    encoding: "utf-8",
   });
-  return stderr.replace(/^Usage: \S+ \S+/m, "handlebars");
+  return stdout;
 }
