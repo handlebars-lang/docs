@@ -89,6 +89,16 @@ Determines if an object is an array.
 
 Determines if an object is a function.
 
+### `Handlebars.Utils.isMap(obj)` <small class="version">(since v5.0.0)</small>
+
+Determines if an object is a
+[Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map).
+
+### `Handlebars.Utils.isSet(obj)` <small class="version">(since v5.0.0)</small>
+
+Determines if an object is a
+[Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set).
+
 ### `Handlebars.log(level, message)`
 
 Logger used by the `log` helper.
