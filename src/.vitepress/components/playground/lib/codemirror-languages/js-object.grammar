@@ -1,0 +1,99 @@
+//!top
+
+@top Program { expression* }
+
+//!expression
+
+commaSepObject<content> {
+  "" | content ("," content?)*
+}
+
+commaSepArray<content> {
+  content ("," content)*
+}
+
+propName { PropertyDefinition | "[" expression "]" ~destructure | Number ~destructure | String ~destructure }
+
+PropertyDefinition { word ~propName }
+
+Property {
+  propName ~destructure (":" expression)?
+}
+
+ArrayExpression {
+  "[" commaSepArray<"..."? expression | ""> ~destructure "]"
+}
+
+ObjectExpression {
+  "{" commaSepObject<Property> ~destructure "}"
+}
+
+boolean { @specialize[@name=BooleanLiteral]<identifier, "true" | "false"> }
+
+expression {
+  Number |
+  String |
+  boolean |
+  ArrayExpression |
+  ObjectExpression
+}
+
+//!tokens
+@local tokens {
+  blockCommentEnd { "*/" }
+  blockCommentNewline { "\n" }
+  @else blockCommentContent
+}
+
+@tokens {
+  spaces[@export] { $[\u0009 \u000b\u00a0\u1680\u2000-\u200a\u202f\u205f\u3000\ufeff]+ }
+  newline[@export] { $[\r\n\u2028\u2029] }
+  LineComment[isolate] { "//" ![\n]* }
+  identifierChar { @asciiLetter | $[_$\u{a1}-\u{10ffff}] }
+  word { identifierChar (identifierChar | @digit)* }
+  identifier { word }
+
+  @precedence { spaces, newline, identifier }
+  @precedence { spaces, newline }
+  @precedence { spaces, newline, word }
+
+  hex { @digit | $[a-fA-F] }
+
+  Number {
+    (@digit ("_" | @digit)* ("." ("_" | @digit)*)? | "." @digit ("_" | @digit)*)
+      (("e" | "E") ("+" | "-")? ("_" | @digit)+)? |
+    @digit ("_" | @digit)* "n" |
+    "0x" (hex | "_")+ "n"? |
+    "0b" $[01_]+ "n"? |
+    "0o" $[0-7_]+ "n"?
+  }
+
+  Escape {
+    "\\" ("x" hex hex | "u" ("{" hex+ "}" | hex hex hex hex) | ![xu])
+  }
+
+  stringContentSingle { ![\\\n']+ }
+  stringContentDouble { ![\\\n"]+ }
+
+  "(" ")" "[" "]" "{" "}"
+  "." "," ";" ":" "@"
+}
+
+//!skip
+
+@skip {} {
+  String[isolate] {
+    '"' (stringContentDouble | Escape)* ('"' | "\n") |
+    "'" (stringContentSingle | Escape)* ("'" | "\n")
+  }
+
+  BlockComment[isolate] { "/*" (blockCommentContent | blockCommentNewline)* blockCommentEnd }
+}
+
+@skip { spaces | newline | LineComment | BlockComment }
+
+//!external
+
+//!delim
+
+@detectDelim

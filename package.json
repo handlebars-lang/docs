@@ -1,20 +1,21 @@
 {
   "name": "docs",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "The handlebars documentation site",
   "license": "MIT",
   "private": true,
+  "type": "module",
   "scripts": {
-    "clean": "rm -rf target  node_modules/@vuepress/core/node_modules/.cache/",
-    "dev": "vuepress dev src",
-    "preview": "npm run clean && npm run test-and-build && cd target && static-server",
-    "fix": "npm run format && npm run lintfix",
-    "test-and-build": "concurrently --kill-others-on-fail npm:lint npm:test npm:build",
-    "lint": "eslint \"**/*.{js,vue}\"",
-    "lintfix": "eslint --fix \"**/*.{js,vue}\"",
-    "test": "jest",
+    "prepare": "husky",
+    "docs:dev": "vitepress dev src",
+    "docs:build": "vitepress build src",
+    "docs:preview": "vitepress preview src",
     "format": "prettier --write \"src/**/*.{js,css,json,md,vue}\"",
-    "build": "vuepress build src"
+    "lint": "prettier --check \"src/**/*.{js,css,json,md,vue}\"",
+    "lint-staged": "lint-staged",
+    "test": "vitest",
+    "codemirror:lang-handlebars": "lezer-generator src/.vitepress/components/playground/lib/codemirror-languages/handlebars.grammar -o src/.vitepress/components/playground/lib/codemirror-languages/handlebars.parser.js",
+    "codemirror:lang-js-object": "lezer-generator src/.vitepress/components/playground/lib/codemirror-languages/js-object.grammar -o src/.vitepress/components/playground/lib/codemirror-languages/js-object.parser.js"
   },
   "repository": {
     "type": "git",
@@ -25,52 +26,33 @@
   },
   "homepage": "https://github.com/handlebars-lang/docs#readme",
   "dependencies": {
-    "axios": "^0.21.2",
-    "babel-eslint": "^10.1.0",
-    "codemirror": "^5.60.0",
-    "debounce-promise": "^3.1.2",
-    "handlebars": "^4.7.7",
-    "highlight.js": "^10.7.1",
-    "js-yaml": "^3.14.1",
-    "json5": "^2.2.2",
-    "promise-worker": "^2.0.1",
-    "vue-cm": "^1.1.0"
+    "@codemirror/commands": "^6.8.0",
+    "@codemirror/lang-html": "^6.4.9",
+    "@codemirror/lang-javascript": "^6.2.3",
+    "@codemirror/language": "^6.10.8",
+    "@codemirror/theme-one-dark": "^6.1.2",
+    "@codemirror/view": "^6.36.4",
+    "@lezer/common": "^1.2.3",
+    "@lezer/highlight": "^1.2.1",
+    "codemirror": "^6.0.1",
+    "handlebars": "^4.7.8",
+    "json5": "^2.2.3",
+    "p-debounce": "^4.0.0",
+    "prettier": "^3.5.0",
+    "semver": "^7.7.1",
+    "shiki": "^3.1.0",
+    "vue": "^3.5.13"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.10",
-    "@babel/node": "^7.13.10",
-    "@babel/register": "^7.13.8",
-    "@vuepress/plugin-pwa": "^1.8.2",
-    "@vuepress/plugin-register-components": "^1.8.2",
-    "concurrently": "^5.3.0",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-jest": "^23.20.0",
-    "eslint-plugin-vue": "^6.2.2",
-    "fs-extra": "^9.1.0",
-    "husky": "^4.3.8",
-    "jest": "^25.5.4",
-    "lint-staged": "^10.5.4",
-    "markdown-it": "^12.3.2",
-    "prettier": "^2.2.1",
-    "semver": "^7.5.2",
-    "static-server": "^2.2.1",
-    "vuepress": "^1.8.2",
-    "worker-loader": "^2.0.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "@lezer/generator": "^1.7.2",
+    "@lezer/lr": "^1.4.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "vite-plugin-static-copy": "^2.2.0",
+    "vitepress": "^1.6.3",
+    "vitest": "^3.0.5"
   },
   "lint-staged": {
-    "*.{js,css,json,md,vue}": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.{js,vue}": [
-      "eslint --fix",
-      "git add"
-    ]
+    "*.{js,css,json,md,vue}": "npm run format"
   }
 }

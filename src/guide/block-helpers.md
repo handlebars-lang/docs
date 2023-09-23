@@ -21,7 +21,7 @@ The `noop` helper (short for "no operation") will receive an options hash. This 
 and return a String.
 
 ```js
-Handlebars.registerHelper("noop", function(options) {
+Handlebars.registerHelper("noop", function (options) {
   return options.fn(this);
 });
 ```
@@ -54,7 +54,7 @@ The bold helper will add markup to make its text bold. As before, the function w
 String.
 
 ```js
-Handlebars.registerHelper("bold", function(options) {
+Handlebars.registerHelper("bold", function (options) {
   return new Handlebars.SafeString('<div class="mybold">' + options.fn(this) + "</div>");
 });
 ```
@@ -96,7 +96,7 @@ parameters are evaluated just like expressions used directly inside `{{mustache}
 :::
 
 ```js
-Handlebars.registerHelper("with", function(context, options) {
+Handlebars.registerHelper("with", function (context, options) {
   return options.fn(context);
 });
 ```
@@ -129,7 +129,7 @@ are defined as regular Handlebars block helpers. Let's take a look at how the bu
 In this case, we want to invoke the block passed to `each` once for each element in the comments Array.
 
 ```js
-Handlebars.registerHelper("each", function(context, options) {
+Handlebars.registerHelper("each", function (context, options) {
   var ret = "";
 
   for (var i = 0, j = context.length; i < j; i++) {
@@ -158,7 +158,7 @@ You would evaluate this template using something like this as the context:
 {
   nav: [
     { url: "http://www.yehudakatz.com", title: "Katz Got Your Tongue" },
-    { url: "http://www.sproutcore.com/block", title: "SproutCore Blog" }
+    { url: "http://www.sproutcore.com/block", title: "SproutCore Blog" },
   ];
 }
 ```
@@ -166,7 +166,7 @@ You would evaluate this template using something like this as the context:
 The helper is similar to the original `each` helper.
 
 ```js
-Handlebars.registerHelper("list", function(context, options) {
+Handlebars.registerHelper("list", function (context, options) {
   var ret = "<ul>";
 
   for (var i = 0, j = context.length; i < j; i++) {
@@ -181,11 +181,11 @@ Using a library like underscore.js or SproutCore's runtime library could make th
 what it might look like using SproutCore's runtime library:
 
 ```js
-Handlebars.registerHelper("list", function(context, options) {
+Handlebars.registerHelper("list", function (context, options) {
   return (
     "<ul>" +
     context
-      .map(function(item) {
+      .map(function (item) {
         return "<li>" + options.fn(item) + "</li>";
       })
       .join("\n") +
@@ -201,7 +201,7 @@ built-in `if` and `unless` control structures are implemented as regular Handleb
 
 ```handlebars
 {{#if isActive}}
-  <img src="star.gif" alt="Active">
+  <img src="star.gif" alt="Active" />
 {{/if}}
 ```
 
@@ -209,7 +209,7 @@ Control structures typically do not change the current context, instead they dec
 based upon some variable.
 
 ```js
-Handlebars.registerHelper("if", function(conditional, options) {
+Handlebars.registerHelper("if", function (conditional, options) {
   if (conditional) {
     return options.fn(this);
   }
@@ -222,9 +222,9 @@ functionality to block helpers.
 
 ```handlebars
 {{#if isActive}}
-  <img src="star.gif" alt="Active">
+  <img src="star.gif" alt="Active" />
 {{else}}
-  <img src="cry.gif" alt="Inactive">
+  <img src="cry.gif" alt="Inactive" />
 {{/if}}
 ```
 
@@ -232,7 +232,7 @@ Handlebars provides the block for the `else` fragment as `options.inverse`. You 
 of the else fragment: Handlebars will detect it automatically and register a "noop" function.
 
 ```js
-Handlebars.registerHelper("if", function(conditional, options) {
+Handlebars.registerHelper("if", function (conditional, options) {
   if (conditional) {
     return options.fn(this);
   } else {
@@ -248,11 +248,10 @@ Conditionals may also be chained by including the subsequent helper call within 
 
 ```handlebars
 {{#if isActive}}
-  <img src="star.gif" alt="Active">
+  <img src="star.gif" alt="Active" />
 {{else if isInactive}}
-  <img src="cry.gif" alt="Inactive">
+  <img src="cry.gif" alt="Inactive" />
 {{/if}}
-
 ```
 
 It is not necessary to use the same helper in subsequent calls, the unless helper could be used in the else portion as
@@ -274,9 +273,9 @@ while also accepting an optional Hash. If the template provides no hash argument
 empty object (`{}`), so you don't need to check for the existence of hash arguments.
 
 ```js
-Handlebars.registerHelper("list", function(context, options) {
+Handlebars.registerHelper("list", function (context, options) {
   var attrs = Object.keys(options.hash)
-    .map(function(key) {
+    .map(function (key) {
       return key + '="' + options.hash[key] + '"';
     })
     .join(" ");
@@ -286,7 +285,7 @@ Handlebars.registerHelper("list", function(context, options) {
     attrs +
     ">" +
     context
-      .map(function(item) {
+      .map(function (item) {
         return "<li>" + options.fn(item) + "</li>";
       })
       .join("\n") +
@@ -305,12 +304,13 @@ For example, when iterating over a list, you may provide the current index as a 
 
 ```handlebars
 {{#list array}}
-  {{@index}}. {{title}}
+  {{@index}}.
+  {{title}}
 {{/list}}
 ```
 
 ```js
-Handlebars.registerHelper("list", function(context, options) {
+Handlebars.registerHelper("list", function (context, options) {
   var out = "<ul>",
     data;
 
@@ -348,7 +348,10 @@ New in Handlebars 3.0, it's possible to receive named parameters from supporting
 
 ```handlebars
 {{#each users as |user userId|}}
-  Id: {{userId}} Name: {{user.name}}
+  Id:
+  {{userId}}
+  Name:
+  {{user.name}}
 {{/each}}
 ```
 
@@ -360,7 +363,10 @@ This allows for nested helpers to avoid name conflicts that can occur with priva
 ```handlebars
 {{#each users as |user userId|}}
   {{#each user.book as |book bookId|}}
-    User Id: {{userId}} Book Id: {{bookId}}
+    User Id:
+    {{userId}}
+    Book Id:
+    {{bookId}}
   {{/each}}
 {{/each}}
 ```
@@ -377,18 +383,18 @@ is optional and any additional parameters passed to the template will be silentl
 
 Raw blocks are available for templates needing to handle unprocessed mustache blocks.
 
-<ExamplePart examplePage="/examples/raw-blocks.md" show="template"/>
+<Example examplePage="/examples/raw-blocks.md" show="template"/>
 
 ```handlebars
-{{{{raw-helper}}}}
-  {{bar}}
-{{{{/raw-helper}}}}
+{{#raw-helper}}
+  \{{bar}}
+{{/raw-helper}}
 ```
 
 will execute the helper raw-helper without interpreting the content.
 
 ```js
-Handlebars.registerHelper("raw-helper", function(options) {
+Handlebars.registerHelper("raw-helper", function (options) {
   return options.fn();
 });
 ```

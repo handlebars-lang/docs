@@ -13,13 +13,13 @@ Supports a variety of options that alter how the template executes.
 
 ::: v-pre
 
-- `data`: Set to false to disable `@data` tracking.
-- `compat`: Set to true to enable recursive field lookup.
+- `data`: Set to `false` to disable `@data` tracking.
+- `compat`: Set to `true` to enable recursive field lookup.
 - `knownHelpers`: Hash containing list of helpers that are known to exist (truthy) at template execution time. Passing
   this allows the compiler to optimize a number of cases. Builtin helpers are automatically included in this list and
   may be omitted by setting that value to `false`.
-- `knownHelpersOnly`: Set to true to allow further optimizations based on the known helpers list.
-- `noEscape`: Set to true to not HTML escape any content.
+- `knownHelpersOnly`: Set to `true` to allow further optimizations based on the known helpers list.
+- `noEscape`: Set to `true` to not HTML escape any content.
 - `strict`: Run in strict mode. In this mode, templates will throw rather than silently ignore missing fields. This has
   the side effect of disabling inverse operations such as `{{^foo}}{{/foo}}` unless fields are explicitly included in
   the source object.

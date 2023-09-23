@@ -1,5 +1,5 @@
 ---
-layout: InteractivePlaygroundLayout
+layout: playground
 example:
   template: |
     {{>header}}
@@ -14,7 +14,7 @@ example:
       The person {{loud person.name}} is {{person.age}} years old.
   preparationScript: |
     Handlebars.registerHelper('loud', function (aString) {
-        return aString.toUpperCase()
+      return aString.toUpperCase()
     })
   input:
     persons:

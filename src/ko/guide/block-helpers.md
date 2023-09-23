@@ -198,7 +198,7 @@ Handlebars.registerHelper("list", function (context, options) {
 
 ```handlebars
 {{#if isActive}}
-  <img src="star.gif" alt="Active">
+  <img src="star.gif" alt="Active" />
 {{/if}}
 ```
 
@@ -217,9 +217,9 @@ Handlebars.registerHelper("if", function (conditional, options) {
 
 ```handlebars
 {{#if isActive}}
-  <img src="star.gif" alt="Active">
+  <img src="star.gif" alt="Active" />
 {{else}}
-  <img src="cry.gif" alt="Inactive">
+  <img src="cry.gif" alt="Inactive" />
 {{/if}}
 ```
 
@@ -242,11 +242,10 @@ Handlebars는 옵션 해시의 속성으로 추가 메타데이터를 블록 헬
 
 ```handlebars
 {{#if isActive}}
-  <img src="star.gif" alt="Active">
+  <img src="star.gif" alt="Active" />
 {{else if isInactive}}
-  <img src="cry.gif" alt="Inactive">
+  <img src="cry.gif" alt="Inactive" />
 {{/if}}
-
 ```
 
 후속 호출에서 동일한 헬퍼를 사용할 필요는 없습니다. 다른 헬퍼와 마찬가지로 else 부분에서 unless 헬퍼를 사용할 수 있습니
@@ -298,7 +297,8 @@ Handlebars.registerHelper("list", function (context, options) {
 
 ```handlebars
 {{#list array}}
-  {{@index}}. {{title}}
+  {{@index}}.
+  {{title}}
 {{/list}}
 ```
 
@@ -341,7 +341,10 @@ Handlebars 3.0에서는 지원하는 헬퍼로부터 명명된 매개변수를 �
 
 ```handlebars
 {{#each users as |user userId|}}
-  Id: {{userId}} Name: {{user.name}}
+  Id:
+  {{userId}}
+  Name:
+  {{user.name}}
 {{/each}}
 ```
 
@@ -352,7 +355,10 @@ Handlebars 3.0에서는 지원하는 헬퍼로부터 명명된 매개변수를 �
 ```handlebars
 {{#each users as |user userId|}}
   {{#each user.book as |book bookId|}}
-    User Id: {{userId}} Book Id: {{bookId}}
+    User Id:
+    {{userId}}
+    Book Id:
+    {{bookId}}
   {{/each}}
 {{/each}}
 ```
@@ -369,12 +375,12 @@ Handlebars 3.0에서는 지원하는 헬퍼로부터 명명된 매개변수를 �
 
 Raw 블록은 처리되지 않은 머스태쉬 블록을 다뤄야 하는 템플릿에서 사용할 수 있습니다.
 
-<ExamplePart examplePage="/zh/examples/raw-blocks.md" show="template"/>
+<Example examplePage="/zh/examples/raw-blocks.md" show="template"/>
 
 ```handlebars
-{{{{raw-helper}}}}
-  {{bar}}
-{{{{/raw-helper}}}}
+{{#raw-helper}}
+  \{{bar}}
+{{/raw-helper}}
 ```
 
 내용을 해석하지 않고 raw-helper 헬퍼를 실행합니다.

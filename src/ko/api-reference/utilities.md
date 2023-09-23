@@ -1,5 +1,5 @@
 ---
-sidebarDepth: 2
+outline: [1, 3]
 ---
 
 # 유틸리티 함수
@@ -21,6 +21,8 @@ new Handlebars.SafeString("<div>HTML Content!</div>");
 
 ### `Handlebars.escapeExpression(string)`
 
+::: v-pre
+
 전달된 문자열을 HTML 이스케이프하여 HTML 콘텐츠 내에서 텍스트로 렌더링할 때 안전하게 만듭니다.
 
 ```js
@@ -34,6 +36,8 @@ Handlebars.Utils.escapeExpression(string);
 환할 때도 가능한 코드 삽입을 방지하기 위해 이 메서드를 사용해야 합니다.
 
 이 메서드는 `Handlebars.Utils.escapeExpression`에 별칭으로 정의되어 있습니다.
+
+:::
 
 ### `Handlebars.createFrame(data)`
 

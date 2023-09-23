@@ -1,8 +1,3 @@
-node_modules
-target
-.idea
-!.vuepress
-/src/usage-examples/precompilation/example.precompiled.js
-/src/usage-examples/precompilation/precompile-in-nodejs.output.js
-/src/*/usage-examples/precompilation/example.precompiled.js
-/src/*/usage-examples/precompilation/precompile-in-nodejs.output.js
+!.vitepress
+/src/snippets/precompilation/example.precompiled.js
+/src/snippets/precompilation/precompile-in-nodejs.output.js

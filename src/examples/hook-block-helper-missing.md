@@ -1,5 +1,5 @@
 ---
-layout: InteractivePlaygroundLayout
+layout: playground
 example:
   template: |-
     {{#person}}
@@ -7,8 +7,7 @@ example:
     {{/person}}
   preparationScript: |
     Handlebars.registerHelper('blockHelperMissing', function(context, options) {
-        return "Helper '"+options.name+"' not found. " 
-          + "Printing block: " + options.fn(context); 
+      return "Helper '"+options.name+"' not found. Printing block: " + options.fn(context); 
     });
   input:
     person:

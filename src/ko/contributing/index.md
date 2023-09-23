@@ -1,6 +1,9 @@
 # 문서 개선하기
 
-[[toc]]
+<script setup>
+import { useData } from 'vitepress';
+const { theme } = useData();
+</script>
 
 Handlebars는 오픈 소스 프로젝트입니다. 문서를 최신 상태로 유지하는 _“문서 부서”_ 가 없습니다. 이 문서 사이트는 유용하고
 도움이 되는 사이트가 되기 위해 여러분의 도움이 필요합니다.
@@ -18,8 +21,8 @@ Handlebars는 오픈 소스 프로젝트입니다. 문서를 최신 상태로 �
 
 - 페이지에 변경 사항이 있을 경우 [pull requests](https://help.github.com/en/articles/about-pull-requests)를 생성해 주세
   요.
-- 변경 사항이 단일 페이지의 내용에만 영향을 미치는 경우, 페이지 하단의 `{{$themeLocaleConfig.editLinkText}}` 링크를 클릭
-  하여 변경할 수 있습니다. 자세한 내용은
+- 변경 사항이 단일 페이지의 내용에만 영향을 미치는 경우, 페이지 하단의 `{{theme.editLink.text}}` 링크를 클릭 하여 변경할
+  수 있습니다. 자세한 내용은
    [다른 사용자의 저장소에서 파일 편집하기](https://help.github.com/en/articles/editing-files-in-another-users-repository)를
   참조하세요.
 - 더 복잡한 변경 사항(스타일링, 여러 페이지, 새 페이지, 빌드 문제 수정)은 저장소를 포크하고 작업이 완료되면 풀 리퀘스트
@@ -40,11 +43,10 @@ Handlebars는 오픈 소스 프로젝트입니다. 문서를 최신 상태로 �
 이러한 모든 확장 외에도, 이 사이트는 소스 파일에 포함될 수 있는 일부 사용자 정의 Vue 컴포넌트를 추가합니다.
 
 - [인터랙티브 예제](interactive-examples.md)
-- [버튼 링크](button-links.md)
 
 ## 어떤 행동을 해야 하나요?
 
-::: 위험
+::: danger
 
 - **지적 재산 존중**: 본인이 작성했거나 [handlebarsjs.com](https://handlebarsjs.com) 上에서 복사한 텍스트와 기타 미디어
   만 제출해 주세요. Handlebars에 관한 많은 블로그 게시물이 있지만, 해당 게시물의 텍스트는 작성자의 지적 재산입니다.
