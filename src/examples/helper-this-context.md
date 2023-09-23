@@ -1,5 +1,5 @@
 ---
-layout: InteractivePlaygroundLayout
+layout: playground
 example:
   template: |
     {{#each people}}
@@ -8,7 +8,7 @@ example:
   partials:
   preparationScript: |
     Handlebars.registerHelper('print_person', function () {
-        return this.firstname + ' ' + this.lastname
+      return this.firstname + ' ' + this.lastname
     })
   input:
     people:

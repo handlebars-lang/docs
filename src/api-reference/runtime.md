@@ -31,13 +31,13 @@ Handlebars.unregisterPartial("foo");
 Registers helpers accessible by any template in the environment.
 
 ```js
-Handlebars.registerHelper("foo", function() {});
+Handlebars.registerHelper("foo", function () {});
 ```
 
 Also supports registering multiple helpers at once.
 
 ```js
-Handlebars.registerHelper({ foo: function() {}, bar: function() {} });
+Handlebars.registerHelper({ foo: function () {}, bar: function () {} });
 ```
 
 ## `Handlebars.unregisterHelper(name)`
@@ -60,13 +60,13 @@ the internal API which is difficult to port to other languages and makes to code
 Registers a decorator accessible by any template in the environment.
 
 ```js
-Handlebars.registerDecorator("foo", function() {});
+Handlebars.registerDecorator("foo", function () {});
 ```
 
 Also supports registering multiple decorators at once.
 
 ```js
-Handlebars.registerDecorator({ foo: function() {}, bar: function() {} });
+Handlebars.registerDecorator({ foo: function () {}, bar: function () {} });
 ```
 
 ## `Handlebars.unregisterDecorator(name)`

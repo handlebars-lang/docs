@@ -1,10 +1,10 @@
 ---
-layout: InteractivePlaygroundLayout
+layout: playground
 example:
   template: |
     Geo-Coordinates :
     {{#each cities}}
-       {{name}} {{#with location}} {{north}}, {{east}} {{/with}}
+      {{name}} {{#with location}} {{north}}, {{east}} {{/with}}
     {{/each}}
   partials:
   input:

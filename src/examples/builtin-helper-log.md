@@ -1,5 +1,5 @@
 ---
-layout: InteractivePlaygroundLayout
+layout: playground
 example:
   template: |+
     {{log 'this is a simple log output'}}

@@ -1,5 +1,5 @@
 ---
-layout: InteractivePlaygroundLayout
+layout: playground
 example:
   template: |
     helper: {{name}}
@@ -7,7 +7,7 @@ example:
   partials:
   preparationScript: |
     Handlebars.registerHelper('name', function () {
-        return "Nils"
+      return "Nils"
     })
   input:
     name: Yehuda

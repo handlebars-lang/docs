@@ -1,0 +1,129 @@
+//!top
+
+@top Template { (Text | Handlebars)* }
+
+//!expression
+
+As { as }
+DataVariable { root | first | last | index | key | level }
+PartialBlock { partialBlock }
+Path { path }
+PathWithThis { Path | (This ("/" | ".")) }
+Name { name }
+This { this }
+Else { else }
+Bool { bool }
+Number { number }
+Array { "[" (Name | Number | Bool)* "]" }
+BlockParam { "|" name* "|" }
+Function { "(" DataAccess* ")" }
+At { "@" (DataVariable | PartialBlock) }
+DataTypes { Name | BlockParam | String | Array | Number | Bool | Function }
+
+Partial { ">" (Name | "@" PartialBlock) }
+InlinePartial { "#*inline" String }
+BlockHelper { ("#" | "#>") name }
+BlockHelperClose { "/" name }
+DataAccess {
+  At?
+  (PathWithThis | DataTypes)
+  "/"?
+}
+
+Expression {
+  BlockHelper?
+  Partial?
+  InlinePartial?
+  (
+    ((Name "=") | (DataAccess As))?
+    DataAccess
+  )*
+}
+
+Content {
+  This |
+  Else |
+  BlockHelperClose |
+  Expression
+}
+
+Mustache { MustacheOpen Content MustacheClose }
+RawBlock { "{{{{" "/"? Name "}}}}" }
+
+Handlebars {
+  Mustache |
+  RawBlock
+}
+
+//!tokens
+
+@local tokens {
+  comment1End { "}}" }
+  comment1Newline { "\n" }
+  @else comment1Content
+}
+
+@local tokens {
+  comment2End { "--}}" }
+  comment2Newline { "\n" }
+  @else comment2Content
+}
+
+@tokens {
+  Text { (@whitespace | ($[\u{20}-\u{7E}] ![{]))+ }
+  WhitespaceControl { "~" }
+  MustacheOpen { ("{{" WhitespaceControl?) | "{{{" }
+  MustacheClose { (WhitespaceControl? "}}") | "}}}" }
+
+  identifier { @asciiLetter | $[_\u{a1}-\u{10ffff}] }
+  number { @digit }
+  name { identifier (identifier | (number | "-"))* }
+  bool { "true" | "false" }
+  else { "else" }
+  this { "this" }
+  as { "as" }
+  partialBlock { "partial-block" }
+
+  root { "root" }
+  first { "first" }
+  last { "last" }
+  index { "index" }
+  level { "level" }
+  key { "key" }
+
+  path { "." | ".." | "./" | "../" }
+
+  stringContentDouble { ![\\\n"]+ }
+  stringContentSingle { ![\\\n']+ }
+
+  space { @whitespace+ }
+
+  @precedence { Text space }
+  @precedence { space as key index path else bool this name }
+
+  "{{"[closedBy="}}"]
+  "}}"[openedBy="{{"]
+  "{{{"[closedBy="}}}"]
+  "}}}"[openedBy="{{{"]
+  "{{{{"[closedBy="}}}}"]
+  "}}}}"[openedBy="{{{{"]
+  "#" "/" "@" ">" "~" "*" "|" "=" "." "(" ")" "[" "]"
+}
+
+//!skip
+
+@skip {} {
+  String[isolate] {
+    '"' stringContentDouble* ('"' | "\n") |
+    "'" stringContentSingle* ("'" | "\n")
+  }
+
+  Comment1[isolate] { "{{!" (comment1Content | comment1Newline)* comment1End }
+  Comment2[isolate] { "{{!--" (comment2Content | comment2Newline)* comment2End }
+}
+
+@skip { space | Comment1 | Comment2 }
+
+//!external
+
+//!delim

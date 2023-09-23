@@ -1,12 +1,12 @@
 ---
-layout: InteractivePlaygroundLayout
+layout: playground
 example:
   template: |
     {{firstname}} {{loud lastname}}
   partials:
   preparationScript: |
     Handlebars.registerHelper('loud', function (aString) {
-        return aString.toUpperCase()
+      return aString.toUpperCase()
     })
   input:
     firstname: Yehuda

@@ -1,11 +1,11 @@
 ---
-layout: InteractivePlaygroundLayout
+layout: playground
 example:
   template: |
     {{#each persons as | person |}}
-        {{name}} lives in {{#with (lookup ../cities [resident-in])~}}
-          {{name}} ({{country}})
-        {{/with}}
+      {{name}} lives in {{#with (lookup ../cities [resident-in])~}}
+        {{name}} ({{country}})
+      {{/with}}
     {{/each}}
   input:
     persons:

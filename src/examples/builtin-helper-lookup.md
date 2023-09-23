@@ -1,9 +1,9 @@
 ---
-layout: InteractivePlaygroundLayout
+layout: playground
 example:
   template: |+
     {{#each people}}
-       {{.}} lives in {{lookup ../cities @index}}
+      {{.}} lives in {{lookup ../cities @index}}
     {{/each}}
   input:
     people:

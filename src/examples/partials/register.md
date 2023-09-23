@@ -1,15 +1,12 @@
 ---
-layout: InteractivePlaygroundLayout
+layout: playground
 example:
   template: |
     {{#each persons}}
       {{>person person=.}}
     {{/each}}
   preparationScript: >
-    Handlebars.registerPartial(
-        "person", 
-        "{{person.name}} is {{person.age}} years old.\n"
-    )
+    Handlebars.registerPartial("person", "{{person.name}} is {{person.age}} years old.\n")
   input:
     persons:
       - name: Nils
