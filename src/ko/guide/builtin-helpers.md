@@ -5,15 +5,15 @@
 `if` 헬퍼를 사용하여 조건부로 블록을 렌더링할 수 있습니다. 인수가 `false`, `undefined`, `null`, `""`, `0`, 또는 `[]`를반
 환하면 Handlebars는 블록을 렌더링하지 않습니다.
 
-<ExamplePart examplePage="/ko/examples/builtin-helper-if-block.md" show="template" />
+<Example examplePage="/ko/examples/builtin-helper-if-block.md" show="template" />
 
 다음 입력을 위 템플릿에 전달하면
 
-<ExamplePart examplePage="/ko/examples/builtin-helper-if-block.md" show="input" />
+<Example examplePage="/ko/examples/builtin-helper-if-block.md" show="input" />
 
 다음과 같은 결과를 생성합니다:
 
-<ExamplePart examplePage="/ko/examples/builtin-helper-if-block.md" show="output" />
+<Example examplePage="/ko/examples/builtin-helper-if-block.md" show="output" />
 
 입력이 빈 JSON 객체 `{}`이면, `author`는 `undefined`가 되어 `if` 조건이 실패하고 다음과 같은 출력이 생성됩니다:
 
@@ -24,7 +24,7 @@
 블록 표현식을 사용할 때, 표현식이 거짓 값을 반환하면 실행할 템플릿 섹션을 지정할 수 있습니다. `else`로 표시된 이 섹션은
 "else 섹션"이라고 합니다.
 
-<ExamplePart examplePage="/ko/examples/builtin-helper-ifelse-block.md" show="template" />
+<Example examplePage="/ko/examples/builtin-helper-ifelse-block.md" show="template" />
 
 ### includeZero
 
@@ -33,7 +33,7 @@
 
 ```handlebars
 {{#if 0 includeZero=true}}
-<h1>렌더링됩니다</h1>
+  <h1>렌더링됩니다</h1>
 {{/if}}
 ```
 
@@ -47,17 +47,17 @@
 
 "undefined"를 확인하는 헬퍼는 다음과 같이 작성할 수 있습니다:
 
-<ExamplePart examplePage="/ko/examples/builtin-helper-if-subexpression.md" show="preparationScript" />
+<Example examplePage="/ko/examples/builtin-helper-if-subexpression.md" show="preparationScript" />
 
 그런 다음 서브 표현식에서 헬퍼를 사용하세요:
 
-<ExamplePart examplePage="/ko/examples/builtin-helper-if-subexpression.md" show="template" />
+<Example examplePage="/ko/examples/builtin-helper-if-subexpression.md" show="template" />
 
 ## #unless
 
 `unless` 헬퍼는 `if` 헬퍼의 반대로 사용할 수 있습니다. 표현식이 거짓 값을 반환하면 해당 블록이 렌더링됩니다.
 
-<ExamplePart examplePage="/ko/examples/builtin-helper-unless-block.md" show="template" />
+<Example examplePage="/ko/examples/builtin-helper-unless-block.md" show="template" />
 
 현재 컨텍스트에서 `license`를 조회한 결과가 거짓 값이면 Handlebars는 경고를 렌더링합니다. 그렇지 않으면 아무것도 렌더링
 하지 않습니다.
@@ -67,21 +67,21 @@
 내장 `each` 헬퍼를 사용하여 리스트를 반복할 수 있습니다. 블록 내부에서는 `this`를 사용하여 반복 중인 요소를 참조할 수 있
 습니다.
 
-<ExamplePart examplePage="/ko/examples/builtin-helper-each-block.md" show="template" />
+<Example examplePage="/ko/examples/builtin-helper-each-block.md" show="template" />
 
 이 컨텍스트가 사용될 때:
 
-<ExamplePart examplePage="/ko/examples/builtin-helper-each-block.md" show="input" />
+<Example examplePage="/ko/examples/builtin-helper-each-block.md" show="input" />
 
 다음과 같은 결과를 생성합니다:
 
-<ExamplePart examplePage="/ko/examples/builtin-helper-each-block.md" show="output" />
+<Example examplePage="/ko/examples/builtin-helper-each-block.md" show="output" />
 
 `this` 표현식을 사용하여 현재 컨텍스트를 참조할 수 있습니다.
 
 리스트가 비어 있을 때만 표시될 `else` 섹션을 선택적으로 제공할 수 있습니다.
 
-<ExamplePart examplePage="/ko/examples/builtin-helper-eachelse-block.md" show="template" />
+<Example examplePage="/ko/examples/builtin-helper-eachelse-block.md" show="template" />
 
 ::: v-pre
 
@@ -113,20 +113,20 @@
 
 `with` 헬퍼는 템플릿 부분의 평가 컨텍스트를 변경할 수 있게 해줍니다.
 
-<ExamplePart examplePage="/ko/examples/builtin-helper-with-block.md" show="template" />
+<Example examplePage="/ko/examples/builtin-helper-with-block.md" show="template" />
 
 이 컨텍스트가 사용될 때:
 
-<ExamplePart examplePage="/ko/examples/builtin-helper-with-block.md" show="input" />
+<Example examplePage="/ko/examples/builtin-helper-with-block.md" show="input" />
 
 다음과 같은 결과를 생성합니다:
 
-<ExamplePart examplePage="/ko/examples/builtin-helper-with-block.md" show="output" />
+<Example examplePage="/ko/examples/builtin-helper-with-block.md" show="output" />
 
 `with`는 블록 매개변수와 함께 사용하여 현재 블록에서 알려진 참조를 정의할 수도 있습니다. 위 예제는 다음과 같이 변환될 수
 있습니다:
 
-<ExamplePart examplePage="/ko/examples/builtin-helper-with-block-param.md" show="template" />
+<Example examplePage="/ko/examples/builtin-helper-with-block-param.md" show="template" />
 
 이렇게 하면 복잡한 템플릿이 `../` 깊이 참조보다 더 명확한 코드를 제공할 수 있습니다.
 
@@ -137,8 +137,8 @@
 :::
 
 <Flex>
-<ExamplePart examplePage="/ko/examples/builtin-helper-with-else.md" show="template" />
-<ExamplePart examplePage="/ko/examples/builtin-helper-with-else.md" show="input" />
+<Example examplePage="/ko/examples/builtin-helper-with-else.md" show="template" />
+<Example examplePage="/ko/examples/builtin-helper-with-else.md" show="input" />
 </Flex>
 
 ## lookup
@@ -147,24 +147,24 @@
 
 이것은 배열 인덱스의 값을 해석하는 데 유용합니다.
 
-<ExamplePart examplePage="/ko/examples/builtin-helper-lookup.md" show="template" />
+<Example examplePage="/ko/examples/builtin-helper-lookup.md" show="template" />
 
 입력 데이터에 기반한 객체의 속성을 조회하는 데에도 사용할 수 있습니다. 다음은 `lookup`을 서브 표현식에서 사용하여 속성값
 을 기반으로 평가 컨텍스트를 다른 객체로 변경하는 보다 복잡한 예제입니다.
 
-<ExamplePart examplePage="/ko/examples/builtin-helper-lookup-dynamic-property.md" show="template" />
+<Example examplePage="/ko/examples/builtin-helper-lookup-dynamic-property.md" show="template" />
 
 ## log
 
 `log` 헬퍼는 템플릿을 실행하는 동안 컨텍스트 상태를 로그로 기록할 수 있게 해줍니다.
 
-<ExamplePart examplePage="/ko/examples/builtin-helper-log.md" show="template" />
+<Example examplePage="/ko/examples/builtin-helper-log.md" show="template" />
 
 이 헬퍼는 `Handlebars.logger.log`에 위임되며, 이를 재정의하여 맞춤 로깅을 수행할 수 있습니다.
 
 이 메서드에는 여러 개의 인수를 전달할 수 있으며, 모두 로거에 전달됩니다.
 
-<ExamplePart examplePage="/ko/examples/builtin-helper-log-multiple-params.md" show="template" />
+<Example examplePage="/ko/examples/builtin-helper-log-multiple-params.md" show="template" />
 
 로그 레벨은 level 해시 매개변수를 사용하여 설정할 수 있습니다. 지원되는 값은 debug, info, warn, error입니다. 생략되면 기
 본값은 info입니다.
@@ -172,4 +172,4 @@
 로깅은 레벨 및 `Handlebars.logger.level`에 설정된 값에 따라 조건부로 수행됩니다. 기본값은 `info`입니다. 현재 레벨 이상에
 서의 모든 로그 문은 출력됩니다.
 
-<ExamplePart examplePage="/ko/examples/builtin-helper-log-loglevel.md" show="template" />
+<Example examplePage="/ko/examples/builtin-helper-log-loglevel.md" show="template" />

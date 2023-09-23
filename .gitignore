@@ -1,4 +1,5 @@
-node_modules
-target
-.idea
-/*.iml
+/src/.vitepress/.temp
+/src/.vitepress/cache
+/src/.vitepress/dist
+/node_modules
+/target

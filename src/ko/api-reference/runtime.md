@@ -49,7 +49,7 @@ Handlebars.unregisterHelper("foo");
 
 ## `Handlebars.registerDecorator(name, helper)` (폐기 예정)
 
-::: 주의 폐기 예정 안내
+::: warning 폐기 예정 안내
 
 사용자 정의 데코레이터는 폐기 예정이며 Handlebars의 다음 주요 버전에서 사라질 수 있습니다. 이들은 다른 언어로 포팅하기어
 려운 내부 API의 너무 많은 부분을 노출하며 코드 유지 관리가 어렵게 만듭니다.

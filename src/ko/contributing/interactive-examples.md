@@ -1,7 +1,5 @@
 # 인터랙티브 예제 만들기
 
-[[toc]]
-
 인터랙티브 예제를 정의할 수 있습니다. 예제 또는 예제의 일부는 **어느 페이지에나 포함**될 수 있습니다. 자동 생성된 링크를
 통해 방문자는 **플레이그라운드**에서 예제를 열어 템플릿, 부분 템플릿, 입력 등을 변경하고 결과 출력을 확인할 수 있습니다.
 
@@ -30,15 +28,15 @@
 
 ## 예제의 일부 포함
 
-`<ExamplePart>` 컴포넌트를 사용하여 현재 부분에 예제의 일부를 표시할 수 있습니다.
+`<Example>` 컴포넌트를 사용하여 현재 부분에 예제의 일부를 표시할 수 있습니다.
 
 ```md
-<ExamplePart examplePage="/ko/examples/builtin-helper-each-block" show="template"/>
+<Example examplePage="/ko/examples/builtin-helper-each-block" show="template"/>
 ```
 
 이렇게 하면 다음과 같은 결과가 나옵니다:
 
-<ExamplePart examplePage="/ko/examples/builtin-helper-each-block" show="template"/>
+<Example examplePage="/ko/examples/builtin-helper-each-block" show="template"/>
 
 이 컴포넌트의 속성(props)은 다음과 같습니다:
 
@@ -48,22 +46,22 @@
 - `name` （선택 사항）: `show="partial"`일 때만 필요한 속성으로, 예제에 삽입할 부분 템플릿의 이름을 정의합니다.
 
 이 컴포넌트는 예제의 일부를 흐르는 텍스트에 포함시키고자 할 때 매우 유용합니다.
-`<ExamplePart examplePage="/examples/all-features" show="input" />`를 사용하여 입력 JSON을 삽입하면 다음 코드 조각이 페
+`<Example examplePage="/examples/all-features" show="input" />`를 사용하여 입력 JSON을 삽입하면 다음 코드 조각이 페
 이지에 나타납니다:
 
-<ExamplePart examplePage="/ko/examples/all-features" show="input" />
+<Example examplePage="/ko/examples/all-features" show="input" />
 
 그런 다음, 독자에게 템플릿을 보여주기 위해 동일한 examplePage로 show="template"을 사용할 수 있습니다.
 
-<ExamplePart examplePage="/ko/examples/all-features" show="template" />
+<Example examplePage="/ko/examples/all-features" show="template" />
 
 부분 템플릿을 렌더링하려면 예를 들어 `show=partial` 및 `name=person`을 사용할 수 있습니다.
 
-<ExamplePart examplePage="/ko/examples/all-features" show="partial" name="person"/>
+<Example examplePage="/ko/examples/all-features" show="partial" name="person"/>
 
 헬퍼가 포함된 예제가 있는 경우 준비 스크립트를 포함시키고 싶을 수도 있습니다:
 
-<ExamplePart examplePage="/ko/examples/all-features" show="preparationScript" />
+<Example examplePage="/ko/examples/all-features" show="preparationScript" />
 
 ## 가로 레이아웃
 
@@ -71,14 +69,14 @@
 
 ```md
 <Flex>
-<ExamplePart examplePage="/ko/examples/builtin-helper-each-block" show="template"/>
-<ExamplePart examplePage="/ko/examples/builtin-helper-each-block" show="input"/>
+<Example examplePage="/ko/examples/builtin-helper-each-block" show="template"/>
+<Example examplePage="/ko/examples/builtin-helper-each-block" show="input"/>
 </Flex>
 ```
 
 이렇게 렌더링됩니다.
 
 <Flex>
-<ExamplePart examplePage="/ko/examples/builtin-helper-each-block" show="template"/>
-<ExamplePart examplePage="/ko/examples/builtin-helper-each-block" show="input"/>
+<Example examplePage="/ko/examples/builtin-helper-each-block" show="template"/>
+<Example examplePage="/ko/examples/builtin-helper-each-block" show="input"/>
 </Flex>

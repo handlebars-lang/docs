@@ -1,5 +1,5 @@
 ---
-sidebarDepth: 2
+outline: [1, 3]
 ---
 
 # Utility functions

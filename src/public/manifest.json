@@ -1,0 +1,15 @@
+{
+  "name": "Handlebars.js",
+  "short_name": "Handlebars",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f0772b",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/handlebars-icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg"
+    }
+  ]
+}

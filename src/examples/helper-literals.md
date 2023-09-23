@@ -1,5 +1,5 @@
 ---
-layout: InteractivePlaygroundLayout
+layout: playground
 example:
   template: |
     {{progress "Search" 10 false}}

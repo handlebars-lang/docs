@@ -1,5 +1,5 @@
 ---
-sidebarDepth: 2
+outline: [1, 3]
 ---
 
 # 实用方法
@@ -20,6 +20,8 @@ new Handlebars.SafeString("<div>HTML Content!</div>");
 
 ### `Handlebars.escapeExpression(string)`
 
+::: v-pre
+
 HTML 转义输入的字符串，使得字符串可以安全地在 HTML 内容中渲染为文字。
 
 ```js
@@ -33,6 +35,8 @@ Handlebars.Utils.escapeExpression(string);
 
 本函数是 `Handlebars.Utils.escapeExpression` 的别名。
 
+:::
+
 ### `Handlebars.createFrame(data)`
 
 由块助手代码使用以创建子数据对象。
@@ -45,8 +49,8 @@ if (options.data) {
 }
 ```
 
-更改数据状态的助手代码应会同时创建一个新的框架以将它们自己隔离并且避免和任何父程序的状态冲突。通常来说，在执行时，对每个
-助手代码来说只有一个框架需要被创建。比如，`each` 迭代器创建一个会被所有子执行程序应用的框架。
+更改数据状态的助手代码应会同时创建一个新的框架以将它们自己隔离并且避免和任何父程序的状态冲突。通常来说，在执行时，对每个助手代码来说只有一个框架需要被创建。比如，`each`
+迭代器创建一个会被所有子执行程序应用的框架。
 
 ## General Utilities
 

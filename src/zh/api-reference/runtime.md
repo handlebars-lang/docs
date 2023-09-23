@@ -14,8 +14,8 @@ Handlebars.registerPartial("foo", partial);
 Handlebars.registerPartial({ foo: partial, bar: partial });
 ```
 
-如果导入整个库，代码片段的值可能是按需编译的字符串。如果只是在运行时导入，代码片段必须为通过 `Handlebars.template` 预编
-译过的模版。
+如果导入整个库，代码片段的值可能是按需编译的字符串。如果只是在运行时导入，代码片段必须为通过 `Handlebars.template`
+预编译过的模版。
 
 ## `Handlebars.unregisterPartial(name)`
 
@@ -30,13 +30,13 @@ Handlebars.unregisterPartial("foo");
 注册可以被当前环境中任意模版访问的助手代码。
 
 ```js
-Handlebars.registerHelper("foo", function() {});
+Handlebars.registerHelper("foo", function () {});
 ```
 
 支持同时注册多个助手代码。
 
 ```js
-Handlebars.registerHelper({ foo: function() {}, bar: function() {} });
+Handlebars.registerHelper({ foo: function () {}, bar: function () {} });
 ```
 
 ## `Handlebars.unregisterHelper(name)`
@@ -51,21 +51,20 @@ Handlebars.unregisterHelper("foo");
 
 ::: warning 弃用警告
 
-自定义装饰器已经被废弃，并且可能会在 Handlebars 的下个主要版本消失。自定义装饰器关联了非常多的内部 API，而这会对导入其他
-语言造成不便，并且代码也变得难以维护。
+自定义装饰器已经被废弃，并且可能会在 Handlebars 的下个主要版本消失。自定义装饰器关联了非常多的内部 API，而这会对导入其他语言造成不便，并且代码也变得难以维护。
 
 :::
 
 注册一个可以被环境内任意模版访问的装饰器。
 
 ```js
-Handlebars.registerDecorator("foo", function() {});
+Handlebars.registerDecorator("foo", function () {});
 ```
 
 支持同时注册多个装饰器。
 
 ```js
-Handlebars.registerDecorator({ foo: function() {}, bar: function() {} });
+Handlebars.registerDecorator({ foo: function () {}, bar: function () {} });
 ```
 
 ## `Handlebars.unregisterDecorator(name)`
@@ -84,11 +83,11 @@ Handlebars.unregisterDecorator("foo");
 var OtherHandlebars = Handlebars.create();
 ```
 
-每个环境都有它独立的助手代码和代码片段。本函数只在需要独立的助手代码或代码片段时有用。通常来说，`Handlebars` 环境已经足
-够。
+每个环境都有它独立的助手代码和代码片段。本函数只在需要独立的助手代码或代码片段时有用。通常来说，`Handlebars`
+环境已经足够。
 
-在当前环境中创建的模版属于当前环境。这意味着如果想要在多个环境中运行当前模版，必须用 `Handlebars.template` 对每个环境重
-新编译或重新构造。以上描述对于代码片段也是一样的。
+在当前环境中创建的模版属于当前环境。这意味着如果想要在多个环境中运行当前模版，必须用 `Handlebars.template`
+对每个环境重新编译或重新构造。以上描述对于代码片段也是一样的。
 
 ## `Handlebars.noConflict()`
 
