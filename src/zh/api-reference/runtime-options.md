@@ -2,18 +2,18 @@
 
 ::: v-pre
 
-'Handlebars.compile' 与 'Handlebars.precompile' 函数构造了另一个函数。构造的函数可以用 `template(context, options)` 调用
-。`context` 是输入的对象。
+'Handlebars.compile' 与 'Handlebars.precompile' 函数构造了另一个函数。构造的函数可以用 `template(context, options)` 调
+用。`context` 是输入的对象。
 
 `options` 是可能具有以下属性的对象：
 
 - `data` 输入一个对象以设定自定义的 `@variable` 的私有值。
 - `helpers` 输入以提供自定义助手代码以及全局的助手代码。在模版运行时，本项所定义的值将会替换全局对象所定义的任何值。
-- `partials` 输入以提供自定义代码片段以及全局定义的代码片段。在模版运行时，本项所定义的值将会替换全局对象所定义的任何值
-  。
+- `partials` 输入以提供自定义代码片段以及全局定义的代码片段。在模版运行时，本项所定义的值将会替换全局对象所定义的任何
+  值。
 - `allowCallsToHelperMissing` （从 4.3.0 开始, 不安全）：如果设置为 `true`，类似 `{{helperMissing}}` 或
-  `{{blockHelperMissing}}` 的调用将会被允许。请注意，这允许模版作者假造模版并在运行 Handlebars 的环境下远程执行代码。（
-  见https://github.com/handlebars-lang/handlebars.js/issues/1558）
+  `{{blockHelperMissing}}` 的调用将会被允许。请注意，这允许模版作者假造模版并在运行 Handlebars 的环境下远程执行代码。
+  （见https://github.com/handlebars-lang/handlebars.js/issues/1558）
 
 :::
 
@@ -68,9 +68,9 @@
     { aString: "  abc  " },
     {
       allowedProtoMethods: {
-        trim: true
-      }
-    }
+        trim: true,
+      },
+    },
   );
   // result = 'abc'
   ```

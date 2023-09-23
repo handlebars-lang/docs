@@ -30,13 +30,13 @@ Handlebars.unregisterPartial("foo");
 注册可以被当前环境中任意模版访问的助手代码。
 
 ```js
-Handlebars.registerHelper("foo", function() {});
+Handlebars.registerHelper("foo", function () {});
 ```
 
 支持同时注册多个助手代码。
 
 ```js
-Handlebars.registerHelper({ foo: function() {}, bar: function() {} });
+Handlebars.registerHelper({ foo: function () {}, bar: function () {} });
 ```
 
 ## `Handlebars.unregisterHelper(name)`
@@ -59,13 +59,13 @@ Handlebars.unregisterHelper("foo");
 注册一个可以被环境内任意模版访问的装饰器。
 
 ```js
-Handlebars.registerDecorator("foo", function() {});
+Handlebars.registerDecorator("foo", function () {});
 ```
 
 支持同时注册多个装饰器。
 
 ```js
-Handlebars.registerDecorator({ foo: function() {}, bar: function() {} });
+Handlebars.registerDecorator({ foo: function () {}, bar: function () {} });
 ```
 
 ## `Handlebars.unregisterDecorator(name)`

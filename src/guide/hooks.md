@@ -11,9 +11,9 @@ This hook is called when a mustache or a block-statement
 
 you can add custom handling for those situations by registering the helper `helperMissing`:
 
-<ExamplePart examplePage="/examples/hook-helper-missing.md" show="template" />
-<ExamplePart examplePage="/examples/hook-helper-missing.md" show="preparationScript" />
-<ExamplePart examplePage="/examples/hook-helper-missing.md" show="output" />
+<Example examplePage="/examples/hook-helper-missing.md" show="template" />
+<Example examplePage="/examples/hook-helper-missing.md" show="preparationScript" />
+<Example examplePage="/examples/hook-helper-missing.md" show="output" />
 
 The helper receives the same arguments and options (`hash`, `name` etc) as any custom helper or block-helper. The
 `options.name` is the name of the helper being called.
@@ -24,15 +24,15 @@ If no parameters are passed to the mustache, the default behavior is to do nothi
 expression or the whole block:
 
 <Flex>
-<ExamplePart examplePage="/examples/hook-helper-missing-default-no-param.md" show="template" />
-<ExamplePart examplePage="/examples/hook-helper-missing-default-no-param.md" show="output" />
+<Example examplePage="/examples/hook-helper-missing-default-no-param.md" show="template" />
+<Example examplePage="/examples/hook-helper-missing-default-no-param.md" show="output" />
 </Flex>
 
 If parameter is passed to the mustache, Handlebars with throw an exception:
 
 <Flex>
-<ExamplePart examplePage="/examples/hook-helper-missing-default-param.md" show="template" />
-<ExamplePart examplePage="/examples/hook-helper-missing-default-param.md" show="error" />
+<Example examplePage="/examples/hook-helper-missing-default-param.md" show="template" />
+<Example examplePage="/examples/hook-helper-missing-default-param.md" show="error" />
 </Flex>
 
 ## blockHelperMissing
@@ -44,9 +44,9 @@ This hook is called, when a
 
 You can handle this situation by registering a helper named `blockHelperMissing`.
 
-<ExamplePart examplePage="/examples/hook-block-helper-missing.md" show="template" />
-<ExamplePart examplePage="/examples/hook-block-helper-missing.md" show="preparationScript" />
-<ExamplePart examplePage="/examples/hook-block-helper-missing.md" show="output" />
+<Example examplePage="/examples/hook-block-helper-missing.md" show="template" />
+<Example examplePage="/examples/hook-block-helper-missing.md" show="preparationScript" />
+<Example examplePage="/examples/hook-block-helper-missing.md" show="output" />
 
 ### Default behavior
 
@@ -56,5 +56,5 @@ name of the property.
 If the hook is not overridden, then the default implementation will mimic the behavior of Mustache and just call the
 block.
 
-<ExamplePart examplePage="/examples/hook-block-helper-missing-default.md" show="template" />
-<ExamplePart examplePage="/examples/hook-block-helper-missing-default.md" show="output" />
+<Example examplePage="/examples/hook-block-helper-missing-default.md" show="template" />
+<Example examplePage="/examples/hook-block-helper-missing-default.md" show="output" />

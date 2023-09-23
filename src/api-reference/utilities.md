@@ -1,7 +1,3 @@
----
-sidebarDepth: 2
----
-
 # Utility functions
 
 ## Helper utilities

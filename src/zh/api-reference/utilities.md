@@ -1,7 +1,3 @@
----
-sidebarDepth: 2
----
-
 # 实用方法
 
 ## 助手代码实用方法
@@ -20,6 +16,8 @@ new Handlebars.SafeString("<div>HTML Content!</div>");
 
 ### `Handlebars.escapeExpression(string)`
 
+::: v-pre
+
 HTML 转义输入的字符串，使得字符串可以安全地在 HTML 内容中渲染为文字。
 
 ```js
@@ -32,6 +30,8 @@ Handlebars.Utils.escapeExpression(string);
 `SafeString` 的实例来使用本函数。
 
 本函数是 `Handlebars.Utils.escapeExpression` 的别名。
+
+:::
 
 ### `Handlebars.createFrame(data)`
 
