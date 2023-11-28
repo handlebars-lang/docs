@@ -1,14 +1,12 @@
 # 创建交互式示例
 
-[[toc]]
-
 我们可以定义交互式示例。示例或示例的一部分可以 **嵌入任何页面**。一种自动生成的链接使访问者可以在 **Playground** 中打开
 示例，在这里访问者可以更改模板，局部变量，输入等，并可以看到结果输出。
 
 ## 创建示例
 
 为了定义示例，请在 `examples` 目录中创建一个新的 Markdown 文件。示例数据在引用示例页面的索引处。参见
-[all-features-example-raw](../examples/all-features.md) 演示所有功能。
+[all-features-example-raw](../../examples/all-features.md) 演示所有功能。
 
 支持以下 Frontmatter 属性：
 
@@ -23,7 +21,7 @@
 ## 示例数据
 
 如果可能的话，示例应该使用通用数据集中提供的变量。因此，文件
-[src/zh/examples/\_example-base-data.yaml](https://github.com/handlebars-lang/docs/blob/master/src/zh/examples/_example-base-data.yaml)
+[src/\_examples/\_example-base-data.yaml](https://github.com/handlebars-lang/docs/blob/master/src/_examples/_example-base-data.yaml)
 包含了可重复使用并适用于每个示例的数据。如果该文件中的数据不足，请添加新的数据，但请确保它们之间存在关联。
 
 ## 嵌入示例
@@ -31,12 +29,12 @@
 `<ExamplePart>` 组件允许您在当前段落中显示示例的一部分。
 
 ```md
-<ExamplePart examplePage="/zh/examples/builtin-helper-each-block" show="template"/>
+<Example examplePage="/zh/examples/builtin-helper-each-block" show="template"/>
 ```
 
 将渲染
 
-<ExamplePart examplePage="/zh/examples/builtin-helper-each-block" show="template"/>
+<Example examplePage="/zh/examples/builtin-helper-each-block" show="template"/>
 
 该组件的属性有：
 
@@ -45,21 +43,21 @@
 - `name` （可选）: 仅当`show =“ partial”`时才需要此道具。它定义了应该是的部分名称    插入到示例中。
 
 如果您想将示例的各个部分嵌入流文本中，则该组件非常有用。您可以插入输入的 JSON 使用
-`<ExamplePart examplePage="/zh/examples/all-features" show="input" />`，以下代码段将出现在页面中：
+`<Example examplePage="/zh/examples/all-features" show="input" />`，以下代码段将出现在页面中：
 
-<ExamplePart examplePage="/zh/examples/all-features" show="input" />
+<Example examplePage="/zh/examples/all-features" show="input" />
 
 然后，为了向读者显示模板，您可以将 `show="template"` 与相同的 `examplePage` 一起使用。
 
-<ExamplePart examplePage="/zh/examples/all-features" show="template" />
+<Example examplePage="/zh/examples/all-features" show="template" />
 
 您可以使用例如 `show=partial` 和 `name=person`来局部渲染。
 
-<ExamplePart examplePage="/zh/examples/all-features" show="partial" name="person"/>
+<Example examplePage="/zh/examples/all-features" show="partial" name="person"/>
 
 如果您有助手代码的示例，则可能还需要包括脚本：
 
-<ExamplePart examplePage="/zh/examples/all-features" show="preparationScript" />
+<Example examplePage="/zh/examples/all-features" show="preparationScript" />
 
 ## 水平布局
 
@@ -67,14 +65,14 @@
 
 ```md
 <Flex>
-<ExamplePart examplePage="/zh/examples/builtin-helper-each-block" show="template"/>
-<ExamplePart examplePage="/zh/examples/builtin-helper-each-block" show="input"/>
+<Example examplePage="/zh/examples/builtin-helper-each-block" show="template"/>
+<Example examplePage="/zh/examples/builtin-helper-each-block" show="input"/>
 </Flex>
 ```
 
 将渲染
 
 <Flex>
-<ExamplePart examplePage="/zh/examples/builtin-helper-each-block" show="template"/>
-<ExamplePart examplePage="/zh/examples/builtin-helper-each-block" show="input"/>
+<Example examplePage="/zh/examples/builtin-helper-each-block" show="template"/>
+<Example examplePage="/zh/examples/builtin-helper-each-block" show="input"/>
 </Flex>

@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -13,9 +14,9 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: 16
+          node-version: '20'
       - run: npm ci
-      - run: npm run test-and-build
+      - run: npm run docs:build
 
       - name: Deploy to ${{ env.TARGET_URL }}
         uses: peaceiris/actions-gh-pages@v3

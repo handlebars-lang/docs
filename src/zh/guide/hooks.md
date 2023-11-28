@@ -11,9 +11,9 @@
 
 你可以通过注册 `helperMissing` 助手代码为这些情况添加自定义处理：
 
-<ExamplePart examplePage="/zh/examples/hook-helper-missing.md" show="template" />
-<ExamplePart examplePage="/zh/examples/hook-helper-missing.md" show="preparationScript" />
-<ExamplePart examplePage="/zh/examples/hook-helper-missing.md" show="output" />
+<Example examplePage="/zh/examples/hook-helper-missing.md" show="template" />
+<Example examplePage="/zh/examples/hook-helper-missing.md" show="preparationScript" />
+<Example examplePage="/zh/examples/hook-helper-missing.md" show="output" />
 
 与任何自定义助手代码或块助手代码一样，该助手代码接收相同的参数和选项（`hash`，`name`等）。 `option.name` 是被调用的助手
 代码的名称。
@@ -23,15 +23,15 @@
 如果没有参数传递给 Mustache，则默认行为是不执行任何操作并忽略整个表达式或代码块：
 
 <Flex>
-<ExamplePart examplePage="/zh/examples/hook-helper-missing-default-no-param.md" show="template" />
-<ExamplePart examplePage="/zh/examples/hook-helper-missing-default-no-param.md" show="output" />
+<Example examplePage="/zh/examples/hook-helper-missing-default-no-param.md" show="template" />
+<Example examplePage="/zh/examples/hook-helper-missing-default-no-param.md" show="output" />
 </Flex>
 
 如果有参数传递给 Mustache，则 Handlebars 将引发异常：
 
 <Flex>
-<ExamplePart examplePage="/zh/examples/hook-helper-missing-default-param.md" show="template" />
-<ExamplePart examplePage="/zh/examples/hook-helper-missing-default-param.md" show="error" />
+<Example examplePage="/zh/examples/hook-helper-missing-default-param.md" show="template" />
+<Example examplePage="/zh/examples/hook-helper-missing-default-param.md" show="error" />
 </Flex>
 
 ## blockHelperMissing
@@ -43,9 +43,9 @@
 
 你可以通过注册一个名为 `blockHelperMissing` 的助手代码来处理这种情况。
 
-<ExamplePart examplePage="/zh/examples/hook-block-helper-missing.md" show="template" />
-<ExamplePart examplePage="/zh/examples/hook-block-helper-missing.md" show="preparationScript" />
-<ExamplePart examplePage="/zh/examples/hook-block-helper-missing.md" show="output" />
+<Example examplePage="/zh/examples/hook-block-helper-missing.md" show="template" />
+<Example examplePage="/zh/examples/hook-block-helper-missing.md" show="preparationScript" />
+<Example examplePage="/zh/examples/hook-block-helper-missing.md" show="output" />
 
 ### 默认行为
 
@@ -53,5 +53,5 @@
 
 如果钩子没有被覆盖，则默认实现将模仿 Mustache 的行为：只调用代码块。
 
-<ExamplePart examplePage="/zh/examples/hook-block-helper-missing-default.md" show="template" />
-<ExamplePart examplePage="/zh/examples/hook-block-helper-missing-default.md" show="output" />
+<Example examplePage="/zh/examples/hook-block-helper-missing-default.md" show="template" />
+<Example examplePage="/zh/examples/hook-block-helper-missing-default.md" show="output" />
