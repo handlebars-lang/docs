@@ -68,3 +68,11 @@ The most recent one is: https://www.npmjs.com/package/@inventory/parcel-plugin-h
 TODO: Write text here
 
 https://www.npmjs.com/package/parcel-plugin-handlebars-precompile
+
+## Drupal CMS
+
+Drupal is a CMS written in PHP + Symfony. There is a contrib module that allows you to integrate and use Handlebars
+in the front end to create progressively decoupled applications.
+
+See [https://www.drupal.org/project/handlebars](https://www.drupal.org/project/handlebars) for instructions.
+
