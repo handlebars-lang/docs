@@ -69,7 +69,7 @@ TODO: Write text here
 
 https://www.npmjs.com/package/parcel-plugin-handlebars-precompile
 
-## Drupal CMS
+## Drupal
 
 Drupal is a CMS written in PHP + Symfony. There is a contrib module that allows you to integrate and use Handlebars
 in the front end to create progressively decoupled applications.
