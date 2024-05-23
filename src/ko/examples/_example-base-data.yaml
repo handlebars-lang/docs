@@ -1,0 +1,32 @@
+# In order to make the examples in this site recognizable, we generally use this data as their basis.
+# If you want to create new example, you can use parts of this data along with your templates, partials and helpers.
+# You don't have to use the same JSON structure, but using the same entities (i.e. people, Darmstadt, San Francisco)
+# would be nice. If you have to use new data, please add it to this file.
+cities:
+  - name: Darmstadt
+    summary: Darmstadt is a city in <b>Hesse</b>, Germany
+    country: Germany
+    location:
+      north: 49.87
+      east: 8.64
+    population: 158254
+  - name: San Francisco
+    summary: San Francisco is the <b>cultural center</b> of <b>Northern California</b>
+    country: USA
+    location:
+      north: 37.73,
+      east: -122.44
+    population: 883305
+people:
+  - firstname: Nils
+    lastname: Knappmeier
+    url: https://knappi.org
+    resident-in: Darmstadt
+  - firstname: Yehuda
+    lastname: Katz
+    url: https://yehudakatz.com/
+    resident-in: San Francisco
+  - firstname: Carl
+    lastname: Lerche
+  - firstname: Alan
+    lastname: Johnson
