@@ -2,8 +2,8 @@
 
 ## #if
 
-`if` 헬퍼를 사용하여 조건부로 블록을 렌더링할 수 있습니다. 인수가 `false`, `undefined`, `null`, `""`, `0`, 또는 `[]`를
-반환하면 Handlebars는 블록을 렌더링하지 않습니다.
+`if` 헬퍼를 사용하여 조건부로 블록을 렌더링할 수 있습니다. 인수가 `false`, `undefined`, `null`, `""`, `0`, 또는 `[]`를반
+환하면 Handlebars는 블록을 렌더링하지 않습니다.
 
 <ExamplePart examplePage="/ko/examples/builtin-helper-if-block.md" show="template" />
 
@@ -28,8 +28,8 @@
 
 ### includeZero
 
-`includeZero=true` 옵션을 설정하면 조건을 비어 있지 않은 것으로 처리할 수 있습니다. 이는 0이 긍정 경로로 처리될지 부정
-경로로 처리될지를 효과적으로 결정합니다.
+`includeZero=true` 옵션을 설정하면 조건을 비어 있지 않은 것으로 처리할 수 있습니다. 이는 0이 긍정 경로로 처리될지 부정경
+로로 처리될지를 효과적으로 결정합니다.
 
 ```handlebars
 {{#if 0 includeZero=true}}
@@ -149,8 +149,8 @@
 
 <ExamplePart examplePage="/ko/examples/builtin-helper-lookup.md" show="template" />
 
-입력 데이터에 기반한 객체의 속성을 조회하는 데에도 사용할 수 있습니다. 다음은 `lookup`을 서브 표현식에서 사용하여 속성
-값을 기반으로 평가 컨텍스트를 다른 객체로 변경하는 보다 복잡한 예제입니다.
+입력 데이터에 기반한 객체의 속성을 조회하는 데에도 사용할 수 있습니다. 다음은 `lookup`을 서브 표현식에서 사용하여 속성값
+을 기반으로 평가 컨텍스트를 다른 객체로 변경하는 보다 복잡한 예제입니다.
 
 <ExamplePart examplePage="/ko/examples/builtin-helper-lookup-dynamic-property.md" show="template" />
 

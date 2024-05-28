@@ -53,8 +53,8 @@
 template({}, { data: { level: Handlebars.logger.WARN } });
 ```
 
-`Handlebars.logger.DEBUG`，`Handlebars.logger.INFO`，`Handlebars.logger.WARN` 또는 `Handlebars.logger.ERROR` 중 하나로
-설정할 수 있습니다.
+`Handlebars.logger.DEBUG`，`Handlebars.logger.INFO`，`Handlebars.logger.WARN` 또는 `Handlebars.logger.ERROR` 중 하나로설
+정할 수 있습니다.
 
 설정하게 되면, 로거는 출력에 `Handlebars.logger.level` 이상의 로그 레벨을 가진 메시지만 포함합니다. 기본 값은
 `Handlebars.logger.ERROR`입니다.

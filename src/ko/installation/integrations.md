@@ -31,7 +31,7 @@ import compiledTemplate from "./template.handlebars";
 
 [html-bundler-webpack-plugin](https://github.com/webdiscus/html-bundler-webpack-plugin) 은
 [Handlebars를 포함한](https://github.com/webdiscus/html-bundler-webpack-plugin#using-the-handlebars) 다양한 템플릿 엔진
-을 사용하여 템플릿을 렌더링하고 생성된 HTML에 스타일 및 스크립트를 번들링합니다.
+을사용하여 템플릿을 렌더링하고 생성된 HTML에 스타일 및 스크립트를 번들링합니다.
 
 ## Babel: handlebars-inline-precompile
 

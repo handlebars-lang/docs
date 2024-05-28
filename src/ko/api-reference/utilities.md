@@ -16,7 +16,7 @@ sidebarDepth: 2
 new Handlebars.SafeString("<div>HTML Content!</div>");
 ```
 
-안전한 문자열로 표시될 문자열을 구성할 때, 외부 콘텐츠는 `Handlebars.escapeExpression` 메서드를 사용하여 적절히 이스케이
+안전한 문자열로 표시될 문자열을 구성할 때, 외부 콘텐츠는 `Handlebars.escapeExpression` 메서드를 사용하여 적절히이스케이
 프되어야 보안 문제를 방지할 수 있습니다.
 
 ### `Handlebars.escapeExpression(string)`
@@ -30,7 +30,7 @@ Handlebars.Utils.escapeExpression(string);
 문자열 값에 대해 `&`, `<`, `>`, `"`, `'`, `` ` ``, `=` 를 HTML 엔티티 값으로 대체합니다. `SafeString` 값은 변경되지 않습
 니다.
 
-`{{{` 표현을 제외한 모든 표현의 출력은 이 메서드를 통해 전달됩니다. 헬퍼가 `SafeString` 인스턴스를 통해 HTML 콘텐츠를 반
+`{{{` 표현을 제외한 모든 표현의 출력은 이 메서드를 통해 전달됩니다. 헬퍼가 `SafeString` 인스턴스를 통해 HTML 콘텐츠를반
 환할 때도 가능한 코드 삽입을 방지하기 위해 이 메서드를 사용해야 합니다.
 
 이 메서드는 `Handlebars.Utils.escapeExpression`에 별칭으로 정의되어 있습니다.
@@ -48,8 +48,8 @@ if (options.data) {
 ```
 
 데이터 상태를 수정하는 헬퍼는 새 프레임을 생성하여 자신을 격리하고 부모의 상태를 손상시키지 않아야 합니다. 일반적으로,
-헬퍼 실행당 하나의 프레임만 생성하면 됩니다. 예를 들어, `each` 반복자는 모든 자식 실행에 대해 재사용되는 단일 프레임을
-생성합니다.
+헬퍼 실행당 하나의 프레임만 생성하면 됩니다. 예를 들어, `each` 반복자는 모든 자식 실행에 대해 재사용되는 단일 프레임을생
+성합니다.
 
 ## 일반 유틸리티
 

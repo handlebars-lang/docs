@@ -15,10 +15,9 @@
 -`layout`: 항상 `InteractivePlaygroundLayout`이어야 합니다. -`example`: 예제를 포함합니다. -`template`: 주요 Handlebars
 템플릿   -`partials`: 각 등록된 부분 템플릿에 대한 속성을 포함하는 객체로, 키는 부분 템플릿 이름, 값은 부분 템플릿 내용
 입니다.  -`preparationScript`: 템플릿을 컴파일하고 실행하기 전에 실행되는 스크립트입니다. 이 스크립트에서는
-`Handlebars`가 전역 변수로 제공됩니다.  -`input`: 내장 YAML 객체로 된 템플릿 입력입니다.   -`errorExpected`: 이 예제가
-오류를 발생시킬 것으로 예상되는지 여부를 지정하는 부울 값(기본값: `false`)입니다. 기본적으로, 실행 중에 오류를 발생시키
-는 예제는 사이트 전체 빌드를 실패하게 만듭니다. 오류를 설명하는 예제를 작성하는 경우 이 플래그를 `true`로 설정해야 합니
-다.
+`Handlebars`가 전역 변수로 제공됩니다.  -`input`: 내장 YAML 객체로 된 템플릿 입력입니다.   -`errorExpected`: 이 예제가오
+류를 발생시킬 것으로 예상되는지 여부를 지정하는 부울 값(기본값: `false`)입니다. 기본적으로, 실행 중에 오류를 발생시키는
+예제는 사이트 전체 빌드를 실패하게 만듭니다. 오류를 설명하는 예제를 작성하는 경우 이 플래그를 `true`로 설정해야 합니다.
 
 예제의 출력은 최신 릴리스 버전의 Handlebars를 사용하여 자동으로 계산됩니다.
 
@@ -26,8 +25,8 @@
 
 가능하다면, 예제는 공통 데이터 세트의 변형을 사용해야 합니다. 따라서 파일
 [src/ko/examples/\_example-base-data.yaml](https://github.com/handlebars-lang/docs/blob/master/src/ko/examples/_example-base-data.yaml)
-에는 각 예제에 재사용 및 적응할 수 있는 데이터가 포함되어 있습니다. 해당 파일의 데이터가 불충분하면 새 데이터를 추가할
-수 있지만, 관련이 있는지 확인해 주세요.
+에는 각 예제에 재사용 및 적응할 수 있는 데이터가 포함되어 있습니다. 해당 파일의 데이터가 불충분하면 새 데이터를 추가할수
+있지만, 관련이 있는지 확인해 주세요.
 
 ## 예제의 일부 포함
 
@@ -77,7 +76,7 @@
 </Flex>
 ```
 
-将渲染
+이렇게 렌더링됩니다.
 
 <Flex>
 <ExamplePart examplePage="/ko/examples/builtin-helper-each-block" show="template"/>

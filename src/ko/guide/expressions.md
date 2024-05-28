@@ -69,8 +69,8 @@ Handlebars는 부모 컨텍스트로 돌아갑니다.
 {{/each}}
 ```
 
-이 예제에서 모든 위의 참조는 다른 블록 내에 위치해 있음에도 불구하고 동일한 접두사 값을 참조합니다. 이 동작은 Handlebars
-4에서 새롭게 도입되었습니다.
+이 예제에서 모든 위의 참조는 다른 블록 내에 위치해 있음에도 불구하고 동일한 접두사 값을 참조합니다. 이 동작은
+Handlebars4에서 새롭게 도입되었습니다.
 [릴리즈 노트](https://github.com/handlebars-lang/handlebars.js/blob/master/release-notes.md) 에서 이전 동작과 마이그레이
 션 계획에 대해 논의하고 있습니다. Handlebars는 또한 헬퍼와 데이터 필드 간의 이름 충돌을 `this` 참조를 통해 해결할 수 있
 습니다:
@@ -86,8 +86,8 @@ _Whitespace_ `!` `"` `#` `%` `&` `'` `(` `)` `*` `+` `,` `.` `/` `;` `<` `=` `>`
 
 또한, `true`, `false`, `null` 및 `undefined` 단어는 경로 표현식의 첫 번째 부분에서만 허용됩니다.
 
-유효한 식별자가 아닌 속성을 참조하려면 세그먼트 리터럴 표기법인 `[`를 사용할 수 있습니다. 경로 리터럴에서는 닫는 `]`를
-포함할 수 없지만, 다른 모든 문자는 허용됩니다.
+유효한 식별자가 아닌 속성을 참조하려면 세그먼트 리터럴 표기법인 `[`를 사용할 수 있습니다. 경로 리터럴에서는 닫는 `]`를포
+함할 수 없지만, 다른 모든 문자는 허용됩니다.
 
 JavaScript 스타일 문자열인 `"` 및 `'`도 `[` 쌍 대신 사용할 수 있습니다.
 
@@ -199,8 +199,8 @@ Handlebars는 최종 매개변수로 헬퍼에 해시 인수와 같은 추가 �
 
 <ExamplePart examplePage="/ko/examples/helper-hash-arguments.md" show="input" />
 
-예시 스크립트에 설명된 것처럼, 해시 인수는 도우미 내에서 추가 처리할 수 있도록 마지막 매개변수인 `options`에서 얻을 수
-있습니다.
+예시 스크립트에 설명된 것처럼, 해시 인수는 도우미 내에서 추가 처리할 수 있도록 마지막 매개변수인 `options`에서 얻을 수있
+습니다.
 
 <ExamplePart examplePage="/ko/examples/helper-hash-arguments.md" show="preparationScript" />
 
@@ -233,13 +233,13 @@ Handlebars는 하위 표현식을 지원하여 단일 머스태시 내에서 여
 {{outer-helper (inner-helper 'abc') 'def'}}
 ```
 
-이 경우, `inner-helper`는 문자열 인수 `'abc'`로 호출되며 `inner-helper` 함수가 반환하는 값이 `outer-helper`의 첫 번째 인
-수로 전달됩니다 (그리고 `'def'`는 `outer-helper`의 두 번째 인수로 전달됩니다).
+이 경우, `inner-helper`는 문자열 인수 `'abc'`로 호출되며 `inner-helper` 함수가 반환하는 값이 `outer-helper`의 첫 번째인
+수로 전달됩니다(그리고 `'def'`는 `outer-helper`의 두 번째 인수로 전달됩니다).
 
 ## 공백 제어
 
-템플릿 공백은 중괄호 옆에 `~` 문자를 추가하여 어느 쪽에서든 생략할 수 있습니다. 적용되면 해당 측의 모든 공백이 첫 번째
-핸들바 표현식 또는 비공백 문자까지 제거됩니다.
+템플릿 공백은 중괄호 옆에 `~` 문자를 추가하여 어느 쪽에서든 생략할 수 있습니다. 적용되면 해당 측의 모든 공백이 첫 번째핸
+들바 표현식 또는 비공백 문자까지 제거됩니다.
 
 ```handlebars
 {{#each nav ~}}
