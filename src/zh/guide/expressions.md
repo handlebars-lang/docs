@@ -128,7 +128,7 @@ Handlebars 助手代码的调用需要一个简单标识符，且可紧接一个
 
 <ExamplePart examplePage="/zh/examples/helper-simple.md" show="template" />
 
-此例子中，`load` 是助手代码的名称，而 `lastname` 为传递给助手代码的参数。此模板，将会将输入的 `uppercase` 属性正确地转换
+此例子中，`loud` 是助手代码的名称，而 `lastname` 为传递给助手代码的参数。此模板，将会将输入的 `uppercase` 属性正确地转换
 为大写：
 
 <Flex>
