@@ -129,6 +129,14 @@ $contentBorderRadius = 0.5rem
 h1, h2, h3, h4, h5, h6 {
     // Makes the header end before a float-right div
     display: flex;
+    flex-wrap: wrap;
+}
+h1, h2, h3, h4, h5, h6 {
+    > .version {
+        font-weight: normal;
+        font-size: 70%;
+        flex-basis: 100%;
+    }
 }
 
 $buttonLinkBgColor = darken($baseColor, 10%);
