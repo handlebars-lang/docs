@@ -1,5 +1,5 @@
 ---
-layout: InteractivePlaygroundLayout
+layout: playground
 example:
   template: |
     {{#if (isdefined value1)}}true{{else}}false{{/if}}

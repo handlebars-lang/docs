@@ -1,7 +1,5 @@
 # Creating interactive examples
 
-[[toc]]
-
 It is possible to define interactive examples. Examples or parts of an example can be **embedded in any page**. A
 auto-generated link enables the visitor to open the example in a **playground** where she can change the template,
 partials, input, and so on and can see the resulting output.
@@ -31,7 +29,7 @@ The output of the example is automatically computed using the latest release ver
 ## Example data
 
 If possible, examples should use variations of a common data set. Therefore, the file
-[src/examples/\_example-base-data.yaml](https://github.com/handlebars-lang/docs/blob/master/src/examples/_example-base-data.yaml)
+[src/\_examples/\_example-base-data.yaml](https://github.com/handlebars-lang/docs/blob/master/src/_examples/_example-base-data.yaml)
 contains data that can be reused and adapted to each example. If the data in that file is insufficient, please add new
 data, but please make sure it is somehow related.
 
@@ -40,12 +38,12 @@ data, but please make sure it is somehow related.
 The `<ExamplePart>`-component allows you to show a part of the example in the current part.
 
 ```md
-<ExamplePart examplePage="/examples/builtin-helper-each-block" show="template"/>
+<Example examplePage="/examples/builtin-helper-each-block" show="template"/>
 ```
 
 will result in
 
-<ExamplePart examplePage="/examples/builtin-helper-each-block" show="template"/>
+<Example examplePage="/examples/builtin-helper-each-block" show="template"/>
 
 The props for this component are:
 
@@ -56,22 +54,22 @@ The props for this component are:
   inserted into the example.
 
 The component is very useful if you want to embed the parts of an example into flowing text, You can insert the input
-JSON by using `<ExamplePart examplePage="/examples/all-features" show="input" />` and the following code snippet will
-appear in the page:
+JSON by using `<Example examplePage="/examples/all-features" show="input" />` and the following code snippet will appear
+in the page:
 
-<ExamplePart examplePage="/examples/all-features" show="input" />
+<Example examplePage="/examples/all-features" show="input" />
 
 Then, in order to show the reader the template you can use `show="template"` with the same `examplePage`.
 
-<ExamplePart examplePage="/examples/all-features" show="template" />
+<Example examplePage="/examples/all-features" show="template" />
 
 You can render a partial using for example `show=partial` and `name=person`
 
-<ExamplePart examplePage="/examples/all-features" show="partial" name="person"/>
+<Example examplePage="/examples/all-features" show="partial" name="person"/>
 
 If you have an example with helpers, you might also want to include the preparation script:
 
-<ExamplePart examplePage="/examples/all-features" show="preparationScript" />
+<Example examplePage="/examples/all-features" show="preparationScript" />
 
 ## Horizontal layout
 
@@ -79,14 +77,14 @@ If you want to layout two example-parts horizontally, you can use the `<Flex>`-c
 
 ```md
 <Flex>
-<ExamplePart examplePage="/examples/builtin-helper-each-block" show="template"/>
-<ExamplePart examplePage="/examples/builtin-helper-each-block" show="input"/>
+<Example examplePage="/examples/builtin-helper-each-block" show="template"/>
+<Example examplePage="/examples/builtin-helper-each-block" show="input"/>
 </Flex>
 ```
 
 becomes
 
 <Flex>
-<ExamplePart examplePage="/examples/builtin-helper-each-block" show="template"/>
-<ExamplePart examplePage="/examples/builtin-helper-each-block" show="input"/>
+<Example examplePage="/examples/builtin-helper-each-block" show="template"/>
+<Example examplePage="/examples/builtin-helper-each-block" show="input"/>
 </Flex>

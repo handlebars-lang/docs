@@ -1,5 +1,5 @@
 ---
-layout: InteractivePlaygroundLayout
+layout: playground
 example:
   template: |
     {{#list people}}{{firstname}} {{lastname}}{{/list}}
