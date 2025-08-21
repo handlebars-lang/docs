@@ -48,7 +48,7 @@
     "@lezer/lr": "^1.4.2",
     "husky": "^9.1.7",
     "lint-staged": "^15.4.3",
-    "vite-plugin-static-copy": "^2.2.0",
+    "vite-plugin-static-copy": "^2.3.2",
     "vitepress": "^1.6.3",
     "vitest": "^3.0.5"
   },
