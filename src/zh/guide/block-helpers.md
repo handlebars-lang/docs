@@ -24,7 +24,8 @@ Handlebars.registerHelper("noop", function (options) {
 });
 ```
 
-Handlebars 调用 helper 函数时，上下文对象会绑定为 `this` 指针。因此你可以为 `options.fn` 传入 `this` 以在当前上下文中执行 `noop` 内部块。
+Handlebars 调用 helper 函数时，上下文对象会绑定为 `this` 指针。因此你可以为 `options.fn` 传入 `this`
+以在当前上下文中执行 `noop` 内部块。
 
 通过这种方式定义的任何助手代码都将优先于上下文中定义的字段。若要访问被助手代码名称“遮蔽”的字段，可以使用路径引用。在上面的示例中，上下文对象中名为
 `noop` 的字段可以这样引用：
@@ -56,7 +57,8 @@ Handlebars.registerHelper("bold", function (options) {
 
 ## `with` 助手代码
 
-`with` 助手代码演示了如何将参数传递给你的助手。当 `with` 助手被调用并传入参数时，它会使用模板传入的参数作为上下文来执行。
+`with` 助手代码演示了如何将参数传递给你的助手。当 `with`
+助手被调用并传入参数时，它会使用模板传入的参数作为上下文来执行。
 
 ```handlebars
 <div class="entry">
@@ -68,7 +70,8 @@ Handlebars.registerHelper("bold", function (options) {
 </div>
 ```
 
-如果你的 JSON 对象中包含深层嵌套属性，并且你想要避免重复父名称，你就会发现 `with` 助手很有用。上面的模板可以用于以下 JSON 数据：
+如果你的 JSON 对象中包含深层嵌套属性，并且你想要避免重复父名称，你就会发现 `with`
+助手很有用。上面的模板可以用于以下 JSON 数据：
 
 ```js
 {
@@ -205,7 +208,8 @@ Handlebars.registerHelper("if", function (conditional, options) {
 });
 ```
 
-编写条件语句时，你通常会希望模板能够提供一个 HTML 块，当条件为false时，你的助手应该插入该块。Handlebars 通过为块级助手提供通用的 `else` 功能来解决这个问题。
+编写条件语句时，你通常会希望模板能够提供一个 HTML 块，当条件为false时，你的助手应该插入该块。Handlebars 通过为块级助手提供通用的
+`else` 功能来解决这个问题。
 
 ```handlebars
 {{#if isActive}}
