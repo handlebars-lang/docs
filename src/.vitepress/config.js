@@ -199,7 +199,7 @@ export default defineConfig({
                   { text: "介绍", link: "/" },
                   { text: "表达式", link: "/expressions" },
                   { text: "代码片段", link: "/partials" },
-                  { text: "代码片段", link: "/block-helpers" },
+                  { text: "块助手代码", link: "/block-helpers" },
                   { text: "内置助手代码", link: "/builtin-helpers" },
                   { text: "钩子", link: "/hooks" },
                 ],
