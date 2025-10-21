@@ -4,6 +4,7 @@ import Theme from "vitepress/theme";
 import Flex from "../components/Flex.vue";
 import Example from "../components/Example.vue";
 import PlaygroundLayout from "../components/PlaygroundLayout.vue";
+import CopyOrDownloadAsMarkdownButtons from "vitepress-plugin-llms/vitepress-components/CopyOrDownloadAsMarkdownButtons.vue";
 import "./style.css";
 
 export default {
@@ -18,5 +19,6 @@ export default {
     app.component("playground", PlaygroundLayout);
     app.component("Flex", Flex);
     app.component("Example", Example);
+    app.component("CopyOrDownloadAsMarkdownButtons", CopyOrDownloadAsMarkdownButtons);
   },
 };

@@ -1,5 +1,70 @@
 import { defineConfig } from "vitepress";
 import { viteStaticCopy } from "vite-plugin-static-copy";
+import llmstxt from "vitepress-plugin-llms";
+import { copyOrDownloadAsMarkdownButtons } from "vitepress-plugin-llms";
+
+// We need to put root sidebar in a separate shared const in order to generate sections in `llms.txt`
+const rootSidebar = {
+  "/guide/": {
+    base: "/guide",
+    items: [
+      {
+        text: "Language Guide",
+        collapsed: false,
+        items: [
+          { text: "Introduction", link: "/" },
+          { text: "Expressions", link: "/expressions" },
+          { text: "Partials", link: "/partials" },
+          { text: "Block Helpers", link: "/block-helpers" },
+          { text: "Built-in Helpers", link: "/builtin-helpers" },
+          { text: "Hooks", link: "/hooks" },
+        ],
+      },
+      {
+        text: "Installation & Precompilation",
+        base: "/guide/installation",
+        collapsed: false,
+        items: [
+          { text: "Installation", link: "/" },
+          { text: "Precompiling templates", link: "/precompilation" },
+          { text: "Integrations", link: "/integrations" },
+          { text: "When (not) to use Handlebars?", link: "/when-to-use-handlebars" },
+        ],
+      },
+    ],
+  },
+  "/api-reference/": {
+    base: "/api-reference",
+    items: [
+      {
+        text: "API Reference",
+        collapsed: false,
+        items: [
+          { text: "Index", link: "/" },
+          { text: "(Pre-)Compilation", link: "/compilation" },
+          { text: "Runtime Options", link: "/runtime-options" },
+          { text: "Handlebars Runtime", link: "/runtime" },
+          { text: "Utility Functions", link: "/utilities" },
+          { text: "@data variables", link: "/data-variables" },
+          { text: "Helpers", link: "/helpers" },
+        ],
+      },
+    ],
+  },
+  "/contributing/": {
+    base: "/contributing",
+    items: [
+      {
+        text: "Contributing",
+        collapsed: false,
+        items: [
+          { text: "Improving the documentation", link: "/" },
+          { text: "Creating interactive examples", link: "/interactive-examples" },
+        ],
+      },
+    ],
+  },
+};
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -21,67 +86,7 @@ export default defineConfig({
           { text: "API Reference", link: "/api-reference/" },
           { text: "Improve the docs", link: "/contributing/" },
         ],
-        sidebar: {
-          "/guide/": {
-            base: "/guide",
-            items: [
-              {
-                text: "Language Guide",
-                collapsed: false,
-                items: [
-                  { text: "Introduction", link: "/" },
-                  { text: "Expressions", link: "/expressions" },
-                  { text: "Partials", link: "/partials" },
-                  { text: "Block Helpers", link: "/block-helpers" },
-                  { text: "Built-in Helpers", link: "/builtin-helpers" },
-                  { text: "Hooks", link: "/hooks" },
-                ],
-              },
-              {
-                text: "Installation & Precompilation",
-                base: "/guide/installation",
-                collapsed: false,
-                items: [
-                  { text: "Installation", link: "/" },
-                  { text: "Precompiling templates", link: "/precompilation" },
-                  { text: "Integrations", link: "/integrations" },
-                  { text: "When (not) to use Handlebars?", link: "/when-to-use-handlebars" },
-                ],
-              },
-            ],
-          },
-          "/api-reference/": {
-            base: "/api-reference",
-            items: [
-              {
-                text: "API Reference",
-                collapsed: false,
-                items: [
-                  { text: "Index", link: "/" },
-                  { text: "(Pre-)Compilation", link: "/compilation" },
-                  { text: "Runtime Options", link: "/runtime-options" },
-                  { text: "Handlebars Runtime", link: "/runtime" },
-                  { text: "Utility Functions", link: "/utilities" },
-                  { text: "@data variables", link: "/data-variables" },
-                  { text: "Helpers", link: "/helpers" },
-                ],
-              },
-            ],
-          },
-          "/contributing/": {
-            base: "/contributing",
-            items: [
-              {
-                text: "Contributing",
-                collapsed: false,
-                items: [
-                  { text: "Improving the documentation", link: "/" },
-                  { text: "Creating interactive examples", link: "/interactive-examples" },
-                ],
-              },
-            ],
-          },
-        },
+        sidebar: rootSidebar,
         editLink: {
           pattern: "https://github.com/handlebars-lang/docs/tree/master/src/:path",
           text: "Suggest changes to this page",
@@ -320,6 +325,12 @@ export default defineConfig({
     },
   },
 
+  markdown: {
+    config(md) {
+      md.use(copyOrDownloadAsMarkdownButtons);
+    },
+  },
+
   vite: {
     plugins: [
       viteStaticCopy({
@@ -329,6 +340,10 @@ export default defineConfig({
             dest: ".",
           },
         ],
+      }),
+      llmstxt({
+        ignoreFiles: ["zh/**/*", "ko/**/*", "examples/**/*", "playground.md"],
+        sidebar: rootSidebar,
       }),
     ],
   },
