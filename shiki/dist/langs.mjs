@@ -2,52 +2,52 @@ const bundledLanguagesInfo = [
   {
     "id": "abap",
     "name": "ABAP",
-    "import": () => import('@shikijs/langs/abap')
+    "import": (() => import('@shikijs/langs/abap'))
   },
   {
     "id": "actionscript-3",
     "name": "ActionScript",
-    "import": () => import('@shikijs/langs/actionscript-3')
+    "import": (() => import('@shikijs/langs/actionscript-3'))
   },
   {
     "id": "ada",
     "name": "Ada",
-    "import": () => import('@shikijs/langs/ada')
+    "import": (() => import('@shikijs/langs/ada'))
   },
   {
     "id": "angular-html",
     "name": "Angular HTML",
-    "import": () => import('@shikijs/langs/angular-html')
+    "import": (() => import('@shikijs/langs/angular-html'))
   },
   {
     "id": "angular-ts",
     "name": "Angular TypeScript",
-    "import": () => import('@shikijs/langs/angular-ts')
+    "import": (() => import('@shikijs/langs/angular-ts'))
   },
   {
     "id": "apache",
     "name": "Apache Conf",
-    "import": () => import('@shikijs/langs/apache')
+    "import": (() => import('@shikijs/langs/apache'))
   },
   {
     "id": "apex",
     "name": "Apex",
-    "import": () => import('@shikijs/langs/apex')
+    "import": (() => import('@shikijs/langs/apex'))
   },
   {
     "id": "apl",
     "name": "APL",
-    "import": () => import('@shikijs/langs/apl')
+    "import": (() => import('@shikijs/langs/apl'))
   },
   {
     "id": "applescript",
     "name": "AppleScript",
-    "import": () => import('@shikijs/langs/applescript')
+    "import": (() => import('@shikijs/langs/applescript'))
   },
   {
     "id": "ara",
     "name": "Ara",
-    "import": () => import('@shikijs/langs/ara')
+    "import": (() => import('@shikijs/langs/ara'))
   },
   {
     "id": "asciidoc",
@@ -55,27 +55,27 @@ const bundledLanguagesInfo = [
     "aliases": [
       "adoc"
     ],
-    "import": () => import('@shikijs/langs/asciidoc')
+    "import": (() => import('@shikijs/langs/asciidoc'))
   },
   {
     "id": "asm",
     "name": "Assembly",
-    "import": () => import('@shikijs/langs/asm')
+    "import": (() => import('@shikijs/langs/asm'))
   },
   {
     "id": "astro",
     "name": "Astro",
-    "import": () => import('@shikijs/langs/astro')
+    "import": (() => import('@shikijs/langs/astro'))
   },
   {
     "id": "awk",
     "name": "AWK",
-    "import": () => import('@shikijs/langs/awk')
+    "import": (() => import('@shikijs/langs/awk'))
   },
   {
     "id": "ballerina",
     "name": "Ballerina",
-    "import": () => import('@shikijs/langs/ballerina')
+    "import": (() => import('@shikijs/langs/ballerina'))
   },
   {
     "id": "bat",
@@ -83,12 +83,12 @@ const bundledLanguagesInfo = [
     "aliases": [
       "batch"
     ],
-    "import": () => import('@shikijs/langs/bat')
+    "import": (() => import('@shikijs/langs/bat'))
   },
   {
     "id": "beancount",
     "name": "Beancount",
-    "import": () => import('@shikijs/langs/beancount')
+    "import": (() => import('@shikijs/langs/beancount'))
   },
   {
     "id": "berry",
@@ -96,22 +96,22 @@ const bundledLanguagesInfo = [
     "aliases": [
       "be"
     ],
-    "import": () => import('@shikijs/langs/berry')
+    "import": (() => import('@shikijs/langs/berry'))
   },
   {
     "id": "bibtex",
     "name": "BibTeX",
-    "import": () => import('@shikijs/langs/bibtex')
+    "import": (() => import('@shikijs/langs/bibtex'))
   },
   {
     "id": "bicep",
     "name": "Bicep",
-    "import": () => import('@shikijs/langs/bicep')
+    "import": (() => import('@shikijs/langs/bicep'))
   },
   {
     "id": "blade",
     "name": "Blade",
-    "import": () => import('@shikijs/langs/blade')
+    "import": (() => import('@shikijs/langs/blade'))
   },
   {
     "id": "bsl",
@@ -119,12 +119,12 @@ const bundledLanguagesInfo = [
     "aliases": [
       "1c"
     ],
-    "import": () => import('@shikijs/langs/bsl')
+    "import": (() => import('@shikijs/langs/bsl'))
   },
   {
     "id": "c",
     "name": "C",
-    "import": () => import('@shikijs/langs/c')
+    "import": (() => import('@shikijs/langs/c'))
   },
   {
     "id": "cadence",
@@ -132,17 +132,17 @@ const bundledLanguagesInfo = [
     "aliases": [
       "cdc"
     ],
-    "import": () => import('@shikijs/langs/cadence')
+    "import": (() => import('@shikijs/langs/cadence'))
   },
   {
     "id": "cairo",
     "name": "Cairo",
-    "import": () => import('@shikijs/langs/cairo')
+    "import": (() => import('@shikijs/langs/cairo'))
   },
   {
     "id": "clarity",
     "name": "Clarity",
-    "import": () => import('@shikijs/langs/clarity')
+    "import": (() => import('@shikijs/langs/clarity'))
   },
   {
     "id": "clojure",
@@ -150,22 +150,22 @@ const bundledLanguagesInfo = [
     "aliases": [
       "clj"
     ],
-    "import": () => import('@shikijs/langs/clojure')
+    "import": (() => import('@shikijs/langs/clojure'))
   },
   {
     "id": "cmake",
     "name": "CMake",
-    "import": () => import('@shikijs/langs/cmake')
+    "import": (() => import('@shikijs/langs/cmake'))
   },
   {
     "id": "cobol",
     "name": "COBOL",
-    "import": () => import('@shikijs/langs/cobol')
+    "import": (() => import('@shikijs/langs/cobol'))
   },
   {
     "id": "codeowners",
     "name": "CODEOWNERS",
-    "import": () => import('@shikijs/langs/codeowners')
+    "import": (() => import('@shikijs/langs/codeowners'))
   },
   {
     "id": "codeql",
@@ -173,7 +173,7 @@ const bundledLanguagesInfo = [
     "aliases": [
       "ql"
     ],
-    "import": () => import('@shikijs/langs/codeql')
+    "import": (() => import('@shikijs/langs/codeql'))
   },
   {
     "id": "coffee",
@@ -181,7 +181,7 @@ const bundledLanguagesInfo = [
     "aliases": [
       "coffeescript"
     ],
-    "import": () => import('@shikijs/langs/coffee')
+    "import": (() => import('@shikijs/langs/coffee'))
   },
   {
     "id": "common-lisp",
@@ -189,12 +189,12 @@ const bundledLanguagesInfo = [
     "aliases": [
       "lisp"
     ],
-    "import": () => import('@shikijs/langs/common-lisp')
+    "import": (() => import('@shikijs/langs/common-lisp'))
   },
   {
     "id": "coq",
     "name": "Coq",
-    "import": () => import('@shikijs/langs/coq')
+    "import": (() => import('@shikijs/langs/coq'))
   },
   {
     "id": "cpp",
@@ -202,12 +202,12 @@ const bundledLanguagesInfo = [
     "aliases": [
       "c++"
     ],
-    "import": () => import('@shikijs/langs/cpp')
+    "import": (() => import('@shikijs/langs/cpp'))
   },
   {
     "id": "crystal",
     "name": "Crystal",
-    "import": () => import('@shikijs/langs/crystal')
+    "import": (() => import('@shikijs/langs/crystal'))
   },
   {
     "id": "csharp",
@@ -216,22 +216,22 @@ const bundledLanguagesInfo = [
       "c#",
       "cs"
     ],
-    "import": () => import('@shikijs/langs/csharp')
+    "import": (() => import('@shikijs/langs/csharp'))
   },
   {
     "id": "css",
     "name": "CSS",
-    "import": () => import('@shikijs/langs/css')
+    "import": (() => import('@shikijs/langs/css'))
   },
   {
     "id": "csv",
     "name": "CSV",
-    "import": () => import('@shikijs/langs/csv')
+    "import": (() => import('@shikijs/langs/csv'))
   },
   {
     "id": "cue",
     "name": "CUE",
-    "import": () => import('@shikijs/langs/cue')
+    "import": (() => import('@shikijs/langs/cue'))
   },
   {
     "id": "cypher",
@@ -239,32 +239,32 @@ const bundledLanguagesInfo = [
     "aliases": [
       "cql"
     ],
-    "import": () => import('@shikijs/langs/cypher')
+    "import": (() => import('@shikijs/langs/cypher'))
   },
   {
     "id": "d",
     "name": "D",
-    "import": () => import('@shikijs/langs/d')
+    "import": (() => import('@shikijs/langs/d'))
   },
   {
     "id": "dart",
     "name": "Dart",
-    "import": () => import('@shikijs/langs/dart')
+    "import": (() => import('@shikijs/langs/dart'))
   },
   {
     "id": "dax",
     "name": "DAX",
-    "import": () => import('@shikijs/langs/dax')
+    "import": (() => import('@shikijs/langs/dax'))
   },
   {
     "id": "desktop",
     "name": "Desktop",
-    "import": () => import('@shikijs/langs/desktop')
+    "import": (() => import('@shikijs/langs/desktop'))
   },
   {
     "id": "diff",
     "name": "Diff",
-    "import": () => import('@shikijs/langs/diff')
+    "import": (() => import('@shikijs/langs/diff'))
   },
   {
     "id": "docker",
@@ -272,32 +272,32 @@ const bundledLanguagesInfo = [
     "aliases": [
       "dockerfile"
     ],
-    "import": () => import('@shikijs/langs/docker')
+    "import": (() => import('@shikijs/langs/docker'))
   },
   {
     "id": "dotenv",
     "name": "dotEnv",
-    "import": () => import('@shikijs/langs/dotenv')
+    "import": (() => import('@shikijs/langs/dotenv'))
   },
   {
     "id": "dream-maker",
     "name": "Dream Maker",
-    "import": () => import('@shikijs/langs/dream-maker')
+    "import": (() => import('@shikijs/langs/dream-maker'))
   },
   {
     "id": "edge",
     "name": "Edge",
-    "import": () => import('@shikijs/langs/edge')
+    "import": (() => import('@shikijs/langs/edge'))
   },
   {
     "id": "elixir",
     "name": "Elixir",
-    "import": () => import('@shikijs/langs/elixir')
+    "import": (() => import('@shikijs/langs/elixir'))
   },
   {
     "id": "elm",
     "name": "Elm",
-    "import": () => import('@shikijs/langs/elm')
+    "import": (() => import('@shikijs/langs/elm'))
   },
   {
     "id": "emacs-lisp",
@@ -305,12 +305,12 @@ const bundledLanguagesInfo = [
     "aliases": [
       "elisp"
     ],
-    "import": () => import('@shikijs/langs/emacs-lisp')
+    "import": (() => import('@shikijs/langs/emacs-lisp'))
   },
   {
     "id": "erb",
     "name": "ERB",
-    "import": () => import('@shikijs/langs/erb')
+    "import": (() => import('@shikijs/langs/erb'))
   },
   {
     "id": "erlang",
@@ -318,17 +318,17 @@ const bundledLanguagesInfo = [
     "aliases": [
       "erl"
     ],
-    "import": () => import('@shikijs/langs/erlang')
+    "import": (() => import('@shikijs/langs/erlang'))
   },
   {
     "id": "fennel",
     "name": "Fennel",
-    "import": () => import('@shikijs/langs/fennel')
+    "import": (() => import('@shikijs/langs/fennel'))
   },
   {
     "id": "fish",
     "name": "Fish",
-    "import": () => import('@shikijs/langs/fish')
+    "import": (() => import('@shikijs/langs/fish'))
   },
   {
     "id": "fluent",
@@ -336,7 +336,7 @@ const bundledLanguagesInfo = [
     "aliases": [
       "ftl"
     ],
-    "import": () => import('@shikijs/langs/fluent')
+    "import": (() => import('@shikijs/langs/fluent'))
   },
   {
     "id": "fortran-fixed-form",
@@ -346,7 +346,7 @@ const bundledLanguagesInfo = [
       "for",
       "f77"
     ],
-    "import": () => import('@shikijs/langs/fortran-fixed-form')
+    "import": (() => import('@shikijs/langs/fortran-fixed-form'))
   },
   {
     "id": "fortran-free-form",
@@ -358,7 +358,7 @@ const bundledLanguagesInfo = [
       "f08",
       "f18"
     ],
-    "import": () => import('@shikijs/langs/fortran-free-form')
+    "import": (() => import('@shikijs/langs/fortran-free-form'))
   },
   {
     "id": "fsharp",
@@ -367,47 +367,47 @@ const bundledLanguagesInfo = [
       "f#",
       "fs"
     ],
-    "import": () => import('@shikijs/langs/fsharp')
+    "import": (() => import('@shikijs/langs/fsharp'))
   },
   {
     "id": "gdresource",
     "name": "GDResource",
-    "import": () => import('@shikijs/langs/gdresource')
+    "import": (() => import('@shikijs/langs/gdresource'))
   },
   {
     "id": "gdscript",
     "name": "GDScript",
-    "import": () => import('@shikijs/langs/gdscript')
+    "import": (() => import('@shikijs/langs/gdscript'))
   },
   {
     "id": "gdshader",
     "name": "GDShader",
-    "import": () => import('@shikijs/langs/gdshader')
+    "import": (() => import('@shikijs/langs/gdshader'))
   },
   {
     "id": "genie",
     "name": "Genie",
-    "import": () => import('@shikijs/langs/genie')
+    "import": (() => import('@shikijs/langs/genie'))
   },
   {
     "id": "gherkin",
     "name": "Gherkin",
-    "import": () => import('@shikijs/langs/gherkin')
+    "import": (() => import('@shikijs/langs/gherkin'))
   },
   {
     "id": "git-commit",
     "name": "Git Commit Message",
-    "import": () => import('@shikijs/langs/git-commit')
+    "import": (() => import('@shikijs/langs/git-commit'))
   },
   {
     "id": "git-rebase",
     "name": "Git Rebase Message",
-    "import": () => import('@shikijs/langs/git-rebase')
+    "import": (() => import('@shikijs/langs/git-rebase'))
   },
   {
     "id": "gleam",
     "name": "Gleam",
-    "import": () => import('@shikijs/langs/gleam')
+    "import": (() => import('@shikijs/langs/gleam'))
   },
   {
     "id": "glimmer-js",
@@ -415,7 +415,7 @@ const bundledLanguagesInfo = [
     "aliases": [
       "gjs"
     ],
-    "import": () => import('@shikijs/langs/glimmer-js')
+    "import": (() => import('@shikijs/langs/glimmer-js'))
   },
   {
     "id": "glimmer-ts",
@@ -423,22 +423,22 @@ const bundledLanguagesInfo = [
     "aliases": [
       "gts"
     ],
-    "import": () => import('@shikijs/langs/glimmer-ts')
+    "import": (() => import('@shikijs/langs/glimmer-ts'))
   },
   {
     "id": "glsl",
     "name": "GLSL",
-    "import": () => import('@shikijs/langs/glsl')
+    "import": (() => import('@shikijs/langs/glsl'))
   },
   {
     "id": "gnuplot",
     "name": "Gnuplot",
-    "import": () => import('@shikijs/langs/gnuplot')
+    "import": (() => import('@shikijs/langs/gnuplot'))
   },
   {
     "id": "go",
     "name": "Go",
-    "import": () => import('@shikijs/langs/go')
+    "import": (() => import('@shikijs/langs/go'))
   },
   {
     "id": "graphql",
@@ -446,22 +446,22 @@ const bundledLanguagesInfo = [
     "aliases": [
       "gql"
     ],
-    "import": () => import('@shikijs/langs/graphql')
+    "import": (() => import('@shikijs/langs/graphql'))
   },
   {
     "id": "groovy",
     "name": "Groovy",
-    "import": () => import('@shikijs/langs/groovy')
+    "import": (() => import('@shikijs/langs/groovy'))
   },
   {
     "id": "hack",
     "name": "Hack",
-    "import": () => import('@shikijs/langs/hack')
+    "import": (() => import('@shikijs/langs/hack'))
   },
   {
     "id": "haml",
     "name": "Ruby Haml",
-    "import": () => import('@shikijs/langs/haml')
+    "import": (() => import('@shikijs/langs/haml'))
   },
   {
     "id": "handlebars",
@@ -469,7 +469,7 @@ const bundledLanguagesInfo = [
     "aliases": [
       "hbs"
     ],
-    "import": () => import('@shikijs/langs/handlebars')
+    "import": (() => import('@shikijs/langs/handlebars'))
   },
   {
     "id": "haskell",
@@ -477,57 +477,57 @@ const bundledLanguagesInfo = [
     "aliases": [
       "hs"
     ],
-    "import": () => import('@shikijs/langs/haskell')
+    "import": (() => import('@shikijs/langs/haskell'))
   },
   {
     "id": "haxe",
     "name": "Haxe",
-    "import": () => import('@shikijs/langs/haxe')
+    "import": (() => import('@shikijs/langs/haxe'))
   },
   {
     "id": "hcl",
     "name": "HashiCorp HCL",
-    "import": () => import('@shikijs/langs/hcl')
+    "import": (() => import('@shikijs/langs/hcl'))
   },
   {
     "id": "hjson",
     "name": "Hjson",
-    "import": () => import('@shikijs/langs/hjson')
+    "import": (() => import('@shikijs/langs/hjson'))
   },
   {
     "id": "hlsl",
     "name": "HLSL",
-    "import": () => import('@shikijs/langs/hlsl')
+    "import": (() => import('@shikijs/langs/hlsl'))
   },
   {
     "id": "html",
     "name": "HTML",
-    "import": () => import('@shikijs/langs/html')
+    "import": (() => import('@shikijs/langs/html'))
   },
   {
     "id": "html-derivative",
     "name": "HTML (Derivative)",
-    "import": () => import('@shikijs/langs/html-derivative')
+    "import": (() => import('@shikijs/langs/html-derivative'))
   },
   {
     "id": "http",
     "name": "HTTP",
-    "import": () => import('@shikijs/langs/http')
+    "import": (() => import('@shikijs/langs/http'))
   },
   {
     "id": "hxml",
     "name": "HXML",
-    "import": () => import('@shikijs/langs/hxml')
+    "import": (() => import('@shikijs/langs/hxml'))
   },
   {
     "id": "hy",
     "name": "Hy",
-    "import": () => import('@shikijs/langs/hy')
+    "import": (() => import('@shikijs/langs/hy'))
   },
   {
     "id": "imba",
     "name": "Imba",
-    "import": () => import('@shikijs/langs/imba')
+    "import": (() => import('@shikijs/langs/imba'))
   },
   {
     "id": "ini",
@@ -535,12 +535,12 @@ const bundledLanguagesInfo = [
     "aliases": [
       "properties"
     ],
-    "import": () => import('@shikijs/langs/ini')
+    "import": (() => import('@shikijs/langs/ini'))
   },
   {
     "id": "java",
     "name": "Java",
-    "import": () => import('@shikijs/langs/java')
+    "import": (() => import('@shikijs/langs/java'))
   },
   {
     "id": "javascript",
@@ -548,42 +548,42 @@ const bundledLanguagesInfo = [
     "aliases": [
       "js"
     ],
-    "import": () => import('@shikijs/langs/javascript')
+    "import": (() => import('@shikijs/langs/javascript'))
   },
   {
     "id": "jinja",
     "name": "Jinja",
-    "import": () => import('@shikijs/langs/jinja')
+    "import": (() => import('@shikijs/langs/jinja'))
   },
   {
     "id": "jison",
     "name": "Jison",
-    "import": () => import('@shikijs/langs/jison')
+    "import": (() => import('@shikijs/langs/jison'))
   },
   {
     "id": "json",
     "name": "JSON",
-    "import": () => import('@shikijs/langs/json')
+    "import": (() => import('@shikijs/langs/json'))
   },
   {
     "id": "json5",
     "name": "JSON5",
-    "import": () => import('@shikijs/langs/json5')
+    "import": (() => import('@shikijs/langs/json5'))
   },
   {
     "id": "jsonc",
     "name": "JSON with Comments",
-    "import": () => import('@shikijs/langs/jsonc')
+    "import": (() => import('@shikijs/langs/jsonc'))
   },
   {
     "id": "jsonl",
     "name": "JSON Lines",
-    "import": () => import('@shikijs/langs/jsonl')
+    "import": (() => import('@shikijs/langs/jsonl'))
   },
   {
     "id": "jsonnet",
     "name": "Jsonnet",
-    "import": () => import('@shikijs/langs/jsonnet')
+    "import": (() => import('@shikijs/langs/jsonnet'))
   },
   {
     "id": "jssm",
@@ -591,12 +591,12 @@ const bundledLanguagesInfo = [
     "aliases": [
       "fsl"
     ],
-    "import": () => import('@shikijs/langs/jssm')
+    "import": (() => import('@shikijs/langs/jssm'))
   },
   {
     "id": "jsx",
     "name": "JSX",
-    "import": () => import('@shikijs/langs/jsx')
+    "import": (() => import('@shikijs/langs/jsx'))
   },
   {
     "id": "julia",
@@ -604,7 +604,7 @@ const bundledLanguagesInfo = [
     "aliases": [
       "jl"
     ],
-    "import": () => import('@shikijs/langs/julia')
+    "import": (() => import('@shikijs/langs/julia'))
   },
   {
     "id": "kotlin",
@@ -613,7 +613,7 @@ const bundledLanguagesInfo = [
       "kt",
       "kts"
     ],
-    "import": () => import('@shikijs/langs/kotlin')
+    "import": (() => import('@shikijs/langs/kotlin'))
   },
   {
     "id": "kusto",
@@ -621,12 +621,12 @@ const bundledLanguagesInfo = [
     "aliases": [
       "kql"
     ],
-    "import": () => import('@shikijs/langs/kusto')
+    "import": (() => import('@shikijs/langs/kusto'))
   },
   {
     "id": "latex",
     "name": "LaTeX",
-    "import": () => import('@shikijs/langs/latex')
+    "import": (() => import('@shikijs/langs/latex'))
   },
   {
     "id": "lean",
@@ -634,42 +634,42 @@ const bundledLanguagesInfo = [
     "aliases": [
       "lean4"
     ],
-    "import": () => import('@shikijs/langs/lean')
+    "import": (() => import('@shikijs/langs/lean'))
   },
   {
     "id": "less",
     "name": "Less",
-    "import": () => import('@shikijs/langs/less')
+    "import": (() => import('@shikijs/langs/less'))
   },
   {
     "id": "liquid",
     "name": "Liquid",
-    "import": () => import('@shikijs/langs/liquid')
+    "import": (() => import('@shikijs/langs/liquid'))
   },
   {
     "id": "llvm",
     "name": "LLVM IR",
-    "import": () => import('@shikijs/langs/llvm')
+    "import": (() => import('@shikijs/langs/llvm'))
   },
   {
     "id": "log",
     "name": "Log file",
-    "import": () => import('@shikijs/langs/log')
+    "import": (() => import('@shikijs/langs/log'))
   },
   {
     "id": "logo",
     "name": "Logo",
-    "import": () => import('@shikijs/langs/logo')
+    "import": (() => import('@shikijs/langs/logo'))
   },
   {
     "id": "lua",
     "name": "Lua",
-    "import": () => import('@shikijs/langs/lua')
+    "import": (() => import('@shikijs/langs/lua'))
   },
   {
     "id": "luau",
     "name": "Luau",
-    "import": () => import('@shikijs/langs/luau')
+    "import": (() => import('@shikijs/langs/luau'))
   },
   {
     "id": "make",
@@ -677,7 +677,7 @@ const bundledLanguagesInfo = [
     "aliases": [
       "makefile"
     ],
-    "import": () => import('@shikijs/langs/make')
+    "import": (() => import('@shikijs/langs/make'))
   },
   {
     "id": "markdown",
@@ -685,27 +685,27 @@ const bundledLanguagesInfo = [
     "aliases": [
       "md"
     ],
-    "import": () => import('@shikijs/langs/markdown')
+    "import": (() => import('@shikijs/langs/markdown'))
   },
   {
     "id": "marko",
     "name": "Marko",
-    "import": () => import('@shikijs/langs/marko')
+    "import": (() => import('@shikijs/langs/marko'))
   },
   {
     "id": "matlab",
     "name": "MATLAB",
-    "import": () => import('@shikijs/langs/matlab')
+    "import": (() => import('@shikijs/langs/matlab'))
   },
   {
     "id": "mdc",
     "name": "MDC",
-    "import": () => import('@shikijs/langs/mdc')
+    "import": (() => import('@shikijs/langs/mdc'))
   },
   {
     "id": "mdx",
     "name": "MDX",
-    "import": () => import('@shikijs/langs/mdx')
+    "import": (() => import('@shikijs/langs/mdx'))
   },
   {
     "id": "mermaid",
@@ -713,7 +713,7 @@ const bundledLanguagesInfo = [
     "aliases": [
       "mmd"
     ],
-    "import": () => import('@shikijs/langs/mermaid')
+    "import": (() => import('@shikijs/langs/mermaid'))
   },
   {
     "id": "mipsasm",
@@ -721,17 +721,17 @@ const bundledLanguagesInfo = [
     "aliases": [
       "mips"
     ],
-    "import": () => import('@shikijs/langs/mipsasm')
+    "import": (() => import('@shikijs/langs/mipsasm'))
   },
   {
     "id": "mojo",
     "name": "Mojo",
-    "import": () => import('@shikijs/langs/mojo')
+    "import": (() => import('@shikijs/langs/mojo'))
   },
   {
     "id": "move",
     "name": "Move",
-    "import": () => import('@shikijs/langs/move')
+    "import": (() => import('@shikijs/langs/move'))
   },
   {
     "id": "narrat",
@@ -739,7 +739,7 @@ const bundledLanguagesInfo = [
     "aliases": [
       "nar"
     ],
-    "import": () => import('@shikijs/langs/narrat')
+    "import": (() => import('@shikijs/langs/narrat'))
   },
   {
     "id": "nextflow",
@@ -747,22 +747,22 @@ const bundledLanguagesInfo = [
     "aliases": [
       "nf"
     ],
-    "import": () => import('@shikijs/langs/nextflow')
+    "import": (() => import('@shikijs/langs/nextflow'))
   },
   {
     "id": "nginx",
     "name": "Nginx",
-    "import": () => import('@shikijs/langs/nginx')
+    "import": (() => import('@shikijs/langs/nginx'))
   },
   {
     "id": "nim",
     "name": "Nim",
-    "import": () => import('@shikijs/langs/nim')
+    "import": (() => import('@shikijs/langs/nim'))
   },
   {
     "id": "nix",
     "name": "Nix",
-    "import": () => import('@shikijs/langs/nix')
+    "import": (() => import('@shikijs/langs/nix'))
   },
   {
     "id": "nushell",
@@ -770,7 +770,7 @@ const bundledLanguagesInfo = [
     "aliases": [
       "nu"
     ],
-    "import": () => import('@shikijs/langs/nushell')
+    "import": (() => import('@shikijs/langs/nushell'))
   },
   {
     "id": "objective-c",
@@ -778,37 +778,37 @@ const bundledLanguagesInfo = [
     "aliases": [
       "objc"
     ],
-    "import": () => import('@shikijs/langs/objective-c')
+    "import": (() => import('@shikijs/langs/objective-c'))
   },
   {
     "id": "objective-cpp",
     "name": "Objective-C++",
-    "import": () => import('@shikijs/langs/objective-cpp')
+    "import": (() => import('@shikijs/langs/objective-cpp'))
   },
   {
     "id": "ocaml",
     "name": "OCaml",
-    "import": () => import('@shikijs/langs/ocaml')
+    "import": (() => import('@shikijs/langs/ocaml'))
   },
   {
     "id": "pascal",
     "name": "Pascal",
-    "import": () => import('@shikijs/langs/pascal')
+    "import": (() => import('@shikijs/langs/pascal'))
   },
   {
     "id": "perl",
     "name": "Perl",
-    "import": () => import('@shikijs/langs/perl')
+    "import": (() => import('@shikijs/langs/perl'))
   },
   {
     "id": "php",
     "name": "PHP",
-    "import": () => import('@shikijs/langs/php')
+    "import": (() => import('@shikijs/langs/php'))
   },
   {
     "id": "plsql",
     "name": "PL/SQL",
-    "import": () => import('@shikijs/langs/plsql')
+    "import": (() => import('@shikijs/langs/plsql'))
   },
   {
     "id": "po",
@@ -817,22 +817,22 @@ const bundledLanguagesInfo = [
       "pot",
       "potx"
     ],
-    "import": () => import('@shikijs/langs/po')
+    "import": (() => import('@shikijs/langs/po'))
   },
   {
     "id": "polar",
     "name": "Polar",
-    "import": () => import('@shikijs/langs/polar')
+    "import": (() => import('@shikijs/langs/polar'))
   },
   {
     "id": "postcss",
     "name": "PostCSS",
-    "import": () => import('@shikijs/langs/postcss')
+    "import": (() => import('@shikijs/langs/postcss'))
   },
   {
     "id": "powerquery",
     "name": "PowerQuery",
-    "import": () => import('@shikijs/langs/powerquery')
+    "import": (() => import('@shikijs/langs/powerquery'))
   },
   {
     "id": "powershell",
@@ -841,17 +841,17 @@ const bundledLanguagesInfo = [
       "ps",
       "ps1"
     ],
-    "import": () => import('@shikijs/langs/powershell')
+    "import": (() => import('@shikijs/langs/powershell'))
   },
   {
     "id": "prisma",
     "name": "Prisma",
-    "import": () => import('@shikijs/langs/prisma')
+    "import": (() => import('@shikijs/langs/prisma'))
   },
   {
     "id": "prolog",
     "name": "Prolog",
-    "import": () => import('@shikijs/langs/prolog')
+    "import": (() => import('@shikijs/langs/prolog'))
   },
   {
     "id": "proto",
@@ -859,7 +859,7 @@ const bundledLanguagesInfo = [
     "aliases": [
       "protobuf"
     ],
-    "import": () => import('@shikijs/langs/proto')
+    "import": (() => import('@shikijs/langs/proto'))
   },
   {
     "id": "pug",
@@ -867,17 +867,17 @@ const bundledLanguagesInfo = [
     "aliases": [
       "jade"
     ],
-    "import": () => import('@shikijs/langs/pug')
+    "import": (() => import('@shikijs/langs/pug'))
   },
   {
     "id": "puppet",
     "name": "Puppet",
-    "import": () => import('@shikijs/langs/puppet')
+    "import": (() => import('@shikijs/langs/puppet'))
   },
   {
     "id": "purescript",
     "name": "PureScript",
-    "import": () => import('@shikijs/langs/purescript')
+    "import": (() => import('@shikijs/langs/purescript'))
   },
   {
     "id": "python",
@@ -885,32 +885,32 @@ const bundledLanguagesInfo = [
     "aliases": [
       "py"
     ],
-    "import": () => import('@shikijs/langs/python')
+    "import": (() => import('@shikijs/langs/python'))
   },
   {
     "id": "qml",
     "name": "QML",
-    "import": () => import('@shikijs/langs/qml')
+    "import": (() => import('@shikijs/langs/qml'))
   },
   {
     "id": "qmldir",
     "name": "QML Directory",
-    "import": () => import('@shikijs/langs/qmldir')
+    "import": (() => import('@shikijs/langs/qmldir'))
   },
   {
     "id": "qss",
     "name": "Qt Style Sheets",
-    "import": () => import('@shikijs/langs/qss')
+    "import": (() => import('@shikijs/langs/qss'))
   },
   {
     "id": "r",
     "name": "R",
-    "import": () => import('@shikijs/langs/r')
+    "import": (() => import('@shikijs/langs/r'))
   },
   {
     "id": "racket",
     "name": "Racket",
-    "import": () => import('@shikijs/langs/racket')
+    "import": (() => import('@shikijs/langs/racket'))
   },
   {
     "id": "raku",
@@ -918,17 +918,17 @@ const bundledLanguagesInfo = [
     "aliases": [
       "perl6"
     ],
-    "import": () => import('@shikijs/langs/raku')
+    "import": (() => import('@shikijs/langs/raku'))
   },
   {
     "id": "razor",
     "name": "ASP.NET Razor",
-    "import": () => import('@shikijs/langs/razor')
+    "import": (() => import('@shikijs/langs/razor'))
   },
   {
     "id": "reg",
     "name": "Windows Registry Script",
-    "import": () => import('@shikijs/langs/reg')
+    "import": (() => import('@shikijs/langs/reg'))
   },
   {
     "id": "regexp",
@@ -936,22 +936,22 @@ const bundledLanguagesInfo = [
     "aliases": [
       "regex"
     ],
-    "import": () => import('@shikijs/langs/regexp')
+    "import": (() => import('@shikijs/langs/regexp'))
   },
   {
     "id": "rel",
     "name": "Rel",
-    "import": () => import('@shikijs/langs/rel')
+    "import": (() => import('@shikijs/langs/rel'))
   },
   {
     "id": "riscv",
     "name": "RISC-V",
-    "import": () => import('@shikijs/langs/riscv')
+    "import": (() => import('@shikijs/langs/riscv'))
   },
   {
     "id": "rst",
     "name": "reStructuredText",
-    "import": () => import('@shikijs/langs/rst')
+    "import": (() => import('@shikijs/langs/rst'))
   },
   {
     "id": "ruby",
@@ -959,7 +959,7 @@ const bundledLanguagesInfo = [
     "aliases": [
       "rb"
     ],
-    "import": () => import('@shikijs/langs/ruby')
+    "import": (() => import('@shikijs/langs/ruby'))
   },
   {
     "id": "rust",
@@ -967,32 +967,32 @@ const bundledLanguagesInfo = [
     "aliases": [
       "rs"
     ],
-    "import": () => import('@shikijs/langs/rust')
+    "import": (() => import('@shikijs/langs/rust'))
   },
   {
     "id": "sas",
     "name": "SAS",
-    "import": () => import('@shikijs/langs/sas')
+    "import": (() => import('@shikijs/langs/sas'))
   },
   {
     "id": "sass",
     "name": "Sass",
-    "import": () => import('@shikijs/langs/sass')
+    "import": (() => import('@shikijs/langs/sass'))
   },
   {
     "id": "scala",
     "name": "Scala",
-    "import": () => import('@shikijs/langs/scala')
+    "import": (() => import('@shikijs/langs/scala'))
   },
   {
     "id": "scheme",
     "name": "Scheme",
-    "import": () => import('@shikijs/langs/scheme')
+    "import": (() => import('@shikijs/langs/scheme'))
   },
   {
     "id": "scss",
     "name": "SCSS",
-    "import": () => import('@shikijs/langs/scss')
+    "import": (() => import('@shikijs/langs/scss'))
   },
   {
     "id": "sdbl",
@@ -1000,7 +1000,7 @@ const bundledLanguagesInfo = [
     "aliases": [
       "1c-query"
     ],
-    "import": () => import('@shikijs/langs/sdbl')
+    "import": (() => import('@shikijs/langs/sdbl'))
   },
   {
     "id": "shaderlab",
@@ -1008,7 +1008,7 @@ const bundledLanguagesInfo = [
     "aliases": [
       "shader"
     ],
-    "import": () => import('@shikijs/langs/shaderlab')
+    "import": (() => import('@shikijs/langs/shaderlab'))
   },
   {
     "id": "shellscript",
@@ -1019,7 +1019,7 @@ const bundledLanguagesInfo = [
       "shell",
       "zsh"
     ],
-    "import": () => import('@shikijs/langs/shellscript')
+    "import": (() => import('@shikijs/langs/shellscript'))
   },
   {
     "id": "shellsession",
@@ -1027,17 +1027,17 @@ const bundledLanguagesInfo = [
     "aliases": [
       "console"
     ],
-    "import": () => import('@shikijs/langs/shellsession')
+    "import": (() => import('@shikijs/langs/shellsession'))
   },
   {
     "id": "smalltalk",
     "name": "Smalltalk",
-    "import": () => import('@shikijs/langs/smalltalk')
+    "import": (() => import('@shikijs/langs/smalltalk'))
   },
   {
     "id": "solidity",
     "name": "Solidity",
-    "import": () => import('@shikijs/langs/solidity')
+    "import": (() => import('@shikijs/langs/solidity'))
   },
   {
     "id": "soy",
@@ -1045,12 +1045,12 @@ const bundledLanguagesInfo = [
     "aliases": [
       "closure-templates"
     ],
-    "import": () => import('@shikijs/langs/soy')
+    "import": (() => import('@shikijs/langs/soy'))
   },
   {
     "id": "sparql",
     "name": "SPARQL",
-    "import": () => import('@shikijs/langs/sparql')
+    "import": (() => import('@shikijs/langs/sparql'))
   },
   {
     "id": "splunk",
@@ -1058,22 +1058,22 @@ const bundledLanguagesInfo = [
     "aliases": [
       "spl"
     ],
-    "import": () => import('@shikijs/langs/splunk')
+    "import": (() => import('@shikijs/langs/splunk'))
   },
   {
     "id": "sql",
     "name": "SQL",
-    "import": () => import('@shikijs/langs/sql')
+    "import": (() => import('@shikijs/langs/sql'))
   },
   {
     "id": "ssh-config",
     "name": "SSH Config",
-    "import": () => import('@shikijs/langs/ssh-config')
+    "import": (() => import('@shikijs/langs/ssh-config'))
   },
   {
     "id": "stata",
     "name": "Stata",
-    "import": () => import('@shikijs/langs/stata')
+    "import": (() => import('@shikijs/langs/stata'))
   },
   {
     "id": "stylus",
@@ -1081,27 +1081,27 @@ const bundledLanguagesInfo = [
     "aliases": [
       "styl"
     ],
-    "import": () => import('@shikijs/langs/stylus')
+    "import": (() => import('@shikijs/langs/stylus'))
   },
   {
     "id": "svelte",
     "name": "Svelte",
-    "import": () => import('@shikijs/langs/svelte')
+    "import": (() => import('@shikijs/langs/svelte'))
   },
   {
     "id": "swift",
     "name": "Swift",
-    "import": () => import('@shikijs/langs/swift')
+    "import": (() => import('@shikijs/langs/swift'))
   },
   {
     "id": "system-verilog",
     "name": "SystemVerilog",
-    "import": () => import('@shikijs/langs/system-verilog')
+    "import": (() => import('@shikijs/langs/system-verilog'))
   },
   {
     "id": "systemd",
     "name": "Systemd Units",
-    "import": () => import('@shikijs/langs/systemd')
+    "import": (() => import('@shikijs/langs/systemd'))
   },
   {
     "id": "talonscript",
@@ -1109,22 +1109,22 @@ const bundledLanguagesInfo = [
     "aliases": [
       "talon"
     ],
-    "import": () => import('@shikijs/langs/talonscript')
+    "import": (() => import('@shikijs/langs/talonscript'))
   },
   {
     "id": "tasl",
     "name": "Tasl",
-    "import": () => import('@shikijs/langs/tasl')
+    "import": (() => import('@shikijs/langs/tasl'))
   },
   {
     "id": "tcl",
     "name": "Tcl",
-    "import": () => import('@shikijs/langs/tcl')
+    "import": (() => import('@shikijs/langs/tcl'))
   },
   {
     "id": "templ",
     "name": "Templ",
-    "import": () => import('@shikijs/langs/templ')
+    "import": (() => import('@shikijs/langs/templ'))
   },
   {
     "id": "terraform",
@@ -1133,17 +1133,17 @@ const bundledLanguagesInfo = [
       "tf",
       "tfvars"
     ],
-    "import": () => import('@shikijs/langs/terraform')
+    "import": (() => import('@shikijs/langs/terraform'))
   },
   {
     "id": "tex",
     "name": "TeX",
-    "import": () => import('@shikijs/langs/tex')
+    "import": (() => import('@shikijs/langs/tex'))
   },
   {
     "id": "toml",
     "name": "TOML",
-    "import": () => import('@shikijs/langs/toml')
+    "import": (() => import('@shikijs/langs/toml'))
   },
   {
     "id": "ts-tags",
@@ -1151,27 +1151,27 @@ const bundledLanguagesInfo = [
     "aliases": [
       "lit"
     ],
-    "import": () => import('@shikijs/langs/ts-tags')
+    "import": (() => import('@shikijs/langs/ts-tags'))
   },
   {
     "id": "tsv",
     "name": "TSV",
-    "import": () => import('@shikijs/langs/tsv')
+    "import": (() => import('@shikijs/langs/tsv'))
   },
   {
     "id": "tsx",
     "name": "TSX",
-    "import": () => import('@shikijs/langs/tsx')
+    "import": (() => import('@shikijs/langs/tsx'))
   },
   {
     "id": "turtle",
     "name": "Turtle",
-    "import": () => import('@shikijs/langs/turtle')
+    "import": (() => import('@shikijs/langs/turtle'))
   },
   {
     "id": "twig",
     "name": "Twig",
-    "import": () => import('@shikijs/langs/twig')
+    "import": (() => import('@shikijs/langs/twig'))
   },
   {
     "id": "typescript",
@@ -1179,7 +1179,7 @@ const bundledLanguagesInfo = [
     "aliases": [
       "ts"
     ],
-    "import": () => import('@shikijs/langs/typescript')
+    "import": (() => import('@shikijs/langs/typescript'))
   },
   {
     "id": "typespec",
@@ -1187,7 +1187,7 @@ const bundledLanguagesInfo = [
     "aliases": [
       "tsp"
     ],
-    "import": () => import('@shikijs/langs/typespec')
+    "import": (() => import('@shikijs/langs/typespec'))
   },
   {
     "id": "typst",
@@ -1195,17 +1195,17 @@ const bundledLanguagesInfo = [
     "aliases": [
       "typ"
     ],
-    "import": () => import('@shikijs/langs/typst')
+    "import": (() => import('@shikijs/langs/typst'))
   },
   {
     "id": "v",
     "name": "V",
-    "import": () => import('@shikijs/langs/v')
+    "import": (() => import('@shikijs/langs/v'))
   },
   {
     "id": "vala",
     "name": "Vala",
-    "import": () => import('@shikijs/langs/vala')
+    "import": (() => import('@shikijs/langs/vala'))
   },
   {
     "id": "vb",
@@ -1213,17 +1213,17 @@ const bundledLanguagesInfo = [
     "aliases": [
       "cmd"
     ],
-    "import": () => import('@shikijs/langs/vb')
+    "import": (() => import('@shikijs/langs/vb'))
   },
   {
     "id": "verilog",
     "name": "Verilog",
-    "import": () => import('@shikijs/langs/verilog')
+    "import": (() => import('@shikijs/langs/verilog'))
   },
   {
     "id": "vhdl",
     "name": "VHDL",
-    "import": () => import('@shikijs/langs/vhdl')
+    "import": (() => import('@shikijs/langs/vhdl'))
   },
   {
     "id": "viml",
@@ -1232,17 +1232,22 @@ const bundledLanguagesInfo = [
       "vim",
       "vimscript"
     ],
-    "import": () => import('@shikijs/langs/viml')
+    "import": (() => import('@shikijs/langs/viml'))
   },
   {
     "id": "vue",
     "name": "Vue",
-    "import": () => import('@shikijs/langs/vue')
+    "import": (() => import('@shikijs/langs/vue'))
   },
   {
     "id": "vue-html",
     "name": "Vue HTML",
-    "import": () => import('@shikijs/langs/vue-html')
+    "import": (() => import('@shikijs/langs/vue-html'))
+  },
+  {
+    "id": "vue-vine",
+    "name": "Vue Vine",
+    "import": (() => import('@shikijs/langs/vue-vine'))
   },
   {
     "id": "vyper",
@@ -1250,12 +1255,12 @@ const bundledLanguagesInfo = [
     "aliases": [
       "vy"
     ],
-    "import": () => import('@shikijs/langs/vyper')
+    "import": (() => import('@shikijs/langs/vyper'))
   },
   {
     "id": "wasm",
     "name": "WebAssembly",
-    "import": () => import('@shikijs/langs/wasm')
+    "import": (() => import('@shikijs/langs/wasm'))
   },
   {
     "id": "wenyan",
@@ -1263,12 +1268,12 @@ const bundledLanguagesInfo = [
     "aliases": [
       "\u6587\u8A00"
     ],
-    "import": () => import('@shikijs/langs/wenyan')
+    "import": (() => import('@shikijs/langs/wenyan'))
   },
   {
     "id": "wgsl",
     "name": "WGSL",
-    "import": () => import('@shikijs/langs/wgsl')
+    "import": (() => import('@shikijs/langs/wgsl'))
   },
   {
     "id": "wikitext",
@@ -1277,12 +1282,12 @@ const bundledLanguagesInfo = [
       "mediawiki",
       "wiki"
     ],
-    "import": () => import('@shikijs/langs/wikitext')
+    "import": (() => import('@shikijs/langs/wikitext'))
   },
   {
     "id": "wit",
     "name": "WebAssembly Interface Types",
-    "import": () => import('@shikijs/langs/wit')
+    "import": (() => import('@shikijs/langs/wit'))
   },
   {
     "id": "wolfram",
@@ -1290,17 +1295,17 @@ const bundledLanguagesInfo = [
     "aliases": [
       "wl"
     ],
-    "import": () => import('@shikijs/langs/wolfram')
+    "import": (() => import('@shikijs/langs/wolfram'))
   },
   {
     "id": "xml",
     "name": "XML",
-    "import": () => import('@shikijs/langs/xml')
+    "import": (() => import('@shikijs/langs/xml'))
   },
   {
     "id": "xsl",
     "name": "XSL",
-    "import": () => import('@shikijs/langs/xsl')
+    "import": (() => import('@shikijs/langs/xsl'))
   },
   {
     "id": "yaml",
@@ -1308,17 +1313,17 @@ const bundledLanguagesInfo = [
     "aliases": [
       "yml"
     ],
-    "import": () => import('@shikijs/langs/yaml')
+    "import": (() => import('@shikijs/langs/yaml'))
   },
   {
     "id": "zenscript",
     "name": "ZenScript",
-    "import": () => import('@shikijs/langs/zenscript')
+    "import": (() => import('@shikijs/langs/zenscript'))
   },
   {
     "id": "zig",
     "name": "Zig",
-    "import": () => import('@shikijs/langs/zig')
+    "import": (() => import('@shikijs/langs/zig'))
   }
 ];
 const bundledLanguagesBase = Object.fromEntries(bundledLanguagesInfo.map((i) => [i.id, i.import]));

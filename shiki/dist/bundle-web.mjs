@@ -8,27 +8,27 @@ const bundledLanguagesInfo = [
   {
     "id": "angular-html",
     "name": "Angular HTML",
-    "import": () => import('@shikijs/langs/angular-html')
+    "import": (() => import('@shikijs/langs/angular-html'))
   },
   {
     "id": "angular-ts",
     "name": "Angular TypeScript",
-    "import": () => import('@shikijs/langs/angular-ts')
+    "import": (() => import('@shikijs/langs/angular-ts'))
   },
   {
     "id": "astro",
     "name": "Astro",
-    "import": () => import('@shikijs/langs/astro')
+    "import": (() => import('@shikijs/langs/astro'))
   },
   {
     "id": "blade",
     "name": "Blade",
-    "import": () => import('@shikijs/langs/blade')
+    "import": (() => import('@shikijs/langs/blade'))
   },
   {
     "id": "c",
     "name": "C",
-    "import": () => import('@shikijs/langs/c')
+    "import": (() => import('@shikijs/langs/c'))
   },
   {
     "id": "coffee",
@@ -36,7 +36,7 @@ const bundledLanguagesInfo = [
     "aliases": [
       "coffeescript"
     ],
-    "import": () => import('@shikijs/langs/coffee')
+    "import": (() => import('@shikijs/langs/coffee'))
   },
   {
     "id": "cpp",
@@ -44,17 +44,17 @@ const bundledLanguagesInfo = [
     "aliases": [
       "c++"
     ],
-    "import": () => import('@shikijs/langs/cpp')
+    "import": (() => import('@shikijs/langs/cpp'))
   },
   {
     "id": "css",
     "name": "CSS",
-    "import": () => import('@shikijs/langs/css')
+    "import": (() => import('@shikijs/langs/css'))
   },
   {
     "id": "glsl",
     "name": "GLSL",
-    "import": () => import('@shikijs/langs/glsl')
+    "import": (() => import('@shikijs/langs/glsl'))
   },
   {
     "id": "graphql",
@@ -62,12 +62,12 @@ const bundledLanguagesInfo = [
     "aliases": [
       "gql"
     ],
-    "import": () => import('@shikijs/langs/graphql')
+    "import": (() => import('@shikijs/langs/graphql'))
   },
   {
     "id": "haml",
     "name": "Ruby Haml",
-    "import": () => import('@shikijs/langs/haml')
+    "import": (() => import('@shikijs/langs/haml'))
   },
   {
     "id": "handlebars",
@@ -75,32 +75,32 @@ const bundledLanguagesInfo = [
     "aliases": [
       "hbs"
     ],
-    "import": () => import('@shikijs/langs/handlebars')
+    "import": (() => import('@shikijs/langs/handlebars'))
   },
   {
     "id": "html",
     "name": "HTML",
-    "import": () => import('@shikijs/langs/html')
+    "import": (() => import('@shikijs/langs/html'))
   },
   {
     "id": "html-derivative",
     "name": "HTML (Derivative)",
-    "import": () => import('@shikijs/langs/html-derivative')
+    "import": (() => import('@shikijs/langs/html-derivative'))
   },
   {
     "id": "http",
     "name": "HTTP",
-    "import": () => import('@shikijs/langs/http')
+    "import": (() => import('@shikijs/langs/http'))
   },
   {
     "id": "imba",
     "name": "Imba",
-    "import": () => import('@shikijs/langs/imba')
+    "import": (() => import('@shikijs/langs/imba'))
   },
   {
     "id": "java",
     "name": "Java",
-    "import": () => import('@shikijs/langs/java')
+    "import": (() => import('@shikijs/langs/java'))
   },
   {
     "id": "javascript",
@@ -108,42 +108,42 @@ const bundledLanguagesInfo = [
     "aliases": [
       "js"
     ],
-    "import": () => import('@shikijs/langs/javascript')
+    "import": (() => import('@shikijs/langs/javascript'))
   },
   {
     "id": "jinja",
     "name": "Jinja",
-    "import": () => import('@shikijs/langs/jinja')
+    "import": (() => import('@shikijs/langs/jinja'))
   },
   {
     "id": "jison",
     "name": "Jison",
-    "import": () => import('@shikijs/langs/jison')
+    "import": (() => import('@shikijs/langs/jison'))
   },
   {
     "id": "json",
     "name": "JSON",
-    "import": () => import('@shikijs/langs/json')
+    "import": (() => import('@shikijs/langs/json'))
   },
   {
     "id": "json5",
     "name": "JSON5",
-    "import": () => import('@shikijs/langs/json5')
+    "import": (() => import('@shikijs/langs/json5'))
   },
   {
     "id": "jsonc",
     "name": "JSON with Comments",
-    "import": () => import('@shikijs/langs/jsonc')
+    "import": (() => import('@shikijs/langs/jsonc'))
   },
   {
     "id": "jsonl",
     "name": "JSON Lines",
-    "import": () => import('@shikijs/langs/jsonl')
+    "import": (() => import('@shikijs/langs/jsonl'))
   },
   {
     "id": "jsx",
     "name": "JSX",
-    "import": () => import('@shikijs/langs/jsx')
+    "import": (() => import('@shikijs/langs/jsx'))
   },
   {
     "id": "julia",
@@ -151,12 +151,12 @@ const bundledLanguagesInfo = [
     "aliases": [
       "jl"
     ],
-    "import": () => import('@shikijs/langs/julia')
+    "import": (() => import('@shikijs/langs/julia'))
   },
   {
     "id": "less",
     "name": "Less",
-    "import": () => import('@shikijs/langs/less')
+    "import": (() => import('@shikijs/langs/less'))
   },
   {
     "id": "markdown",
@@ -164,32 +164,32 @@ const bundledLanguagesInfo = [
     "aliases": [
       "md"
     ],
-    "import": () => import('@shikijs/langs/markdown')
+    "import": (() => import('@shikijs/langs/markdown'))
   },
   {
     "id": "marko",
     "name": "Marko",
-    "import": () => import('@shikijs/langs/marko')
+    "import": (() => import('@shikijs/langs/marko'))
   },
   {
     "id": "mdc",
     "name": "MDC",
-    "import": () => import('@shikijs/langs/mdc')
+    "import": (() => import('@shikijs/langs/mdc'))
   },
   {
     "id": "mdx",
     "name": "MDX",
-    "import": () => import('@shikijs/langs/mdx')
+    "import": (() => import('@shikijs/langs/mdx'))
   },
   {
     "id": "php",
     "name": "PHP",
-    "import": () => import('@shikijs/langs/php')
+    "import": (() => import('@shikijs/langs/php'))
   },
   {
     "id": "postcss",
     "name": "PostCSS",
-    "import": () => import('@shikijs/langs/postcss')
+    "import": (() => import('@shikijs/langs/postcss'))
   },
   {
     "id": "pug",
@@ -197,7 +197,7 @@ const bundledLanguagesInfo = [
     "aliases": [
       "jade"
     ],
-    "import": () => import('@shikijs/langs/pug')
+    "import": (() => import('@shikijs/langs/pug'))
   },
   {
     "id": "python",
@@ -205,12 +205,12 @@ const bundledLanguagesInfo = [
     "aliases": [
       "py"
     ],
-    "import": () => import('@shikijs/langs/python')
+    "import": (() => import('@shikijs/langs/python'))
   },
   {
     "id": "r",
     "name": "R",
-    "import": () => import('@shikijs/langs/r')
+    "import": (() => import('@shikijs/langs/r'))
   },
   {
     "id": "regexp",
@@ -218,17 +218,17 @@ const bundledLanguagesInfo = [
     "aliases": [
       "regex"
     ],
-    "import": () => import('@shikijs/langs/regexp')
+    "import": (() => import('@shikijs/langs/regexp'))
   },
   {
     "id": "sass",
     "name": "Sass",
-    "import": () => import('@shikijs/langs/sass')
+    "import": (() => import('@shikijs/langs/sass'))
   },
   {
     "id": "scss",
     "name": "SCSS",
-    "import": () => import('@shikijs/langs/scss')
+    "import": (() => import('@shikijs/langs/scss'))
   },
   {
     "id": "shellscript",
@@ -239,12 +239,12 @@ const bundledLanguagesInfo = [
       "shell",
       "zsh"
     ],
-    "import": () => import('@shikijs/langs/shellscript')
+    "import": (() => import('@shikijs/langs/shellscript'))
   },
   {
     "id": "sql",
     "name": "SQL",
-    "import": () => import('@shikijs/langs/sql')
+    "import": (() => import('@shikijs/langs/sql'))
   },
   {
     "id": "stylus",
@@ -252,12 +252,12 @@ const bundledLanguagesInfo = [
     "aliases": [
       "styl"
     ],
-    "import": () => import('@shikijs/langs/stylus')
+    "import": (() => import('@shikijs/langs/stylus'))
   },
   {
     "id": "svelte",
     "name": "Svelte",
-    "import": () => import('@shikijs/langs/svelte')
+    "import": (() => import('@shikijs/langs/svelte'))
   },
   {
     "id": "ts-tags",
@@ -265,12 +265,12 @@ const bundledLanguagesInfo = [
     "aliases": [
       "lit"
     ],
-    "import": () => import('@shikijs/langs/ts-tags')
+    "import": (() => import('@shikijs/langs/ts-tags'))
   },
   {
     "id": "tsx",
     "name": "TSX",
-    "import": () => import('@shikijs/langs/tsx')
+    "import": (() => import('@shikijs/langs/tsx'))
   },
   {
     "id": "typescript",
@@ -278,37 +278,42 @@ const bundledLanguagesInfo = [
     "aliases": [
       "ts"
     ],
-    "import": () => import('@shikijs/langs/typescript')
+    "import": (() => import('@shikijs/langs/typescript'))
   },
   {
     "id": "vue",
     "name": "Vue",
-    "import": () => import('@shikijs/langs/vue')
+    "import": (() => import('@shikijs/langs/vue'))
   },
   {
     "id": "vue-html",
     "name": "Vue HTML",
-    "import": () => import('@shikijs/langs/vue-html')
+    "import": (() => import('@shikijs/langs/vue-html'))
+  },
+  {
+    "id": "vue-vine",
+    "name": "Vue Vine",
+    "import": (() => import('@shikijs/langs/vue-vine'))
   },
   {
     "id": "wasm",
     "name": "WebAssembly",
-    "import": () => import('@shikijs/langs/wasm')
+    "import": (() => import('@shikijs/langs/wasm'))
   },
   {
     "id": "wgsl",
     "name": "WGSL",
-    "import": () => import('@shikijs/langs/wgsl')
+    "import": (() => import('@shikijs/langs/wgsl'))
   },
   {
     "id": "wit",
     "name": "WebAssembly Interface Types",
-    "import": () => import('@shikijs/langs/wit')
+    "import": (() => import('@shikijs/langs/wit'))
   },
   {
     "id": "xml",
     "name": "XML",
-    "import": () => import('@shikijs/langs/xml')
+    "import": (() => import('@shikijs/langs/xml'))
   },
   {
     "id": "yaml",
@@ -316,7 +321,7 @@ const bundledLanguagesInfo = [
     "aliases": [
       "yml"
     ],
-    "import": () => import('@shikijs/langs/yaml')
+    "import": (() => import('@shikijs/langs/yaml'))
   }
 ];
 const bundledLanguagesBase = Object.fromEntries(bundledLanguagesInfo.map((i) => [i.id, i.import]));

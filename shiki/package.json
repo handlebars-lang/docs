@@ -1,7 +1,7 @@
 {
   "name": "shiki",
   "type": "module",
-  "version": "3.2.1",
+  "version": "3.13.0",
   "description": "A beautiful Syntax Highlighter.",
   "author": "Pine Wu <octref@gmail.com>; Anthony Fu <anthonyfu117@hotmail.com>",
   "license": "MIT",
@@ -48,22 +48,22 @@
   "dependencies": {
     "@shikijs/vscode-textmate": "^10.0.2",
     "@types/hast": "^3.0.4",
-    "@shikijs/core": "3.2.1",
-    "@shikijs/engine-javascript": "3.2.1",
-    "@shikijs/engine-oniguruma": "3.2.1",
-    "@shikijs/themes": "3.2.1",
-    "@shikijs/langs": "3.2.1",
-    "@shikijs/types": "3.2.1"
+    "@shikijs/core": "3.13.0",
+    "@shikijs/engine-oniguruma": "3.13.0",
+    "@shikijs/engine-javascript": "3.13.0",
+    "@shikijs/langs": "3.13.0",
+    "@shikijs/themes": "3.13.0",
+    "@shikijs/types": "3.13.0"
   },
   "devDependencies": {
     "rollup-plugin-copy": "^3.5.0",
-    "tm-grammars": "^1.23.2",
-    "tm-themes": "^1.10.1",
+    "tm-grammars": "^1.24.12",
+    "tm-themes": "^1.10.9",
     "vscode-oniguruma": "1.7.0"
   },
   "scripts": {
-    "build": "rimraf dist && NODE_OPTIONS=--max-old-space-size=4096 rollup -c",
-    "dev": "rollup -cw",
+    "build": "unbuild",
+    "dev": "unbuild --stub",
     "test": "vitest",
     "test:cf": "wrangler dev test/cf.ts --port 60001"
   }
