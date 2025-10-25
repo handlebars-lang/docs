@@ -31,9 +31,13 @@ Handlebars expressions can also be dot-separated paths.
 This expression looks up the `person` property in the input object and in turn looks up the `firstname` and `lastname`
 property within the `person` object.
 
-Pass the below input object to the template <Example examplePage="/examples/path-expressions-dot.md" show="input" />
+Pass the below input object to the template
 
-Output will be generated as below <Example examplePage="/examples/path-expressions-dot.md" show="output" />
+<Example examplePage="/examples/path-expressions-dot.md" show="input" />
+
+Output will be generated as below
+
+<Example examplePage="/examples/path-expressions-dot.md" show="output" />
 
 Handlebars also supports a deprecated `/` syntax, so you could write the above template as:
 
