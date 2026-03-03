@@ -40,7 +40,7 @@
     "p-debounce": "^5.0.0",
     "prettier": "^3.5.0",
     "semver": "^7.7.1",
-    "shiki": "^3.1.0",
+    "shiki": "^4.0.1",
     "vue": "^3.5.13"
   },
   "devDependencies": {
@@ -50,7 +50,7 @@
     "lint-staged": "^16.2.6",
     "vite-plugin-static-copy": "^3.1.4",
     "vitepress": "^1.6.3",
-    "vitest": "^3.0.5"
+    "vitest": "^4.0.18"
   },
   "lint-staged": {
     "*.{js,css,json,md,vue}": "npm run format"
