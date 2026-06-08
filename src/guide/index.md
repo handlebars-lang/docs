@@ -126,7 +126,7 @@ mustache, `/`, of the same name. Let's consider a helper that will generate an H
 
 <Example examplePage="/examples/helper-block" show="preparationScript" />
 
-The example creates a helper named `list` to generate our HTML list. The helper receives the `people` as its first
+The example creates a helper named `list` to generate our HTML list. The helper receives the `items` as its first
 parameter, and an `options` hash as its second parameter. The options hash contains a property named `fn`, which you can
 invoke with a context just as you would invoke a normal Handlebars template.
 
