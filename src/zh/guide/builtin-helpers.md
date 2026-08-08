@@ -101,6 +101,17 @@
 
 嵌套的每个块都可以通过基于深度的路径来访问迭代变量。例如，要访问父级的索引，可以使用 `{{@../index}}`。
 
+在当前项本身是一个数组时，可以使用 [段字面量语法](expressions.md#文字)
+来读取固定的索引。普通的 `this[0]` 不是有效的 Handlebars 语法，应该写成 `this.[0]`：
+
+```handlebars
+<ul class="tuples">
+  {{#each tuple}}
+    <li>{{this.[0]}} {{this.[1]}}</li>
+  {{/each}}
+</ul>
+```
+
 :::
 
 ## #with
