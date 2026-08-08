@@ -325,7 +325,7 @@ export default defineConfig({
       viteStaticCopy({
         targets: [
           {
-            src: "./../node_modules/shiki/",
+            src: "./../node_modules/shiki",
             dest: ".",
           },
         ],

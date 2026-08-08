@@ -108,9 +108,8 @@ The first and last steps of iteration are noted via the [`@first`](../api-refere
 Nested `each` blocks may access the iteration variables via depth based paths. To access the parent index, for example,
 `{{@../index}}` can be used.
 
-When the current item is itself an array, use
-[segment-literal notation](expressions.md#literal-segments) to read a fixed index. Plain `this[0]` is not valid
-Handlebars syntax; write `this.[0]` instead:
+When the current item is itself an array, use [segment-literal notation](expressions.md#literal-segments) to read a
+fixed index. Plain `this[0]` is not valid Handlebars syntax; write `this.[0]` instead:
 
 ```handlebars
 <ul class="tuples">
