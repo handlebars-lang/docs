@@ -67,9 +67,7 @@ Handlebars 编译器将优化对这些 helper 的访问以提高性能。当所�
 在客户端，你将通过以下方式使用 JavaScript。
 
 ```js
-Handlebars.partials["test1"] = Handlebars.template({
-  /** 在此处插入编译的输出 **/
-});
+Handlebars.partials["test1"] = Handlebars.template({/** 在此处插入编译的输出 **/});
 ```
 
 最后，你可以在 JavaScript 中动态引用这些模板。

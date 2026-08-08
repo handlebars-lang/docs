@@ -72,9 +72,7 @@ The output will be the following:
 On the client side you have Javascript along the lines of the following.
 
 ```js
-Handlebars.partials["test1"] = Handlebars.template({
-  /** insert compiled output here **/
-});
+Handlebars.partials["test1"] = Handlebars.template({/** insert compiled output here **/});
 ```
 
 Finally, you can reference these templates dynamically in your Javascript.

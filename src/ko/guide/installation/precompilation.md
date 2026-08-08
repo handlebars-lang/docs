@@ -70,9 +70,7 @@ NodeJS 내부에서 템플릿을 사전 컴파일하려면 "handlebars"를 명�
 클라이언트 측에서는 다음과 같은 형식의 JavaScript 코드를 사용합니다.
 
 ```js
-Handlebars.partials["test1"] = Handlebars.template({
-  /** 컴파일된 ouput을 여기에 삽입하세요. **/
-});
+Handlebars.partials["test1"] = Handlebars.template({/** 컴파일된 ouput을 여기에 삽입하세요. **/});
 ```
 
 마지막으로, 이러한 템플릿을 JavaScript에서 동적으로 참조할 수 있습니다.
