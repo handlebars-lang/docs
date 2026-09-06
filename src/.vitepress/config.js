@@ -35,6 +35,7 @@ export default defineConfig({
                   { text: "Block Helpers", link: "/block-helpers" },
                   { text: "Built-in Helpers", link: "/builtin-helpers" },
                   { text: "Hooks", link: "/hooks" },
+                  { text: "Security", link: "/security" },
                 ],
               },
               {
@@ -117,6 +118,7 @@ export default defineConfig({
                   { text: "블록 헬퍼(Block Helpers)", link: "/block-helpers" },
                   { text: "내장 헬퍼(Built-in Helpers)", link: "/builtin-helpers" },
                   { text: "훅(Hooks)", link: "/hooks" },
+                  { text: "보안", link: "/security" },
                 ],
               },
               {
@@ -202,6 +204,7 @@ export default defineConfig({
                   { text: "块助手代码", link: "/block-helpers" },
                   { text: "内置助手代码", link: "/builtin-helpers" },
                   { text: "钩子", link: "/hooks" },
+                  { text: "安全", link: "/security" },
                 ],
               },
               {

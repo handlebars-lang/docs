@@ -122,8 +122,8 @@ Handlebars 表达式是一个 <span v-pre>`{{`</span>，一些内容，后跟一
 
 <Example examplePage="/zh/examples/helper-block" show="template" />
 
-助手代码接收一个 `people` 参数和一个 `options`
-参数。`options` 包含一个名为 `fn` 的属性，这个属性使你能够像调用普通的 Handlebars 模板一样调用代码块的上下文。
+助手代码接收一个 `people` 参数和一个 `options` 参数。`options` 包含一个名为 `fn`
+的属性，这个属性使你能够像调用普通的 Handlebars 模板一样调用代码块的上下文。
 
 执行后，模板将渲染：
 
