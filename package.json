@@ -50,7 +50,7 @@
     "lint-staged": "^17.3.0",
     "vite-plugin-static-copy": "^3.4.0",
     "vitepress": "^1.6.3",
-    "vitest": "^4.0.18"
+    "vitest": "^4.1.11"
   },
   "lint-staged": {
     "*.{js,css,json,md,vue}": "npm run format"
