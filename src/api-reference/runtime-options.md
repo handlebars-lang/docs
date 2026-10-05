@@ -29,7 +29,7 @@ this access.
 
 ::: danger Using these properties may open security holes.
 
-Allowing prototype properties may allow template authors to execute arbitray code on you the machine where Handlebars is
+Allowing prototype properties may allow template authors to execute arbitrary code on the machine where Handlebars is
 running. Even with some restrictions in place, an attacker may fabricate Handlebars templates that crash your machine.
 
 Details can be found in the npm-security advisories [755](https://www.npmjs.com/advisories/755),
@@ -50,7 +50,7 @@ of [Mahmoud Gamal](http://mahmoudsec.blogspot.com/2019/04/handlebars-template-in
   is attempted and forbidden.
 
 - `allowedProtoMethods` (since 4.6.0): a string-to-boolean map of property-names that are allowed if they are methods of
-  the parent object. Undefined values revert the the value defined in `allowProtoMethodsByDefault`.
+  the parent object. Undefined values revert to the value defined in `allowProtoMethodsByDefault`.
 - `allowProtoPropertiesByDefault` (since 4.7.0): a boolean (default: false) that defines whether non-method properties
   that are defined on the prototype of an object should be resolvable or not, by default.
 

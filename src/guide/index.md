@@ -121,7 +121,7 @@ Helpers receive the current context as the `this`-context of the function.
 ### Block Helpers
 
 Block expressions allow you to define helpers that will invoke a section of your template with a different context than
-the current. These block helpers are identified by a `#` preceeding the helper name and require a matching closing
+the current. These block helpers are identified by a `#` preceding the helper name and require a matching closing
 mustache, `/`, of the same name. Let's consider a helper that will generate an HTML list:
 
 <Example examplePage="/examples/helper-block" show="preparationScript" />
