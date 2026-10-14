@@ -68,3 +68,21 @@ The most recent one is: https://www.npmjs.com/package/@inventory/parcel-plugin-h
 TODO: Write text here
 
 https://www.npmjs.com/package/parcel-plugin-handlebars-precompile
+
+
+## JavaScript Modules
+
+When precompiling using the CLI, use the `--esm handlebars` option.
+
+```sh
+npx handlebars your.handlebars -f your.js --esm handlebars
+```
+
+And then import it like so:
+
+```js
+import Handlebars from 'handlebars';
+import './your.js';
+
+const result = Handlebars.templates['your'](data);
+```
