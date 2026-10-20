@@ -304,17 +304,31 @@ will render
 
 ::: v-pre
 
-Handlebars content may be escaped in one of two ways, inline escapes or raw block helpers. Inline escapes created by
-prefixing a mustache block with `\`. Raw blocks are created using `{{{{` mustache braces.
+Handlebars content may be escaped in two ways: inline escapes and raw block helpers.
 
 :::
 
+Use an inline escape when you need to output a single Handlebars expression literally. Prefix the opening mustache with
+a backslash (`\`) and Handlebars will render the expression without evaluating it:
+
 ```handlebars
 \{{escaped}}
-{{#raw}}
-  \{{escaped}}
-{{/raw}}
 ```
 
-Raw blocks operate in the same manner as other [block helpers](block-helpers.html) with the distinction of the child
-content is treated as a literal string.
+The template above renders:
+
+```handlebars
+{{escaped}}
+```
+
+Use a raw block when you need to output a larger section of template syntax literally. Raw blocks are created with four
+mustache braces around a block helper name:
+
+```text
+{{{{raw}}}}
+  {{escaped}}
+{{{{/raw}}}}
+```
+
+Raw blocks operate in the same manner as other [block helpers](block-helpers.html), except that the child content is
+treated as a literal string instead of being evaluated as a Handlebars template.
